@@ -1,0 +1,301 @@
+﻿
+@{
+    ViewData["Title"] = "合同文本借阅";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="layui-fluid">
+    <div class="layui-card" id="contTextBorrowList">
+        <div class="layui-card-body">
+            <table id="NF-ContTextBorrow-List" lay-filter="NF-ContTextBorrow-List"></table>
+            <script id="tooltextborrow" type="text/html">
+                <div class="layui-inline">
+                    <button class="layui-btn  layui-btn-sm" lay-event="addborrow">
+                        <i class="layui-icon layui-icon-edit layuiadmin-button-btn"></i>
+                        新建借阅
+                    </button>
+                    <button class="layui-btn  layui-btn-sm" lay-event="addrepay">
+                        <i class="layui-icon layui-icon-edit layuiadmin-button-btn"></i>
+                        归还
+                    </button>
+                    <span style="margin-left:20px;">归档份数:<span id="ArcSumNumber" style="color:#FF5722;">0</span>&nbsp;&nbsp;</span>
+                    <span>已借份数:<span id="BorrSumNumber" style="color:#FF5722;">0</span>&nbsp;&nbsp;</span>
+                    <span>剩余份数:<span id="ResidueNumber" style="color:#FF5722;">0</span>&nbsp;&nbsp;</span>
+
+
+                </div>
+
+            </script>
+        </div>
+    </div>
+    @*新建借阅*@
+    <div class="layui-card layui-hide" id="contTextBorrowAdd">
+        <div class="layui-form" lay-filter="NF-ContTextBorrowForm">
+            @*合同文本ID*@
+            <input type="hidden" name="ContTextId" id="ContTextId" />
+            <div class="layui-card-header">新建借阅</div>
+            <div class="layui-card-body">
+                <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                    <div class="layui-col-lg4 layui-col-md4 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">借阅人</label>
+                        <div class="layui-input-inline" style="width:70%;">
+                            <input type="text" name="BorrUser" lay-verify="required" class="layui-input pen" />
+                        </div>
+                    </div>
+                    <div class="layui-col-lg4 layui-col-md4 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">借阅日期</label>
+                        <div class="layui-input-inline" style="width:70%;">
+                            <input type="text" name="BorrDateTime" id="BorrDateTime" lay-verify="required" class="layui-input pen" />
+                        </div>
+                    </div>
+                    <div class="layui-col-lg4 layui-col-md4 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">所属单位</label>
+                        <div class="layui-input-inline" style="width:70%;">
+                            <input type="text" name="BorrDeptName" lay-verify="required" class="layui-input pen" />
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                    <div class="layui-col-lg4 layui-col-md4 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">借阅份数</label>
+                        <div class="layui-input-inline" style="width:70%;">
+                            <input type="number" name="BorrNumber" value="1" readonly class="layui-input detail" />
+                        </div>
+                    </div>
+
+                </div>
+                <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                    <div class="layui-col-lg12 layui-col-md12 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">借阅说明</label>
+                        <div class="layui-input-inline" style="width:70%;">
+                            <textarea name="BorrRemark" lay-verify="required" class="layui-textarea"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-form-item layui-layout-admin">
+                <div class="layui-input-block">
+                    <div class="layui-footer" style="left: 0;">
+                        <button class="layui-btn" id="NF-ContTextBorrow-FormSubmit" lay-submit lay-filter="NF-ContTextBorrow-FormSubmit">保存</button>
+                        <button type="reset" class="layui-btn layui-btn-primary back">返回</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    @*新建借阅表单结束*@
+    @*归还文档开始*@
+    <div class="layui-card layui-hide" id="contTextRepayAdd">
+        <div class="layui-form" lay-filter="NF-ContTextRepayForm">
+            @*当前数据ID*@
+            <input type="hidden" name="Id" id="borrowId" />
+            <div class="layui-card-header">新建借阅</div>
+            <div class="layui-card-body">
+                <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                    <div class="layui-col-lg4 layui-col-md4 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">归还人</label>
+                        <div class="layui-input-inline" style="width:70%;">
+                            <input type="text" name="RepayUser" lay-verify="required" class="layui-input pen" />
+                        </div>
+                    </div>
+                    <div class="layui-col-lg4 layui-col-md4 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">归还日期</label>
+                        <div class="layui-input-inline" style="width:70%;">
+                            <input type="text" name="RepayDateTime" id="RepayDateTime" lay-verify="required" class="layui-input pen" />
+                        </div>
+                    </div>
+                    <div class="layui-col-lg4 layui-col-md4 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">归还数量</label>
+                        <div class="layui-input-inline" style="width:70%;">
+                            <input type="text" name="RepayNumber" value="1" class="layui-input detail" />
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="layui-form-item layui-layout-admin">
+                <div class="layui-input-block">
+                    <div class="layui-footer" style="left: 0;">
+                        <button class="layui-btn" id="NF-ContTextRepay-FormSubmit" lay-submit lay-filter="NF-ContTextRepay-FormSubmit">保存</button>
+                        <button type="reset" class="layui-btn layui-btn-primary back">返回</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    @*归还文档结束*@
+</div>
+@{
+    Html.RenderPartial("_LayuiScriptsPartial");
+
+}
+
+<script>
+    layui.config({
+        base: '/lib/layuiadmin/'
+    }).extend({
+        index: 'lib/index' //主入口模块
+
+    }).use(['table', 'index', 'laydate'], function () {
+        var $ = layui.$
+         , admin = layui.admin
+         , form = layui.form
+         , laydate = layui.laydate
+         , setter = layui.setter
+         , table = layui.table;
+        var txtId = wooutil.getQueryString('txtId');
+        var contId = wooutil.getQueryString('contId');
+        //借阅日期
+        laydate.render({ elem: '#BorrDateTime' });
+        //归还日期
+        laydate.render({ elem: '#RepayDateTime' });
+
+        /**********************************公共方法-begin****************************************************/
+         //设置基本信息
+        function SetInfo() {
+            admin.req({
+                url: "/ContractDraft/ContText/ArchiveShowView",
+                data: { Id: txtId },
+                done: function (res) {
+                    $("#ArcSumNumber").text(res.Data.ArcSumNumber);
+                    $("#BorrSumNumber").text(res.Data.BorrSumNumber);
+                    $("#ResidueNumber").text(res.Data.ResidueNumber);
+
+
+                }
+            });
+        }
+        var borrowEvent = {
+            borrowAdd: function () {
+                var shenyis=parseInt($("#ResidueNumber").text());
+                if (!isNaN(shenyis)&& shenyis>0){
+                $("#contTextBorrowList").addClass("layui-hide");
+                $("#contTextRepayAdd").addClass("layui-hide");
+                $("#contTextBorrowAdd").removeClass("layui-hide");
+                $("#ContTextId").val(txtId);
+                }else{
+                    layer.alert("没有合同文本可以提供借阅!");
+                }
+
+            },
+            repayAdd: function (rowobj) {//归还
+                var checkStatus = table.checkStatus(rowobj.config.id);
+                if (checkStatus.data.length != 1) {
+                    layer.alert("请选择一条借阅记录!");
+                } else if (checkStatus.data[0].BorrNumber == checkStatus.data[0].RepayNumber)
+                {
+                    layer.alert("已归还无需归还!");
+                }
+                else {
+                    $("#borrowId").val(checkStatus.data[0].Id);//存储借阅ID
+                    var jysl = parseInt($("#BorrSumNumber").text());
+                    if (!isNaN(jysl) && jysl > 0) {
+                        $("#contTextBorrowList").addClass("layui-hide");
+                        $("#contTextRepayAdd").removeClass("layui-hide");
+                        $("#contTextBorrowAdd").addClass("layui-hide");
+                    } else {
+                        layer.alert("没有合同文本需要归还!");
+                    }
+                }
+
+            },
+
+        };
+        /**********************************公共方法-end****************************************************/
+        /**
+       *借阅
+       **/
+        table.render({
+         elem: '#NF-ContTextBorrow-List'
+       , url: '/ContractDraft/ContText/GetListBorrow?txtId=' + txtId + '&rand=' + wooutil.getRandom()
+       , toolbar: '#tooltextborrow'
+       , defaultToolbar: []
+       , cellMinWidth: 80
+       , cols: [[
+             { type: 'numbers', fixed: 'left' }
+           , { type: 'checkbox', fixed: 'left' }
+           , { field: 'BorrUser', title: '借阅人', width: 100 }
+           , { field: 'BorrDateTime', title: '借阅日期', width: 100 }
+           , { field: 'BorrRemark', title: '借阅说明', width: 120 }
+           , { field: 'BorrNumber', title: '借阅份数', width: 100 }
+           , { field: 'BorrowHandUName', title: '借阅经办人', width: 110 }
+           , { field: 'RepayDateTime', title: '归还日期', width: 110 }
+           , { field: 'RepayUser', title: '归还人', width: 100 }
+           , { field: 'RepayHandUName', title: '归还经办人', width: 100 }
+
+
+       ]]
+        , page: false
+        , loading: true
+        , height: setter.table.height_tab
+        , limit: setter.table.limit_tab
+        , done: function () {
+            SetInfo();
+        }
+        });
+        table.on('toolbar(NF-ContTextBorrow-List)', function (obj) {
+            switch (obj.event) {
+                case 'addborrow'://新建借阅
+                    borrowEvent.borrowAdd();
+                    break;
+                case 'addrepay'://归还
+                    borrowEvent.repayAdd(obj);
+                    break;
+
+            };
+        });
+
+        /**********************************提交-begin*****************************************************/
+        /**提交借阅**/
+        form.on('submit(NF-ContTextBorrow-FormSubmit)', function (data) {
+            admin.req({
+                url: "/ContractDraft/ContText/SaveBorrow",
+                data: data.field,
+                done: function (res) {
+                    layer.msg("保存成功", { icon: 1, time: 500 }, function (msgindex) {
+                            $("#contTextBorrowList").removeClass("layui-hide");
+                            $("#contTextBorrowAdd").addClass("layui-hide");
+                            $("#contTextRepayAdd").addClass("layui-hide");
+                            table.reload("NF-ContTextBorrow-List", {
+                                where: { rand: wooutil.getRandom() }
+                            });
+                        });
+                }
+            });
+
+
+
+        });
+        /**归还提交**/
+        form.on('submit(NF-ContTextRepay-FormSubmit)', function (data) {
+            admin.req({
+                url: "/ContractDraft/ContText/SaveRepay",
+                data: data.field,
+                done: function (res) {
+                    layer.msg("保存成功", { icon: 1, time: 500 }, function (msgindex) {
+                        $("#contTextBorrowList").removeClass("layui-hide");
+                        $("#contTextBorrowAdd").addClass("layui-hide");
+                        $("#contTextRepayAdd").addClass("layui-hide");
+                        table.reload("NF-ContTextBorrow-List",{
+                            where: { rand: wooutil.getRandom()}
+                        });
+                    });
+                }
+            });
+
+        });
+        /**
+        *返回
+        **/
+        $(".back").click(function () {
+            $("#contTextBorrowList").removeClass("layui-hide");
+            $("#contTextBorrowAdd").addClass("layui-hide");
+            $("#contTextRepayAdd").addClass("layui-hide");
+        });
+        /***********************************提交-end*************************************************************/
+    
+     });
+</script>
+

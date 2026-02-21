@@ -1,0 +1,55 @@
+﻿@using NF.Common.Utility;
+@using NF.ViewModel.Models;
+@using NF.Model.Models;
+@model APPWFLayPageInfo<ProjectManagerViewDTO>
+@{
+    ViewData["Title"] = "PRROJDetails";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<html>
+<head runat="server">
+    <title>项目审批</title>
+    <link href="~/css/DetailsPage.css" type="text/css" rel="stylesheet" />
+    <meta name="format-detection" content="telephone=no" />
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="TopTitle">
+            <h1 style="text-align: center;"><strong style="border-bottom-style: double; border-color: red">项 目 审 批</strong></h1>
+        </div>
+        @*项目信息*@
+        <table border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td colspan="4" class="TopTb">项目信息</td>
+            </tr>
+            <tr>
+                <td class="ConInfoId" id="contractNameTD">项目名称</td>
+                <td colspan="3">@Model.WFInstanceList[0].Name</td>
+            </tr>
+            <tr>
+                <td class="ConInfoId">项目编号</td>
+                <td class="ConInfoText">@Model.WFInstanceList[0].Code</td>
+                <td class="ConInfoId">项目类别</td>
+                <td class="ConInfoText">@Model.WFInstanceList[0].ProjTypeName</td>
+            </tr>
+            <tr>
+                <td class="ConInfoId">预算收款</td>
+                <td class="ConInfoText">@Model.WFInstanceList[0].BugetCollectAmountMoney</td>
+                <td class="ConInfoId">预算付款</td>
+                <td class="ConInfoText">@Model.WFInstanceList[0].BudgetPayAmountMoney</td>
+            </tr>
+            <tr>
+                <td class="ConInfoId">负责人</td>
+                <td class="ConInfoText">@Model.WFInstanceList[0].CreateUserName</td>
+                <td class="ConInfoId">建立时间</td>
+                <td class="ConInfoText">@Model.WFInstanceList[0].CreateDateTime</td>
+            </tr>
+        </table>
+        <br />
+        @{
+            Html.RenderPartial("_ShenpiDetails");
+        }
+    </form>
+</body>
+</html>
+

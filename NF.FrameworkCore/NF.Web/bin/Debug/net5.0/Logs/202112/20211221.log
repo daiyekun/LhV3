@@ -1,0 +1,742 @@
+
+======================================================================================
+
+
+--------------------------------------------------------------------------------------
+
+日志时间：2021-12-21 14:10:35,238 [193] 
+日志级别：ERROR 
+日 志 类：类名：NF.Web.Utility.Filters
+	方法名：OnException [(null)] 
+Object reference not set to an instance of an object. 
+
+
+--------------------------------------------------------------------------------------
+
+日志时间：2021-12-21 14:10:37,971 [178] 
+日志级别：ERROR 
+日 志 类：类名：NF.Web.Utility.Filters
+	方法名：OnException [(null)] 
+Object reference not set to an instance of an object. 
+
+
+--------------------------------------------------------------------------------------
+
+日志时间：2021-12-21 14:10:38,478 [179] 
+日志级别：ERROR 
+日 志 类：类名：NF.Web.Utility.Filters
+	方法名：OnException [(null)] 
+Object reference not set to an instance of an object. 
+
+
+--------------------------------------------------------------------------------------
+
+日志时间：2021-12-21 14:10:39,045 [176] 
+日志级别：ERROR 
+日 志 类：类名：NF.Web.Utility.Filters
+	方法名：OnException [(null)] 
+Object reference not set to an instance of an object. 
+
+
+--------------------------------------------------------------------------------------
+
+日志时间：2021-12-21 14:10:39,988 [181] 
+日志级别：ERROR 
+日 志 类：类名：NF.Web.Utility.Filters
+	方法名：OnException [(null)] 
+Object reference not set to an instance of an object. 
+
+======================================================================================
+
+
+--------------------------------------------------------------------------------------
+
+日志时间：2021-12-21 14:44:10,030 [16] 
+日志级别：ERROR 
+日 志 类：类名：NF.BLL
+	方法名：GetConsoleReminder [(null)] 
+Err-->mesgInfo.DqjhskNum:列名 'IsWxMsg' 无效。
+列名 'IsWXMsgDate' 无效。
+列名 'CountField' 无效。
+列名 'HtXmnr' 无效。
+列名 'IsWxMsg' 无效。
+列名 'IsWXMsgDate' 无效。 
+
+
+--------------------------------------------------------------------------------------
+
+日志时间：2021-12-21 14:44:10,153 [16] 
+日志级别：ERROR 
+日 志 类：类名：NF.BLL
+	方法名：GetConsoleReminder [(null)] 
+Err-->mesgInfo.DqjhfkNum:列名 'IsWxMsg' 无效。
+列名 'IsWXMsgDate' 无效。
+列名 'CountField' 无效。
+列名 'HtXmnr' 无效。
+列名 'IsWxMsg' 无效。
+列名 'IsWXMsgDate' 无效。 
+
+
+--------------------------------------------------------------------------------------
+
+日志时间：2021-12-21 14:44:18,061 [15] 
+日志级别：ERROR 
+日 志 类：类名：NF.Web.Utility.Filters
+	方法名：OnException [(null)] 
+列名 'CountField' 无效。
+列名 'HtXmnr' 无效。
+列名 'IsWxMsg' 无效。
+列名 'IsWXMsgDate' 无效。 
+
+
+--------------------------------------------------------------------------------------
+
+日志时间：2021-12-21 14:44:18,801 [10] 
+日志级别：ERROR 
+日 志 类：类名：NF.BLL
+	方法名：GetConsoleReminder [(null)] 
+Err-->mesgInfo.DqjhskNum:列名 'IsWxMsg' 无效。
+列名 'IsWXMsgDate' 无效。
+列名 'CountField' 无效。
+列名 'HtXmnr' 无效。
+列名 'IsWxMsg' 无效。
+列名 'IsWXMsgDate' 无效。 
+
+
+--------------------------------------------------------------------------------------
+
+日志时间：2021-12-21 14:44:19,015 [10] 
+日志级别：ERROR 
+日 志 类：类名：NF.BLL
+	方法名：GetConsoleReminder [(null)] 
+Err-->mesgInfo.DqjhfkNum:列名 'IsWxMsg' 无效。
+列名 'IsWXMsgDate' 无效。
+列名 'CountField' 无效。
+列名 'HtXmnr' 无效。
+列名 'IsWxMsg' 无效。
+列名 'IsWXMsgDate' 无效。 
+
+
+--------------------------------------------------------------------------------------
+
+日志时间：2021-12-21 14:44:21,927 [16] 
+日志级别：ERROR 
+日 志 类：类名：NF.Web.Utility.Filters
+	方法名：OnException [(null)] 
+列名 'CountField' 无效。
+列名 'HtXmnr' 无效。
+列名 'IsWxMsg' 无效。
+列名 'IsWXMsgDate' 无效。 
+
+
+--------------------------------------------------------------------------------------
+
+日志时间：2021-12-21 14:44:23,865 [4] 
+日志级别：ERROR 
+日 志 类：类名：NF.Web.Utility.Filters
+	方法名：OnException [(null)] 
+列名 'CountField' 无效。
+列名 'HtXmnr' 无效。
+列名 'IsWxMsg' 无效。
+列名 'IsWXMsgDate' 无效。 
+
+
+--------------------------------------------------------------------------------------
+
+日志时间：2021-12-21 14:47:23,253 [31] 
+日志级别：ERROR 
+日 志 类：类名：NF.Web.Utility.Filters
+	方法名：OnException [(null)] 
+列名 'CountField' 无效。
+列名 'HtXmnr' 无效。
+列名 'IsWxMsg' 无效。
+列名 'IsWXMsgDate' 无效。 
+
+======================================================================================
+
+
+--------------------------------------------------------------------------------------
+
+日志时间：2021-12-21 15:01:44,613 [44] 
+日志级别：ERROR 
+日 志 类：类名：NF.Web.Utility.Filters
+	方法名：OnException [(null)] 
+Object reference not set to an instance of an object. 
+
+======================================================================================
+
+
+--------------------------------------------------------------------------------------
+
+日志时间：2021-12-21 15:04:57,658 [35] 
+日志级别：ERROR 
+日 志 类：类名：NF.Web.Utility.Filters
+	方法名：OnException [(null)] 
+Object reference not set to an instance of an object. 
+
+
+--------------------------------------------------------------------------------------
+
+日志时间：2021-12-21 15:06:52,478 [42] 
+日志级别：ERROR 
+日 志 类：类名：NF.Web.Utility.Filters
+	方法名：OnException [(null)] 
+Object reference not set to an instance of an object. 
+
+======================================================================================
+
+
+--------------------------------------------------------------------------------------
+
+日志时间：2021-12-21 15:16:34,971 [33] 
+日志级别：ERROR 
+日 志 类：类名：NF.BLL
+	方法名：GetConsoleReminder [(null)] 
+Err-->mesgInfo.DqjhskNum:Object reference not set to an instance of an object. 
+
+
+--------------------------------------------------------------------------------------
+
+日志时间：2021-12-21 15:16:35,036 [33] 
+日志级别：ERROR 
+日 志 类：类名：NF.BLL
+	方法名：GetConsoleReminder [(null)] 
+Err-->mesgInfo.DqjhfkNum:Object reference not set to an instance of an object. 
+
+
+--------------------------------------------------------------------------------------
+
+日志时间：2021-12-21 15:16:36,805 [57] 
+日志级别：ERROR 
+日 志 类：类名：NF.BLL
+	方法名：GetConsoleReminder [(null)] 
+Err-->mesgInfo.DqjhskNum:Object reference not set to an instance of an object. 
+
+
+--------------------------------------------------------------------------------------
+
+日志时间：2021-12-21 15:16:36,891 [57] 
+日志级别：ERROR 
+日 志 类：类名：NF.BLL
+	方法名：GetConsoleReminder [(null)] 
+Err-->mesgInfo.DqjhfkNum:Object reference not set to an instance of an object. 
+
+
+--------------------------------------------------------------------------------------
+
+日志时间：2021-12-21 15:38:56,582 [100] 
+日志级别：ERROR 
+日 志 类：类名：NF.OfficeComm
+	方法名：DeleteDocStateBehavior [(null)] 
+System.Runtime.InteropServices.COMException (0x800A11FD): 此命令无效。
+   at Microsoft.Office.Interop.Word.DocumentClass.DeleteAllCommentsShown()
+   at NF.OfficeComm.WordDocHiper.DeleteDocStateBehavior(Document document) in D:\MyCode\V3.0\NF.FrameworkCore\NF.OfficeComm\WordDocHiper.cs:line 121 
+
+======================================================================================
+
+
+--------------------------------------------------------------------------------------
+
+日志时间：2021-12-21 16:06:16,829 [50] 
+日志级别：ERROR 
+日 志 类：类名：NF.BLL
+	方法名：GetConsoleReminder [(null)] 
+Err-->mesgInfo.DqjhskNum:Object reference not set to an instance of an object. 
+
+
+--------------------------------------------------------------------------------------
+
+日志时间：2021-12-21 16:06:16,989 [50] 
+日志级别：ERROR 
+日 志 类：类名：NF.BLL
+	方法名：GetConsoleReminder [(null)] 
+Err-->mesgInfo.DqjhfkNum:Object reference not set to an instance of an object. 
+
+
+--------------------------------------------------------------------------------------
+
+日志时间：2021-12-21 16:06:19,548 [63] 
+日志级别：ERROR 
+日 志 类：类名：NF.BLL
+	方法名：GetConsoleReminder [(null)] 
+Err-->mesgInfo.DqjhskNum:Object reference not set to an instance of an object. 
+
+
+--------------------------------------------------------------------------------------
+
+日志时间：2021-12-21 16:06:19,607 [63] 
+日志级别：ERROR 
+日 志 类：类名：NF.BLL
+	方法名：GetConsoleReminder [(null)] 
+Err-->mesgInfo.DqjhfkNum:Object reference not set to an instance of an object. 
+
+
+--------------------------------------------------------------------------------------
+
+日志时间：2021-12-21 16:07:15,490 [67] 
+日志级别：ERROR 
+日 志 类：类名：NF.Web.Utility.Filters
+	方法名：OnException [(null)] 
+Object reference not set to an instance of an object. 
+
+
+--------------------------------------------------------------------------------------
+
+日志时间：2021-12-21 16:07:18,279 [70] 
+日志级别：ERROR 
+日 志 类：类名：NF.Web.Utility.Filters
+	方法名：OnException [(null)] 
+Object reference not set to an instance of an object. 
+
+
+--------------------------------------------------------------------------------------
+
+日志时间：2021-12-21 16:07:18,919 [72] 
+日志级别：ERROR 
+日 志 类：类名：NF.Web.Utility.Filters
+	方法名：OnException [(null)] 
+Object reference not set to an instance of an object. 
+
+
+--------------------------------------------------------------------------------------
+
+日志时间：2021-12-21 16:07:19,228 [63] 
+日志级别：ERROR 
+日 志 类：类名：NF.Web.Utility.Filters
+	方法名：OnException [(null)] 
+Object reference not set to an instance of an object. 
+
+
+--------------------------------------------------------------------------------------
+
+日志时间：2021-12-21 16:07:19,360 [63] 
+日志级别：ERROR 
+日 志 类：类名：NF.Web.Utility.Filters
+	方法名：OnException [(null)] 
+Object reference not set to an instance of an object. 
+
+
+--------------------------------------------------------------------------------------
+
+日志时间：2021-12-21 16:07:19,529 [72] 
+日志级别：ERROR 
+日 志 类：类名：NF.Web.Utility.Filters
+	方法名：OnException [(null)] 
+Object reference not set to an instance of an object. 
+
+
+--------------------------------------------------------------------------------------
+
+日志时间：2021-12-21 16:07:19,854 [72] 
+日志级别：ERROR 
+日 志 类：类名：NF.Web.Utility.Filters
+	方法名：OnException [(null)] 
+Object reference not set to an instance of an object. 
+
+
+--------------------------------------------------------------------------------------
+
+日志时间：2021-12-21 16:07:20,861 [63] 
+日志级别：ERROR 
+日 志 类：类名：NF.Web.Utility.Filters
+	方法名：OnException [(null)] 
+Object reference not set to an instance of an object. 
+
+
+--------------------------------------------------------------------------------------
+
+日志时间：2021-12-21 16:09:32,841 [62] 
+日志级别：ERROR 
+日 志 类：类名：NF.OfficeComm
+	方法名：DeleteDocStateBehavior [(null)] 
+System.Runtime.InteropServices.COMException (0x800A11FD): 此命令无效。
+   at Microsoft.Office.Interop.Word.DocumentClass.DeleteAllCommentsShown()
+   at NF.OfficeComm.WordDocHiper.DeleteDocStateBehavior(Document document) in D:\MyCode\V3.0\NF.FrameworkCore\NF.OfficeComm\WordDocHiper.cs:line 121 
+
+======================================================================================
+
+
+--------------------------------------------------------------------------------------
+
+日志时间：2021-12-21 17:12:46,604 [31] 
+日志级别：ERROR 
+日 志 类：类名：NF.Web.Utility.Filters
+	方法名：OnException [(null)] 
+Could not find file 'D:\MyCode\V3.0\NF.FrameworkCore\NF.Web\bin\Debug\net5.0\Uploads\ContractTextFile\637756996157621540-测试合同模板审阅-0002.pdf'. 
+
+
+--------------------------------------------------------------------------------------
+
+日志时间：2021-12-21 17:19:58,989 [43] 
+日志级别：ERROR 
+日 志 类：类名：NF.Web.Utility.Filters
+	方法名：OnException [(null)] 
+Could not find file 'D:\MyCode\V3.0\NF.FrameworkCore\NF.Web\bin\Debug\net5.0\Uploads\ContractTextFile\637756996157621540-测试合同模板审阅-0002.pdf'. 
+
+
+--------------------------------------------------------------------------------------
+
+日志时间：2021-12-21 17:26:47,235 [49] 
+日志级别：ERROR 
+日 志 类：类名：NF.Web.Utility.Filters
+	方法名：OnException [(null)] 
+Could not find file 'D:\MyCode\V3.0\NF.FrameworkCore\NF.Web\bin\Debug\net5.0\Uploads\ContractTextFile\637756996157621540-测试合同模板审阅-0002.pdf'. 
+
+======================================================================================
+
+
+--------------------------------------------------------------------------------------
+
+日志时间：2021-12-21 17:55:41,305 [196] 
+日志级别：ERROR 
+日 志 类：类名：NF.Web.Utility.Filters
+	方法名：OnException [(null)] 
+Could not find file 'D:\MyCode\V3.0\NF.FrameworkCore\NF.Web\bin\Debug\net5.0\Uploads\ContractTextFile\637756996157621540'. 
+
+======================================================================================
+
+
+--------------------------------------------------------------------------------------
+
+日志时间：2021-12-21 18:03:07,800 [53] 
+日志级别：ERROR 
+日 志 类：类名：NF.BLL
+	方法名：GetConsoleReminder [(null)] 
+Err-->mesgInfo.DqjhskNum:Object reference not set to an instance of an object. 
+
+
+--------------------------------------------------------------------------------------
+
+日志时间：2021-12-21 18:03:07,899 [53] 
+日志级别：ERROR 
+日 志 类：类名：NF.BLL
+	方法名：GetConsoleReminder [(null)] 
+Err-->mesgInfo.DqjhfkNum:Object reference not set to an instance of an object. 
+
+
+--------------------------------------------------------------------------------------
+
+日志时间：2021-12-21 18:03:09,467 [53] 
+日志级别：ERROR 
+日 志 类：类名：NF.BLL
+	方法名：GetConsoleReminder [(null)] 
+Err-->mesgInfo.DqjhskNum:Object reference not set to an instance of an object. 
+
+
+--------------------------------------------------------------------------------------
+
+日志时间：2021-12-21 18:03:09,622 [53] 
+日志级别：ERROR 
+日 志 类：类名：NF.BLL
+	方法名：GetConsoleReminder [(null)] 
+Err-->mesgInfo.DqjhfkNum:Object reference not set to an instance of an object. 
+
+
+--------------------------------------------------------------------------------------
+
+日志时间：2021-12-21 18:05:49,078 [25] 
+日志级别：ERROR 
+日 志 类：类名：NF.OfficeComm
+	方法名：DeleteDocStateBehavior [(null)] 
+System.Runtime.InteropServices.COMException (0x800A11FD): 此命令无效。
+   at Microsoft.Office.Interop.Word.DocumentClass.DeleteAllCommentsShown()
+   at NF.OfficeComm.WordDocHiper.DeleteDocStateBehavior(Document document) in D:\MyCode\V3.0\NF.FrameworkCore\NF.OfficeComm\WordDocHiper.cs:line 121 
+
+
+--------------------------------------------------------------------------------------
+
+日志时间：2021-12-21 18:05:50,239 [25] 
+日志级别：ERROR 
+日 志 类：类名：NF.OfficeComm
+	方法名：ConvertPDFToVsto [(null)] 
+System.Runtime.InteropServices.COMException (0x80004005): 此文件为只读。
+   at Microsoft.Office.Interop.Word.DocumentClass.ExportAsFixedFormat(String OutputFileName, WdExportFormat ExportFormat, Boolean OpenAfterExport, WdExportOptimizeFor OptimizeFor, WdExportRange Range, Int32 From, Int32 To, WdExportItem Item, Boolean IncludeDocProps, Boolean KeepIRM, WdExportCreateBookmarks CreateBookmarks, Boolean DocStructureTags, Boolean BitmapMissingFonts, Boolean UseISO19005_1, Object& FixedFormatExtClassPtr)
+   at NF.OfficeComm.MsWordToPdfHelper.ConvertPDFToVsto(String marktemplatePath, String savePath, String contextPath) in D:\MyCode\V3.0\NF.FrameworkCore\NF.OfficeComm\MsWordToPdfHelper.cs:line 212 
+
+======================================================================================
+
+
+--------------------------------------------------------------------------------------
+
+日志时间：2021-12-21 18:06:57,531 [6] 
+日志级别：ERROR 
+日 志 类：类名：NF.Web.Utility.Filters
+	方法名：OnException [(null)] 
+Could not find file 'D:\MyCode\V3.0\NF.FrameworkCore\NF.Web\bin\Debug\net5.0\Uploads\ContractTextFile\637757066234381521.pdf'. 
+
+
+--------------------------------------------------------------------------------------
+
+日志时间：2021-12-21 18:10:57,666 [48] 
+日志级别：ERROR 
+日 志 类：类名：NF.BLL
+	方法名：GetConsoleReminder [(null)] 
+Err-->mesgInfo.DqjhskNum:Object reference not set to an instance of an object. 
+
+
+--------------------------------------------------------------------------------------
+
+日志时间：2021-12-21 18:10:57,801 [48] 
+日志级别：ERROR 
+日 志 类：类名：NF.BLL
+	方法名：GetConsoleReminder [(null)] 
+Err-->mesgInfo.DqjhfkNum:Object reference not set to an instance of an object. 
+
+
+--------------------------------------------------------------------------------------
+
+日志时间：2021-12-21 18:10:59,336 [18] 
+日志级别：ERROR 
+日 志 类：类名：NF.BLL
+	方法名：GetConsoleReminder [(null)] 
+Err-->mesgInfo.DqjhskNum:Object reference not set to an instance of an object. 
+
+
+--------------------------------------------------------------------------------------
+
+日志时间：2021-12-21 18:10:59,390 [18] 
+日志级别：ERROR 
+日 志 类：类名：NF.BLL
+	方法名：GetConsoleReminder [(null)] 
+Err-->mesgInfo.DqjhfkNum:Object reference not set to an instance of an object. 
+
+
+--------------------------------------------------------------------------------------
+
+日志时间：2021-12-21 18:11:38,370 [46] 
+日志级别：ERROR 
+日 志 类：类名：NF.Web.Utility.Filters
+	方法名：OnException [(null)] 
+Object reference not set to an instance of an object. 
+
+
+--------------------------------------------------------------------------------------
+
+日志时间：2021-12-21 18:12:06,572 [48] 
+日志级别：ERROR 
+日 志 类：类名：NF.OfficeComm
+	方法名：DeleteDocStateBehavior [(null)] 
+System.Runtime.InteropServices.COMException (0x800A11FD): 此命令无效。
+   at Microsoft.Office.Interop.Word.DocumentClass.DeleteAllCommentsShown()
+   at NF.OfficeComm.WordDocHiper.DeleteDocStateBehavior(Document document) in D:\MyCode\V3.0\NF.FrameworkCore\NF.OfficeComm\WordDocHiper.cs:line 121 
+
+
+--------------------------------------------------------------------------------------
+
+日志时间：2021-12-21 18:12:35,549 [17] 
+日志级别：ERROR 
+日 志 类：类名：NF.Web.Utility.Filters
+	方法名：OnException [(null)] 
+Could not find file 'D:\MyCode\V3.0\NF.FrameworkCore\NF.Web\bin\Debug\net5.0\Uploads\ContractTextFile\637757069232451445'. 
+
+
+--------------------------------------------------------------------------------------
+
+日志时间：2021-12-21 18:13:23,011 [72] 
+日志级别：ERROR 
+日 志 类：类名：NF.OfficeComm
+	方法名：DeleteDocStateBehavior [(null)] 
+System.Runtime.InteropServices.COMException (0x800A11FD): 此命令无效。
+   at Microsoft.Office.Interop.Word.DocumentClass.DeleteAllCommentsShown()
+   at NF.OfficeComm.WordDocHiper.DeleteDocStateBehavior(Document document) in D:\MyCode\V3.0\NF.FrameworkCore\NF.OfficeComm\WordDocHiper.cs:line 121 
+
+
+--------------------------------------------------------------------------------------
+
+日志时间：2021-12-21 18:13:24,163 [72] 
+日志级别：ERROR 
+日 志 类：类名：NF.OfficeComm
+	方法名：ConvertNewWordToVsto [(null)] 
+System.Runtime.InteropServices.COMException (0x80004005): 此文件为只读。
+   at Microsoft.Office.Interop.Word.DocumentClass.ExportAsFixedFormat(String OutputFileName, WdExportFormat ExportFormat, Boolean OpenAfterExport, WdExportOptimizeFor OptimizeFor, WdExportRange Range, Int32 From, Int32 To, WdExportItem Item, Boolean IncludeDocProps, Boolean KeepIRM, WdExportCreateBookmarks CreateBookmarks, Boolean DocStructureTags, Boolean BitmapMissingFonts, Boolean UseISO19005_1, Object& FixedFormatExtClassPtr)
+   at NF.OfficeComm.MsWordToPdfHelper.ConvertNewWordToVsto(String marktemplatePath, String savePath, String contextPath) in D:\MyCode\V3.0\NF.FrameworkCore\NF.OfficeComm\MsWordToPdfHelper.cs:line 297 
+
+
+--------------------------------------------------------------------------------------
+
+日志时间：2021-12-21 18:13:50,420 [17] 
+日志级别：ERROR 
+日 志 类：类名：NF.Web.Utility.Filters
+	方法名：OnException [(null)] 
+Could not find file 'D:\MyCode\V3.0\NF.FrameworkCore\NF.Web\bin\Debug\net5.0\Uploads\ContractTextFile\637757069232451445.pdf'. 
+
+
+--------------------------------------------------------------------------------------
+
+日志时间：2021-12-21 18:13:59,115 [75] 
+日志级别：ERROR 
+日 志 类：类名：NF.OfficeComm
+	方法名：DeleteDocStateBehavior [(null)] 
+System.Runtime.InteropServices.COMException (0x800A11FD): 此命令无效。
+   at Microsoft.Office.Interop.Word.DocumentClass.DeleteAllCommentsShown()
+   at NF.OfficeComm.WordDocHiper.DeleteDocStateBehavior(Document document) in D:\MyCode\V3.0\NF.FrameworkCore\NF.OfficeComm\WordDocHiper.cs:line 121 
+
+
+--------------------------------------------------------------------------------------
+
+日志时间：2021-12-21 18:14:11,921 [72] 
+日志级别：ERROR 
+日 志 类：类名：NF.Web.Utility.Filters
+	方法名：OnException [(null)] 
+Could not find file 'D:\MyCode\V3.0\NF.FrameworkCore\NF.Web\bin\Debug\net5.0\Uploads\ContractTextFile\637757069232451445.pdf'. 
+
+
+--------------------------------------------------------------------------------------
+
+日志时间：2021-12-21 18:14:16,416 [76] 
+日志级别：ERROR 
+日 志 类：类名：NF.Web.Utility.Filters
+	方法名：OnException [(null)] 
+Could not find file 'D:\MyCode\V3.0\NF.FrameworkCore\NF.Web\bin\Debug\net5.0\Uploads\ContractTextFile\637757069865450695.pdf'. 
+
+
+--------------------------------------------------------------------------------------
+
+日志时间：2021-12-21 18:14:21,606 [76] 
+日志级别：ERROR 
+日 志 类：类名：NF.Web.Utility.Filters
+	方法名：OnException [(null)] 
+Could not find file 'D:\MyCode\V3.0\NF.FrameworkCore\NF.Web\bin\Debug\net5.0\Uploads\ContractTextFile\637757069865450695.pdf'. 
+
+======================================================================================
+
+
+--------------------------------------------------------------------------------------
+
+日志时间：2021-12-21 18:22:46,151 [37] 
+日志级别：ERROR 
+日 志 类：类名：NF.Web.Utility.Filters
+	方法名：OnException [(null)] 
+Could not find a part of the path 'D:\MyCode\V3.0\NF.FrameworkCore\NF.Web\bin\Debug\net5.0\Uploads\ContractTextFile\637757069232451445-测试合同模板-006.pdf\637757069232451445'. 
+
+
+--------------------------------------------------------------------------------------
+
+日志时间：2021-12-21 18:22:51,255 [19] 
+日志级别：ERROR 
+日 志 类：类名：NF.Web.Utility.Filters
+	方法名：OnException [(null)] 
+Could not find a part of the path 'D:\MyCode\V3.0\NF.FrameworkCore\NF.Web\bin\Debug\net5.0\Uploads\ContractTextFile\637757069865450695-测试合同模板-0007.pdf\637757069865450695'. 
+
+
+--------------------------------------------------------------------------------------
+
+日志时间：2021-12-21 18:23:45,128 [4] 
+日志级别：ERROR 
+日 志 类：类名：NF.Web.Utility.Filters
+	方法名：OnException [(null)] 
+Could not find a part of the path 'D:\MyCode\V3.0\NF.FrameworkCore\NF.Web\bin\Debug\net5.0\Uploads\ContractTextFile\637757069232451445-测试合同模板-006.pdf\637757069232451445'. 
+
+======================================================================================
+
+
+--------------------------------------------------------------------------------------
+
+日志时间：2021-12-21 18:24:55,348 [27] 
+日志级别：ERROR 
+日 志 类：类名：NF.Web.Utility.Filters
+	方法名：OnException [(null)] 
+Could not find a part of the path 'D:\MyCode\V3.0\NF.FrameworkCore\NF.Web\bin\Debug\net5.0\Uploads\ContractTextFile\637757069232451445-测试合同模板-006.pdf\637757069232451445'. 
+
+
+--------------------------------------------------------------------------------------
+
+日志时间：2021-12-21 18:25:27,556 [31] 
+日志级别：ERROR 
+日 志 类：类名：NF.Web.Utility.Filters
+	方法名：OnException [(null)] 
+Could not find a part of the path 'D:\MyCode\V3.0\NF.FrameworkCore\NF.Web\bin\Debug\net5.0\Uploads\ContractTextFile\637757069232451445-测试合同模板-006.pdf\637757069232451445'. 
+
+
+--------------------------------------------------------------------------------------
+
+日志时间：2021-12-21 18:25:39,416 [31] 
+日志级别：ERROR 
+日 志 类：类名：NF.Web.Utility.Filters
+	方法名：OnException [(null)] 
+Could not find a part of the path 'D:\MyCode\V3.0\NF.FrameworkCore\NF.Web\bin\Debug\net5.0\Uploads\ContractTextFile\637757069232451445-测试合同模板-006.pdf\637757069232451445'. 
+
+
+--------------------------------------------------------------------------------------
+
+日志时间：2021-12-21 18:26:03,400 [9] 
+日志级别：ERROR 
+日 志 类：类名：NF.Web.Utility.Filters
+	方法名：OnException [(null)] 
+Could not find a part of the path 'D:\MyCode\V3.0\NF.FrameworkCore\NF.Web\bin\Debug\net5.0\Uploads\ContractTextFile\637757066234381521-测试合同模板-0004.pdf\637757066234381521'. 
+
+======================================================================================
+
+
+--------------------------------------------------------------------------------------
+
+日志时间：2021-12-21 19:01:24,808 [103] 
+日志级别：ERROR 
+日 志 类：类名：NF.Web.Utility.Filters
+	方法名：OnException [(null)] 
+Could not find file 'D:\MyCode\V3.0\NF.FrameworkCore\NF.Web\bin\Debug\net5.0\Uploads\ContractTextFile\637757069232451445.pdf'. 
+
+
+--------------------------------------------------------------------------------------
+
+日志时间：2021-12-21 19:01:30,932 [102] 
+日志级别：ERROR 
+日 志 类：类名：NF.Web.Utility.Filters
+	方法名：OnException [(null)] 
+Could not find file 'D:\MyCode\V3.0\NF.FrameworkCore\NF.Web\bin\Debug\net5.0\Uploads\ContractTextFile\637757069865450695.pdf'. 
+
+
+--------------------------------------------------------------------------------------
+
+日志时间：2021-12-21 19:03:24,483 [85] 
+日志级别：ERROR 
+日 志 类：类名：NF.Web.Utility.Filters
+	方法名：OnException [(null)] 
+Could not find file 'D:\MyCode\V3.0\NF.FrameworkCore\NF.Web\bin\Debug\net5.0\Uploads\ContractTextFile\637757069232451445.pdf'. 
+
+
+--------------------------------------------------------------------------------------
+
+日志时间：2021-12-21 19:03:36,597 [83] 
+日志级别：ERROR 
+日 志 类：类名：NF.Web.Utility.Filters
+	方法名：OnException [(null)] 
+Could not find file 'D:\MyCode\V3.0\NF.FrameworkCore\NF.Web\bin\Debug\net5.0\Uploads\ContractTextFile\637757069232451445.pdf'. 
+
+
+--------------------------------------------------------------------------------------
+
+日志时间：2021-12-21 19:05:19,774 [72] 
+日志级别：ERROR 
+日 志 类：类名：NF.Web.Utility.Filters
+	方法名：OnException [(null)] 
+Could not find file 'D:\MyCode\V3.0\NF.FrameworkCore\NF.Web\bin\Debug\net5.0\Uploads\ContractTextFile\637757069232451445.pdf'. 
+
+======================================================================================
+
+
+--------------------------------------------------------------------------------------
+
+日志时间：2021-12-21 19:09:32,509 [6] 
+日志级别：ERROR 
+日 志 类：类名：NF.Web.Utility.Filters
+	方法名：OnException [(null)] 
+Access to the path 'D:\MyCode\V3.0\NF.FrameworkCore\NF.Web\bin\Debug\net5.0' is denied. 
+
+
+--------------------------------------------------------------------------------------
+
+日志时间：2021-12-21 19:09:36,451 [6] 
+日志级别：ERROR 
+日 志 类：类名：NF.Web.Utility.Filters
+	方法名：OnException [(null)] 
+Access to the path 'D:\MyCode\V3.0\NF.FrameworkCore\NF.Web\bin\Debug\net5.0' is denied. 
+
+
+--------------------------------------------------------------------------------------
+
+日志时间：2021-12-21 19:10:53,372 [42] 
+日志级别：ERROR 
+日 志 类：类名：NF.Web.Utility.Filters
+	方法名：OnException [(null)] 
+Access to the path 'D:\MyCode\V3.0\NF.FrameworkCore\NF.Web\bin\Debug\net5.0' is denied. 

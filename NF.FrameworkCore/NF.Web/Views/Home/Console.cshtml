@@ -1,0 +1,367 @@
+﻿
+@{
+    ViewData["Title"] = "控制台";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/lib/fontico/kjico/iconfont.css" rel="stylesheet" />
+<div class="layui-fluid">
+    <div class="layui-row layui-col-space15">
+        <div class="layui-col-md8">
+            <div class="layui-row layui-col-space15">
+                <div class="layui-col-md6">
+                    <div class="layui-card">
+                        <div class="layui-card-header">快捷方式</div>
+                        <div class="layui-card-body">
+                            <div class="layui-carousel layadmin-carousel layadmin-shortcut">
+                                <div carousel-item>
+                                    <ul class="layui-row layui-col-space10">
+                                        <li class="layui-col-xs3">
+                                            <a lay-href="/Company/Customer/Index">
+                                                <i class="layui-icon iconfont icon-customer" style="font-size:30px"></i>
+                                                <cite>客户</cite>
+                                            </a>
+                                        </li>
+                                        <li class="layui-col-xs3">
+                                            <a lay-href="/Company/Supplier/Index">
+                                                <i class="layui-icon iconfont icon-gongyingshangguanli" style="font-size:30px"></i>
+                                                <cite>供应商</cite>
+                                            </a>
+                                        </li>
+                                        <li class="layui-col-xs3">
+                                            <a lay-href="/Contract/ContractCollection/Index">
+                                                <i class="layui-icon iconfont icon-hetongdaiqian" style="font-size:30px"></i>
+                                                <cite>收款合同</cite>
+                                            </a>
+                                        </li>
+                                        <li class="layui-col-xs3">
+                                            <a lay-href="/Contract/ContractPayment/Index">
+                                                <i class="layui-icon iconfont icon-hetongdaoqi" style="font-size:30px"></i>
+                                                <cite>付款合同</cite>
+                                            </a>
+                                        </li>
+                                        <li class="layui-col-xs3">
+                                            <a lay-href="/Finance/ContActualFinance/ActualFinanceCollIndex">
+                                                <i class="layui-icon iconfont icon-yishoukuan" style="font-size:30px"></i>
+                                                <cite>实际收款</cite>
+                                            </a>
+                                        </li>
+                                        <li class="layui-col-xs3">
+                                            <a lay-href="/Finance/ContActualFinance/ActualFinancePayIndex">
+                                                <i class="layui-icon iconfont icon-fukuan" style="font-size:30px"></i>
+                                                <cite>实际付款</cite>
+                                            </a>
+                                        </li>
+                                        <li class="layui-col-xs3">
+                                            <a lay-href="/Finance/ContInvoice/InvoiceIndex">
+                                                <i class="layui-icon iconfont icon-fapiao" style="font-size:30px"></i>
+                                                <cite>收票</cite>
+                                            </a>
+                                        </li>
+                                        <li class="layui-col-xs3">
+                                            <a lay-href="/Finance/ContInvoice/InvoiceOutIndex">
+                                                <i class="layui-icon iconfont icon-fapiao1" style="font-size:30px"></i>
+                                                <cite>开票</cite>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <ul class="layui-row layui-col-space10">
+                                        <li class="layui-col-xs3">
+                                            <a lay-href="/Project/ProjectManager/Index">
+                                                <i class="layui-icon iconfont iconfont icon-xiangmu" style="font-size:30px"></i>
+                                                <cite>项目</cite>
+                                            </a>
+                                        </li>
+                                        <li class="layui-col-xs3">
+                                            <a lay-href="/Company/Other/Index">
+                                                <i class="layui-icon iconfont icon-duixiang" style="font-size:30px"></i>
+                                                <cite>其他对方</cite>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-col-md6">
+                    <div class="layui-card">
+                        <div class="layui-card-header">待办事项</div>
+                        <div class="layui-card-body">
+
+                            <div class="layui-carousel layadmin-carousel layadmin-backlog">
+                                <div carousel-item>
+                                    <ul class="layui-row layui-col-space10">
+                                        <li class="layui-col-xs6">
+                                            <a lay-href="/WorkFlow/AppInst/AppPendingList" class="layadmin-backlog-body">
+                                                <h3>待审批</h3>
+                                                <p><cite id="daichuli">0</cite></p>
+                                            </a>
+                                        </li>
+                                        <li class="layui-col-xs6">
+                                            <a lay-href="/WorkFlow/AppInst/BeBackList" class="layadmin-backlog-body">
+                                                <h3>被打回</h3>
+                                                <p><cite id="beidahui">0</cite></p>
+                                            </a>
+                                        </li>
+                                        <li class="layui-col-xs6">
+                                            <a lay-href="/WorkFlow/AppInst/AppProcessedList?seaType=1" class="layadmin-backlog-body">
+                                                <h3>已通过</h3>
+                                                <p><cite id="yitongguo">0</cite></p>
+                                            </a>
+                                        </li>
+                                        <li class="layui-col-xs6">
+                                            <a lay-href="/Finance/ContPlanFinance/PlanFinanceCollIndex?seaType=1" class="layadmin-backlog-body">
+                                                <h3>到期计划的收款</h3>
+                                                <p><cite id="dqjhsk">0</cite></p>
+                                            </a>
+                                        </li>
+
+                                    </ul>
+
+                                    <ul class="layui-row layui-col-space10">
+                                        <li class="layui-col-xs6">
+                                            <a lay-href="/Finance/ContPlanFinance/PlanFinancePayIndex?seaType=1" class="layadmin-backlog-body">
+                                                <h3>到期计划的付款</h3>
+                                                <p><cite style="color: #FF5722;" id="dqjhfk">0</cite></p>
+                                            </a>
+                                        </li>
+                                        <li class="layui-col-xs6">
+                                            <a lay-href="/Finance/ContActualFinance/ActualFinanceCollIndex?seaType=1" class="layadmin-backlog-body">
+                                                <h3>待处理的实际收款</h3>
+                                                <p><cite style="color: #FF5722;" id="dclsjsk">0</cite></p>
+                                            </a>
+                                        </li>
+                                        <li class="layui-col-xs6">
+                                            <a lay-href="/Finance/ContActualFinance/ActualFinancePayIndex?seaType=1" class="layadmin-backlog-body">
+                                                <h3>待处理的实际付款</h3>
+                                                <p><cite style="color: #FF5722;" id="dclsjfk">0</cite></p>
+                                            </a>
+                                        </li>
+                                        <li class="layui-col-xs6">
+                                            <a lay-href="/Finance/ContInvoice/InvoiceIndex?seaType=1" class="layadmin-backlog-body">
+                                                <h3>待处理的收票</h3>
+                                                <p><cite style="color: #FF5722;" id="dclsp">0</cite></p>
+                                            </a>
+                                        </li>
+
+                                    </ul>
+
+                                    <ul class="layui-row layui-col-space10">
+                                        <li class="layui-col-xs6">
+                                            <a lay-href="/Finance/ContInvoice/InvoiceOutIndex?seaType=1" class="layadmin-backlog-body">
+                                                <h3>待处理的开票</h3>
+                                                <p><cite style="color: #FF5722;" id="dclkp">0</cite></p>
+                                            </a>
+                                        </li>
+                                        <li class="layui-col-xs6">
+                                            <a lay-href="/Contract/ContractCollection/Index?seaType=1" class="layadmin-backlog-body">
+                                                <h3>到期收款合同</h3>
+                                                <p><cite style="color: #FF5722;" id="dqskht">0</cite></p>
+                                            </a>
+                                        </li>
+                                        <li class="layui-col-xs6">
+                                            <a lay-href="/Contract/ContractPayment/Index?seaType=1" class="layadmin-backlog-body">
+                                                <h3>到期付款合同</h3>
+                                                <p><cite style="color: #FF5722;" id="dqfkht">0</cite></p>
+                                            </a>
+                                        </li>
+                                        <li class="layui-col-xs6">
+                                            <a lay-href="/Schedule/ScheduleDetail/Index?seaType=1" class="layadmin-backlog-body">
+                                                <h3>进度评定</h3>
+                                                <p><cite style="color: #FF5722;" id="Jdpdtx">0</cite></p>
+                                            </a>
+                                        </li>
+
+                                    </ul>
+                                    <ul class="layui-row layui-col-space10">
+                                        <li class="layui-col-xs6">
+                                            <a lay-href="/Workbench/Mydesk/Index?seaType=1" class="layadmin-backlog-body">
+                                                    <h3>我的工作台</h3>
+                                                    <p><cite style="color: #FF5722;" id="Mydesc">0</cite></p>
+                                                </a>
+                                        </li>
+                                        <li class="layui-col-xs6">
+                                            <a lay-href="/Workbench/Gzdesk/Index?seaType=1" class="layadmin-backlog-body">
+                                                <h3>跟踪工作台</h3>
+                                                <p><cite style="color: #FF5722;" id="Gzdesc">0</cite></p>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-col-md12">
+                    <div class="layui-card">
+                        <div class="layui-card-header">数据概览</div>
+                        <div class="layui-card-body">
+                            <div class="layui-carousel layadmin-carousel layadmin-dataview" data-anim="fade" lay-filter="LAY-index-dataview">
+                                <div carousel-item id="LAY-index-dataview">
+                                    <div><i class="layui-icon layui-icon-loading1 layadmin-loading"></i></div>
+                                    <div></div>
+                                    <div></div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="layui-card">
+                        <div class="layui-tab layui-tab-brief layadmin-latestData">
+                            <ul class="layui-tab-title">
+                                <li class="layui-this">执行中合同</li>
+                                <li>项目情况</li>
+                            </ul>
+                            <div class="layui-tab-content">
+                                <div class="layui-tab-item layui-show">
+                                    <table id="LAY-index-topSearch"></table>
+                                </div>
+                                <div class="layui-tab-item">
+                                    <table id="LAY-index-topCard"></table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="layui-col-md4">
+            <div class="layui-card">
+                <div class="layui-card-header">版本信息</div>
+                <div class="layui-card-body layui-text">
+                    <table class="layui-table">
+                        <colgroup>
+                            <col width="100">
+                            <col>
+                        </colgroup>
+                        <tbody>
+                            <tr>
+                                <td>当前版本</td>
+                                <td>
+                                    <script type="text/html" template>
+                                        V6.3.5
+                                        @*    v{{ layui.admin.v }}*@
+                                       <a href="/System/InitData/UpdateLog" target="_blank" style="padding-left: 15px;">更新日志</a>
+                                       @* <a href="#" style="padding-left: 15px;">更新日志</a>*@
+                                    </script>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>基于框架</td>
+                                <td>
+                                    <script type="text/html" template>
+                                        LHcms-V6.3.1
+
+                                    </script>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>数据库版本</td>
+                                <td>
+                                    <script type="text/html" template>
+                                        SQL Server 2008+
+                                    </script>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>主要特色</td>
+                                <td>实用 / 响应式 / 清爽 / 极简</td>
+                            </tr>
+                            @*<tr>
+            <td>获取渠道</td>
+            <td style="padding-bottom: 0;">
+                <div class="layui-btn-container">
+                    <a href="http://www.layui.com/admin/" target="_blank" class="layui-btn layui-btn-danger">获取授权</a>
+                    <a href="http://fly.layui.com/download/layuiAdmin/" target="_blank" class="layui-btn">立即下载</a>
+                </div>
+            </td>
+        </tr>*@
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="layui-card">
+                <div class="layui-card-header">合同金额完成比例</div>
+                <div class="layui-card-body layadmin-takerates">
+                    <div class="layui-progress" lay-showPercent="yes" lay-filter="skhtwcbl">
+                        @*//<h3>转化率（日同比 28% <span class="layui-edge layui-edge-top" lay-tips="增长" lay-offset="-15"></span>）</h3>*@
+                        <h3>收款合同金额完成比例</h3>
+                        <div class="layui-progress-bar" lay-percent="0%"></div>
+                    </div>
+                    <div class="layui-progress" lay-showPercent="yes" lay-filter="fkhtwcbl">
+                        @* <h3>签到率（日同比 11% <span class="layui-edge layui-edge-bottom" lay-tips="下降" lay-offset="-15"></span>）</h3>*@
+                        <h3>付款合同金额完成比例</h3>
+                        <div class="layui-progress-bar layui-bg-red" lay-percent="0%"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="layui-card">
+                <div class="layui-card-header">发票完成比例</div>
+                <div class="layui-card-body layadmin-takerates">
+                    <div class="layui-progress" lay-showPercent="yes" lay-filter="spwcbl">
+                        <h3>收票完成比例</h3>
+                        <div class="layui-progress-bar" lay-percent="0%"></div>
+                    </div>
+                    <div class="layui-progress" lay-showPercent="yes" lay-filter="kpwcbl">
+                        <h3>开票完成比例</h3>
+                        <div class="layui-progress-bar layui-bg-red" lay-percent="0%"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="layui-card">
+                <div class="layui-card-header">产品动态</div>
+                <div class="layui-card-body">
+                    <div class="layui-carousel layadmin-carousel layadmin-news" data-autoplay="true" data-anim="fade" lay-filter="news">
+                        <div carousel-item>
+                            <div><a href="~/SysFiles/NF用户手册.docx" target="_blank" class="layui-bg-red">用户手册</a></div>
+                            <div><a href="~/SysFiles/NF安装说明文档.docx" target="_blank" class="layui-bg-green">系统安装文档</a></div>
+                            <div><a href="~/SysFiles/LhWordAddin.rar" target="_blank" class="layui-bg-blue">Word插件</a></div>
+                            <div><a href="~/SysFiles/NetFramWork.rar" target="_blank" class="layui-bg-blue">windows修复组件</a></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="layui-card">
+                <div class="layui-card-header">
+                    产品简介
+                    <i class="layui-icon layui-icon-tips" lay-tips="要支持的噢" lay-offset="5"></i>
+                </div>
+                <div class="layui-card-body layui-text layadmin-text">
+                    <p>本系统基于.NET开发平台，B/S架构，具备无限扩展能力。</p>
+                    <p>利用它您可以把繁多的合同管理得井井有条；合同执行数据统计分析清晰和准确；同时对于每个用户都是一套独立的系统，从根本上保证了客户资料和合同信息等数据的安全。</p>
+                    <p>它符合现代企业员工的使用习惯，轻松全面的合同内控管理，功能强大的管理模块、简单易用的用户界面、完善周到的服务保障为众多企业用户提供人性化、智能化、网络化、规范化的贴心服务！</p><br /><br />
+                    <p>—— 将心来，与汝安（<a href="#">Bodhidharma</a>）</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script src="/lib/layuiadmin/layui/layui.js?t=1"></script>
+<script type="text/javascript">
+    //layui.config({
+    //    base: '/lib/layuiadmin/' //静态资源所在路径
+    //}).extend({
+    //    index: 'lib/index' //主入口模块
+    //}).use(['index', 'console']);
+    layui.config({
+        base: '/lib/layuiadmin/'
+    }).extend({
+        index: 'lib/index', //主入口模块
+        projectmanagerIndex: 'projectmanager-nf/projectmanager-index'
+        , projectutility: 'common-nf/projectutility'
+        , appflowutility: 'common-nf/appflowutility'
+    }).use(['index', 'console'], function () {
+
+    });
+
+</script>
+
+
+

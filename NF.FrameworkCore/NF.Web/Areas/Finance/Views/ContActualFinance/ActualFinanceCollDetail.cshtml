@@ -1,0 +1,305 @@
+﻿
+@{
+    ViewData["Title"] = "ActualFinanceCollDetail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="layui-fluid">
+    <!--基本信息begin-->
+    <div class="layui-form" lay-filter="NF-ContActFinanceForm">
+        <!--修改时使用-->
+        <input type="hidden" id="Id" name="Id" />
+        @*合同ID*@
+        <input type="hidden" id="ContId" name="ContId" />
+        @*核销类型，0：计划资金、1：发票*@
+        <input type="hidden" id="CheckType" name="CheckType" />
+        @*资金类型，0：收款、1：付款*@
+        <input type="hidden" id="FinceType" name="FinceType" value="0" />
+        @*币种ID*@
+        @*<input type="hidden" id="CurrencyId" name="CurrencyId" />*@
+        @*汇率*@
+        @*<input type="hidden" id="CurrencyRate" name="CurrencyRate" />*@
+        <div class="layui-card " id="actfinanceinfo">
+            <div class="layui-card-header">实际资金基本信息</div>
+            <div class="layui-card-body" style="padding: 15px;">
+                <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">资金金额</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="AmountMoneyThod" id="AmountMoneyThod" lay-verify="required" class="layui-input detail" />
+                        </div>
+                    </div>
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">票据号码</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="VoucherNo" lay-verify="required" class="layui-input detail" />
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">结算方式</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="SettlementMethodDic" lay-verify="required" class="layui-input detail" />
+                        </div>
+                    </div>
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">结算日期</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="ActualSettlementDate" id="ActualSettlementDate" lay-verify="required" class="layui-input detail" />
+                        </div>
+                    </div>
+
+                </div>
+                <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">备用1</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="Reserve1" id="Reserve1" class="layui-input detail" />
+                        </div>
+                    </div>
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">备用2</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="Reserve2" id="Reserve2" class="layui-input detail" />
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                    <div class="layui-col-lg12 layui-col-md12 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">备注</label>
+                        <div class="layui-input-block">
+                            <textarea name="Remark" class="layui-textarea detail"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <!--需要在最后加这个或者没有也加一个 <div class="layui-form-item">，这样不会导致隐藏菜单是显示问题-->
+                <div class="layui-form-item">
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="layui-form-item layui-layout-admin layui-hide">
+            <div class="layui-input-block">
+                <div class="layui-footer" style="left: 0;">
+                    <button type="submit" id="NF-ActFinance-FormSubmit" lay-submit lay-filter="NF-ActFinance-FormSubmit">提交</button>
+                    <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="layui-card  layui-hide" id="invoicecheck">
+        <div class="layui-card-header">票款核销</div>
+        <div class="layui-card-body">
+            <table id="NF-ActualBuild-InvoiceCheck" lay-filter="NF-ActualBuild-InvoiceCheck"></table>
+            @*操作*@
+            @*<script type="text/html" id="table-invoicecheckbar">
+                    <a class="layui-btn layui-btn-normal layui-btn-xs" lay-event="checkinvoice"><i class="layui-icon layui-icon-edit"></i>核销</a>
+                </script>*@
+        </div>
+    </div>
+    <div class="layui-card layui-hide" id="planfinancecheck">
+        <div class="layui-card-header">计划资金核销</div>
+        <div class="layui-card-body">
+            <table id="NF-ActualBuild-PlanFinanceCheck" lay-filter="NF-ActualBuild-PlanFinanceCheck"></table>
+            @*操作*@
+            @*<script type="text/html" id="table-planfinancecheckbar">
+                    <a class="layui-btn layui-btn-normal layui-btn-xs" lay-event="checkplanfinance"><i class="layui-icon layui-icon-edit"></i>核销</a>
+                </script>*@
+
+        </div>
+    </div>
+    <!--附件begin-->
+    <div class="layui-card " id="DivFinceFile">
+        <div class="layui-card-header">资金附件</div>
+        <div class="layui-card-body" style="padding: 15px;">
+            <table id="NF-FinceFileTable" lay-filter="NF-FinceFileTable"></table>
+            <!--表格工具栏-->
+            <script id="toolFinceFile" type="text/html">
+                <div class="layui-inline">
+                    <button class="layui-btn " lay-event="add"><i class="layui-icon layui-icon-edit"></i> 新增</button>
+                    <button class="layui-btn  layui-btn-danger" lay-event="batchdel"><i class="layui-icon layui-icon-delete"></i>批量删除</button>
+                </div>
+            </script>
+            <script type="text/html" id="table-FinceFilebar">
+                <a class="layui-btn layui-btn-xs" lay-event="download"><i class="layui-icon layui-icon-edit"></i>下载</a>
+                <a class="layui-btn layui-btn-normal layui-btn-xs" lay-event="edit"><i class="layui-icon layui-icon-edit"></i>修改</a>
+                <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del"><i class="layui-icon layui-icon-delete"></i>删除</a>
+            </script>
+
+        </div>
+    </div>
+    <!--附件end-->
+
+    <script>
+        function danji() {
+            var ss = document.getElementById('Sid').value;
+            var Htty = document.getElementById('Htty').value;
+            var url = '/contract/ContractCollection/Detail?Id=' + ss + "&rand=" + wooutil.getRandom();
+            if (Htty == 1) {//付款
+                url = '/contract/ContractPayment/Detail?Id=' + ss + "&rand=" + wooutil.getRandom();
+            }
+            parent.layer.open({
+                type: 2
+                , title: '查看合同详情'
+                , content: url// '/contract/ContractCollection/Detail?Id=' + obj.data.ContId + "&rand=" + wooutil.getRandom()
+                , maxmin: true
+                , area: ['60%', '80%']
+                , btnAlign: 'c'
+                , skin: "layer-nf-nfskin"
+                , btn: ['关闭']
+                , success: function (layero, index) {
+                    parent.layer.load(0, { shade: false, time: 2 * 1100 });//2秒自动关闭
+                    parent.layer.full(index);
+                    wooutil.openTip();
+                }
+            });
+          
+        }
+
+        function com() {
+            var conid = document.getElementById('conid').value;
+            var comty = document.getElementById('comty').value;
+            /// <summary>合同对方</summary>
+            var _openuerl = '/Company/Customer/Detail?Id=' + conid + "&rand=" + wooutil.getRandom();
+            if (comty === 1) {
+                _openuerl = '/Company/Supplier/Detail?Id=' + comty + "&rand=" + wooutil.getRandom();
+            }
+            parent.layer.open({
+                type: 2
+                , title: '查看对方详情'
+                , content: _openuerl
+                , maxmin: true
+                , area: ['60%', '80%']
+                , btnAlign: 'c'
+                , skin: "layer-nf-nfskin"
+                , btn: ['关闭']// ,
+                , success: function (layero, index) {
+                    parent.layer.load(0, { shade: false, time: 2 * 1100 });//2秒自动关闭
+                    parent.layer.full(index);
+                    wooutil.openTip();
+
+                }
+            });
+
+        }
+
+    </script>
+    <div class="layui-card " id="checkdetail">
+        <div class="layui-card-header">核销明细</div>
+        <div class="layui-card-body">
+            <table id="NF-ActualBuild-CheckItem" lay-filter="NF-ActualBuild-CheckItem"></table>
+        </div>
+    </div>
+    <div class="layui-form" lay-filter="NF-ContInfoForm" style="margin-bottom:15px;" id="contractfo">
+        <div class="layui-card ">
+            <div class="layui-card-header">合同基本信息</div>
+            <div class="layui-card-body">
+                <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">合同名称</label>
+                        <div class="layui-input-block">
+
+                            <input type="text" name="Name" style="color:cyan" onclick="danji()" readonly class="layui-input detail" />
+                            <input type="hidden" name="Id" id="Sid" />
+                            <input type="hidden" name="FinanceType" id="Htty" />
+                        </div>
+                    </div>
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">合同编号</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="Code" readonly class="layui-input detail" />
+                        </div>
+                    </div>
+
+                </div>
+                <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">合同金额</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="ContAmThod" readonly class="layui-input detail" />
+                        </div>
+                    </div>
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">合同对方</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="CompName" onclick="com()" style="color:cyan" readonly class="layui-input detail" />
+                            <input type="hidden" name="CompId" id="conid" />
+                            <input type="hidden" name="Ctype" id="comty" />
+                        </div>
+                    </div>
+
+                </div>
+                <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">收款金额</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="HtWcJeThod" readonly class="layui-input detail" />
+                        </div>
+                    </div>
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">开票金额</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="FaPiaoThod" readonly class="layui-input detail" />
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="layui-card layui-hide" id="planfinance">
+        <div class="layui-card-header">计划资金</div>
+        <div class="layui-card-body">
+            <table id="NF-ActualBuild-PlanFinance" lay-filter="NF-ActualBuild-PlanFinance"></table>
+        </div>
+    </div>
+    <div class="layui-form-item layui-layout-admin nf-actfinance-detail">
+        <div class="layui-input-block">
+            <div class="layui-footer" style="left: 0;z-index:9999">
+                <button class="layui-btn layui-btn-sm layui-btn-normal nf-actfinance-detail layui-hide" id="edit" data-type="edit">修改</button>
+                <button class="layui-btn layui-btn-sm layui-btn-normal nf-actfinance-detail layui-hide" id="del" data-type="del">删除</button>
+                @*<button class="layui-btn layui-btn-sm layui-btn-normal nf-actfinance-detail layui-hide" id="submit" data-type="submit">提交</button>*@
+                <button class="layui-btn layui-btn-sm layui-btn-normal nf-actfinance-detail layui-hide" id="confirm" data-type="confirm">确认</button>
+                <button class="layui-btn layui-btn-sm layui-btn-normal nf-actfinance-detail layui-hide" id="back" data-type="back">打回</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!--目录-->
+<ul class="site-dir layui-layer-wrap nf-ml-ul layui-hide" id="customernva">
+    <li><a href="#actfinanceinfo" rel="external nofollow" class="current">实际资金基本信息</a></li>
+    <li class="invoicecheck"><a href="#invoicecheck" rel="external nofollow">票款核销</a></li>
+    <li class="planfinancecheck"><a href="#planfinancecheck" rel="external nofollow">计划资金核销</a></li>
+    <li><a href="#DivFinceFile" rel="external nofollow">资金附件</a></li>
+    <li><a href="#checkdetail" rel="external nofollow">核销明细</a></li>
+    <li><a href="#contractfo" rel="external nofollow">合同基本信息</a></li>
+    <li class="planfinance"><a href="#planfinance" rel="external nofollow">计划资金</a></li>
+</ul>
+
+@{
+    Html.RenderPartial("_LayuiScriptsPartial");
+}
+<script>
+    layui.config({
+        base: '/lib/layuiadmin/'
+    }).extend({
+        index: 'lib/index',
+        commonnf: 'common-nf/commonnf'
+        , nfcontents: 'contents-nf/nfcontents'
+        , viewPageEdit: 'viewpage-edit/viewPageEdit'
+        , actualfinancecollDetail: 'finance-nf/actualfinancecoll-detail'
+    }).use(['index', 'actualfinancecollDetail'], function ()
+    {
+
+    });
+</script>
+

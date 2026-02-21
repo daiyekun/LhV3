@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>罗合EBP移动终端</title>
+    <!--Styles-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="vendor/jquery.mobile-1.4.0-rc.1.css"/>
+    <link rel="stylesheet" href="vendor/mobiscroll/css/mobiscroll.custom-2.6.2.min.css"/>
+    <link rel="stylesheet" href="css/style.css"/>
+    <!--Scripts-->
+    <script type="text/javascript" src="vendor/jquery-1.10.2.js"></script>
+    <script type="text/javascript" src="vendor/jquery.jsonp.js"></script>
+    <script type="text/javascript" src="vendor/jquery.validate.js"></script>
+    <script type="text/javascript" src="vendor/jquery.mobile-1.4.0-rc.1.js"></script>
+    <script type="text/javascript" src="vendor/mobiscroll/js/mobiscroll.custom-2.6.2.min.js"></script>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/woo.js"></script>
+    <script type="text/javascript" src="vendor/PushNotification.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+</head>
+
+<body>
+
+<!--初始欢迎页-->
+<div data-role="page" id="welcome"></div>
+
+<!--登陆页-->
+<div data-role="page" id="login">
+    <div data-role="header" data-position="fixed">
+        <h1>账号注册</h1>
+    </div>
+    <div data-role="content" data-inset="true">
+        <form id="loginzcform">
+            <fieldset>
+                <div class="ui-field-contain">
+                    <label for="loginzcform_systemurl">合同管理系统注册</label>
+                    <input type="text" name="systemurl" id="loginzcform_systemurl" placeholder="请输入合同系统地址" required
+                           value="http://52.82.50.30:8020/" />
+                </div>
+                <hr />
+                <input type="text" name="Name" id="loginzcform_Name" placeholder="请输入用户名" required />
+                <input type="text" name="DisplyName" id="loginzcform_DisplyName" placeholder="请输显示名" required />
+                <input type="password" name="Pwd" id="loginzcform_Pwd" placeholder="请输入密码" required />
+                <input type="submit" id="loginzcform_submit11" value="确定" data-role="button" />
+            </fieldset>
+        </form>
+    </div>
+</div>
+
+
+</body>
+</html>

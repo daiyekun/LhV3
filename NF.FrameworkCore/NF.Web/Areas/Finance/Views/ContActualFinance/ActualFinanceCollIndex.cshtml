@@ -1,0 +1,184 @@
+﻿
+@{
+    ViewData["Title"] = "实际收款";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/lib/layuiadmin/modules/layui-nf-plugs/soulTable/soulTable.css" rel="stylesheet" />
+<div class="layui-fluid">
+    <input type="hidden" name="hide_keyWord" />
+    <div class="layui-card">
+        <div class="layui-card-body">
+            <table id="NF-ActualFinanceColl-Index" lay-filter="NF-ActualFinanceColl-Index"></table>
+            <!--查看详情-->
+            <script type="text/html" id="nameTpl">
+                <a class="layui-table-link hand" lay-text="查看详情" lay-event="detail">
+                    <cite>{{d.AmountMoneyThod}}</cite>
+                </a>
+            </script>
+            <!--合同查看-->
+            <script type="text/html" id="contnameTpl">
+                <a class="layui-table-link hand" lay-text="查看合同详情" lay-event="contdetail">
+                    <cite>{{d.ContName}}</cite>
+                </a>
+            </script>
+            <!--合同对方查看-->
+            <script type="text/html" id="compnameTpl">
+                <a class="layui-table-link hand" lay-text="查看客户详情" lay-event="compdetail">
+                    <cite>{{d.CompName}}</cite>
+                </a>
+            </script>
+            <!--状态-->
+            <script type="text/html" id="stateTpl">
+                {{#  if(d.Astate ==0){ }}
+                <span style="color:blue;">{{d.AstateDic}}</span>
+                {{#  } else if(d.Astate ==1) { }}
+                <span style="color:green;">{{d.AstateDic}}</span>
+                {{#  } else if(d.Astate ==2){ }}
+                <span style="color:#009688;">{{d.AstateDic}}</span>
+                {{#  } else if(d.Astate ==3){ }}
+                <span style="color:#009688;">{{d.AstateDic}}</span>
+                {{#  } else if(d.Astate ==6){ }}
+                <span style="color:#009688;">{{d.AstateDic}}</span>
+                {{#  } }}
+            </script>
+            <!--表格工具栏-->
+            <script id="toolactfinance" type="text/html">
+                <div class="layui-inline">
+                    <input class="layui-input" type="text" name="keyWord" placeholder="合同名称、编号、客户名称、编号" style="width:240px;" />
+                </div>
+                <div class="layui-inline">
+                    <button class="layui-btn" lay-event="search">
+                        <i class="layui-icon layui-icon-search layuiadmin-button-btn"></i>
+                    </button>
+                    <button class="layui-btn" lay-event="add">
+                        <i class="layui-icon layui-icon-edit layuiadmin-button-btn"></i>
+                        新增
+                    </button>
+                    <div class="layui-btn  layui-unselect layui-form-select downpanel">
+                        <div class="layui-select-title">
+                            状态流转
+                            <i class="layui-edge"></i>
+                        </div>
+                        <dl class="layui-anim layui-anim-upbit datastate"></dl>
+                    </div>
+                    <ul class="layui-nav layui-btn layui-bg-green " style="font-size: 12px;float: right;padding:0px 0px 0px 0px;margin-left: 14px;">
+                        <li class="layui-nav-item" style="line-height: 33px;font-size: 12px;">
+                            <a style="color:white;font-size: 12px;padding: 2px 30px 3px 20px;letter-spacing:1px;width:88px" id="moreClick">更多操作<i class="layui-edge"></i></a>
+                            <dl class="layui-nav-child" style="top: 30px;line-height: 30px;width:188px;background-color:#fff ;border:white" id="moreEncrypt">
+                                <!-- 二级菜单 -->
+                                <dd>
+                                    <button class="layui-btn" lay-event="advQuery" style="width:168px;margin:5px;">
+                                        <i class="layui-icon layui-icon-search layuiadmin-button-btn"></i>高级查询
+                                    </button>
+                                </dd>
+                                <dd>
+                                    <button class="layui-btn" lay-event="batchdel" style="width:168px;margin:5px;">
+                                        <i class="layui-icon layui-icon-delete layuiadmin-button-btn"></i>批量删除
+                                    </button>
+                                </dd>
+                                <dd>
+                                    <button class="layui-btn" lay-event="exportexcel" style="width:168px;margin:5px;">
+                                        <i class="layui-icon layui-icon-export layuiadmin-button-btn"></i>导出Excel
+                                    </button>
+                                </dd>
+                                <dd>
+                                    <button class="layui-btn" lay-event="clear" style="width:168px;margin:5px;">
+                                        <i class="layui-icon layui-icon-edit layuiadmin-button-btn"></i>清除
+                                    </button>
+                                </dd>
+                            </dl>
+                        </li>
+                    </ul>
+                </div>
+            </script>
+
+            @*操作*@
+            <script type="text/html" id="table-actfinance-bar">
+                <a class="layui-btn layui-btn-normal layui-btn-xs" lay-event="edit"><i class="layui-icon layui-icon-edit"></i>修改</a>
+                <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del"><i class="layui-icon layui-icon-delete"></i>删除</a>
+
+            </script>
+
+            <ul id="dynamicCondition" style="display:none;">
+                <li field="AmountMoney" title="实际金额" ops="between" edit="text" layVerify="number"></li>
+                <li field="Name" title="合同名称" ops="equal,like" edit="text"></li>
+                <li field="Code" title="合同编号" ops="equal,like" edit="text"></li>
+                <li field="ContTypeId" title="合同类别" ops="equal" edit="select" templet="#selectLb"></li>
+                <li field="CompClassId" title="客户类别" ops="equal" edit="select" templet="#selectKhLb"></li>
+                <li field="CompName" title="客户名称" ops="equal,like" edit="text" layVerify=""></li>
+                <li field="ActualSettlementDate" title="实际结算时间" ops="between" edit="date"></li>
+                <li field="VoucherNo" title="票据号码" ops="equal,like" edit="text" layVerify=""></li>
+                <li field="Astate" title="状态" ops="equal" edit="select" templet="#selectZt"></li>
+                <li field="SettlementMethod" title="结算方式" ops="equal" edit="select" templet="#SelSettlementMethod"></li>
+                <li field="DeptId" title="经办机构" ops="equal" edit="treeSelect" url="/System/Department/GetTreeSelectDept"></li>
+                <li field="ConfirmUserId" title="确认人" ops="equal,like" edit="text" layVerify=""></li>
+                <li field="ConfirmDateTime" title="确认时间" ops="between" edit="date"></li>
+                <li field="CreateDateTime" title="建立日期" ops="between" edit="date"></li>
+                <li field="CreateUserId" title="建立人" ops="equal,like" edit="text" layVerify=""></li>
+                <li field="Remark" title="备注" ops="like" edit="text" layVerify=""></li>
+                <li field="Reserve1" title="备用1" ops="equal,like" edit="text" layVerify=""></li>
+                <li field="Reserve2" title="备用2" ops="equal,like" edit="text" layVerify=""></li>
+                <li field="WfCurrNodeName" title="当前节点" edit="text" layVerify=""></li>
+            </ul>
+            @*合同类别*@
+            <script type="text/html" id="selectLb">
+
+            </script>
+            @*状态*@
+            <script type="text/html" id="selectZt">
+                <select id="selectZt" name="selectZt" lay-filter="selectZt">
+                    <option value="">请选择</option>
+                    <option value="0">未提交</option>
+                    <option value="1">已提交</option>
+                    <option value="2">已确认</option>
+                    <option value="3">被打回</option>
+                    <option value="6">审批通过</option>
+                </select>
+
+            </script>
+            @*客户类别*@
+            <script type="text/html" id="selectKhLb">
+
+            </script>
+            @*结算方式*@
+            <script type="text/html" id="SelSettlementMethod">
+
+            </script>
+            
+        </div>
+    </div>
+</div>
+@{
+    Html.RenderPartial("_ExportExcelSetPartial");
+    Html.RenderPartial("_LayuiScriptsPartial");
+}
+
+<script>
+    layui.config({
+        base: '/lib/layuiadmin/'
+    }).extend({
+        index: 'lib/index'//主入口模块
+        ,actualFinanceCollIndex: 'finance-nf/actualfinancecoll-index'
+        , actfinaniceutility: 'common-nf/actfinaniceutility'
+        ,commonnf: 'common-nf/commonnf'
+        , dynamicCondition: 'layui-nf-plugs/dynamicCondition/dynamicCondition'
+        , treeSelect: 'layui-nf-plugs/treeselect'
+
+        , dynamicCondition: 'layui-nf-plugs/dynamicCondition/dynamicCondition'
+        , soulTable: 'layui-nf-plugs/soulTable/soulTable',
+        tableChild: 'layui-nf-plugs/soulTable/tableChild',
+        tableMerge: 'layui-nf-plugs/soulTable/tableMerge',
+        tableFilter: 'layui-nf-plugs/soulTable/tableFilter',
+        excel: 'layui-nf-plugs/soulTable/excel'
+
+    }).use(['index', 'actualFinanceCollIndex','commonnf'], function () {
+        var commonnf = layui.commonnf;
+        //合同类别
+        commonnf.getdatadic({ dataenum: 1, selectEl: "ContTypeId", script: "script",scriptEl:"selectLb" });
+        //客户类别
+        commonnf.getdatadic({ dataenum: 3, selectEl: "CompClassId", script: "script", scriptEl: "selectKhLb" });
+        //结算方式
+         commonnf.getdatadic({ dataenum: 17, selectEl: "SettlementMethod", script: "script",scriptEl:"SelSettlementMethod" });
+     });
+</script>
+

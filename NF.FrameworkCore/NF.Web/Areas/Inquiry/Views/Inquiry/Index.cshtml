@@ -1,0 +1,191 @@
+﻿
+@{
+    ViewData["Title"] = "询价大列表页";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="layui-fluid">
+    <input type="hidden" name="hide_keyWord" />
+    <div class="layui-card">
+        <div class="layui-card-body">
+            <table id="NF-InquiryCollection-Index" lay-filter="NF-InquiryCollection-Index"></table>
+            <!--查看详情-->
+            <script type="text/html" id="nameTpl">
+                <a class="layui-table-link hand" lay-text="查看详情" lay-event="detail">
+                    {{d.DeptName}}
+                  
+                </a>
+            </script>
+            <script type="text/html" id="ProjectTpl">
+                <a class="layui-table-link hand" lay-text="查看详情" lay-event="Projectdetail">
+                    <cite>{{d.ProjectName}}</cite>
+                </a>
+            </script>
+            <!--表格工具栏-->
+            <script id="toolcontract" type="text/html">
+                <div class="layui-inline">
+                    <input class="layui-input" type="text" name="keyWord" placeholder="名称、编号" style="width:220px;" />
+
+                </div>
+                <div class="layui-inline">
+                    <button class="layui-btn" lay-event="search">
+                        <i class="layui-icon layui-icon-search layuiadmin-button-btn"></i>
+                    </button>
+                    @* 高级查询暂时不用 *@
+                    @*<button class="layui-btn" id="advQuery" lay-event="advQuery">
+                    <i class="layui-icon layui-icon-search layuiadmin-button-btn"></i>高级查询
+                </button>*@
+                    <button class="layui-btn" lay-event="add">
+                        <i class="layui-icon layui-icon-edit layuiadmin-button-btn"></i>
+                        新增
+                    </button>
+                    <div class="layui-btn  layui-unselect layui-form-select downpanel">
+                        <div class="layui-select-title">
+                            状态流转
+                            <i class="layui-edge"></i>
+                        </div>
+                        <dl class="layui-anim layui-anim-upbit datastate"></dl>
+                    </div>
+                    <ul class="layui-nav layui-btn layui-bg-green " style="font-size: 12px;float: right;padding:0px 0px 0px 0px;margin-left: 14px;">
+                        <li class="layui-nav-item" style="line-height: 33px;font-size: 12px;">
+                            <a style="color:white;font-size: 12px;padding: 2px 30px 3px 20px;letter-spacing:1px;width:88px" id="moreClick">更多操作<i class="layui-edge"></i></a>
+                            <dl class="layui-nav-child" style="top: 30px;line-height: 30px;width:188px;background-color:#fff ;border:white" id="moreEncrypt">
+                                <!-- 二级菜单 -->
+                                <dd>
+                                    <button class="layui-btn" lay-event="batchdel" style="width:168px;margin:5px;">
+                                        <i class="layui-icon layui-icon-delete layuiadmin-button-btn"></i>批量删除
+                                    </button>
+                                </dd>
+                                <dd>
+                                    <button class="layui-btn" lay-event="exportexcel" style="width:168px;margin:5px;">
+                                        <i class="layui-icon layui-icon-export layuiadmin-button-btn"></i>导出Excel
+                                    </button>
+                                </dd>
+                                <dd>
+                                    <button class="layui-btn" lay-event="clear" style="width:168px;margin:5px;">
+                                        <i class="layui-icon layui-icon-edit layuiadmin-button-btn"></i>清除
+                                    </button>
+                                </dd>
+                            </dl>
+                        </li>
+                    </ul>
+                </div>
+            </script>
+            @*状态*@
+            <script type="text/html" id="stateTpl">
+                {{#  if(d.InState ===0){ }}@*未执行*@
+                <span style="color:blue;">{{d.InStateDic}}</span>
+                {{#  } else if(d.InState ===1) { }} @*执行中*@
+                <span style="color:green;">{{d.InStateDic}}</span>
+                {{#  } else{ }}
+                <span style="color:gray;">{{d.InStateDic}}</span>
+                {{#  } }}
+            </script>
+            @*操作*@
+            <script type="text/html" id="table-contract-bar">
+                <a class="layui-btn layui-btn-normal layui-btn-xs" lay-event="edit"><i class="layui-icon layui-icon-edit"></i>修改</a>
+                <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del"><i class="layui-icon layui-icon-delete"></i>删除</a>
+                @*{{#  if(d.ContState ===0&&d.ModificationTimes ===0){ }}
+            <a class="layui-btn layui-btn-normal layui-btn-xs" lay-event="edit"><i class="layui-icon layui-icon-edit"></i>修改</a>
+            <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del"><i class="layui-icon layui-icon-delete"></i>删除</a>
+            {{#  } else{ }}
+            <a class="layui-btn layui-btn-normal layui-btn-xs layui-btn-disabled" lay-event="edit"><i class="layui-icon layui-icon-edit"></i>修改</a>
+            <a class="layui-btn layui-btn-danger layui-btn-xs layui-btn-disabled" lay-event="del"><i class="layui-icon layui-icon-delete"></i>删除</a>
+            {{#  } }}*@
+            </script>
+            <ul id="dynamicCondition" style="display:none;">
+                @*<li field="Name" title="名称" ops="like" edit="text"></li>
+            <li field="Code" title="编号" ops="like" edit="text"></li>
+            <li field="ContTypeId" title="类别" ops="equal" edit="select" templet="#selectLb"></li>
+            <li field="AmountMoney" title="合同金额" ops="between" edit="text" layVerify="number"></li>
+            <li field="DeptId" title="经办机构" ops="equal" edit="treeSelect" url="/System/Department/GetTreeSelectDept"></li>
+            <li field="CompId" title="合同对方" ops="equal,like" edit="text" layVerify=""></li>
+            <li field="ProjectId" title="所属项目" ops="equal,like" edit="text" layVerify=""></li>
+            <li field="SngnDateTime" title="签订日期" ops="between" edit="date"></li>
+            <li field="EffectiveDateTime" title="生效日期" ops="between" edit="date"></li>
+            <li field="PlanCompleteDateTime" title="计划完成日期" ops="between" edit="date"></li>
+            <li field="ActualCompleteDateTime" title="实际完成日期" ops="between" edit="date"></li>
+            <li field="PrincipalUserId" title="负责人" ops="equal,like" edit="text" layVerify=""></li>
+            <li field="OtherCode" title="对方合同编号" ops="like" edit="text" layVerify=""></li>
+            <li field="CreateDateTime" title="建立日期" ops="between" edit="date"></li>
+            <li field="CreateUserId" title="建立人" ops="equal,like" edit="text" layVerify=""></li>
+            <li field="Reserve1" title="备用1" ops="like" edit="text" layVerify=""></li>
+            <li field="Reserve2" title="备用2" ops="like" edit="text" layVerify=""></li>
+            <li field="MainDeptId" title="签约主体" ops="like" edit="text" layVerify=""></li>
+            <li field="ContDivisionZb" title="总包" ops="equal" edit="select" templet="#IsZb"></li>
+            <li field="PerformanceDateTime" title="实际履行日期" ops="between" edit="date"></li>
+            <li field="AdvanceAmount" title="预收金额" ops="between" edit="text" layVerify="number"></li>
+            <li field="EstimateAmount" title="预估金额" ops="between" edit="text" layVerify="number"></li>
+            <li field="ContState" title="状态" ops="equal" edit="select" templet="#selectZt"></li>
+            <li field="ContSourceId" title="合同来源" ops="equal" edit="select" templet="#selectLy"></li>*@
+
+            </ul>
+
+            @*类别*@
+            <script type="text/html" id="selectLb">
+
+            </script>
+            @*合同来源*@
+            <script type="text/html" id="selectLy">
+
+            </script>
+            @*状态*@
+            <script type="text/html" id="selectZt">
+                <select id="selectZt" name="selectZt" lay-filter="selectZt">
+                    <option value="">请选择</option>
+                    <option value="0">未审核</option>
+                    <option value="1">审核通过</option>
+                    <option value="2">已终止</option>
+                </select>
+            </script>
+            <script type="text/html" id="IsZb">
+                <select id="IsZb" name="IsZb" lay-filter="IsZb">
+                    <option value="">请选择</option>
+                    <option value="0">否</option>
+                    <option value="1">是</option>
+                </select>
+            </script>
+        </div>
+    </div>
+</div>
+<div class="layui-card layui-hide" id="updatecontractdiv">
+    <div class="layui-card-body" style="padding: 15px;">
+        <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+            <div class="layui-col-lg12 layui-col-md12 layui-col-xs12 layui-col-sm12">
+                <label class="layui-form-label" style="width:85px;">签订日期</label>
+                <div class="layui-input-block">
+                    <input type="text" name="SngnDateTime" id="SngnDateTime" style="width:200px;" lay-verify="required" class="layui-input pen" />
+                </div>
+            </div>
+            
+         
+        </div>
+    </div>
+</div>
+@{
+    Html.RenderPartial("_WorkFlowPartial");
+    Html.RenderPartial("_ExportExcelSetPartial");
+    Html.RenderPartial("_LayuiScriptsPartial");
+    Html.RenderPartial("_ContStatePartial");
+}
+<script>
+    layui.config({
+        base: '/lib/layuiadmin/'
+    }).extend({
+        index: 'lib/index' //主入口模块
+        ,commonnf: 'common-nf/commonnf'
+        , dynamicCondition: 'layui-nf-plugs/dynamicCondition/dynamicCondition'
+        ,treeSelect: 'layui-nf-plugs/treeselect'
+        ,collectionContractIndex: 'Inquiry-nf/Inquiry-index'
+        , contractutility: 'common-nf/Inquiryility'
+         , appflowutility: 'common-nf/appflowutility'
+        , soulTable: 'layui-nf-plugs/soulTable/soulTable',
+        tableChild: 'layui-nf-plugs/soulTable/tableChild',
+        tableMerge: 'layui-nf-plugs/soulTable/tableMerge',
+        tableFilter: 'layui-nf-plugs/soulTable/tableFilter',
+        excel: 'layui-nf-plugs/soulTable/excel'
+    }).use(['index', 'collectionContractIndex', 'commonnf','contractutility'], function () {
+  
+     });
+</script>
+<link href="~/lib/layuiadmin/modules/layui-nf-plugs/soulTable/soulTable.css" rel="stylesheet" />

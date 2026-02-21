@@ -1,0 +1,115 @@
+﻿
+@{
+    ViewData["Title"] = "审批";
+    ViewData["MyPage"] = "ApproveIndex";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+
+}
+
+<div class="page">
+    <input type="hidden" id="mypage" value="1" />
+    <input type="hidden" id="Wxid" value="@ViewData["WxCurrUserId"]" />
+    <input type="hidden" id="dcl" value="@ViewData["Dcl"]" />
+    <input type="hidden" id="bdh"value="@ViewData["Bdh"]" />
+    <a href="/Home/Eees" type="hidden" id="wxnamenull"></a>
+    <div class="page__hd menu_hd">
+        <h1 class="page__title menu_hd_Title1">审批事项</h1>
+        @*<p class="page__desc menu_hd_Title2">徽章</p>*@
+    </div>
+    <div class="page__bd">
+        <div class="weui-cells">
+            <a href="/WorkFlow/DaiChuLi?wxzh=@ViewData["WxCurrUserId"]" class="weui-cell_access">
+                <div class="weui-cell weui-cell_active weui-cell_access">
+                    <div class="weui-cell__bd">
+                        <span style="vertical-align: middle;">待处理</span>
+                      
+                    <span class="weui-badge weui-badge_dot" id="T1" style="margin-left: 5px; margin-right: 5px;"></span>
+                     
+                        
+                    </div>
+                    <div class="weui-cell__ft">
+                        详细信息
+                    </div>
+                </div>
+            </a>
+            <a href="/WorkFlow/BeiDaHui?wxzh=@ViewData["WxCurrUserId"]" class="weui-cell_access">
+                <div class="weui-cell weui-cell_active weui-cell_access">
+                    <div class="weui-cell__bd">
+                        <span style="vertical-align: middle;">被打回<span style="color:red;">(发起人使用)</span></span>
+                        <span class="weui-badge weui-badge_dot" id="T2" style="margin-left: 5px; margin-right: 5px;"></span>
+                    </div>
+                    <div class="weui-cell__ft">详细信息</div>
+                </div>
+            </a>
+            <a href="/WorkFlow/WooDaHui?wxzh=@ViewData["WxCurrUserId"]&HtTye=0" class="weui-cell_access">
+                <div class="weui-cell weui-cell_active weui-cell_access">
+                    <div class="weui-cell__bd">
+                        <span style="vertical-align: middle;">我打回</span>
+
+                    </div>
+                    <div class="weui-cell__ft">详细信息</div>
+                </div>
+            </a>
+            <a href="/WorkFlow/WooTongGuo?wxzh=@ViewData["WxCurrUserId"]&HtTye=1" class="weui-cell_access">
+                <div class="weui-cell weui-cell_active weui-cell_access">
+                    <div class="weui-cell__bd">
+                        <span style="vertical-align: middle;">我通过</span>
+
+                    </div>
+                    <div class="weui-cell__ft">详细信息</div>
+                </div>
+            </a>
+            <a href="/WorkFlow/YiFaQi?wxzh=@ViewData["WxCurrUserId"]" class="weui-cell_access">
+                <div class="weui-cell weui-cell_active weui-cell_access">
+                    <div class="weui-cell__bd">
+                        <span style="vertical-align: middle;">已发起<span style="color:red;">(发起人使用)</span></span>
+
+                    </div>
+                    <div class="weui-cell__ft">详细信息</div>
+                </div>
+            </a>
+            <a href="/WorkFlow/YiChuLi?wxzh=@ViewData["WxCurrUserId"]" class="weui-cell_access">
+                <div class="weui-cell weui-cell_active weui-cell_access">
+                    <div class="weui-cell__bd">
+                        <span style="vertical-align: middle;">已处理<span style="color:red;">(发起人使用)</span></span>
+
+                    </div>
+                    <div class="weui-cell__ft">详细信息</div>
+                </div>
+            </a>
+           @* <a href="/WorkFlow/BeiDaHui?wxzh=@ViewData["WxCurrUserId"]" class="weui-cell_access">
+                <div class="weui-cell weui-cell_active weui-cell_access">
+                    <div class="weui-cell__bd">
+                        <span style="vertical-align: middle;">被打回<span style="color:red;">(发起人使用)</span></span>
+
+                    </div>
+                    <div class="weui-cell__ft">详细信息</div>
+                </div>
+            </a>*@
+        </div>
+
+    </div>
+</div>
+
+<script type="text/javascript" src="~/lib/modules/Home/home-index.js"></script>
+<script>
+    var dcl = $("#dcl").val();
+    if (dcl > 0) {
+        $("#T1").show();
+       
+    } else {
+        $("#T1").hide();
+
+    }
+    var bdh = $("#bdh").val();
+    if (bdh > 0) {
+        $("#T2").show();
+
+    } else {
+        $("#T2").hide();
+
+    }
+
+
+</script>

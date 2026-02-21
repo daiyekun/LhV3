@@ -1,0 +1,92 @@
+﻿
+@{
+    ViewData["Title"] = "收款计划资金";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/lib/layuiadmin/modules/layui-nf-plugs/soulTable/soulTable.css" rel="stylesheet" />
+<div class="layui-fluid">
+    <input type="hidden" name="hide_keyWord" />
+    <div class="layui-card">
+        <div class="layui-card-body">
+            <table id="NF-PlanFinanceColl-Index" lay-filter="NF-PlanFinanceColl-Index"></table>
+            <!--合同查看-->
+            <script type="text/html" id="contnameTpl">
+                <a class="layui-table-link hand" lay-text="查看合同详情" lay-event="contdetail">
+                   
+                    <cite>{{d.ContName}}</cite>
+                </a>
+            </script>
+            <!--合同对方查看-->
+            <script type="text/html" id="compnameTpl">
+                <a class="layui-table-link hand" lay-text="查看客户详情" lay-event="compdetail">
+                    <cite>{{d.CompName}}</cite>
+                </a>
+            </script>
+            <!--项目查看-->
+            <script type="text/html" id="projnameTpl">
+                <a class="layui-table-link hand" lay-text="查看项目详情" lay-event="projdetail">
+                    {{# if(d.ProjectName!=null){}}
+                    <cite>{{d.ProjectName}}</cite>
+                    {{# } }}
+                </a>
+            </script>
+            <!--表格工具栏-->
+            <script id="toolplanfinancecell" type="text/html">
+                <div class="layui-inline">
+                    <input class="layui-input" type="text" name="keyWord" placeholder="合同名称、编号、客户名称、编号" style="width:240px;" />
+                </div>
+                <div class="layui-inline">
+                    <button class="layui-btn" lay-event="search">
+                        <i class="layui-icon layui-icon-search layuiadmin-button-btn"></i>
+                    </button>
+                    <button class="layui-btn" lay-event="exportexcel">
+                        <i class="layui-icon layui-icon-export layuiadmin-button-btn"></i>导出Excel
+                    </button>
+                    
+                        <button class="layui-btn" lay-event="clear" style="width:168px;margin:5px;">
+                            <i class="layui-icon layui-icon-edit layuiadmin-button-btn"></i>清除
+                        </button>
+                    
+                </div>
+            </script>
+            <!--状态-->
+            <script type="text/html" id="contractstateTpl">
+                {{#  if(d.ContState ===0){ }}
+                <span style="color:blue;">{{d.StateDic}}</span>
+                {{#  } else if(d.ContState ===1) { }}
+                <span style="color:green;">{{d.StateDic}}</span>
+                {{#  } else if(d.ContState ===2){ }}
+                <span style="color:red;">{{d.StateDic}}</span>
+                {{#  } else{ }}
+                <span style="color:gray;">{{d.StateDic}}</span>
+                {{#  } }}
+            </script>
+
+
+        </div>
+    </div>
+</div>
+@{
+    Html.RenderPartial("_ExportExcelSetPartial");
+    Html.RenderPartial("_LayuiScriptsPartial");
+}
+
+<script>
+    layui.config({
+        base: '/lib/layuiadmin/'
+    }).extend({
+        index: 'lib/index', //主入口模块
+          dynamicCondition: 'layui-nf-plugs/dynamicCondition/dynamicCondition'
+       ,planFinanCecollIndex: 'finance-nf/planfinancecoll-index'
+        , soulTable: 'layui-nf-plugs/soulTable/soulTable',
+        tableChild: 'layui-nf-plugs/soulTable/tableChild',
+        tableMerge: 'layui-nf-plugs/soulTable/tableMerge',
+        tableFilter: 'layui-nf-plugs/soulTable/tableFilter',
+        excel: 'layui-nf-plugs/soulTable/excel'
+
+    }).use(['table', 'index', 'planFinanCecollIndex'], function () {
+
+     });
+</script>
+
+

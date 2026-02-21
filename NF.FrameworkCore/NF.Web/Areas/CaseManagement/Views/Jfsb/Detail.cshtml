@@ -1,0 +1,219 @@
+﻿
+@{
+    ViewData["Title"] = "Detail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="layui-fluid">
+    <!--合同基本信息begin-->
+    <div class="layui-form" lay-filter="NF-Jfsb-Form">
+        <!--修改时使用-->
+        <input type="hidden" id="Id" name="Id" />
+        <div class="layui-card " id="contractfo">
+            <div class="layui-card-header">主要信息</div>
+            <div class="layui-card-body" style="padding: 15px;">
+                <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">名称</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="Name" id="Name" readonly="readonly" class="layui-input detail" />
+                        </div>
+                    </div>
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">编号</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="Code" readonly="readonly" class="layui-input detail" />
+                        </div>
+                    </div>
+
+                </div>
+                <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">标题</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="Title" readonly="readonly" class="layui-input detail"  />
+                        </div>
+                    </div>
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">编号</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="Code" readonly="readonly" class="layui-input detail" />
+                            @*<input type="text" name="Code" lay-verify="required" class="layui-input pen" />*@
+                        </div>
+                    </div>
+
+                </div>
+                <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">紧急程度</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="UrgentName" readonly="readonly" id="UrgentName" class="layui-input detail" />
+                            @*<select name="Urgent" id="Urgent" lay-verify="required" lay-search>
+                                <option value="">请选择..</option>
+                            </select>*@
+                        </div>
+                    </div>
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">名称</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="Name" lay-filter="Name" readonly="readonly" id="Name" class="layui-input detail" />
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">经办单位</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="CompName" id="CompName" readonly="readonly" class="layui-input detail"  />
+                          
+                        </div>
+                    </div>
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">经办人</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="HandlerIdName"  readonly="readonly" id="HandlerIdName"class="layui-input detail"  />
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">相关合同</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="ContIdName" readonly="readonly" id="ContIdName" class="layui-input detail"  />
+                          
+                        </div>
+                    </div>
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">经办日期</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="HandDate" readonly="readonly" id="HandDate" class="layui-input detail" />
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">纠纷类别</label>
+                        <div class="layui-input-block">
+                            @*name="StampTax"*@
+                            <input type="text" name="DisputeName" readonly="readonly" id="DisputeName" class="layui-input detail" />
+                            @*<select name="disputeType" id="disputeType" lay-verify="required" lay-search>
+                                <option value="">请选择..</option>
+
+                            </select>*@
+
+                        </div>
+                    </div>
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">涉及金额(万元)</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="Amount" id="Amount" readonly="readonly" class="layui-input detail"  />
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                    <div class="layui-col-lg12 layui-col-md12 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">对方情况</label>
+                        <div class="layui-input-block">
+                            <textarea name="CompInfo" id="CompInfo" readonly="readonly" class="layui-textarea detail"></textarea>
+
+                        </div>
+                    </div>
+                    <div class="layui-col-lg12 layui-col-md12 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">纠纷简述及建议</label>
+                        <div class="layui-input-block">
+                            <textarea name="Remark" id="Remark" readonly="readonly" class="layui-textarea detail"></textarea>
+
+                        </div>
+                    </div>
+                    @*<div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">对方情况</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="CompInfo" id="CompInfo" readonly="readonly" class="layui-input detail" />
+                        </div>
+                    </div>
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">纠纷简述及建议</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="Remark" id="Remark" readonly="readonly" class="layui-input detail" />
+                        </div>
+                    </div>*@
+                </div>
+
+
+
+
+
+                <!--需要在最后加这个或者没有也加一个 <div class="layui-form-item">，这样不会导致隐藏菜单是显示问题-->
+                <div class="layui-form-item">
+
+                </div>
+
+            </div>
+        </div>
+
+    
+
+
+
+
+        <!--按钮begin-->
+        <div class="layui-form-item layui-layout-admin layui-hide">
+            <div class="layui-input-block">
+                <div class="layui-footer" style="left: 0;">
+                    <button class="layui-btn" id="NF-Jfsb-FormSubmit" lay-submit lay-filter="NF-Jfsb-FormSubmit">保存</button>
+                    <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                </div>
+            </div>
+        </div>
+        <!--按钮end-->
+    </div>
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+<!--目录-->
+<ul class="site-dir layui-layer-wrap nf-ml-ul layui-hide" id="customernva">
+    <li><a href="#contractfo" rel="external nofollow" class="current">主要信息</a></li>
+  
+</ul>
+
+
+@{
+    Html.RenderPartial("_LayuiScriptsPartial");
+}
+@*<script type="text/javascript" src="~/lib/signalr/dist/browser/signalr.min.js"></script>*@
+<script type="text/javascript">
+        layui.config({
+            base: '/lib/layuiadmin/'
+        }).extend({
+            index: 'lib/index', //主入口模块
+            nfcontents: 'contents-nf/nfcontents'
+            , tableSelect: 'layui-nf-plugs/tableSelect'
+            , viewPageEdit: 'viewpage-edit/viewPageEdit'
+            , selectnfitem: 'common-nf/selectnfitem'
+            , treeSelect: 'layui-nf-plugs/treeselect'
+            , CollectionContractDetail: 'jfan-nf/jfsb-detail'
+            , appListHist: 'workflow-nf/approvelisthist'
+            , subMetDetail: 'subjectmatter-nf/submet-detail'
+            , wordAddin: 'addin-nf/wordAddin'
+        }).use(['index', 'element','CollectionContractDetail'], function () {
+            var element = layui.element;
+
+        });
+</script>
+

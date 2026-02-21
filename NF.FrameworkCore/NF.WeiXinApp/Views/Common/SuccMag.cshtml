@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewData["Title"] = "操作成功";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="weui-msg"  id="succMsg">
+    <div class="weui-msg__icon-area"><i class="weui-icon-success weui-icon_msg"></i></div>
+    <div class="weui-msg__text-area">
+        <h2 class="weui-msg__title">操作成功</h2>
+        <p class="weui-msg__desc">操作成功，你已经审批通过，将按流程模板跳转到下一个节点或者数据审批通过！@*<a href="javascript:void(0);">文字链接</a>*@</p>
+    </div>
+    <div class="weui-msg__opr-area">
+        <p class="weui-btn-area">
+            <a href="/Home/Index" class="weui-btn weui-btn_primary">首页</a>
+            <a href="/Home/ApproveIndex" class="weui-btn weui-btn_default">审批</a>
+        </p>
+    </div>
+    <div class="weui-msg__extra-area">
+
+    </div>
+</div>
+

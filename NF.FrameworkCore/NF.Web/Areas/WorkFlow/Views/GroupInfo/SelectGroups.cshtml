@@ -1,0 +1,95 @@
+﻿
+@{
+    ViewData["Title"] = "选择组";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="layui-fluid">
+    <div class="layui-card">
+        <div class="layui-card-body">
+            <table id="FlowTemp-selectGroup" lay-filter="FlowTemp-selectGroup"></table>
+         
+            @*状态*@
+            <script type="text/html" id="grouptateTpl">
+                {{#  if(d.Ustart ==1){ }}
+                <span style="color:blue;">启用</span>
+                {{#  } else { }}
+                <span style="color:red;">禁用</span>
+                {{#  } }}
+
+            </script>
+            <script id="toolSelectGroup" type="text/html">
+                <div class="layui-inline">
+                    <input type="hidden" name="hide_keyWord" />
+                    <input class="layui-input" type="text" name="keyWord" placeholder="组名称" style="width:300px;" autocomplete="off" />
+
+                </div>
+                <div class="layui-inline">
+                    <button class="layui-btn layuiadmin-btn-useradmin " lay-submit lay-filter="NF-Flow-SelectGroup-search">
+                        <i class="layui-icon layui-icon-search layuiadmin-button-btn"></i>
+                    </button>
+                </div>
+            </script>
+
+        </div>
+    </div>
+</div>
+
+@{
+    Html.RenderPartial("_LayuiScriptsPartial");
+}
+<script>
+    layui.config({
+        base: '/lib/layuiadmin/'
+    }).extend({
+        index: 'lib/index' //主入口模块
+    }).use(['index', 'table','form'], function () {
+             var $ = layui.$
+            , form = layui.form
+            , admin = layui.admin
+            , setter = layui.setter
+            , table = layui.table;
+
+    table.render({
+     elem: '#FlowTemp-selectGroup'
+    , url: '/WorkFlow/GroupInfo/SelectGroupList?rand=' + wooutil.getRandom()
+    , toolbar: '#toolSelectGroup'
+    , defaultToolbar: ['filter']
+    , title: '审批组数据'
+    , cols: [[
+         { type: 'numbers', fixed: 'left' }
+        , { type: 'radio', fixed: 'left' }
+        , { field: 'Name', title: '组名称', width: 150 }
+        , { field: 'UserNames', title: '用户列表', width: 300 }
+        , { field: 'Remark', title: '备注', width: 150 }
+    ]]
+    , page: true
+    , loading: true
+    , height: setter.table.height_3
+    , limit: setter.table.limit
+    , limits: setter.table.limits
+    });
+
+        //监听搜索
+        form.on('submit(NF-Flow-SelectGroup-search)', function (data) {
+            var field = data.field;
+            //执行重载
+            table.reload('FlowTemp-selectGroup', {
+                where: field
+            });
+        });
+        table.on('rowDouble(FlowTemp-selectGroup)', function (obj) {
+
+            var data = obj.data;
+
+
+            window.parent.$("#GroupName").val(data.Name);
+            window.parent.$("#groUserNames").text(data.UserNames);
+            window.parent.$("#GroupId").val(data.Id);
+            var tindex = parent.layer.getFrameIndex(window.name);
+            parent.layer.close(tindex);
+        })
+        
+    });
+</script>
+

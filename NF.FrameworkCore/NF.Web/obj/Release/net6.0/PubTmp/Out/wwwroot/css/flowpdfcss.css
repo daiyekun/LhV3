@@ -1,0 +1,20 @@
+﻿table {
+    border-top: 1px solid #000000;
+    border-left: 1px solid #000000;
+    border-collapse: collapse; /*设置单元格的边框合并为1*/
+}
+
+td {
+    border-bottom: 1px solid #000000;
+    border-right: 1px solid #000000;
+}
+
+/**字体颜色和背景**/
+/***
+    table tr:nth-child(odd) {
+        background: #F4F4F4;
+    }
+    table tr:nth-child(even) {
+        color: #C00;
+    }
+  ****/

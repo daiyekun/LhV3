@@ -1,0 +1,185 @@
+
+======================================================================================
+
+
+--------------------------------------------------------------------------------------
+
+日志时间：2022-02-24 11:49:31,581 [34] 
+日志级别：ERROR 
+日 志 类：类名：NF.BLL
+	方法名：GetConsoleReminder [(null)] 
+Err-->mesgInfo.DqjhfkNum:Value cannot be null. (Parameter 's') 
+
+======================================================================================
+
+
+--------------------------------------------------------------------------------------
+
+日志时间：2022-02-24 12:46:08,521 [173] 
+日志级别：ERROR 
+日 志 类：类名：NF.Web.Utility.Filters
+	方法名：OnException [(null)] 
+Object reference not set to an instance of an object. 
+
+
+--------------------------------------------------------------------------------------
+
+日志时间：2022-02-24 12:46:10,339 [173] 
+日志级别：ERROR 
+日 志 类：类名：NF.Web.Utility.Filters
+	方法名：OnException [(null)] 
+Object reference not set to an instance of an object. 
+
+
+--------------------------------------------------------------------------------------
+
+日志时间：2022-02-24 14:21:22,043 [151] 
+日志级别：ERROR 
+日 志 类：类名：NF.BLL
+	方法名：GetConsoleReminder [(null)] 
+Err-->mesgInfo.DqjhskNum:Object reference not set to an instance of an object. 
+
+
+--------------------------------------------------------------------------------------
+
+日志时间：2022-02-24 14:21:22,059 [151] 
+日志级别：ERROR 
+日 志 类：类名：NF.BLL
+	方法名：GetConsoleReminder [(null)] 
+Err-->mesgInfo.DqjhfkNum:Object reference not set to an instance of an object. 
+
+
+--------------------------------------------------------------------------------------
+
+日志时间：2022-02-24 14:24:17,950 [42] 
+日志级别：ERROR 
+日 志 类：类名：NF.Web.Utility.Filters
+	方法名：OnException [(null)] 
+Object reference not set to an instance of an object. 
+
+
+--------------------------------------------------------------------------------------
+
+日志时间：2022-02-24 14:24:20,550 [153] 
+日志级别：ERROR 
+日 志 类：类名：NF.Web.Utility.Filters
+	方法名：OnException [(null)] 
+Object reference not set to an instance of an object. 
+
+
+--------------------------------------------------------------------------------------
+
+日志时间：2022-02-24 14:24:21,187 [42] 
+日志级别：ERROR 
+日 志 类：类名：NF.Web.Utility.Filters
+	方法名：OnException [(null)] 
+Object reference not set to an instance of an object. 
+
+
+--------------------------------------------------------------------------------------
+
+日志时间：2022-02-24 14:24:21,414 [39] 
+日志级别：ERROR 
+日 志 类：类名：NF.Web.Utility.Filters
+	方法名：OnException [(null)] 
+Object reference not set to an instance of an object. 
+
+
+--------------------------------------------------------------------------------------
+
+日志时间：2022-02-24 14:24:23,467 [149] 
+日志级别：ERROR 
+日 志 类：类名：NF.Web.Utility.Filters
+	方法名：OnException [(null)] 
+Object reference not set to an instance of an object. 
+
+
+--------------------------------------------------------------------------------------
+
+日志时间：2022-02-24 14:24:47,965 [140] 
+日志级别：ERROR 
+日 志 类：类名：NF.Web.Utility.Filters
+	方法名：OnException [(null)] 
+Object reference not set to an instance of an object. 
+
+
+--------------------------------------------------------------------------------------
+
+日志时间：2022-02-24 14:24:49,112 [42] 
+日志级别：ERROR 
+日 志 类：类名：NF.Web.Utility.Filters
+	方法名：OnException [(null)] 
+Object reference not set to an instance of an object. 
+
+
+--------------------------------------------------------------------------------------
+
+日志时间：2022-02-24 14:25:00,929 [140] 
+日志级别：ERROR 
+日 志 类：类名：NF.Web.Utility.Filters
+	方法名：OnException [(null)] 
+Object reference not set to an instance of an object. 
+
+
+--------------------------------------------------------------------------------------
+
+日志时间：2022-02-24 14:26:23,905 [153] 
+日志级别：ERROR 
+日 志 类：类名：NF.Web.Utility.Filters
+	方法名：OnException [(null)] 
+Object reference not set to an instance of an object. 
+
+======================================================================================
+
+
+--------------------------------------------------------------------------------------
+
+日志时间：2022-02-24 14:29:55,415 [23] 
+日志级别：ERROR 
+日 志 类：类名：NF.OfficeComm
+	方法名：DeleteDocStateBehavior [(null)] 
+System.Runtime.InteropServices.COMException (0x800A11FD): 此命令无效。
+   at Microsoft.Office.Interop.Word.DocumentClass.DeleteAllCommentsShown()
+   at NF.OfficeComm.WordDocHiper.DeleteDocStateBehavior(Document document) in D:\MyCode\V3.0\NF.FrameworkCore\NF.OfficeComm\WordDocHiper.cs:line 121 
+
+
+--------------------------------------------------------------------------------------
+
+日志时间：2022-02-24 14:43:54,579 [78] 
+日志级别：ERROR 
+日 志 类：类名：NF.Web.Areas.Contract.Controllers
+	方法名：UpdateSave01 [(null)] 
+提交流程返回信息2System.Collections.Generic.List`1[NF.ViewModel.Models.CounLc] 
+
+
+--------------------------------------------------------------------------------------
+
+日志时间：2022-02-24 14:52:50,567 [85] 
+日志级别：ERROR 
+日 志 类：类名：NF.Web.Areas.Contract.Controllers
+	方法名：UpdateSave01 [(null)] 
+提交流程返回信息2System.Collections.Generic.List`1[NF.ViewModel.Models.CounLc] 
+
+======================================================================================
+
+
+--------------------------------------------------------------------------------------
+
+日志时间：2022-02-24 19:10:36,956 [58] 
+日志级别：ERROR 
+日 志 类：类名：NF.OfficeComm
+	方法名：DeleteDocStateBehavior [(null)] 
+System.Runtime.InteropServices.COMException (0x800A11FD): 此命令无效。
+   at Microsoft.Office.Interop.Word.DocumentClass.DeleteAllCommentsShown()
+   at NF.OfficeComm.WordDocHiper.DeleteDocStateBehavior(Document document) in D:\MyCode\V3.0\NF.FrameworkCore\NF.OfficeComm\WordDocHiper.cs:line 121 
+
+
+--------------------------------------------------------------------------------------
+
+日志时间：2022-02-24 19:11:09,373 [41] 
+日志级别：ERROR 
+日 志 类：类名：NF.OfficeComm
+	方法名：DeleteDocStateBehavior [(null)] 
+System.Runtime.InteropServices.COMException (0x800A11FD): 此命令无效。
+   at Microsoft.Office.Interop.Word.DocumentClass.DeleteAllCommentsShown()
+   at NF.OfficeComm.WordDocHiper.DeleteDocStateBehavior(Document document) in D:\MyCode\V3.0\NF.FrameworkCore\NF.OfficeComm\WordDocHiper.cs:line 121 

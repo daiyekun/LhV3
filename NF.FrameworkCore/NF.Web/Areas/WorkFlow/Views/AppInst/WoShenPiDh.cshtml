@@ -1,0 +1,54 @@
+﻿
+@{
+    ViewData["Title"] = "我审批-打回";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="layui-fluid">
+    <input type="hidden" name="hide_keyWord" />
+    @*标识我审批-打回*@
+    <input type="hidden" name="wshenpiType" value="0" />
+    <div class="layui-card">
+        <div class="layui-card-body">
+            <table id="NF-WoShenPiList" lay-filter="NF-WoShenPiList"></table>
+
+            <script type="text/html" id="viewTpl">
+                <a class="layui-table-link hand" lay-text="查看详情" lay-event="showView">
+                    <cite>{{d.AppObjName}}</cite>
+                </a>
+            </script>
+            <!--表格工具栏-->
+            <script id="toolWoShenPi" type="text/html">
+                <div class="layui-inline">
+                    <input class="layui-input" type="text" name="keyWord" placeholder="名称、编号" style="width:240px;" />
+
+                </div>
+                <div class="layui-inline">
+                    <button class="layui-btn" lay-event="search">
+                        <i class="layui-icon layui-icon-search layuiadmin-button-btn"></i>
+                    </button>
+                </div>
+            </script>
+
+        </div>
+    </div>
+</div>
+
+
+@{
+    Html.RenderPartial("_LayuiScriptsPartial");
+}
+
+<script>
+    layui.config({
+        base: '/lib/layuiadmin/'
+    }).extend({
+        index: 'lib/index', //主入口模块
+        woshenpiList: 'workflow-nf/woshenpilist'
+      , flowEventHandler: 'workflow-nf/utility/flowEventHandler'
+
+    }).use(['index', 'woshenpiList'], function () {
+
+     });
+</script>
+

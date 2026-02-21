@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="11.0.1" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
+    <PackageReference Include="Hangfire.Core" Version="1.7.30" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\NF.Model\NF.Model.csproj" />
+    <ProjectReference Include="..\NF.ViewModel\NF.ViewModel.csproj" />
+  </ItemGroup>
+
+</Project>

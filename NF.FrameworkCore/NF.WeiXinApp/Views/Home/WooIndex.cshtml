@@ -1,0 +1,65 @@
+﻿
+@{
+    ViewData["Title"] = "个人信息";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="page">
+    <input type="hidden" id="mypage" value="2" />
+    <input type="hidden" id="Wxid" value="@ViewData["WxCurrUserId"]" />
+    <a href="/Home/Eees" type="hidden" id="wxnamenull"></a>
+    <div class="weui-form">
+        <div class="weui-form__control-area">
+            <div class="weui-cells__group weui-cells__group_form">
+                <div class="weui-cells__title">个人信息</div>
+                <div class="weui-cells weui-cells_form">
+                    <div class="weui-cell weui-cell_active weui-cell_readonly">
+                        <div class="weui-cell__hd"><label class="weui-label">用户名</label></div>
+                        <div class="weui-cell__bd">
+                            <input class="weui-input" name="Uname" id="Uname" readonly />
+                        </div>
+                    </div>
+                    <div class="weui-cell weui-cell_active weui-cell_disabled">
+                        <div class="weui-cell__hd"><label class="weui-label">显示名称</label></div>
+                        <div class="weui-cell__bd">
+                            <input class="weui-input" name="UdisName" id="UdisName" disabled />
+                        </div>
+                    </div>
+                    <div class="weui-cell weui-cell_active weui-cell_disabled">
+                        <div class="weui-cell__hd"><label class="weui-label">所属机构</label></div>
+                        <div class="weui-cell__bd">
+                            <input class="weui-input" name="UdepName" id="UdepName" disabled />
+                        </div>
+                    </div>
+                    <div class="weui-cell weui-cell_active weui-cell_disabled">
+                        <div class="weui-cell__hd"><label class="weui-label">办公电话</label></div>
+                        <div class="weui-cell__bd">
+                            <input class="weui-input" name="Utel" id="Utel" disabled />
+                        </div>
+                    </div>
+                    <div class="weui-cell weui-cell_active weui-cell_disabled">
+                        <div class="weui-cell__hd"><label class="weui-label">移动电话</label></div>
+                        <div class="weui-cell__bd">
+                            <input class="weui-input" name="Umobile" id="Umobile" disabled />
+                        </div>
+                    </div>
+                    <div class="weui-cell weui-cell_active weui-cell_disabled">
+                        <div class="weui-cell__hd"><label class="weui-label">Email</label></div>
+                        <div class="weui-cell__bd">
+                            <input class="weui-input" name="Uemail" id="Uemail" disabled />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+<script src="~/lib/modules/woouser/wxuser-detail.js"></script>
+<script type="text/javascript" src="~/lib/modules/Home/home-index.js"></script>
+
+
+
+
+

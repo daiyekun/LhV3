@@ -1,0 +1,149 @@
+﻿
+@{
+    ViewData["Title"] = "模板起草基本信息";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="layui-fluid">
+    <!--基本信息begin-->
+    <div class="layui-form" lay-filter="NF-ContTextDrftForm">
+        @*修改时合同文本ID*@
+        <input type="hidden" id="Id" name="Id" />
+        @*未来来源：1:模板起草，0:上传*@
+        <input type="hidden" id="IsFromTemp" name="IsFromTemp" value="1" />
+        @*文件类型*@
+        <input type="hidden" id="ExtenName" name="ExtenName" value="docx" />
+        
+        @*合同ID*@
+        <input type="hidden" id="ContId" name="ContId" />
+        <div class="layui-card ">
+            <div class="layui-card-header">基本信息</div>
+            <div class="layui-card-body" style="padding: 15px;">
+                <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                    <div class="layui-col-lg12 layui-col-md12 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">模板名称</label>
+                        @*<div class="layui-input-block">*@
+                        <div class="layui-input-inline" style="width:70%;">
+                            @*模板ID*@
+                            <input type="hidden" name="TemplateId" id="TemplateId" />
+
+                            @*模板名称*@
+                            <input type="text" name="TempName" id="TempName" lay-verify="required" class="layui-input pen" />
+                        </div>
+                        <div class="layui-form-mid layui-word-aux" style="margin-top:-9px;">
+                            <button class="layui-btn layui-btn layui-btn-sm " id="conttext-selTemp" style="height:38px;line-height:38px;">选择</button>
+                        </div>
+                    </div>
+                   
+                    
+
+                  
+                </div>
+                 <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                      <div class="layui-col-lg12 layui-col-md12 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">文本名称</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="Name" id="Name" lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input pen" />
+                        </div>
+                    </div>
+                 </div>
+                 <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                       <div class="layui-col-lg12 layui-col-md12 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">文本类型</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="ContTxtType" lay-verify="required" class="layui-input pen" />
+                            @*文本类别*@
+                            <input type="hidden" name="CategoryId" id="CategoryId" />
+                        </div>
+                    </div>
+                 </div>
+                 
+
+                <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+
+                    <div class="layui-col-lg12 layui-col-md12 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">文件说明</label>
+                        <div class="layui-input-block">
+                            <textarea name="Remark" class="layui-textarea"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <!--需要在最后加这个或者没有也加一个 <div class="layui-form-item">，这样不会导致隐藏菜单是显示问题-->
+                <div class="layui-form-item">
+
+                </div>
+            </div>
+        </div>
+
+        <div class="layui-form-item layui-layout-admin layui-hide">
+            <div class="layui-input-block">
+                <div class="layui-footer" style="left: 0;">
+                    <button class="layui-btn" id="NF-ContTextDrft-FormSubmit" lay-submit lay-filter="NF-ContTextDrft-FormSubmit">编辑文本</button>
+                    <button type="reset" class="layui-btn layui-btn-primary">取消</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+@{
+    Html.RenderPartial("_LayuiScriptsPartial");
+}
+<script>
+
+    layui.config({
+        base: '/lib/layuiadmin/'
+    }).extend({
+        index: 'lib/index'
+      
+    }).use(['index', 'form'], function () {
+        var $ = layui.$
+            , admin = layui.admin
+          , form = layui.form
+         , setter = layui.setter;
+        var _currindex = parent.layer.getFrameIndex(window.name);
+        var $txtId = wooutil.getUrlVar("txtId");//文本ID。修改时使用
+        //合同类别
+        var htlb = wooutil.getUrlVar("htlb");
+        //经办结构
+        var deptId = wooutil.getUrlVar("deptId");
+        var eventh = {
+            selectTemp:function(){
+              parent.layer.open({
+              type: 2
+            , title: '选择模板'
+            , content: '/NfCommon/SelectItem/SelectTxtTemp?wIndex=' + _currindex + "&htlb=" + htlb + "&deptId=" + deptId
+            , maxmin: true
+            , area: ['75%', '90%']
+                 // , btn: ['确定', '取消']
+            , btnAlign: 'c'
+            , skin: "layer-ext-myskin"
+            , success: function (layero, index) {
+                layero.find('iframe').contents().find('#currIndex').val(index);
+              
+            }
+             });
+            }
+        }
+        /**
+        按钮点击
+        **/
+        $("#conttext-selTemp").on('click', function () {
+            eventh.selectTemp();
+
+        });
+        //绑定值
+        if ($txtId > 0) {
+            admin.req({
+                url: '/ContractDraft/ContText/ShowView',
+                data: { Id: $txtId, rand: wooutil.getRandom() },
+                done: function (res) {
+                    form.val("NF-ContTextDrftForm", res.Data);
+                }
+            });
+        }
+       
+
+    });
+</script>
+

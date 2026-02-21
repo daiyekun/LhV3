@@ -1,0 +1,17 @@
+D:\MyCode\V3.0\NF.FrameworkCore\NF.ViewModel\bin\Release\net6.0\NF.ViewModel.deps.json
+D:\MyCode\V3.0\NF.FrameworkCore\NF.ViewModel\bin\Release\net6.0\NF.ViewModel.dll
+D:\MyCode\V3.0\NF.FrameworkCore\NF.ViewModel\bin\Release\net6.0\NF.ViewModel.pdb
+D:\MyCode\V3.0\NF.FrameworkCore\NF.ViewModel\bin\Release\net6.0\NF.Common.dll
+D:\MyCode\V3.0\NF.FrameworkCore\NF.ViewModel\bin\Release\net6.0\NF.Model.dll
+D:\MyCode\V3.0\NF.FrameworkCore\NF.ViewModel\bin\Release\net6.0\NF.Common.pdb
+D:\MyCode\V3.0\NF.FrameworkCore\NF.ViewModel\bin\Release\net6.0\NF.Model.pdb
+D:\MyCode\V3.0\NF.FrameworkCore\NF.ViewModel\obj\Release\net6.0\NF.ViewModel.csproj.AssemblyReference.cache
+D:\MyCode\V3.0\NF.FrameworkCore\NF.ViewModel\obj\Release\net6.0\NF.ViewModel.GeneratedMSBuildEditorConfig.editorconfig
+D:\MyCode\V3.0\NF.FrameworkCore\NF.ViewModel\obj\Release\net6.0\NF.ViewModel.AssemblyInfoInputs.cache
+D:\MyCode\V3.0\NF.FrameworkCore\NF.ViewModel\obj\Release\net6.0\NF.ViewModel.AssemblyInfo.cs
+D:\MyCode\V3.0\NF.FrameworkCore\NF.ViewModel\obj\Release\net6.0\NF.ViewModel.csproj.CoreCompileInputs.cache
+D:\MyCode\V3.0\NF.FrameworkCore\NF.ViewModel\obj\Release\net6.0\NF.ViewModel.csproj.CopyComplete
+D:\MyCode\V3.0\NF.FrameworkCore\NF.ViewModel\obj\Release\net6.0\NF.ViewModel.dll
+D:\MyCode\V3.0\NF.FrameworkCore\NF.ViewModel\obj\Release\net6.0\ref\NF.ViewModel.dll
+D:\MyCode\V3.0\NF.FrameworkCore\NF.ViewModel\obj\Release\net6.0\NF.ViewModel.pdb
+D:\MyCode\V3.0\NF.FrameworkCore\NF.ViewModel\obj\Release\net6.0\refint\NF.ViewModel.dll

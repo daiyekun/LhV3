@@ -1,0 +1,90 @@
+﻿@using NF.Common.Utility;
+@using NF.ViewModel.Models;
+@using NF.Model.Models;
+@model APPWFLayPageInfo<ContractInfoHistoryViewDTO>;
+   
+ @{
+        ViewData["Title"] = "Index";
+        Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+    <!DOCTYPE html>
+    <html>
+    <head id="Head1" runat="server">
+        <title>合同审批</title>
+        <link href="~/css/DetailsPage.css" type="text/css" rel="stylesheet" />
+    </head>
+    <body>
+        <form id="form1" runat="server">
+            <div class="TopTitle">
+                <h1 style="text-align: center;"><strong style="border-bottom-style: double; border-color: red">合 同 审 批</strong></h1>
+            </div>
+            <table border="0" cellpadding="0" cellspacing="0">
+                <tr>
+                    <td colspan="4" class="TopTb">合同基本信息</td>
+                </tr>
+                <tr>
+                    <td class="ConInfoId" id="contractNameTD">合同名称</td>
+                    <td colspan="3">@Model.WFInstanceList[0].Name</td>
+                </tr>
+                <tr>
+                    <td class="ConInfoId">合同编号</td>
+                    <td class="ConInfoText">@Model.WFInstanceList[0].Code</td>
+                    <td class="ConInfoId">合同类别</td>
+                    <td class="ConInfoText">@Model.WFInstanceList[0].ContTypeId</td>
+                </tr>
+                <tr>
+                    <td class="ConInfoId">合同对方</td>
+                    <td class="ConInfoText">@Model.WFInstanceList[0].CompName</td>
+                    <td class="ConInfoId">资金性质</td>
+                    <td class="ConInfoText">收款</td>
+                </tr>
+                <tr>
+                    <td class="ConInfoId">签约主体</td>
+                    <td class="ConInfoText">@Model.WFInstanceList[0].MdeptName</td>
+                    <td class="ConInfoId">合同属性</td>
+                    <td class="ConInfoText">@Model.WFInstanceList[0].ContPro</td>
+                </tr>
+                <tr>
+                    <td class="ConInfoId">合同金额</td>
+                    <td class="ConInfoText">@Model.WFInstanceList[0].ContAmThod</td>
+                    <td class="ConInfoId">结算金额</td>
+                    <td class="ConInfoText">0</td>
+                </tr>
+                <tr>
+                    <td class="ConInfoId">签订日期</td>
+                    <td class="ConInfoText">@Model.WFInstanceList[0].CreateDateTime</td>
+                    <td class="ConInfoId">生效日期</td>
+                    <td class="ConInfoText">@Model.WFInstanceList[0].PerformanceDateTime</td>
+                </tr>
+                <tr>
+                    <td class="ConInfoId">经办机构</td>
+                    <td class="ConInfoText">@Model.WFInstanceList[0].DeptName</td>
+                    <td class="ConInfoId">计划完成日期</td>
+                    <td class="ConInfoText">@Model.WFInstanceList[0].PlanCompleteDateTime</td>
+                </tr>
+                <tr>
+                    <td class="ConInfoId">负责人</td>
+                    <td class="ConInfoText">@Model.WFInstanceList[0].PrincUserName</td>
+                    <td class="ConInfoId">逾期</td>
+                    <td class="ConInfoText"></td>
+                </tr>
+                <tr>
+                    <td class="ConInfoId">建立人</td>
+                    <td class="ConInfoText">@Model.WFInstanceList[0].CreateUserName</td>
+                    <td class="ConInfoId">建立日期</td>
+                    <td class="ConInfoText">@Model.WFInstanceList[0].CreateDateTime</td>
+                </tr>
+                <tr>
+                    <td class="ConInfoId">所属项目</td>
+                    <td colspan="3">@Model.WFInstanceList[0].ProjName</td>
+                </tr>
+            </table>
+            <br />
+            @{
+                Html.RenderPartial("_ShenpiDetails");
+            }
+        </form>
+    </body>
+</html>

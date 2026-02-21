@@ -1,0 +1,189 @@
+﻿
+@{
+    ViewData["Title"] = "我的工作台";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/lib/layuiadmin/modules/layui-nf-plugs/soulTable/soulTable.css" rel="stylesheet" />
+<div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+    <ul class="layui-tab-title">
+        <li lay-id="0" class="layui-this">
+            未完成
+        </li>
+        <li lay-id="3">
+            已完成
+        </li>
+        <li lay-id="4">
+            已关闭
+        </li>
+    </ul>
+    <div class="layui-tab-content">
+        <div class="layui-tab-item layui-show">
+            <div class="layui-fluid">
+                <input type="hidden" name="hide_keyWord" />
+                <div class="layui-card">
+                    <div class="layui-card-body">
+                        <table id="NF-Workbench-Index" lay-filter="NF-Workbench-Index"></table>
+                        <!--表格工具栏-->
+                        <script id="toolWork" type="text/html">
+                            <div class="layui-inline">
+                                <input class="layui-input" type="text" name="keyWord" placeholder="任务名称、任务归属" style="width:220px;" />
+                            </div>
+                            <div class="layui-inline">
+                                <button class="layui-btn" lay-event="search">
+                                    <i class="layui-icon layui-icon-search layuiadmin-button-btn"></i>
+                                </button>
+                                <div class="layui-btn  layui-unselect layui-form-select downpanel">
+                                    <div class="layui-select-title">
+                                        状态流转
+                                        <i class="layui-edge"></i>
+                                    </div>
+                                    <dl class="layui-anim layui-anim-upbit datastate"></dl>
+                                </div>
+                                @*<button class="layui-btn site-demo-active" data-type="tabChange">已完成</button>*@
+                                <button class="layui-btn" lay-event="exportexcel" style="width:130px;margin:5px;">
+                                    <i class="layui-icon layui-icon-export layuiadmin-button-btn"></i>导出Excel
+                                </button>
+                                <button class="layui-btn" lay-event="clear" style="width:100px;margin:5px;">
+                                    <i class="layui-icon layui-icon-edit layuiadmin-button-btn"></i>清除
+                                </button>
+                            </div>
+                        </script>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="layui-tab-item">
+            <div class="layui-fluid">
+                <input type="hidden" name="hide_keyWord" />
+                <div class="layui-card">
+                    <div class="layui-card-body">
+                        <table id="NF-Workbench2-Index" lay-filter="NF-Workbench2-Index"></table>
+
+
+
+                        <!--表格工具栏-->
+                        <script id="toolcontract" type="text/html">
+                            <div class="layui-inline">
+                                <input class="layui-input" type="text" name="keyWord" placeholder="任务名称、任务归属" style="width:220px;" />
+                            </div>
+                            <div class="layui-inline">
+                                <button class="layui-btn" lay-event="search">
+                                    <i class="layui-icon layui-icon-search layuiadmin-button-btn"></i>
+                                </button>
+
+                                <div class="layui-btn  layui-unselect layui-form-select downpanel dow2">
+                                    <div class="layui-select-title">
+                                        状态流转
+                                        <i class="layui-edge"></i>
+                                    </div>
+                                    <dl class="layui-anim layui-anim-upbit datastate"></dl>
+                                </div>
+                                <button class="layui-btn" lay-event="exportexcel" style="width:130px;margin:5px;">
+                                    <i class="layui-icon layui-icon-export layuiadmin-button-btn"></i>导出Excel
+                                </button>
+                                <button class="layui-btn" lay-event="clear" style="width:100px;margin:5px;">
+                                    <i class="layui-icon layui-icon-edit layuiadmin-button-btn"></i>清除
+                                </button>
+
+                            </div>
+                        </script>
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="layui-tab-item">
+            <div class="layui-fluid">
+                <input type="hidden" name="hide_keyWord" />
+                <div class="layui-card">
+                    <div class="layui-card-body">
+                        <table id="NF-Workbench3-Index" lay-filter="NF-Workbench3-Index"></table>
+
+
+                        <!--表格工具栏-->
+                        <script id="toolWork3" type="text/html">
+                            <div class="layui-inline">
+                                <input class="layui-input" type="text" name="keyWord" placeholder="任务名称、任务归属" style="width:220px;" />
+                            </div>
+                            <div class="layui-inline">
+                                <button class="layui-btn" lay-event="search">
+                                    <i class="layui-icon layui-icon-search layuiadmin-button-btn"></i>
+                                </button>
+
+                                <div class="layui-btn  layui-unselect layui-form-select downpanel dow3">
+                                    <div class="layui-select-title">
+                                        状态流转
+                                        <i class="layui-edge"></i>
+                                    </div>
+                                    <dl class="layui-anim layui-anim-upbit datastate"></dl>
+                                </div>
+                                <button class="layui-btn" lay-event="exportexcel" style="width:130px;margin:5px;">
+                                    <i class="layui-icon layui-icon-export layuiadmin-button-btn"></i>导出Excel
+                                </button>
+                                <button class="layui-btn" lay-event="clear" style="width:100px;margin:5px;">
+                                    <i class="layui-icon layui-icon-edit layuiadmin-button-btn"></i>清除
+                                </button>
+
+                            </div>
+                        </script>
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+
+@{
+    Html.RenderPartial("_WorkFlowPartial");
+    Html.RenderPartial("_ExportExcelSetPartial");
+    Html.RenderPartial("_LayuiScriptsPartial");
+    Html.RenderPartial("_ContStatePartial");
+}
+
+<script>
+
+    layui.config({
+        base: '/lib/layuiadmin/'
+    }).extend({
+        index: 'lib/index' //主入口模块
+        , commonnf: 'common-nf/commonnf'
+        , dynamicCondition: 'layui-nf-plugs/dynamicCondition/dynamicCondition'
+        , treeSelect: 'layui-nf-plugs/treeselect'
+
+        , descutility: 'common-nf/descutility'
+        , desc2utility: 'common-nf/desc2utility'
+        , desc3utility: 'common-nf/desc3utility'
+        , appflowutility: 'common-nf/appflowutility'
+        , soulTable: 'layui-nf-plugs/soulTable/soulTable',
+        tableChild: 'layui-nf-plugs/soulTable/tableChild',
+        tableMerge: 'layui-nf-plugs/soulTable/tableMerge',
+        tableFilter: 'layui-nf-plugs/soulTable/tableFilter',
+        excel: 'layui-nf-plugs/soulTable/excel',
+        Workbenchindex: 'workbench-nf/Workbench-index',
+       
+        Workbench2index: 'workbench2-nf/Workbench2-index',
+        Workbench3index: 'workbench3-nf/Workbench3-index',
+    }).use(['index', 'element', 'Workbenchindex','Workbench2index',  'Workbench3index', 'commonnf'], function () {
+        var element = layui.element;
+        var $ = layui.jquery,
+            element = layui.element,
+            commonnf = layui.commonnf;
+
+       
+        //合同类别
+        commonnf.getdatadic({ dataenum: 1, selectEl: "ContTypeId", script: "script", scriptEl: "selectLb" });
+        //合同来源
+        commonnf.getdatadic({ dataenum: 15, selectEl: "ContSourceId", script: "script", scriptEl: "selectLy" });
+    });
+</script>
+
+<link href="~/lib/layuiadmin/modules/layui-nf-plugs/soulTable/soulTable.css" rel="stylesheet" />

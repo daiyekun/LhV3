@@ -1,0 +1,997 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{128D65E1-0EB6-4FC0-9DAE-9CC1935C425D}|NF.Web\\NF.Web.csproj|d:\\mycode\\v3.0\\nf.frameworkcore\\nf.web\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{128D65E1-0EB6-4FC0-9DAE-9CC1935C425D}|NF.Web\\NF.Web.csproj|solutionrelative:nf.web\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E18367DE-F260-4C25-856F-0B7B50C00523}|NF.BLL\\NF.BLL.csproj|d:\\mycode\\v3.0\\nf.frameworkcore\\nf.bll\\common\\redisdataextend.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E18367DE-F260-4C25-856F-0B7B50C00523}|NF.BLL\\NF.BLL.csproj|solutionrelative:nf.bll\\common\\redisdataextend.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{128D65E1-0EB6-4FC0-9DAE-9CC1935C425D}|NF.Web\\NF.Web.csproj|d:\\mycode\\v3.0\\nf.frameworkcore\\nf.web\\startup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{128D65E1-0EB6-4FC0-9DAE-9CC1935C425D}|NF.Web\\NF.Web.csproj|solutionrelative:nf.web\\startup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{128D65E1-0EB6-4FC0-9DAE-9CC1935C425D}|NF.Web\\NF.Web.csproj|d:\\mycode\\v3.0\\nf.frameworkcore\\nf.web\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{128D65E1-0EB6-4FC0-9DAE-9CC1935C425D}|NF.Web\\NF.Web.csproj|solutionrelative:nf.web\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{128D65E1-0EB6-4FC0-9DAE-9CC1935C425D}|NF.Web\\NF.Web.csproj|d:\\mycode\\v3.0\\nf.frameworkcore\\nf.web\\nf.web.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{128D65E1-0EB6-4FC0-9DAE-9CC1935C425D}|NF.Web\\NF.Web.csproj|solutionrelative:nf.web\\nf.web.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E18367DE-F260-4C25-856F-0B7B50C00523}|NF.BLL\\NF.BLL.csproj|d:\\mycode\\v3.0\\nf.frameworkcore\\nf.bll\\questioning\\questioningservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E18367DE-F260-4C25-856F-0B7B50C00523}|NF.BLL\\NF.BLL.csproj|solutionrelative:nf.bll\\questioning\\questioningservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5EBB68BD-5CDE-4C00-8D8A-DD5E61A48831}|NF.AutoMapper\\NF.AutoMapper.csproj|d:\\mycode\\v3.0\\nf.frameworkcore\\nf.automapper\\mappfile\\nfprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5EBB68BD-5CDE-4C00-8D8A-DD5E61A48831}|NF.AutoMapper\\NF.AutoMapper.csproj|solutionrelative:nf.automapper\\mappfile\\nfprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E18367DE-F260-4C25-856F-0B7B50C00523}|NF.BLL\\NF.BLL.csproj|d:\\mycode\\v3.0\\nf.frameworkcore\\nf.bll\\questioning\\interviewpeopleservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E18367DE-F260-4C25-856F-0B7B50C00523}|NF.BLL\\NF.BLL.csproj|solutionrelative:nf.bll\\questioning\\interviewpeopleservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E18367DE-F260-4C25-856F-0B7B50C00523}|NF.BLL\\NF.BLL.csproj|d:\\mycode\\v3.0\\nf.frameworkcore\\nf.bll\\service.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E18367DE-F260-4C25-856F-0B7B50C00523}|NF.BLL\\NF.BLL.csproj|solutionrelative:nf.bll\\service.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9910ABB0-B735-4C0F-A293-4A26492E0A02}|NF.IBLL\\NF.IBLL.csproj|d:\\mycode\\v3.0\\nf.frameworkcore\\nf.ibll\\questioning\\iinterviewpeopleservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9910ABB0-B735-4C0F-A293-4A26492E0A02}|NF.IBLL\\NF.IBLL.csproj|solutionrelative:nf.ibll\\questioning\\iinterviewpeopleservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9910ABB0-B735-4C0F-A293-4A26492E0A02}|NF.IBLL\\NF.IBLL.csproj|d:\\mycode\\v3.0\\nf.frameworkcore\\nf.ibll\\iservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9910ABB0-B735-4C0F-A293-4A26492E0A02}|NF.IBLL\\NF.IBLL.csproj|solutionrelative:nf.ibll\\iservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55720A6B-8DAC-49AC-9BBC-DEFEEC155294}|NF.Model\\NF.Model.csproj|d:\\mycode\\v3.0\\nf.frameworkcore\\nf.model\\models\\questioning.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55720A6B-8DAC-49AC-9BBC-DEFEEC155294}|NF.Model\\NF.Model.csproj|solutionrelative:nf.model\\models\\questioning.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55720A6B-8DAC-49AC-9BBC-DEFEEC155294}|NF.Model\\NF.Model.csproj|d:\\mycode\\v3.0\\nf.frameworkcore\\nf.model\\models\\nfdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55720A6B-8DAC-49AC-9BBC-DEFEEC155294}|NF.Model\\NF.Model.csproj|solutionrelative:nf.model\\models\\nfdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{91F7186D-2DCF-4F3D-A71D-1B5C174BBC05}|ImportData\\ImportData.csproj|d:\\mycode\\v3.0\\nf.frameworkcore\\importdata\\utility\\common\\importdatahelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{91F7186D-2DCF-4F3D-A71D-1B5C174BBC05}|ImportData\\ImportData.csproj|solutionrelative:importdata\\utility\\common\\importdatahelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{128D65E1-0EB6-4FC0-9DAE-9CC1935C425D}|NF.Web\\NF.Web.csproj|d:\\mycode\\v3.0\\nf.frameworkcore\\nf.web\\areas\\questioning\\controllers\\interviewpeoplecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{128D65E1-0EB6-4FC0-9DAE-9CC1935C425D}|NF.Web\\NF.Web.csproj|solutionrelative:nf.web\\areas\\questioning\\controllers\\interviewpeoplecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55720A6B-8DAC-49AC-9BBC-DEFEEC155294}|NF.Model\\NF.Model.csproj|d:\\mycode\\v3.0\\nf.frameworkcore\\nf.model\\models\\interviewpeople.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55720A6B-8DAC-49AC-9BBC-DEFEEC155294}|NF.Model\\NF.Model.csproj|solutionrelative:nf.model\\models\\interviewpeople.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0BA4CF35-4F08-409E-87F1-6CA00969EAC6}|NF.ViewModel\\NF.ViewModel.csproj|d:\\mycode\\v3.0\\nf.frameworkcore\\nf.viewmodel\\models\\questioning\\interviewpeopledto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0BA4CF35-4F08-409E-87F1-6CA00969EAC6}|NF.ViewModel\\NF.ViewModel.csproj|solutionrelative:nf.viewmodel\\models\\questioning\\interviewpeopledto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2B520B9E-98A2-46A1-84E6-1E88D56B5DD8}|NF.WeiXin.Lib\\NF.WeiXin.Lib.csproj|d:\\mycode\\v3.0\\nf.frameworkcore\\nf.weixin.lib\\wxsdk\\cryptography.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2B520B9E-98A2-46A1-84E6-1E88D56B5DD8}|NF.WeiXin.Lib\\NF.WeiXin.Lib.csproj|solutionrelative:nf.weixin.lib\\wxsdk\\cryptography.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55720A6B-8DAC-49AC-9BBC-DEFEEC155294}|NF.Model\\NF.Model.csproj|d:\\mycode\\v3.0\\nf.frameworkcore\\nf.model\\\u8BF4\u660E.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{55720A6B-8DAC-49AC-9BBC-DEFEEC155294}|NF.Model\\NF.Model.csproj|solutionrelative:nf.model\\\u8BF4\u660E.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55720A6B-8DAC-49AC-9BBC-DEFEEC155294}|NF.Model\\NF.Model.csproj|d:\\mycode\\v3.0\\nf.frameworkcore\\nf.model\\models\\actfincefile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{55720A6B-8DAC-49AC-9BBC-DEFEEC155294}|NF.Model\\NF.Model.csproj|solutionrelative:nf.model\\models\\actfincefile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8958DE3A-F51A-4A8A-995E-C96B0C60E70D}|NF.WebAPI\\NF.WebAPI.csproj|d:\\mycode\\v3.0\\nf.frameworkcore\\nf.webapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{8958DE3A-F51A-4A8A-995E-C96B0C60E70D}|NF.WebAPI\\NF.WebAPI.csproj|solutionrelative:nf.webapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{06F219C3-E02A-4F94-9F6E-8B1063126EF3}|NF.WeiXinApp\\NF.WeiXinApp.csproj|d:\\mycode\\v3.0\\nf.frameworkcore\\nf.weixinapp\\scaffoldingreadme.txt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{06F219C3-E02A-4F94-9F6E-8B1063126EF3}|NF.WeiXinApp\\NF.WeiXinApp.csproj|solutionrelative:nf.weixinapp\\scaffoldingreadme.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{06F219C3-E02A-4F94-9F6E-8B1063126EF3}|NF.WeiXinApp\\NF.WeiXinApp.csproj|d:\\mycode\\v3.0\\nf.frameworkcore\\nf.weixinapp\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{06F219C3-E02A-4F94-9F6E-8B1063126EF3}|NF.WeiXinApp\\NF.WeiXinApp.csproj|solutionrelative:nf.weixinapp\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{91F7186D-2DCF-4F3D-A71D-1B5C174BBC05}|ImportData\\ImportData.csproj|d:\\mycode\\v3.0\\nf.frameworkcore\\importdata\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{91F7186D-2DCF-4F3D-A71D-1B5C174BBC05}|ImportData\\ImportData.csproj|solutionrelative:importdata\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{002CF5C6-C9AC-401D-8D3C-0185E25A555A}|SignalR.Server\\SignalR.Server.csproj|d:\\mycode\\v3.0\\nf.frameworkcore\\signalr.server\\chathub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{002CF5C6-C9AC-401D-8D3C-0185E25A555A}|SignalR.Server\\SignalR.Server.csproj|solutionrelative:signalr.server\\chathub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2B520B9E-98A2-46A1-84E6-1E88D56B5DD8}|NF.WeiXin.Lib\\NF.WeiXin.Lib.csproj|d:\\mycode\\v3.0\\nf.frameworkcore\\nf.weixin.lib\\extend\\jsonhelpextend.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2B520B9E-98A2-46A1-84E6-1E88D56B5DD8}|NF.WeiXin.Lib\\NF.WeiXin.Lib.csproj|solutionrelative:nf.weixin.lib\\extend\\jsonhelpextend.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8958DE3A-F51A-4A8A-995E-C96B0C60E70D}|NF.WebAPI\\NF.WebAPI.csproj|d:\\mycode\\v3.0\\nf.frameworkcore\\nf.webapi\\utility\\di\\servicesdiutility.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8958DE3A-F51A-4A8A-995E-C96B0C60E70D}|NF.WebAPI\\NF.WebAPI.csproj|solutionrelative:nf.webapi\\utility\\di\\servicesdiutility.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5DAD6E6A-CD13-407B-BF8E-283105C9D4C9}|NF.Common\\NF.Common.csproj|d:\\mycode\\v3.0\\nf.frameworkcore\\nf.common\\utility\\staticdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5DAD6E6A-CD13-407B-BF8E-283105C9D4C9}|NF.Common\\NF.Common.csproj|solutionrelative:nf.common\\utility\\staticdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5DAD6E6A-CD13-407B-BF8E-283105C9D4C9}|NF.Common\\NF.Common.csproj|d:\\mycode\\v3.0\\nf.frameworkcore\\nf.common\\utility\\redisutility.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5DAD6E6A-CD13-407B-BF8E-283105C9D4C9}|NF.Common\\NF.Common.csproj|solutionrelative:nf.common\\utility\\redisutility.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{128D65E1-0EB6-4FC0-9DAE-9CC1935C425D}|NF.Web\\NF.Web.csproj|d:\\mycode\\v3.0\\nf.frameworkcore\\nf.web\\utility\\common\\importdatahelperdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{128D65E1-0EB6-4FC0-9DAE-9CC1935C425D}|NF.Web\\NF.Web.csproj|solutionrelative:nf.web\\utility\\common\\importdatahelperdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{128D65E1-0EB6-4FC0-9DAE-9CC1935C425D}|NF.Web\\NF.Web.csproj|d:\\mycode\\v3.0\\nf.frameworkcore\\nf.web\\utility\\common\\importdatahelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{128D65E1-0EB6-4FC0-9DAE-9CC1935C425D}|NF.Web\\NF.Web.csproj|solutionrelative:nf.web\\utility\\common\\importdatahelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{55720A6B-8DAC-49AC-9BBC-DEFEEC155294}|NF.Model\\NF.Model.csproj|d:\\mycode\\v3.0\\nf.frameworkcore\\nf.model\\nf.model.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{55720A6B-8DAC-49AC-9BBC-DEFEEC155294}|NF.Model\\NF.Model.csproj|solutionrelative:nf.model\\nf.model.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E18367DE-F260-4C25-856F-0B7B50C00523}|NF.BLL\\NF.BLL.csproj|d:\\mycode\\v3.0\\nf.frameworkcore\\nf.bll\\system\\userinforservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E18367DE-F260-4C25-856F-0B7B50C00523}|NF.BLL\\NF.BLL.csproj|solutionrelative:nf.bll\\system\\userinforservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{128D65E1-0EB6-4FC0-9DAE-9CC1935C425D}|NF.Web\\NF.Web.csproj|d:\\mycode\\v3.0\\nf.frameworkcore\\nf.web\\utility\\filters\\nfcustomactionfilterattribute.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{128D65E1-0EB6-4FC0-9DAE-9CC1935C425D}|NF.Web\\NF.Web.csproj|solutionrelative:nf.web\\utility\\filters\\nfcustomactionfilterattribute.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E18367DE-F260-4C25-856F-0B7B50C00523}|NF.BLL\\NF.BLL.csproj|d:\\mycode\\v3.0\\nf.frameworkcore\\nf.bll\\workflow\\appinstservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E18367DE-F260-4C25-856F-0B7B50C00523}|NF.BLL\\NF.BLL.csproj|solutionrelative:nf.bll\\workflow\\appinstservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{128D65E1-0EB6-4FC0-9DAE-9CC1935C425D}|NF.Web\\NF.Web.csproj|d:\\mycode\\v3.0\\nf.frameworkcore\\nf.web\\areas\\common\\controllers\\inportdatacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{128D65E1-0EB6-4FC0-9DAE-9CC1935C425D}|NF.Web\\NF.Web.csproj|solutionrelative:nf.web\\areas\\common\\controllers\\inportdatacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E18367DE-F260-4C25-856F-0B7B50C00523}|NF.BLL\\NF.BLL.csproj|d:\\mycode\\v3.0\\nf.frameworkcore\\nf.bll\\nf.bll.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{E18367DE-F260-4C25-856F-0B7B50C00523}|NF.BLL\\NF.BLL.csproj|solutionrelative:nf.bll\\nf.bll.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{128D65E1-0EB6-4FC0-9DAE-9CC1935C425D}|NF.Web\\NF.Web.csproj|d:\\mycode\\v3.0\\nf.frameworkcore\\nf.web\\areas\\workflow\\controllers\\flowtempcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{128D65E1-0EB6-4FC0-9DAE-9CC1935C425D}|NF.Web\\NF.Web.csproj|solutionrelative:nf.web\\areas\\workflow\\controllers\\flowtempcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{128D65E1-0EB6-4FC0-9DAE-9CC1935C425D}|NF.Web\\NF.Web.csproj|d:\\mycode\\v3.0\\nf.frameworkcore\\nf.web\\wwwroot\\lib\\layuiadmin\\modules\\nf-plugs\\pdfjs\\web\\viewer.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{128D65E1-0EB6-4FC0-9DAE-9CC1935C425D}|NF.Web\\NF.Web.csproj|solutionrelative:nf.web\\wwwroot\\lib\\layuiadmin\\modules\\nf-plugs\\pdfjs\\web\\viewer.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{128D65E1-0EB6-4FC0-9DAE-9CC1935C425D}|NF.Web\\NF.Web.csproj|d:\\mycode\\v3.0\\nf.frameworkcore\\nf.web\\wwwroot\\lib\\layuiadmin\\modules\\viewpage-edit\\viewpageedit.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{128D65E1-0EB6-4FC0-9DAE-9CC1935C425D}|NF.Web\\NF.Web.csproj|solutionrelative:nf.web\\wwwroot\\lib\\layuiadmin\\modules\\viewpage-edit\\viewpageedit.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{128D65E1-0EB6-4FC0-9DAE-9CC1935C425D}|NF.Web\\NF.Web.csproj|d:\\mycode\\v3.0\\nf.frameworkcore\\nf.web\\wwwroot\\lib\\layuiadmin\\modules\\nf-plugs\\pdfjs\\build\\pdf.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{128D65E1-0EB6-4FC0-9DAE-9CC1935C425D}|NF.Web\\NF.Web.csproj|solutionrelative:nf.web\\wwwroot\\lib\\layuiadmin\\modules\\nf-plugs\\pdfjs\\build\\pdf.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{128D65E1-0EB6-4FC0-9DAE-9CC1935C425D}|NF.Web\\NF.Web.csproj|d:\\mycode\\v3.0\\nf.frameworkcore\\nf.web\\wwwroot\\lib\\layuiadmin\\modules\\nf-plugs\\biccatetree.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{128D65E1-0EB6-4FC0-9DAE-9CC1935C425D}|NF.Web\\NF.Web.csproj|solutionrelative:nf.web\\wwwroot\\lib\\layuiadmin\\modules\\nf-plugs\\biccatetree.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{128D65E1-0EB6-4FC0-9DAE-9CC1935C425D}|NF.Web\\NF.Web.csproj|d:\\mycode\\v3.0\\nf.frameworkcore\\nf.web\\areas\\company\\controllers\\customercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{128D65E1-0EB6-4FC0-9DAE-9CC1935C425D}|NF.Web\\NF.Web.csproj|solutionrelative:nf.web\\areas\\company\\controllers\\customercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E18367DE-F260-4C25-856F-0B7B50C00523}|NF.BLL\\NF.BLL.csproj|d:\\mycode\\v3.0\\nf.frameworkcore\\nf.bll\\common\\syspermissionmodelserviceextensionone.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E18367DE-F260-4C25-856F-0B7B50C00523}|NF.BLL\\NF.BLL.csproj|solutionrelative:nf.bll\\common\\syspermissionmodelserviceextensionone.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9910ABB0-B735-4C0F-A293-4A26492E0A02}|NF.IBLL\\NF.IBLL.csproj|d:\\mycode\\v3.0\\nf.frameworkcore\\nf.ibll\\common\\isyspermissionmodelservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9910ABB0-B735-4C0F-A293-4A26492E0A02}|NF.IBLL\\NF.IBLL.csproj|solutionrelative:nf.ibll\\common\\isyspermissionmodelservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E18367DE-F260-4C25-856F-0B7B50C00523}|NF.BLL\\NF.BLL.csproj|d:\\mycode\\v3.0\\nf.frameworkcore\\nf.bll\\common\\syspermissionmodelserviceport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E18367DE-F260-4C25-856F-0B7B50C00523}|NF.BLL\\NF.BLL.csproj|solutionrelative:nf.bll\\common\\syspermissionmodelserviceport.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E18367DE-F260-4C25-856F-0B7B50C00523}|NF.BLL\\NF.BLL.csproj|d:\\mycode\\v3.0\\nf.frameworkcore\\nf.bll\\service.tt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{E18367DE-F260-4C25-856F-0B7B50C00523}|NF.BLL\\NF.BLL.csproj|solutionrelative:nf.bll\\service.tt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E18367DE-F260-4C25-856F-0B7B50C00523}|NF.BLL\\NF.BLL.csproj|d:\\mycode\\v3.0\\nf.frameworkcore\\nf.bll\\baseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E18367DE-F260-4C25-856F-0B7B50C00523}|NF.BLL\\NF.BLL.csproj|solutionrelative:nf.bll\\baseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E18367DE-F260-4C25-856F-0B7B50C00523}|NF.BLL\\NF.BLL.csproj|d:\\mycode\\v3.0\\nf.frameworkcore\\nf.bll\\finance\\contactualfinanceservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E18367DE-F260-4C25-856F-0B7B50C00523}|NF.BLL\\NF.BLL.csproj|solutionrelative:nf.bll\\finance\\contactualfinanceservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9910ABB0-B735-4C0F-A293-4A26492E0A02}|NF.IBLL\\NF.IBLL.csproj|d:\\mycode\\v3.0\\nf.frameworkcore\\nf.ibll\\ibaseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9910ABB0-B735-4C0F-A293-4A26492E0A02}|NF.IBLL\\NF.IBLL.csproj|solutionrelative:nf.ibll\\ibaseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{128D65E1-0EB6-4FC0-9DAE-9CC1935C425D}|NF.Web\\NF.Web.csproj|d:\\mycode\\v3.0\\nf.frameworkcore\\nf.web\\areas\\finance\\controllers\\continvoicecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{128D65E1-0EB6-4FC0-9DAE-9CC1935C425D}|NF.Web\\NF.Web.csproj|solutionrelative:nf.web\\areas\\finance\\controllers\\continvoicecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{128D65E1-0EB6-4FC0-9DAE-9CC1935C425D}|NF.Web\\NF.Web.csproj|d:\\mycode\\v3.0\\nf.frameworkcore\\nf.web\\areas\\finance\\views\\continvoice\\buildinvoiceout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{128D65E1-0EB6-4FC0-9DAE-9CC1935C425D}|NF.Web\\NF.Web.csproj|solutionrelative:nf.web\\areas\\finance\\views\\continvoice\\buildinvoiceout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{128D65E1-0EB6-4FC0-9DAE-9CC1935C425D}|NF.Web\\NF.Web.csproj|d:\\mycode\\v3.0\\nf.frameworkcore\\nf.web\\wwwroot\\lib\\layuiadmin\\modules\\viewpage-edit\\viewpageediting.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{128D65E1-0EB6-4FC0-9DAE-9CC1935C425D}|NF.Web\\NF.Web.csproj|solutionrelative:nf.web\\wwwroot\\lib\\layuiadmin\\modules\\viewpage-edit\\viewpageediting.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{128D65E1-0EB6-4FC0-9DAE-9CC1935C425D}|NF.Web\\NF.Web.csproj|d:\\mycode\\v3.0\\nf.frameworkcore\\nf.web\\wwwroot\\lib\\layuiadmin\\modules\\finance-nf\\continvoiceout-build.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{128D65E1-0EB6-4FC0-9DAE-9CC1935C425D}|NF.Web\\NF.Web.csproj|solutionrelative:nf.web\\wwwroot\\lib\\layuiadmin\\modules\\finance-nf\\continvoiceout-build.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{128D65E1-0EB6-4FC0-9DAE-9CC1935C425D}|NF.Web\\NF.Web.csproj|d:\\mycode\\v3.0\\nf.frameworkcore\\nf.web\\wwwroot\\lib\\layuiadmin\\modules\\finance-nf\\continvoice-build.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{128D65E1-0EB6-4FC0-9DAE-9CC1935C425D}|NF.Web\\NF.Web.csproj|solutionrelative:nf.web\\wwwroot\\lib\\layuiadmin\\modules\\finance-nf\\continvoice-build.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{128D65E1-0EB6-4FC0-9DAE-9CC1935C425D}|NF.Web\\NF.Web.csproj|d:\\mycode\\v3.0\\nf.frameworkcore\\nf.web\\wwwroot\\lib\\layuiadmin\\modules\\conttext-nf\\conttextcoll-index.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{128D65E1-0EB6-4FC0-9DAE-9CC1935C425D}|NF.Web\\NF.Web.csproj|solutionrelative:nf.web\\wwwroot\\lib\\layuiadmin\\modules\\conttext-nf\\conttextcoll-index.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E18367DE-F260-4C25-856F-0B7B50C00523}|NF.BLL\\NF.BLL.csproj|d:\\mycode\\v3.0\\nf.frameworkcore\\nf.bll\\system\\departmentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E18367DE-F260-4C25-856F-0B7B50C00523}|NF.BLL\\NF.BLL.csproj|solutionrelative:nf.bll\\system\\departmentservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{128D65E1-0EB6-4FC0-9DAE-9CC1935C425D}|NF.Web\\NF.Web.csproj|d:\\mycode\\v3.0\\nf.frameworkcore\\nf.web\\areas\\contract\\views\\contractcollection\\build.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{128D65E1-0EB6-4FC0-9DAE-9CC1935C425D}|NF.Web\\NF.Web.csproj|solutionrelative:nf.web\\areas\\contract\\views\\contractcollection\\build.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{128D65E1-0EB6-4FC0-9DAE-9CC1935C425D}|NF.Web\\NF.Web.csproj|d:\\mycode\\v3.0\\nf.frameworkcore\\nf.web\\wwwroot\\lib\\layuiadmin\\modules\\contract-nf\\collectioncontract-build.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{128D65E1-0EB6-4FC0-9DAE-9CC1935C425D}|NF.Web\\NF.Web.csproj|solutionrelative:nf.web\\wwwroot\\lib\\layuiadmin\\modules\\contract-nf\\collectioncontract-build.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{13b12e3e-c1b4-4539-9371-4fe9a0d523fc}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "RedisDataExtend.cs",
+              "DocumentMoniker": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.BLL\\Common\\RedisDataExtend.cs",
+              "RelativeDocumentMoniker": "NF.BLL\\Common\\RedisDataExtend.cs",
+              "ToolTip": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.BLL\\Common\\RedisDataExtend.cs",
+              "RelativeToolTip": "NF.BLL\\Common\\RedisDataExtend.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAIwBcAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-21T04:33:01.298Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "QuestioningService.cs",
+              "DocumentMoniker": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.BLL\\Questioning\\QuestioningService.cs",
+              "RelativeDocumentMoniker": "NF.BLL\\Questioning\\QuestioningService.cs",
+              "ToolTip": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.BLL\\Questioning\\QuestioningService.cs",
+              "RelativeToolTip": "NF.BLL\\Questioning\\QuestioningService.cs",
+              "ViewState": "AgIAAFoBAAAAAAAAAAAewFMBAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-21T04:11:03.6Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "IService.cs",
+              "DocumentMoniker": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.IBLL\\IService.cs",
+              "RelativeDocumentMoniker": "NF.IBLL\\IService.cs",
+              "ToolTip": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.IBLL\\IService.cs",
+              "RelativeToolTip": "NF.IBLL\\IService.cs",
+              "ViewState": "AgIAAFEAAAAAAAAAAAAWwFQAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-21T04:05:54.508Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Service.cs",
+              "DocumentMoniker": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.BLL\\Service.cs",
+              "RelativeDocumentMoniker": "NF.BLL\\Service.cs",
+              "ToolTip": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.BLL\\Service.cs",
+              "RelativeToolTip": "NF.BLL\\Service.cs",
+              "ViewState": "AgIAAOYAAAAAAAAAAAAhwOgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2022-06-01T06:04:05.557Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "LoginController.cs",
+              "DocumentMoniker": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.Web\\Controllers\\LoginController.cs",
+              "RelativeDocumentMoniker": "NF.Web\\Controllers\\LoginController.cs",
+              "ToolTip": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.Web\\Controllers\\LoginController.cs",
+              "RelativeToolTip": "NF.Web\\Controllers\\LoginController.cs",
+              "ViewState": "AgIAAD0AAAAAAAAAAAAtwE0AAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2022-09-16T03:52:23.975Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.Web\\appsettings.json",
+              "RelativeDocumentMoniker": "NF.Web\\appsettings.json",
+              "ToolTip": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.Web\\appsettings.json",
+              "RelativeToolTip": "NF.Web\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAADwvw8AAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2022-09-16T02:51:27.959Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Startup.cs",
+              "DocumentMoniker": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.Web\\Startup.cs",
+              "RelativeDocumentMoniker": "NF.Web\\Startup.cs",
+              "ToolTip": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.Web\\Startup.cs",
+              "RelativeToolTip": "NF.Web\\Startup.cs",
+              "ViewState": "AgIAAJ0AAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-21T04:44:00.365Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "IInterviewpeopleService.cs",
+              "DocumentMoniker": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.IBLL\\Questioning\\IInterviewpeopleService.cs",
+              "RelativeDocumentMoniker": "NF.IBLL\\Questioning\\IInterviewpeopleService.cs",
+              "ToolTip": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.IBLL\\Questioning\\IInterviewpeopleService.cs",
+              "RelativeToolTip": "NF.IBLL\\Questioning\\IInterviewpeopleService.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAewAoAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-21T04:05:10.84Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "NF.Web",
+              "DocumentMoniker": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.Web\\NF.Web.csproj",
+              "RelativeDocumentMoniker": "NF.Web\\NF.Web.csproj",
+              "ToolTip": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.Web\\NF.Web.csproj",
+              "RelativeToolTip": "NF.Web\\NF.Web.csproj",
+              "ViewState": "AgIAACoAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-02-21T03:59:09.917Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "InterviewpeopleService.cs",
+              "DocumentMoniker": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.BLL\\Questioning\\InterviewpeopleService.cs",
+              "RelativeDocumentMoniker": "NF.BLL\\Questioning\\InterviewpeopleService.cs",
+              "ToolTip": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.BLL\\Questioning\\InterviewpeopleService.cs",
+              "RelativeToolTip": "NF.BLL\\Questioning\\InterviewpeopleService.cs",
+              "ViewState": "AgIAADUAAAAAAAAAAAAtwBYAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-21T04:06:54.241Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "NfProfile.cs",
+              "DocumentMoniker": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.AutoMapper\\MappFile\\NfProfile.cs",
+              "RelativeDocumentMoniker": "NF.AutoMapper\\MappFile\\NfProfile.cs",
+              "ToolTip": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.AutoMapper\\MappFile\\NfProfile.cs",
+              "RelativeToolTip": "NF.AutoMapper\\MappFile\\NfProfile.cs",
+              "ViewState": "AgIAAIkAAAAAAAAAAAAqwA0AAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-21T04:05:25.548Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Questioning.cs",
+              "DocumentMoniker": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.Model\\Models\\Questioning.cs",
+              "RelativeDocumentMoniker": "NF.Model\\Models\\Questioning.cs",
+              "ToolTip": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.Model\\Models\\Questioning.cs",
+              "RelativeToolTip": "NF.Model\\Models\\Questioning.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAABHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-21T04:03:12.019Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "NFDbContext.cs",
+              "DocumentMoniker": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.Model\\Models\\NFDbContext.cs",
+              "RelativeDocumentMoniker": "NF.Model\\Models\\NFDbContext.cs",
+              "ToolTip": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.Model\\Models\\NFDbContext.cs",
+              "RelativeToolTip": "NF.Model\\Models\\NFDbContext.cs",
+              "ViewState": "AgIAAFMAAAAAAAAAAIA2wFYAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2022-09-16T03:36:52.262Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "ImportDataHelper.cs",
+              "DocumentMoniker": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\ImportData\\Utility\\Common\\ImportDataHelper.cs",
+              "RelativeDocumentMoniker": "ImportData\\Utility\\Common\\ImportDataHelper.cs",
+              "ToolTip": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\ImportData\\Utility\\Common\\ImportDataHelper.cs",
+              "RelativeToolTip": "ImportData\\Utility\\Common\\ImportDataHelper.cs",
+              "ViewState": "AgIAAFkFAAAAAAAAAAAlwGAFAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2022-09-16T02:48:50.993Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "InterviewpeopleController.cs",
+              "DocumentMoniker": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.Web\\Areas\\Questioning\\Controllers\\InterviewpeopleController.cs",
+              "RelativeDocumentMoniker": "NF.Web\\Areas\\Questioning\\Controllers\\InterviewpeopleController.cs",
+              "ToolTip": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.Web\\Areas\\Questioning\\Controllers\\InterviewpeopleController.cs",
+              "RelativeToolTip": "NF.Web\\Areas\\Questioning\\Controllers\\InterviewpeopleController.cs",
+              "ViewState": "AgIAADQAAAAAAAAAAAAlwDMAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-21T04:12:46.908Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Interviewpeople.cs",
+              "DocumentMoniker": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.Model\\Models\\Interviewpeople.cs",
+              "RelativeDocumentMoniker": "NF.Model\\Models\\Interviewpeople.cs",
+              "ToolTip": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.Model\\Models\\Interviewpeople.cs",
+              "RelativeToolTip": "NF.Model\\Models\\Interviewpeople.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAIwAIAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-21T04:01:44.452Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "InterviewpeopleDTO.cs",
+              "DocumentMoniker": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.ViewModel\\Models\\Questioning\\InterviewpeopleDTO.cs",
+              "RelativeDocumentMoniker": "NF.ViewModel\\Models\\Questioning\\InterviewpeopleDTO.cs",
+              "ToolTip": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.ViewModel\\Models\\Questioning\\InterviewpeopleDTO.cs",
+              "RelativeToolTip": "NF.ViewModel\\Models\\Questioning\\InterviewpeopleDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-21T04:13:16.822Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Cryptography.cs",
+              "DocumentMoniker": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.WeiXin.Lib\\WxSdk\\Cryptography.cs",
+              "RelativeDocumentMoniker": "NF.WeiXin.Lib\\WxSdk\\Cryptography.cs",
+              "ToolTip": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.WeiXin.Lib\\WxSdk\\Cryptography.cs",
+              "RelativeToolTip": "NF.WeiXin.Lib\\WxSdk\\Cryptography.cs",
+              "ViewState": "AgIAAHIAAAAAAAAAAAAgwH4AAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-21T03:08:58.381Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "\u8BF4\u660E.txt",
+              "DocumentMoniker": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.Model\\\u8BF4\u660E.txt",
+              "RelativeDocumentMoniker": "NF.Model\\\u8BF4\u660E.txt",
+              "ToolTip": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.Model\\\u8BF4\u660E.txt",
+              "RelativeToolTip": "NF.Model\\\u8BF4\u660E.txt",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAABGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2022-09-16T03:19:51.566Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "ActFinceFile.cs",
+              "DocumentMoniker": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.Model\\Models\\ActFinceFile.cs",
+              "RelativeDocumentMoniker": "NF.Model\\Models\\ActFinceFile.cs",
+              "ToolTip": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.Model\\Models\\ActFinceFile.cs",
+              "RelativeToolTip": "NF.Model\\Models\\ActFinceFile.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-21T03:58:41.747Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.WebAPI\\appsettings.json",
+              "RelativeDocumentMoniker": "NF.WebAPI\\appsettings.json",
+              "ToolTip": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.WebAPI\\appsettings.json",
+              "RelativeToolTip": "NF.WebAPI\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-02-21T03:14:05.478Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "ScaffoldingReadMe.txt",
+              "DocumentMoniker": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.WeiXinApp\\ScaffoldingReadMe.txt",
+              "RelativeDocumentMoniker": "NF.WeiXinApp\\ScaffoldingReadMe.txt",
+              "ToolTip": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.WeiXinApp\\ScaffoldingReadMe.txt",
+              "RelativeToolTip": "NF.WeiXinApp\\ScaffoldingReadMe.txt",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2026-02-21T03:13:51.417Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.WeiXinApp\\appsettings.json",
+              "RelativeDocumentMoniker": "NF.WeiXinApp\\appsettings.json",
+              "ToolTip": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.WeiXinApp\\appsettings.json",
+              "RelativeToolTip": "NF.WeiXinApp\\appsettings.json",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-02-21T03:13:32.13Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\ImportData\\appsettings.json",
+              "RelativeDocumentMoniker": "ImportData\\appsettings.json",
+              "ToolTip": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\ImportData\\appsettings.json",
+              "RelativeToolTip": "ImportData\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-02-21T03:13:06.625Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "ChatHub.cs",
+              "DocumentMoniker": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\SignalR.Server\\ChatHub.cs",
+              "RelativeDocumentMoniker": "SignalR.Server\\ChatHub.cs",
+              "ToolTip": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\SignalR.Server\\ChatHub.cs",
+              "RelativeToolTip": "SignalR.Server\\ChatHub.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-21T03:09:23.753Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "JsonHelpExtend.cs",
+              "DocumentMoniker": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.WeiXin.Lib\\Extend\\JsonHelpExtend.cs",
+              "RelativeDocumentMoniker": "NF.WeiXin.Lib\\Extend\\JsonHelpExtend.cs",
+              "ToolTip": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.WeiXin.Lib\\Extend\\JsonHelpExtend.cs",
+              "RelativeToolTip": "NF.WeiXin.Lib\\Extend\\JsonHelpExtend.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAIwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-02-21T03:09:09.356Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "ServicesDIUtility.cs",
+              "DocumentMoniker": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.WebAPI\\Utility\\DI\\ServicesDIUtility.cs",
+              "RelativeDocumentMoniker": "NF.WebAPI\\Utility\\DI\\ServicesDIUtility.cs",
+              "ToolTip": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.WebAPI\\Utility\\DI\\ServicesDIUtility.cs",
+              "RelativeToolTip": "NF.WebAPI\\Utility\\DI\\ServicesDIUtility.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAPAAAABNAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2022-11-11T03:34:55.011Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "RedisUtility.cs",
+              "DocumentMoniker": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.Common\\Utility\\RedisUtility.cs",
+              "RelativeDocumentMoniker": "NF.Common\\Utility\\RedisUtility.cs",
+              "ToolTip": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.Common\\Utility\\RedisUtility.cs",
+              "RelativeToolTip": "NF.Common\\Utility\\RedisUtility.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2022-11-10T06:29:13.363Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "ImportDataHelperData.cs",
+              "DocumentMoniker": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.Web\\Utility\\Common\\ImportDataHelperData.cs",
+              "RelativeDocumentMoniker": "NF.Web\\Utility\\Common\\ImportDataHelperData.cs",
+              "ToolTip": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.Web\\Utility\\Common\\ImportDataHelperData.cs",
+              "RelativeToolTip": "NF.Web\\Utility\\Common\\ImportDataHelperData.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAwCcAAABQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2022-11-07T09:02:42.225Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "UserInforService.cs",
+              "DocumentMoniker": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.BLL\\System\\UserInforService.cs",
+              "RelativeDocumentMoniker": "NF.BLL\\System\\UserInforService.cs",
+              "ToolTip": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.BLL\\System\\UserInforService.cs",
+              "RelativeToolTip": "NF.BLL\\System\\UserInforService.cs",
+              "ViewState": "AQIAABgAAAAAAAAAAAAlwBcAAAAwAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2022-05-30T00:46:47.583Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "NF.Model.csproj",
+              "DocumentMoniker": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.Model\\NF.Model.csproj",
+              "RelativeDocumentMoniker": "NF.Model\\NF.Model.csproj",
+              "ToolTip": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.Model\\NF.Model.csproj",
+              "RelativeToolTip": "NF.Model\\NF.Model.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAADwvxUAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2022-11-07T09:01:21.581Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "StaticData.cs",
+              "DocumentMoniker": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.Common\\Utility\\StaticData.cs",
+              "RelativeDocumentMoniker": "NF.Common\\Utility\\StaticData.cs",
+              "ToolTip": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.Common\\Utility\\StaticData.cs",
+              "RelativeToolTip": "NF.Common\\Utility\\StaticData.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABgAAABIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2022-11-10T06:29:17.209Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "ImportDataHelper.cs",
+              "DocumentMoniker": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.Web\\Utility\\Common\\ImportDataHelper.cs",
+              "RelativeDocumentMoniker": "NF.Web\\Utility\\Common\\ImportDataHelper.cs",
+              "ToolTip": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.Web\\Utility\\Common\\ImportDataHelper.cs",
+              "RelativeToolTip": "NF.Web\\Utility\\Common\\ImportDataHelper.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABgAAAAlAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2022-11-07T09:02:03.269Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "AppInstService.cs",
+              "DocumentMoniker": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.BLL\\WorkFlow\\AppInstService.cs",
+              "RelativeDocumentMoniker": "NF.BLL\\WorkFlow\\AppInstService.cs",
+              "ToolTip": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.BLL\\WorkFlow\\AppInstService.cs",
+              "RelativeToolTip": "NF.BLL\\WorkFlow\\AppInstService.cs",
+              "ViewState": "AQIAALcAAAAAAAAAAAAswLsAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2022-09-16T03:23:16.468Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "NfCustomActionFilterAttribute.cs",
+              "DocumentMoniker": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.Web\\Utility\\Filters\\NfCustomActionFilterAttribute.cs",
+              "RelativeDocumentMoniker": "NF.Web\\Utility\\Filters\\NfCustomActionFilterAttribute.cs",
+              "ToolTip": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.Web\\Utility\\Filters\\NfCustomActionFilterAttribute.cs",
+              "RelativeToolTip": "NF.Web\\Utility\\Filters\\NfCustomActionFilterAttribute.cs",
+              "ViewState": "AQIAAB0AAAAAAAAAAIA6wC0AAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2022-09-16T03:53:00.866Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "InportDataController.cs",
+              "DocumentMoniker": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.Web\\Areas\\Common\\Controllers\\InportDataController.cs",
+              "RelativeDocumentMoniker": "NF.Web\\Areas\\Common\\Controllers\\InportDataController.cs",
+              "ToolTip": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.Web\\Areas\\Common\\Controllers\\InportDataController.cs",
+              "RelativeToolTip": "NF.Web\\Areas\\Common\\Controllers\\InportDataController.cs",
+              "ViewState": "AQIAAKQBAAAAAAAAAAAQwL8BAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2022-09-16T02:33:10.443Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "NF.BLL.csproj",
+              "DocumentMoniker": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.BLL\\NF.BLL.csproj",
+              "RelativeDocumentMoniker": "NF.BLL\\NF.BLL.csproj",
+              "ToolTip": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.BLL\\NF.BLL.csproj",
+              "RelativeToolTip": "NF.BLL\\NF.BLL.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAADwvycAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2022-11-07T09:01:23.645Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "FlowTempController.cs",
+              "DocumentMoniker": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.Web\\Areas\\WorkFlow\\Controllers\\FlowTempController.cs",
+              "RelativeDocumentMoniker": "NF.Web\\Areas\\WorkFlow\\Controllers\\FlowTempController.cs",
+              "ToolTip": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.Web\\Areas\\WorkFlow\\Controllers\\FlowTempController.cs",
+              "RelativeToolTip": "NF.Web\\Areas\\WorkFlow\\Controllers\\FlowTempController.cs",
+              "ViewState": "AQIAAD4AAAAAAAAAAAAcwF0AAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2022-08-01T07:40:49.774Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "viewPageEdit.js",
+              "DocumentMoniker": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.Web\\wwwroot\\lib\\layuiadmin\\modules\\viewpage-edit\\viewPageEdit.js",
+              "RelativeDocumentMoniker": "NF.Web\\wwwroot\\lib\\layuiadmin\\modules\\viewpage-edit\\viewPageEdit.js",
+              "ToolTip": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.Web\\wwwroot\\lib\\layuiadmin\\modules\\viewpage-edit\\viewPageEdit.js",
+              "RelativeToolTip": "NF.Web\\wwwroot\\lib\\layuiadmin\\modules\\viewpage-edit\\viewPageEdit.js",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2022-07-19T06:22:39.679Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "pdf.js",
+              "DocumentMoniker": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.Web\\wwwroot\\lib\\layuiadmin\\modules\\nf-plugs\\pdfjs\\build\\pdf.js",
+              "RelativeDocumentMoniker": "NF.Web\\wwwroot\\lib\\layuiadmin\\modules\\nf-plugs\\pdfjs\\build\\pdf.js",
+              "ToolTip": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.Web\\wwwroot\\lib\\layuiadmin\\modules\\nf-plugs\\pdfjs\\build\\pdf.js",
+              "RelativeToolTip": "NF.Web\\wwwroot\\lib\\layuiadmin\\modules\\nf-plugs\\pdfjs\\build\\pdf.js",
+              "ViewState": "AQIAAOUyAAAAAAAAAAAIwLwyAABuAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2022-07-19T06:21:32.382Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "viewer.html",
+              "DocumentMoniker": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.Web\\wwwroot\\lib\\layuiadmin\\modules\\nf-plugs\\pdfjs\\web\\viewer.html",
+              "RelativeDocumentMoniker": "NF.Web\\wwwroot\\lib\\layuiadmin\\modules\\nf-plugs\\pdfjs\\web\\viewer.html",
+              "ToolTip": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.Web\\wwwroot\\lib\\layuiadmin\\modules\\nf-plugs\\pdfjs\\web\\viewer.html",
+              "RelativeToolTip": "NF.Web\\wwwroot\\lib\\layuiadmin\\modules\\nf-plugs\\pdfjs\\web\\viewer.html",
+              "ViewState": "AQIAAIMBAAAAAAAAAABIwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2022-07-19T06:17:05.648Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "biccatetree.js",
+              "DocumentMoniker": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.Web\\wwwroot\\lib\\layuiadmin\\modules\\nf-plugs\\biccatetree.js",
+              "RelativeDocumentMoniker": "NF.Web\\wwwroot\\lib\\layuiadmin\\modules\\nf-plugs\\biccatetree.js",
+              "ToolTip": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.Web\\wwwroot\\lib\\layuiadmin\\modules\\nf-plugs\\biccatetree.js",
+              "RelativeToolTip": "NF.Web\\wwwroot\\lib\\layuiadmin\\modules\\nf-plugs\\biccatetree.js",
+              "ViewState": "AQIAAA8AAAAAAAAAAADwvwAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2022-07-19T06:11:43.728Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 42,
+              "Title": "CustomerController.cs",
+              "DocumentMoniker": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.Web\\Areas\\Company\\Controllers\\CustomerController.cs",
+              "RelativeDocumentMoniker": "NF.Web\\Areas\\Company\\Controllers\\CustomerController.cs",
+              "ToolTip": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.Web\\Areas\\Company\\Controllers\\CustomerController.cs",
+              "RelativeToolTip": "NF.Web\\Areas\\Company\\Controllers\\CustomerController.cs",
+              "ViewState": "AQIAAKsAAAAAAAAAAAAcwLIAAAAcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2022-07-14T06:37:47.896Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 43,
+              "Title": "SysPermissionModelServiceExtensionOne.cs",
+              "DocumentMoniker": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.BLL\\Common\\SysPermissionModelServiceExtensionOne.cs",
+              "RelativeDocumentMoniker": "NF.BLL\\Common\\SysPermissionModelServiceExtensionOne.cs",
+              "ToolTip": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.BLL\\Common\\SysPermissionModelServiceExtensionOne.cs",
+              "RelativeToolTip": "NF.BLL\\Common\\SysPermissionModelServiceExtensionOne.cs",
+              "ViewState": "AQIAAC4BAAAAAAAAAAAwwC4BAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2022-07-14T03:21:52.734Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 45,
+              "Title": "SysPermissionModelServicePort.cs",
+              "DocumentMoniker": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.BLL\\Common\\SysPermissionModelServicePort.cs",
+              "RelativeDocumentMoniker": "NF.BLL\\Common\\SysPermissionModelServicePort.cs",
+              "ToolTip": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.BLL\\Common\\SysPermissionModelServicePort.cs",
+              "RelativeToolTip": "NF.BLL\\Common\\SysPermissionModelServicePort.cs",
+              "ViewState": "AQIAAHMAAAAAAAAAAAAuwHIAAAA0AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2022-07-14T03:13:13.609Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 44,
+              "Title": "ISysPermissionModelService.cs",
+              "DocumentMoniker": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.IBLL\\Common\\ISysPermissionModelService.cs",
+              "RelativeDocumentMoniker": "NF.IBLL\\Common\\ISysPermissionModelService.cs",
+              "ToolTip": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.IBLL\\Common\\ISysPermissionModelService.cs",
+              "RelativeToolTip": "NF.IBLL\\Common\\ISysPermissionModelService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAwwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2022-07-14T03:13:01.946Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 46,
+              "Title": "Service.tt",
+              "DocumentMoniker": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.BLL\\Service.tt",
+              "RelativeDocumentMoniker": "NF.BLL\\Service.tt",
+              "ToolTip": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.BLL\\Service.tt",
+              "RelativeToolTip": "NF.BLL\\Service.tt",
+              "ViewState": "AQIAADEAAAAAAAAAAABAwBkAAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2022-06-01T06:04:21.905Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 47,
+              "Title": "BaseService.cs",
+              "DocumentMoniker": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.BLL\\BaseService.cs",
+              "RelativeDocumentMoniker": "NF.BLL\\BaseService.cs",
+              "ToolTip": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.BLL\\BaseService.cs",
+              "RelativeToolTip": "NF.BLL\\BaseService.cs",
+              "ViewState": "AQIAAAcAAAAAAAAAAAAowBEAAAASAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2022-05-27T08:21:25.321Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 48,
+              "Title": "ContActualFinanceService.cs",
+              "DocumentMoniker": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.BLL\\Finance\\ContActualFinanceService.cs",
+              "RelativeDocumentMoniker": "NF.BLL\\Finance\\ContActualFinanceService.cs",
+              "ToolTip": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.BLL\\Finance\\ContActualFinanceService.cs",
+              "RelativeToolTip": "NF.BLL\\Finance\\ContActualFinanceService.cs",
+              "ViewState": "AQIAACMAAAAAAAAAAAAuwCIAAAAfAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2022-05-30T00:56:45.015Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 49,
+              "Title": "IBaseService.cs",
+              "DocumentMoniker": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.IBLL\\IBaseService.cs",
+              "RelativeDocumentMoniker": "NF.IBLL\\IBaseService.cs",
+              "ToolTip": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.IBLL\\IBaseService.cs",
+              "RelativeToolTip": "NF.IBLL\\IBaseService.cs",
+              "ViewState": "AQIAAFsAAAAAAAAAAAAmwCEAAAAWAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2022-05-27T08:23:11.906Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 50,
+              "Title": "ContInvoiceController.cs",
+              "DocumentMoniker": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.Web\\Areas\\Finance\\Controllers\\ContInvoiceController.cs",
+              "RelativeDocumentMoniker": "NF.Web\\Areas\\Finance\\Controllers\\ContInvoiceController.cs",
+              "ToolTip": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.Web\\Areas\\Finance\\Controllers\\ContInvoiceController.cs",
+              "RelativeToolTip": "NF.Web\\Areas\\Finance\\Controllers\\ContInvoiceController.cs",
+              "ViewState": "AQIAAKYBAAAAAAAAAAAuwKUBAABaAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2022-05-12T03:07:57.779Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 52,
+              "Title": "viewPageEditing.css",
+              "DocumentMoniker": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.Web\\wwwroot\\lib\\layuiadmin\\modules\\viewpage-edit\\viewPageEditing.css",
+              "RelativeDocumentMoniker": "NF.Web\\wwwroot\\lib\\layuiadmin\\modules\\viewpage-edit\\viewPageEditing.css",
+              "ToolTip": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.Web\\wwwroot\\lib\\layuiadmin\\modules\\viewpage-edit\\viewPageEditing.css",
+              "RelativeToolTip": "NF.Web\\wwwroot\\lib\\layuiadmin\\modules\\viewpage-edit\\viewPageEditing.css",
+              "ViewState": "AQIAAAAAAAAAAAAAAADwvwkAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2022-05-12T02:56:35.879Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 53,
+              "Title": "continvoiceout-build.js",
+              "DocumentMoniker": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.Web\\wwwroot\\lib\\layuiadmin\\modules\\finance-nf\\continvoiceout-build.js",
+              "RelativeDocumentMoniker": "NF.Web\\wwwroot\\lib\\layuiadmin\\modules\\finance-nf\\continvoiceout-build.js",
+              "ToolTip": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.Web\\wwwroot\\lib\\layuiadmin\\modules\\finance-nf\\continvoiceout-build.js",
+              "RelativeToolTip": "NF.Web\\wwwroot\\lib\\layuiadmin\\modules\\finance-nf\\continvoiceout-build.js",
+              "ViewState": "AQIAAJUBAAAAAAAAAAAowKwBAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2022-05-12T02:34:05.581Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 54,
+              "Title": "continvoice-build.js",
+              "DocumentMoniker": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.Web\\wwwroot\\lib\\layuiadmin\\modules\\finance-nf\\continvoice-build.js",
+              "RelativeDocumentMoniker": "NF.Web\\wwwroot\\lib\\layuiadmin\\modules\\finance-nf\\continvoice-build.js",
+              "ToolTip": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.Web\\wwwroot\\lib\\layuiadmin\\modules\\finance-nf\\continvoice-build.js",
+              "RelativeToolTip": "NF.Web\\wwwroot\\lib\\layuiadmin\\modules\\finance-nf\\continvoice-build.js",
+              "ViewState": "AQIAADoBAAAAAAAAAAAowFEBAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2022-05-12T02:33:56.784Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 51,
+              "Title": "BuildInvoiceOut.cshtml",
+              "DocumentMoniker": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.Web\\Areas\\Finance\\Views\\ContInvoice\\BuildInvoiceOut.cshtml",
+              "RelativeDocumentMoniker": "NF.Web\\Areas\\Finance\\Views\\ContInvoice\\BuildInvoiceOut.cshtml",
+              "ToolTip": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.Web\\Areas\\Finance\\Views\\ContInvoice\\BuildInvoiceOut.cshtml",
+              "RelativeToolTip": "NF.Web\\Areas\\Finance\\Views\\ContInvoice\\BuildInvoiceOut.cshtml",
+              "ViewState": "AQIAAPMAAAAAAAAAAADwv9cAAABSAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2022-05-12T01:30:42.439Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 56,
+              "Title": "DepartmentService.cs",
+              "DocumentMoniker": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.BLL\\System\\DepartmentService.cs",
+              "RelativeDocumentMoniker": "NF.BLL\\System\\DepartmentService.cs",
+              "ToolTip": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.BLL\\System\\DepartmentService.cs",
+              "RelativeToolTip": "NF.BLL\\System\\DepartmentService.cs",
+              "ViewState": "AQIAAHEAAAAAAAAAAAAswH0AAABRAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2022-05-12T00:51:03.191Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 55,
+              "Title": "conttextcoll-index.js",
+              "DocumentMoniker": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.Web\\wwwroot\\lib\\layuiadmin\\modules\\conttext-nf\\conttextcoll-index.js",
+              "RelativeDocumentMoniker": "NF.Web\\wwwroot\\lib\\layuiadmin\\modules\\conttext-nf\\conttextcoll-index.js",
+              "ToolTip": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.Web\\wwwroot\\lib\\layuiadmin\\modules\\conttext-nf\\conttextcoll-index.js",
+              "RelativeToolTip": "NF.Web\\wwwroot\\lib\\layuiadmin\\modules\\conttext-nf\\conttextcoll-index.js",
+              "ViewState": "AQIAAGYBAAAAAAAAAAAiwEkBAAAqAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2022-03-21T07:52:59.633Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 57,
+              "Title": "Build.cshtml",
+              "DocumentMoniker": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.Web\\Areas\\Contract\\Views\\ContractCollection\\Build.cshtml",
+              "RelativeDocumentMoniker": "NF.Web\\Areas\\Contract\\Views\\ContractCollection\\Build.cshtml",
+              "ToolTip": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.Web\\Areas\\Contract\\Views\\ContractCollection\\Build.cshtml",
+              "RelativeToolTip": "NF.Web\\Areas\\Contract\\Views\\ContractCollection\\Build.cshtml",
+              "ViewState": "AQIAAHYBAAAAAAAAAAAvwIwBAACTAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2022-03-21T07:47:24.694Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 58,
+              "Title": "collectioncontract-build.js",
+              "DocumentMoniker": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.Web\\wwwroot\\lib\\layuiadmin\\modules\\contract-nf\\collectioncontract-build.js",
+              "RelativeDocumentMoniker": "NF.Web\\wwwroot\\lib\\layuiadmin\\modules\\contract-nf\\collectioncontract-build.js",
+              "ToolTip": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.Web\\wwwroot\\lib\\layuiadmin\\modules\\contract-nf\\collectioncontract-build.js",
+              "RelativeToolTip": "NF.Web\\wwwroot\\lib\\layuiadmin\\modules\\contract-nf\\collectioncontract-build.js",
+              "ViewState": "AQIAAAoEAAAAAAAAAAAiwBkEAAAWAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2022-03-21T07:43:38.056Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

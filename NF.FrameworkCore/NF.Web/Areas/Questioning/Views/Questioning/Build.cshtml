@@ -1,0 +1,265 @@
+﻿
+@{
+    ViewData["Title"] = "Build";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <div class="layui-fluid">
+        <!--合同基本信息begin-->
+        <div class="layui-form" lay-filter="NF-ContractCollection-Form">
+            <!--修改时使用-->
+            <input type="hidden" id="Id" name="Id" />
+            <input type="hidden" id="Zbdw" name="Zbdw" />
+            <input type="hidden" id="Zje" name="Zje" />
+            <div class="layui-card " id="contractfo">
+                <div class="layui-card-header">洽谈信息</div>
+                <div class="layui-card-body" style="padding: 15px;">
+                    <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                        <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                            <label class="layui-form-label">洽谈部门</label>
+                            <div class="layui-input-block">
+                                @*//   <input type="hidden" name="Recorder" id="Recorder" />*@
+                                <input type="text" name="Inquirer" lay-filter="NF-PDept" id="NF-PDept" lay-verify="required" placeholder="请选择" class="layui-input pen" />
+                                @*<input type="text" name="Inquirer" lay-filter="Inquirer" id="Inquirer" lay-verify="Inquirer" placeholder="请选择" class="layui-input pen" />
+                <input type="hidden" name="Inquirer" id="Inquirer" />*@
+                            </div>
+                        </div>
+                      
+
+                        <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                            <label class="layui-form-label">项目编号</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="ProjectNumber" id="ProjectNumber" lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input pen" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+
+                        <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                            <label class="layui-form-label">项目名称</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="ProjectNames" id="ProjectNames" lay-verify="required" readonly="readonly" class="layui-input pen" />
+                                <input type="hidden" name="ProjectName" id="ProjectName" />
+                            </div>
+                        </div>
+                        <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                            <label class="layui-form-label">时间</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="Times" id="Times" lay-verify="required" class="layui-input pen" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+
+                        <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                            <label class="layui-form-label">地点</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="Sites" id="Sites" lay-verify="required" class="layui-input pen" />
+                                @*<input type="text" name="CompName" id="CompName" lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input pen" />
+                            <input type="hidden" name="CompId" id="CompId" />*@
+                            </div>
+                        </div>
+                        <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                            <label class="layui-form-label">合同执行部门</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="ContractExecuteBranch" lay-filter="ContractExecuteBranch" id="ContractExecuteBranch" lay-verify="required" placeholder="请选择" class="layui-input pen" />
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+
+                        <div class="layui-col-lg12 layui-col-md12 layui-col-xs12 layui-col-sm12">
+                            <label class="layui-form-label">洽谈条件</label>
+                            <div class="layui-input-block">
+                                <textarea class="layui-textarea layui-input" name="TheWinningConditions"></textarea>
+
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                        <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                            <label class="layui-form-label">记录人</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="RecorderS" id="RecorderS" lay-verify="required" readonly="readonly" class="layui-input pen" />
+                                <input type="hidden" name="Recorder" id="Recorder" />
+                                @*     <input type="text" name="StampTax" value="0" lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input pen" />*@
+                            </div>
+                        </div>
+                        <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                            <label class="layui-form-label">有效期</label>
+                            <div class="layui-input-block">
+                                <input type="text" name="UsefulLife" id="UsefulLife" lay-verify="required" class="layui-input pen" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                        <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                            <label class="layui-form-label">类别</label>
+                            <div class="layui-input-block">
+                                <select name="QueType" id="QueType" lay-verify="required" lay-search lay-filter="QueType">
+                                    <option value="">请选择..</option>
+
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <!--需要在最后加这个或者没有也加一个 <div class="layui-form-item">，这样不会导致隐藏菜单是显示问题-->
+                    <div class="layui-form-item">
+
+                    </div>
+
+                </div>
+            </div>
+
+
+            <!--按钮begin-->
+            <div class="layui-form-item layui-layout-admin layui-hide">
+                <div class="layui-input-block">
+                    <div class="layui-footer" style="left: 0;">
+                        <button class="layui-btn" id="NF-ContractCollection-FormSubmit" lay-submit lay-filter="NF-ContractCollection-FormSubmit">保存</button>
+                        <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                    </div>
+                </div>
+            </div>
+            <!--按钮end-->
+        </div>
+        <!--合同基本信息end-->
+        <!--洽谈情况begin-->
+        <div class="layui-card " id="contplanKbqk">
+            <div class="layui-card-header">洽谈情况</div>
+            <div class="layui-card-body" style="padding: 15px;">
+                <table id="NF-contplanKbqk" lay-filter="NF-contplanKbqk"></table>
+                <!--表格工具栏-->
+                <script id="toolcontplanKbqk" type="text/html">
+                    <div class="layui-inline">
+                        <button class="layui-btn " lay-event="add"><i class="layui-icon layui-icon-edit"></i> 新增</button>
+                        <button class="layui-btn " lay-event="SaveAll"><i class="layui-icon layui-icon-edit"></i>保存</button>
+                        <button class="layui-btn  layui-btn-danger" lay-event="batchdel"><i class="layui-icon layui-icon-delete"></i>批量删除</button>
+                    </div>
+                </script>
+                <script type="text/html" id="table-contplanKbqkbar">
+                    <a class="layui-btn layui-btn-xs" lay-event="Save"><i class="layui-icon layui-icon-add-1"></i>确定</a>
+                    <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del"><i class="layui-icon layui-icon-delete"></i>删除</a>
+                </script>
+
+            </div>
+        </div>
+        <!--洽谈情况end-->
+        <!--洽谈人begin-->
+        <div class="layui-card " id="contplanZbr">
+            <div class="layui-card-header">洽谈人</div>
+            <div class="layui-card-body" style="padding: 15px;">
+                <table id="NF-contplanZbr" lay-filter="NF-contplanZbr"></table>
+                <!--表格工具栏-->
+                <script id="toolcontplanZbr" type="text/html">
+                    <div class="layui-inline">
+                        <button class="layui-btn " lay-event="add"><i class="layui-icon layui-icon-edit"></i> 新增</button>
+                        <button class="layui-btn " lay-event="SaveAll"><i class="layui-icon layui-icon-edit"></i>保存</button>
+                        <button class="layui-btn  layui-btn-danger" lay-event="batchdel"><i class="layui-icon layui-icon-delete"></i>批量删除</button>
+                    </div>
+                </script>
+                <script type="text/html" id="table-contplanZbrbar">
+                    <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del"><i class="layui-icon layui-icon-delete"></i>删除</a>
+                </script>
+
+            </div>
+        </div>
+        <!--洽谈人-end-->
+        <!--洽谈单位begin-->
+        <div class="layui-card " id="contplanZbdw">
+            <div class="layui-card-header">洽谈单位</div>
+            <div class="layui-card-body" style="padding: 15px;">
+                <table id="NF-contplanZbdw" lay-filter="NF-contplanZbdw"></table>
+                <!--表格工具栏-->
+                <script id="toolcontplanZbdw" type="text/html">
+                    <div class="layui-inline">
+                        @*<button class="layui-btn " lay-event="add"><i class="layui-icon layui-icon-edit"></i> 新增</button>*@
+                        @*<button class="layui-btn " lay-event="SaveAll"><i class="layui-icon layui-icon-edit"></i>保存</button>*@
+                        <button class="layui-btn  layui-btn-danger" lay-event="batchdel"><i class="layui-icon layui-icon-delete"></i>批量删除</button>
+                    </div>
+                </script>
+                <script type="text/html" id="table-contplanZbdwbar">
+                    <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del"><i class="layui-icon layui-icon-delete"></i>删除</a>
+                </script>
+
+            </div>
+        </div>
+        <!--洽谈单位-end-->
+        <!--招标附件begin-->
+        <div class="layui-card " id="contattachment">
+            <div class="layui-card-header">洽谈附件</div>
+            <div class="layui-card-body" style="padding: 15px;">
+                <table id="NF-ContAttachment" lay-filter="NF-ContAttachment"></table>
+                <!--表格工具栏-->
+                <script id="toolcontattachment" type="text/html">
+                    <div class="layui-inline">
+                        <button class="layui-btn " lay-event="add"><i class="layui-icon layui-icon-edit"></i> 新增</button>
+                        <button class="layui-btn  layui-btn-danger" lay-event="batchdel"><i class="layui-icon layui-icon-delete"></i>批量删除</button>
+                    </div>
+                </script>
+                <script type="text/html" id="tabl-contattachmentbar">
+                    <a class="layui-btn layui-btn-xs" lay-event="download"><i class="layui-icon layui-icon-edit"></i>下载</a>
+                    <a class="layui-btn layui-btn-normal layui-btn-xs" lay-event="edit"><i class="layui-icon layui-icon-edit"></i>修改</a>
+                    <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del"><i class="layui-icon layui-icon-delete"></i>删除</a>
+                </script>
+
+            </div>
+        </div>
+        <!--招标附件--end-->
+        <!--单品清单begin-->
+        <div class="layui-card " id="contplanfinace">
+            <div class="layui-card-header">货品清单</div>
+            <div class="layui-card-body" style="padding: 15px;">
+                <table id="NF-Cargo" lay-filter="NF-Cargo"></table>
+                <!--表格工具栏-->
+                <script id="toolcontplanfinaceHw" type="text/html">
+                    <div class="layui-inline">
+                        <button class="layui-btn " lay-event="add"><i class="layui-icon layui-icon-edit"></i> 导入</button>
+                        <button class="layui-btn " lay-event="SaveAll"><i class="layui-icon layui-icon-edit"></i>保存</button>
+                        <button class="layui-btn  layui-btn-danger" lay-event="batchdel"><i class="layui-icon layui-icon-delete"></i>批量删除</button>
+                    </div>
+                </script>
+                <script type="text/html" id="table-contplanfinacebar">
+                    <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del"><i class="layui-icon layui-icon-delete"></i>删除</a>
+                </script>
+            </div>
+        </div>
+        <!--单品清单end-->
+
+
+    </div>
+<!--目录-->
+    <ul class="site-dir layui-layer-wrap nf-ml-ul layui-hide" id="customernva">
+        <li><a href="#Zhaobiaofo" rel="external nofollow" class="current">基本信息</a></li>
+        <li><a href="#contplanKbqk" rel="external nofollow">洽谈情况</a></li>
+        <li><a href="#contplanZbr" rel="external nofollow">洽谈人</a></li>
+        <li><a href="#contplanZbdw" rel="external nofollow">洽谈单位</a></li>
+        <li><a href="#contattachment" rel="external nofollow">洽谈附件</a></li>
+
+    </ul>
+@{
+    Html.RenderPartial("_LayuiScriptsPartial");
+}
+
+<script>
+    layui.config({
+        base: '/lib/layuiadmin/'
+    }).extend({
+        index: 'lib/index', //主入口模块
+        nfcontents: 'contents-nf/nfcontents',
+        commonnf: 'common-nf/commonnf',
+        tableSelect: 'layui-nf-plugs/tableSelect',
+        selectnfitem: 'common-nf/selectnfitem',
+        InquiryBuild: 'Questioning-nf/Questioning-Build',
+        treeSelect: 'layui-nf-plugs/treeselect',
+        // subMetBuild:'subjectmatter-nf/submet-build',
+        wordAddin: 'addin-nf/wordAddin'
+    }).use(['index', 'InquiryBuild'], function () {
+
+
+    });
+</script>
+

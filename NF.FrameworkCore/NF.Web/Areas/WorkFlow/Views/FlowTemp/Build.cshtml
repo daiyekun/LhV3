@@ -1,0 +1,105 @@
+﻿
+@{
+    ViewData["Title"] = "新建流程模板";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link rel="stylesheet" href="~/lib/layuiadmin/modules/layui-nf-plugs/formSelects/formSelects-v4.css" />
+<div class="layui-fluid">
+    <!--流程模板信息begin-->
+    <div class="layui-form" lay-filter="NF-FlowTemp-Form">
+        <input type="hidden" id="Id" name="Id" />
+        <div class="layui-card">
+            <div class="layui-card-header">基本信息</div>
+            <div class="layui-card-body" style="padding: 15px;">
+                <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                    <div class="layui-col-lg12 layui-col-md12 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">名称</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="Name" lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input pen" />
+                        </div>
+                    </div>
+                    <div class="layui-col-lg12 layui-col-md12 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">审批对象</label>
+                        <div class="layui-input-block">
+                            <select name="ObjType" id="ObjType" lay-verify="required" lay-search lay-filter="ObjType">
+                                <option value="-1">请选择..</option>
+                            </select>
+                        </div>
+                    </div>
+                   
+                    <div class="layui-col-lg12 layui-col-md12 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">所属机构</label>
+                        <div class="layui-input-block">
+                            <select name="DeptIds" xm-select="DeptIds" lay-verify="required" xm-select-skin="normal">
+                                <option value="-1">请选择</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                    <div class="layui-col-lg12 layui-col-md12 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">对象类别</label>
+                        <div class="layui-input-block">
+                            <select name="CategoryIds" xm-select="CategoryIds" lay-verify="required" xm-select-skin="normal">
+                                <option value="-1">请选择</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="layui-col-lg12 layui-col-md12 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">审批事项</label>
+                        <div class="layui-input-block">
+                            <select name="flowitems" xm-select="flowitems" lay-verify="required" xm-select-skin="normal">
+                                <option value="-1">请选择</option>
+                            </select>
+                        </div>
+                    </div>
+                    @*<div class="layui-col-lg12 layui-col-md12 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">流程状态</label>
+                        <div class="layui-input-block">
+                            <input type="checkbox" name="IsValid" lay-skin="switch" lay-text="启用|禁用" checked>
+                        </div>
+                    </div>*@
+                </div>
+                <!--需要在最后加这个或者没有也加一个 <div class="layui-form-item">，这样不会导致隐藏菜单是显示问题-->
+                <div class="layui-form-item">
+
+                </div>
+
+            </div>
+        </div>
+
+
+        <!--按钮begin-->
+        <div class="layui-form-item layui-layout-admin layui-hide">
+            <div class="layui-input-block">
+                <div class="layui-footer" style="left: 0;">
+                    <button class="layui-btn" id="NF-FlowTemp-FormSubmit" lay-submit lay-filter="NF-FlowTemp-FormSubmit">保存</button>
+                    <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                </div>
+            </div>
+        </div>
+        <!--按钮begin-->
+    </div>
+    <!--基本信息end-->
+
+</div>
+
+@{
+    Html.RenderPartial("_LayuiScriptsPartial");
+}
+<script>
+    layui.config({
+        base: '/lib/layuiadmin/'
+    }).extend({
+        index: 'lib/index' //主入口模块
+       , workFlowTempBuild: 'workflow-nf/workflowtemp-build'
+        , selectM: 'layui-nf-plugs/selectM'
+        , formSelects: 'layui-nf-plugs/formSelects/formSelects-v4'
+    }).use(['index', 'workFlowTempBuild'], function () {
+        //清除部分下拉小笔头
+        wooutil.selpen();
+       
+
+        });
+</script>
+

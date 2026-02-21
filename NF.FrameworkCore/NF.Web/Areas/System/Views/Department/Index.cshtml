@@ -1,0 +1,183 @@
+﻿
+@{
+    ViewData["Title"] = "组织机构";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="layui-fluid">
+    <div class="layui-card">
+        <div class="layui-form layui-card-header layuiadmin-card-header-auto">
+            <div class="layui-form-item">
+                <div class="layui-inline">
+                    <input type="text" name="keyWord" placeholder="部门名称、编号、所属机构" style="width:240px;" autocomplete="off" class="layui-input">
+                </div>
+                <div class="layui-inline">
+                    <button class="layui-btn layuiadmin-btn-useradmin NF-user-front-search" lay-submit lay-filter="NF-system-dept-search">
+                        <i class="layui-icon layui-icon-search layuiadmin-button-btn"></i>
+                    </button>
+                    <button class="layui-btn layuiadmin-btn-dept " data-type="add"> 新增</button>
+                    <button class="layui-btn layuiadmin-btn-dept " data-type="batchdel">批量删除</button>
+                    <button class="layui-btn layuiadmin-btn-dept " data-type="viewdeptTree">组织机构树</button>
+                </div>
+            </div>
+        </div>
+        <div class="layui-card-body">
+            <table id="NF-system-dept" lay-filter="NF-system-dept"></table>
+           
+            <script type="text/html" id="nameTpl">
+                <a class="layui-table-link hand"  lay-text="查看组织机构" lay-event="detail">
+                   <cite>{{d.Name}}</cite>
+                </a>
+
+            </script>
+            <script type="text/html" id="table-system-dept">
+                <a class="layui-btn layui-btn-normal layui-btn-xs" lay-event="edit"><i class="layui-icon layui-icon-edit"></i>修改</a>
+                {{#  if(d.No == 'root'){ }}
+                <a class="layui-btn layui-btn-disabled layui-btn-xs"><i class="layui-icon layui-icon-delete"></i>删除</a>
+                {{#  } else { }}
+                <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del"><i class="layui-icon layui-icon-delete"></i>删除</a>
+                {{#  } }}
+
+            </script>
+            <script type="text/html" id="deptstateTpl">
+                <input type="checkbox" name="Dstatus" value="{{d.Id}}" lay-skin="switch" lay-text="启用|禁用" lay-filter="deptstate" {{ d.Dstatus == 1 ? 'checked' : '' }}>
+            </script>
+            <script type="text/html" id="IsSubCompany">
+                <input type="checkbox" name="IsSubCompany" value="{{d.Id}}" lay-skin="switch" lay-text="是|否" lay-filter="IsSubCompany" {{ d.IsSubCompany == 1 ? 'checked' : '' }}>
+             </script>
+            <script type="text/html" id="IsMainTpl">
+                {{#  if(d.IsMain ===1){ }}
+                <span style="color:#5FB878;">{{ d.IsMainDic }}</span>
+                {{#  } else { }}
+                {{ d.IsMainDic }}
+                {{#  } }}
+            </script>
+        </div>
+    </div>
+</div>
+
+@{
+    Html.RenderPartial("_LayuiScriptsPartial");
+}
+<script>
+    layui.config({
+        base: '/lib/layuiadmin/'
+    }).extend({
+        index: 'lib/index', //主入口模块
+        systemDepartment:'system-nf/nf-system-department'
+        }).use(['index', 'table', 'systemDepartment'], function () {
+            var $ = layui.$
+            , form = layui.form
+            , admin = layui.admin
+            , table = layui.table;
+       
+
+        //监听搜索
+        form.on('submit(NF-system-dept-search)', function (data) {
+            var field = data.field;
+
+            //执行重载
+            table.reload('NF-system-dept', {
+                where: field
+            });
+            });
+
+            //监听状态操作
+            form.on('switch(deptstate)', function (obj) {
+                //layer.tips(this.value + ' ' + this.Dstatus + '：' + obj.elem.checked, obj.othis);
+                var state = obj.elem.checked ? 1 : 0;//状态
+                admin.req({
+                    url: '/System/Department/updateField',
+                    data: { Id: this.value, fieldName:"DStatus", fieldValue:state},
+                    done: function (res) { 
+                        layer.msg('修改成功！');
+
+                    }
+                   
+                });
+            });
+            //监听子公司操作
+            form.on('switch(IsSubCompany)', function (obj) {
+                //layer.tips(this.value + ' ' + this.IsSubCompany + '：' + obj.elem.checked, obj.othis);
+                var iscomp = obj.elem.checked ? 1 : 0;
+                admin.req({
+                    url: '/System/Department/updateField',
+                    data: { Id: this.value, fieldName: "IsSubCompany", fieldValue:iscomp },
+                    done: function (res) {
+                        layer.msg('设置成功！');
+
+                    }
+
+                });
+            });
+
+        //事件
+            var active = {
+                batchdel: function () {
+                    wooutil.deleteDatas({ table: table, url: '/System/Department/Delete', tableId:'NF-system-dept'});
+                    
+                },
+                add: function () {
+                    layer.open({
+                         type: 2
+                        , title: '新增组织机构'
+                        , content: '/System/Department/Build'
+                        , maxmin: true
+                        , area: ['60%', '80%']
+                        , btn: ['确定', '取消']
+                        , btnAlign: 'c'
+                        , skin: "layer-ext-myskin"
+                        , yes: function (index, layero) {
+                            var iframeWindow = window['layui-layer-iframe' + index]
+                                , submitID = 'Nf-SystemAdmin-DeptFormSubmit'
+                                , submit = layero.find('iframe').contents().find('#' + submitID);
+                            //监听提交
+                            iframeWindow.layui.form.on('submit(' + submitID + ')', function (obj) {
+                                var field = obj.field; //获取提交的字段
+                                wooutil.OpenSubmitForm({
+                                    table: table,
+                                    url: "/System/Department/AddSave",
+                                    tableId: 'NF-system-dept',
+                                    data: field,
+                                    index: index
+                                });
+                                
+                                return false;
+
+
+                            });
+
+                            submit.trigger('click');
+                        },
+                        success: function (layero, index) {
+                            layer.full(index);
+
+                            setTimeout(function () {
+                                layui.layer.tips('点击此处返回大列表', '.layui-layer-setwin .layui-layer-close', {
+                                    tips: 3
+                                });
+                            }, 500);
+
+
+
+                        }
+                    });
+                }, viewdeptTree: function ()
+                {
+                    layer.open({
+                        type: 2
+                        , title: '查看组织机构树'
+                        , content: '/System/Department/ShowDeptTree'
+                        , maxmin: true
+                        , area: ['60%', '80%']
+                    });
+
+                }
+
+            };
+            $('.layui-btn.layuiadmin-btn-dept').on('click', function () {
+            var type = $(this).data('type');
+            active[type] ? active[type].call(this) : '';
+        });
+    });
+</script>
+

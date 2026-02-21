@@ -1,0 +1,46 @@
+﻿@{
+    ViewData["Title"] = "ShowDeptTree";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="layui-fluid">
+    <div class="layui-form" lay-filter="Nf-system-deptTree">
+        <div class="layui-card ">
+            <div class="layui-card-body" style="padding: 15px;">
+             <ul id="deptTree"></ul>
+
+                <!--需要在最后加这个或者没有也加一个 <div class="layui-form-item">，这样不会导致隐藏菜单是显示问题-->
+                <div class="layui-form-item">
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+   
+
+</div>
+
+@{
+    Html.RenderPartial("_LayuiScriptsPartial");
+}
+<script>
+    layui.config({
+        base: '/lib/layuiadmin/'
+    }).extend({
+        index: 'lib/index'
+        }).use(['index', 'tree'], function () {
+            var $ = layui.$
+                , tree = layui.tree;
+            $.ajax({
+                url: "/System/Department/GetTreeSelectDept", success: function (result) {
+                    tree.render(
+                        {
+                            elem: '#deptTree',
+                    
+                            data: result
+                        })
+                    
+                }
+            });
+    });
+</script>

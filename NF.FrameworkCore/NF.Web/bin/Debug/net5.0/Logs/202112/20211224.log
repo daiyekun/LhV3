@@ -1,0 +1,11 @@
+
+======================================================================================
+
+
+--------------------------------------------------------------------------------------
+
+日志时间：2021-12-24 10:21:40,157 [119] 
+日志级别：ERROR 
+日 志 类：类名：NF.Web.Utility.Filters
+	方法名：OnException [(null)] 
+Cannot create a DbSet for 'Interviewpeople' because this type is not included in the model for the context. 

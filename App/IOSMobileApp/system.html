@@ -1,0 +1,129 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>恒润基EBP移动终端</title>
+    <!--Styles-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="vendor/jquery.mobile-1.4.0-rc.1.css"/>
+    <link rel="stylesheet" href="vendor/mobiscroll/css/mobiscroll.custom-2.6.2.min.css"/>
+    <link rel="stylesheet" href="css/style.css"/>
+    <!--Scripts-->
+    <script type="text/javascript" src="vendor/jquery-1.10.2.js"></script>
+    <script type="text/javascript" src="vendor/jquery.validate.js"></script>
+    <script type="text/javascript" src="vendor/jquery.mobile-1.4.0-rc.1.js"></script>
+    <script type="text/javascript" src="vendor/mobiscroll/js/mobiscroll.custom-2.6.2.min.js"></script>
+    <script type="text/javascript" src="vendor/signature_pad.js"></script>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="vendor/backgroundService-2.5.0.js"></script>
+    <script type="text/javascript" src="vendor/myService-2.5.0.js"></script>
+    <script type="text/javascript" src="js/woo.js"></script>
+    <script type="text/javascript" src="js/system.js"></script>
+    <style>
+        body {
+            -moz-user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+        }
+    </style>
+</head>
+
+<body>
+<!--首页-->
+<div data-role="page" id="index">
+    <div data-role="header">
+        <h1>设置</h1>
+    </div>
+    <div data-role="content">
+        <ul data-role="listview">
+            <li><a href="index.html#login?from=system" data-ajax="false">登录设置</a></li>
+            <li><a href="#lock">密码锁</a></li>
+            <!--<li><a href="#signature">个人签名</a></li>-->
+            <li><a href="#about" data-rel="dialog">关于</a></li>
+            <li><a href="#checkupdate" data-rel="dialog">检查更新</a></li>
+            <!--<li><a href="#" data-rel="dialog" id="exit">退出</a></li>-->
+        </ul>
+        <br/><br/>
+        <label style="float: left;line-height: 40px;">后台提醒推送：</label>
+        <select name="toggleService" data-role="slider" data-mini="true" id="toggleService">
+            <option value="off">关</option>
+            <option value="on">开</option>
+        </select></p>
+    </div>
+    <div data-role="footer" data-position="fixed">
+        <div data-role="navbar">
+            <ul>
+                <li><a href="index.html#index" data-icon="c-yewu" data-ajax="false" id="menu_index">业务</a></li>
+                <!--<li><a href="index-2.5.0.html" data-icon="c-yewu" data-ajax="false">服务</a></li>-->
+                <li><a href="approve.html" data-icon="c-shenpi" data-ajax="false" id="menu_approve">审批</a></li>
+                <li><a href="remind.html" data-icon="c-tixing" data-ajax="false" id="menu_remind">提醒</a></li>
+                <li><a href="system.html" data-icon="c-shezhi" data-ajax="false" id="menu_system"
+                       class="ui-btn-active">设置</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!--密码锁-->
+<div data-role="page" id="lock">
+    <div data-role="header">
+        <h1>密码锁</h1>
+    </div>
+    <div data-role="content">
+        <form id="lockform">
+            <label for="lockpassword">请输入密码锁（4-6位）</label>
+            <input type="password" name="lockpassword" id="lockpassword" minlength="4" maxlength="6" required>
+            <input type="submit" id="lockform_submit" value="保存" data-role="button" data-theme="b"/>
+            <a href="#" class="ui-btn ui-corner-all" id="lockclear">清空</a>
+            <div class="info">
+                <p>密码锁主要是为了应用的使用安全而设置。密码锁设置后，每次启动软件时，会要求输入密码。</p>
+                <p>请牢记输入的密码，如果忘记密码，请联系恒润基售后。</p>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!--个人签名-->
+<div data-role="page" id="signature">
+    <div data-role="header">
+        <h1>个人签名</h1>
+    </div>
+    <div data-role="content">
+        <p style="text-align: center">
+            <canvas style="width:320px;height: 160px;background: #f0f0f0;" id="signsheet"></canvas>
+        </p>
+        <a href="#" class="ui-btn ui-corner-all" id="savesignature">保存</a>
+        <a href="#" class="ui-btn ui-corner-all" id="clearsignature">清空</a>
+        <br/><br/>
+        <p style="text-align: center">
+            <img src="" alt="" id="sign" style="width: 160px;height: 80px;"/></p>
+    </div>
+</div>
+
+<!--关于-->
+<div data-role="page" id="about">
+    <div data-role="header">
+        <h1>关于</h1>
+    </div>
+    <div data-role="content">
+        <p>版本：V2.7.2</p>
+        <p>罗合（北京）科技有限公司 版权所有</p>
+        <!--<p><a href="http://www.woorich.cn" target="_blank" onclick="window.open(this.href,'_system'); return false;">woorich.cn</a>-->
+        <!--</p>-->
+        <hr/>
+        <p>设备信息：</p>
+        <p id="about_device_info"></p>
+    </div>
+</div>
+
+<!--检查更新-->
+<div data-role="page" id="checkupdate">
+    <div data-role="header">
+        <h1>检查更新</h1>
+    </div>
+    <div data-role="content">
+        <p><img src="img/loading.gif" alt=""/>&nbsp;&nbsp;版本检查中...</p>
+    </div>
+</div>
+</body>
+</html>

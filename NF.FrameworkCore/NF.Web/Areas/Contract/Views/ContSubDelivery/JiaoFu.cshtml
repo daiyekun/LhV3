@@ -1,0 +1,211 @@
+﻿
+@{
+    ViewData["Title"] = "交付";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@*<style type="text/css">
+    .nf-noborder{
+        border:0;
+    }
+</style>*@
+<div class="layui-fluid" id="LAY-component-grid-all">
+    <div class="layui-row layui-col-space10">
+        <div class="layui-col-xs6 layui-col-sm7 layui-col-md8">
+            <div class="layui-card">
+                <div class="layui-card-header">
+                    <div class="layui-inline">
+                        <button class="layui-btn layuiadmin-jiaofu-btn layui-btn-sm" data-type="devAll">
+                            全部交付
+                        </button>
+                    </div>
+                    <div class="layui-inline" style="float:right;">
+                       交付总额:<span id="jiaoFuTotal" style="color:red;">0</span>
+                    </div>
+                </div>
+                <div class="layui-card-body">
+                    <table id="NF-SubDev-List" lay-filter="NF-SubDev-List"></table>
+                    <script type="text/html" id="ProjectTpl">
+                        <a class="layui-table-link hand" lay-text="查看详情" lay-event="Projectdetail">
+                            <cite>{{d.ContName}}</cite>
+                        </a>
+                    </script>
+                    <script type="text/html" id="compTpl">
+                        <a class="layui-table-link hand" lay-text="查看详情" lay-event="compdetail">
+                            <cite>{{d.CompName}}</cite>
+                        </a>
+                    </script>
+                </div>
+            </div>
+        </div>
+        <div class="layui-col-xs6 layui-col-sm5 layui-col-md4">
+            <div class="layui-card">
+                <div class="layui-card-header">基本信息</div>
+                <div class="layui-card-body">
+                    <table class="layui-table"  style="margin-top:0px;">
+                        <colgroup>
+                            <col width="150">
+                            <col width="200">
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>属性</th>
+                                <th>值</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>标的名称</td>
+                                <td id="subName"></td>
+                            </tr>
+                            <tr>
+                                <td>单位</td>
+                                <td id="subUnit"></td>
+                            </tr>
+                            <tr>
+                                <td>单价</td>
+                                <td id="subprice"></td>
+
+                            </tr>
+                            <tr>
+                                <td>数量</td>
+                                <td id="amount"></td>
+                            </tr>
+                            <tr>
+                                <td>小计</td>
+                                <td id="totalthod"></td>
+                            </tr>
+                            <tr>
+                                <td>已交付数量</td>
+                                <td id="devnum"></td>
+                            </tr>
+                            <tr>
+                                <td>未交付数量</td>
+                                <td id="notdevnum"></td>
+                            </tr>
+                            <tr>
+                                <td>本次交付数量</td>
+                                <td id="currdevnum"></td>
+                            </tr>
+                            <tr>
+                                <td>本次交付金额</td>
+                                <td id="currdevmonery"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+              </div>
+        </div>
+        <div class="layui-col-xs12 layui-col-sm12 layui-col-md12">
+            <div class="layui-card">
+                <div class="layui-card-body">
+                    <div class="layui-form" lay-filter="NF-JiaoFuInfo">
+                        <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                            <div class="layui-col-lg4 layui-col-md4 layui-col-xs12 layui-col-sm12">
+                                <label class="layui-form-label">交付人</label>
+                                <div class="layui-input-block">
+
+                                    <input type="hidden" name="DeliverUserId" id="DeliverUserId" />
+                                    <input type="text" name="DeliverUserName" id="DeliverUserName" readonly lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input pen" />
+                                </div>
+                            </div>
+                            <div class="layui-col-lg4 layui-col-md4 layui-col-xs12 layui-col-sm12">
+                                <label class="layui-form-label">交付方式</label>
+                                <div class="layui-input-block">
+                                    <select name="DeliverType" id="DeliverType" lay-search lay-filter="DeliverType">
+                                        <option value="-1">请选择..</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="layui-col-lg4 layui-col-md4 layui-col-xs12 layui-col-sm12">
+                                <label class="layui-form-label">交付地点</label>
+                                <div class="layui-input-block">
+                                    <input type="text" name="DeliverLocation" class="layui-input" />
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                            <div class="layui-col-lg4 layui-col-md4 layui-col-xs12 layui-col-sm12">
+                                <label class="layui-form-label">交付日期</label>
+                                <div class="layui-input-block">
+                                    <input type="text" name="ActualDateTime" id="ActualDateTime" lay-verify="required" class="layui-input pen" />
+                                </div>
+                            </div>
+                            <div class="layui-col-lg4 layui-col-md4 layui-col-xs12 layui-col-sm12">
+                                <label class="layui-form-label">备用1</label>
+                                <div class="layui-input-block">
+                                    <input type="text" name="Field1" class="layui-input" />
+                                </div>
+                            </div>
+                            <div class="layui-col-lg4 layui-col-md4 layui-col-xs12 layui-col-sm12">
+                                <label class="layui-form-label">备用2</label>
+                                <div class="layui-input-block">
+                                    <input type="text" name="Field2" class="layui-input" />
+                                </div>
+                            </div>
+
+
+                        </div>
+                        <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                            <div class="layui-col-lg9 layui-col-md9 layui-col-xs12 layui-col-sm12">
+                                <label class="layui-form-label">附件</label>
+                                <div class="layui-input-inline" style="width:68%;">
+                                    <input type="text" name="FileName"  class="layui-input" />
+                                    <input type="hidden" name="FolderName" />
+                                    <input type="hidden" name="GuidFileName" />
+                                     <input type="hidden" name="Name" />
+                                  
+                                </div>
+                                <div class="layui-form-mid layui-word-aux" style="margin-top:-9px;">
+                                    <button class="layui-btn layui-btn layui-btn-sm nf-btn-customer" id="jiaofu-attUpload" style="height:38px;line-height:38px;">浏览</button>
+                                </div>
+                            </div>
+                            
+
+
+                        </div>
+                        @*<div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                            <div class="layui-col-lg12 layui-col-md12 layui-col-xs12 layui-col-sm12">
+                                <label class="layui-form-label">备注</label>
+                                <div class="layui-input-block">
+                                    <textarea name="Remark" class="layui-textarea"></textarea>
+                                </div>
+                            </div>
+                        </div>*@
+                        <div class="layui-form-item layui-layout-admin layui-hide">
+                            <div class="layui-input-block">
+                                <div class="layui-footer" style="left: 0;">
+                                    <button class="layui-btn" id="NF-JiaoFu-FormSubmit" lay-submit lay-filter="NF-JiaoFu-FormSubmit">保存</button>
+                                    <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+
+                        </div>
+                    </div>
+                    </div>
+                </div>
+        </div>
+
+    </div>
+</div>
+@{
+    Html.RenderPartial("_LayuiScriptsPartial");
+}
+<script>
+            layui.config({
+                base: '/lib/layuiadmin/'
+            }).extend({
+                index: 'lib/index', //主入口模块
+                jiaoFu: 'subjectmatter-nf/jiaofu'
+                , commonnf: 'common-nf/commonnf'
+                ,tableSelect: 'layui-nf-plugs/tableSelect'
+                , selectnfitem: 'common-nf/selectnfitem'
+            }).use(['index', 'jiaoFu'], function () {
+
+
+            });
+</script>
+

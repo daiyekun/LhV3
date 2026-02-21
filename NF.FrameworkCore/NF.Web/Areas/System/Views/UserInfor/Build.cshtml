@@ -1,0 +1,290 @@
+﻿
+@{
+    ViewData["Title"] = "新建用户";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/lib/layuiadmin/style/selectTree.css" rel="stylesheet" />
+<div class="layui-fluid">
+    <!--用户基本信息begin-->
+    <div class="layui-form" lay-filter="Nf-SystemAdmin-UserForm">
+        <input type="hidden" id="Id" name="Id" />
+        <input type="hidden" id="Userid" name="Userid" value="@(ViewData["UserE"])" />
+        <input type="hidden" id="Yhid" name="Yhid" value="@(ViewData["ids"])" />
+        <div class="layui-card ">
+            <div class="layui-card-header">用户基本信息</div>
+            <div class="layui-card-body" style="padding: 15px;">
+                <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">用户名</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="Name" lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input pen" />
+                        </div>
+                    </div>
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">显示名称</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="DisplyName" lay-verify="required" autocomplete="off" class="layui-input pen" placeholder="请输入" />
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">密码</label>
+                        <div class="layui-input-block">
+                            <input type="password" name="Pwd" lay-verify="required" autocomplete="off" class="layui-input pen" placeholder="请输入" />
+                        </div>
+                    </div>
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">确认密码</label>
+                        <div class="layui-input-block">
+                            <input type="password" name="Repass" lay-verify="required" autocomplete="off" class="layui-input pen" placeholder="请输入" />
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">姓</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="FirstName" class="layui-input" />
+                        </div>
+                    </div>
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">名</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="LastName" class="layui-input" />
+                        </div>
+                    </div>
+
+                </div>
+                <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">所属机构</label>
+                        <div class="layui-input-block">
+                            <input type="text" id="NF-PDept" lay-filter="NF-PDept" name="DepartmentId" lay-verify="required" placeholder="请选择" class="layui-input" />
+                        </div>
+                    </div>
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">性别</label>
+                        <div class="layui-input-block">
+                            <select name="Sex" id="Sex" lay-verify="required" lay-search="">
+                                <option value="0">女</option>
+                                <option value="1">男</option>
+
+                            </select>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">年龄</label>
+                        <div class="layui-input-block">
+                            <input type="number" name="Age" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">身份证号码</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="IdNo" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">办公电话</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="Tel" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">移动电话</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="Mobile" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+
+                </div>
+                <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">入职时间</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="EntryDatetime" id="EntryDatetime" placeholder="yyyy-MM-dd" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">E-Mail</label>
+                        <div class="layui-input-block">
+                            <input type="email" name="Email" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+
+                </div>
+                <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">住址</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="Address" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12 UserE layui-hide">
+
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">电子签章</label>
+                        <div class="layui-input-block">
+                            <input id="imgs" type="image" src="~/Uploads/UserEs/@(ViewData["ids"]).png" />
+                        </div>
+                    </div>
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">签章状态</label>
+                        <div class="layui-input-block">
+                            <select name="UserEsTy" id="UserEsTy">
+                                <option value=""></option>
+                                <option value="0">禁用</option>
+                                <option value="1">启用</option>
+
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">微信账号</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="WxCode" class="layui-input">
+                        </div>
+                    </div>
+
+                </div>
+                <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+
+                    <div class="layui-col-lg12 layui-col-md12 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">备注</label>
+                        <div class="layui-input-block">
+                            <textarea name="Remark" class="layui-textarea"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!--需要在最后加这个或者没有也加一个 <div class="layui-form-item">，这样不会导致隐藏菜单是显示问题-->
+                <div class="layui-form-item">
+
+                </div>
+
+            </div>
+        </div>
+
+
+        <!--按钮begin-->
+        <div class="layui-form-item layui-layout-admin layui-hide">
+            <div class="layui-input-block">
+                <div class="layui-footer" style="left: 0;">
+                    <button class="layui-btn" id="Nf-SystemAdmin-UserFormSubmit" lay-submit lay-filter="Nf-SystemAdmin-UserFormSubmit">保存</button>
+                    <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                </div>
+            </div>
+        </div>
+        <!--按钮begin-->
+    </div>
+    <!--用户基本信息end-->
+
+</div>
+
+@{
+    Html.RenderPartial("_LayuiScriptsPartial");
+}
+<script>
+    layui.config({
+        base: '/lib/layuiadmin/'
+    }).extend({
+        index: 'lib/index' //主入口模块
+        , treeSelect: 'layui-nf-plugs/treeselect'
+    }).use(['index', 'form', 'laydate', 'treeSelect'], function () {
+        var $ = layui.$
+            , admin = layui.admin
+            , element = layui.element
+            , layer = layui.layer
+            , laydate = layui.laydate
+            , treeSelect = layui.treeSelect
+            , table = layui.table
+            , form = layui.form;
+        var byId = wooutil.getUrlVar('Id');
+
+        //入职时间
+        laydate.render({
+            elem: '#EntryDatetime',
+            trigger: 'click'
+
+        });
+        /***
+        *初始化组织机构树
+        ***/
+        function InitDetpTree(tvl) {
+            treeSelect.render(
+                {
+                    elem: "#NF-PDept",
+                    data: '/System/Department/GetTreeSelectDept',
+                    method: "GET",
+                    verify: true,
+                    click: function (d) {
+                        $("input[name=DepartmentId]").val(d.current.id);
+                    },
+                    success: function (d) {
+                        if (tvl != null) {
+                            treeSelect.checkNode("NF-PDept", tvl);
+                        }
+
+
+                    }
+
+                })
+        }
+
+
+        //--------------------------修改的时候赋值----------------------------------
+
+        if (byId !== "" && byId !== undefined) {
+            admin.req({
+                url: '/System/UserInfor/ShowView',
+                data: { Id: byId, rand: wooutil.getRandom() },
+                done: function (res) {
+                    //layer.alert(JSON.stringify(res.Data));
+                    form.val("Nf-SystemAdmin-UserForm", res.Data);
+
+                    //下拉树（所属机构）,必须放到设置值以后，不然修改时设置不稳定
+                    InitDetpTree(res.Data.DepartmentId);
+
+                }
+            });
+
+        } else {
+            InitDetpTree(null);
+        }
+        //-------------------------------------修改赋值end--------------------------------------------
+        setTimeout(function () {
+      var st = $('#Userid').val();
+        var yh = $('#Id').val();
+        //alert(st + "+" + yh + "+"@(ViewData["ids"]));
+       
+        if (st == 1 ) {
+            $(".UserE").removeClass("layui-hide");
+        }
+        }, 2 * 1000);//延迟5000毫米
+
+
+
+
+        form.render(null, 'Nf-SystemAdmin-UserForm');
+
+    });
+</script>
+
+
+

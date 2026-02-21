@@ -1,0 +1,112 @@
+﻿
+@{
+    ViewData["Title"] = "初始化数据";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="layui-fluid">
+    <div class="layui-card">
+        <div class="layui-form layui-card-header layuiadmin-card-header-auto">
+            <blockquote class="layui-elem-quote">系统初始化基础数据>数据库及分布式缓存</blockquote>
+        </div>
+        <div class="layui-card-body">
+            <fieldset class="layui-elem-field layui-field-title">
+                <legend style="color:#FF5722">分布式缓存Redis初始化</legend>
+                <div class="layui-field-box">
+                    <div class="layui-form-item">
+                        <div class="layui-inline">
+                            <button class="layui-btn layuiadmin-btn-inidata" data-type="setdata">数据字典</button>
+                            <button class="layui-btn layuiadmin-btn-inidata" data-type="setdept">机构信息</button>
+                            <button class="layui-btn layuiadmin-btn-inidata" data-type="setuser">用户信息</button>
+                            <button class="layui-btn layuiadmin-btn-inidata" data-type="setcurrency">币种信息</button>
+                            <button class="layui-btn layuiadmin-btn-inidata" data-type="setaddress">省/市/区</button>
+                            <button class="layui-btn layuiadmin-btn-inidata" data-type="setsystree">菜单信息</button>
+                            <button class="layui-btn  layui-btn-normal layuiadmin-btn-inidata" data-type="setcacheall">一键初始化</button>
+
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset class="layui-elem-field layui-field-title">
+                <legend style="color:#FF5722">统计初始化</legend>
+                <div class="layui-field-box">
+                    <div class="layui-inline">
+                        <input type="text" name="No" id="No" style="width:200px;" placeholder="校验单个合同请输入合同编号" class="layui-input" />
+                       
+                    </div>
+                    <div class="layui-inline">
+                        <button class="layui-btn layuiadmin-btn-inidata" data-type="stataicdata">导入数据统计初始化</button>
+                    </div>
+                    </div>
+               </fieldset>
+            <fieldset class="layui-elem-field layui-field-title">
+                <legend style="color:#FF5722">数据库基础数据初始化</legend>
+                <div class="layui-field-box">
+
+                </div>
+            </fieldset>
+        </div>
+    </div>
+</div>
+@{
+    Html.RenderPartial("_LayuiScriptsPartial");
+}
+<script>
+    layui.config({
+        base: '/lib/layuiadmin/'
+    }).extend({
+        index: 'lib/index', //主入口模块
+        }).use(['index',], function () {
+               var $ = layui.$
+                , form = layui.form
+                , admin = layui.admin;
+               //请求
+               var UrlRequst = function (_url,_msg) {
+                   admin.req({
+                       url: _url,
+                       done: function (res) {
+
+                           layer.alert(_msg);
+
+                       }
+                   });
+               }
+            //事件
+            var active = {
+                setdata:function(){
+                    UrlRequst("/System/InitData/SetCacheDataDic", "初始化数据字典成功");
+                },
+                setuser: function () {
+                    UrlRequst("/System/InitData/SetCacheUserData", "初始化用户成功");
+                },
+                setcacheall: function () {
+                    UrlRequst("/System/InitData/SetCacheAll", "初始化完毕");
+                }, setdept: function () {
+                    UrlRequst("/System/InitData/SetCacheDept", "初始化机构信息完毕");
+                },
+                setcurrency: function () {
+                    UrlRequst("/System/InitData/SetCurrency", "初始化币种完毕");
+                },
+                setaddress: function () {
+                    UrlRequst("/System/InitData/SetAddress", "地址信息初始化完毕")
+                },
+                setsystree: function () {
+                    UrlRequst("/System/InitData/SetSystreeReids", "菜单初始化完毕")
+                }, stataicdata: function () {
+                    var htno = $("#No").val();
+                    UrlRequst("/System/InitData/SetStataicdata?No=" + htno, "统计表初始化完毕")
+                }
+
+            };
+
+            $('.layui-btn.layuiadmin-btn-inidata').on('click', function () {
+            var type = $(this).data('type');
+            active[type] ? active[type].call(this) : '';
+            });
+
+    });
+</script>
+
+

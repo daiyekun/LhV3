@@ -1,0 +1,128 @@
+﻿
+@{
+    ViewData["Title"] = "Test";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="layui-form" lay-filter="Nf-SystemAdmin-RoleForm">
+    <div class="layui-card ">
+        <div class="layui-card-header">测试查看页面编辑</div>
+        <div class="layui-card-body" style="padding: 15px;">
+            <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                <div class="layui-col-lg4 layui-col-md4 layui-col-xs12 layui-col-sm12">
+                    <label class="layui-form-label">文本框</label>
+                    <div class="layui-input-inline" style="width:66%;">
+                        <input type="text" name="Name" id="detail_Name" class="layui-input detail" />
+                    </div>
+                </div>
+                <div class="layui-col-lg4 layui-col-md4 layui-col-xs12 layui-col-sm12">
+                    <label class="layui-form-label">下拉框</label>
+                    <div class="layui-input-inline" style="width:66%;">
+                        <input type="text" name="No" id="detail_No" class="layui-input detail" />
+                    </div>
+                </div>
+                <div class="layui-col-lg4 layui-col-md4 layui-col-xs12 layui-col-sm12">
+                    <label class="layui-form-label">时间字段</label>
+                    <div class="layui-input-inline" style="width:66%;">
+                        <input type="text" name="roledate" id="detail_roledate" placeholder="yyyy-MM-dd" class="layui-input detail" />
+                    </div>
+                </div>
+            </div>
+           <input type="hidden" value="" name="" />
+            <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+
+                <div class="layui-col-lg12 layui-col-md12 layui-col-xs12 layui-col-sm12">
+                    <label class="layui-form-label">多行文本框</label>
+                    <div class="layui-input-inline" style="width:88%;">
+                        <textarea name="Remark" class="layui-textarea detail" id="detail_Remark"></textarea>
+                    </div>
+                    @*<span class="layui-input-inline  layui-input-company" style="float:left;margin-left:-50px;"><a href="#" style="color:blue;">编辑</a></span>*@
+                </div>
+            </div>
+
+            <!--需要在最后加这个或者没有也加一个 <div class="layui-form-item">，这样不会导致隐藏菜单是显示问题-->
+            <div class="layui-form-item">
+
+            </div>
+
+        </div>
+    </div>
+</div>
+@{
+    Html.RenderPartial("_LayuiScriptsPartial");
+}
+<script>
+    layui.config({
+        base: '/lib/layuiadmin/'
+    }).extend({
+        index: 'lib/index',
+        viewPageEdit: 'viewpage-edit/viewPageEdit'
+        }).use(['index', 'form', 'nf-system-roles','viewPageEdit'], function () {
+        var $ = layui.$
+            , admin = layui.admin
+            , element = layui.element
+            , layer = layui.layer
+            , setter = layui.setter
+            , form = layui.form
+            , viewPageEdit = layui.viewPageEdit;
+        var byId = wooutil.getUrlVar('Id');
+            //单行
+            viewPageEdit.render({
+                elem: '#detail_Name',
+                edittype: 'text',
+                objid: byId,
+                fieldname: "Name",
+                verify:'required',
+                url:'/System/Role/UpdateField'
+
+            });
+            //多行
+            viewPageEdit.render({
+                elem: '#detail_Remark',
+                edittype: 'textarea',
+                objid: byId,
+                fieldname: "Remark",
+                url: '/System/Role/UpdateField'
+               
+            });
+            //下拉
+            var objdata = {};
+            objdata.data = [{ 'Id': 1, 'Name': '选择1' }, { 'Id': 2, 'Name': '选择123' }];
+            objdata.empty = true;
+            objdata.emptyText = "请选择";
+            viewPageEdit.render({
+                elem: '#detail_No',
+                edittype: 'select',
+                objid: byId,
+                fieldname: "No",
+                url: '/System/Role/UpdateField',
+                editobj: objdata
+            });
+            //时间字段
+            viewPageEdit.render({
+                elem: '#detail_roledate',
+                edittype: 'date',
+                objid: byId,
+                fieldname: "detail_roledate",
+                url: '/System/Role/UpdateField'
+
+            });
+
+
+          
+        //--------------------------修改的时候赋值----------------------------------
+        if (byId != "" && byId != undefined) {
+            admin.req({
+                url: '/System/Role/ShowView',
+                data: { Id: byId, rand: wooutil.getRandom() },
+                done: function (res) {
+                    //layer.alert(JSON.stringify(res.Data));
+                    form.val("Nf-SystemAdmin-RoleForm", res.Data);
+
+                }
+            });
+            
+
+        }
+        });
+</script>
+

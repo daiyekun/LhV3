@@ -1,0 +1,387 @@
+﻿@{
+    ViewData["Title"] = "合同基本信息";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    textarea::-webkit-input-placeholder {
+        /* WebKit browsers */
+        /* placeholder颜色  */
+        color: #ff0000;
+        /* placeholder字号  */
+        font-size: 26px;
+        font-weight: bold;
+    }
+
+    textarea:-moz-placeholder {
+        /* Mozilla Firefox 4 to 18 */
+        color: #ff0000;
+        font-size: 26px;
+        font-weight: bold;
+    }
+
+    textarea::-moz-placeholder {
+        /* Mozilla Firefox 19+ */
+        color: #ff0000;
+        font-size: 26px;
+        font-weight: bold;
+    }
+
+    textarea::-ms-input-placeholder {
+        /* Internet Explorer 10+ */
+        color: #ff0000;
+        font-size: 26px;
+        font-weight: bold;
+    }
+    /****审批中*/
+    .timeline .zpzcent {
+        color: #0026ff;
+    }
+
+    .timeline .bdhcent {
+        color: #ff0000;
+    }
+    /****图标背景*/
+    .timeline-item-bluecolor {
+        background-color: blue;
+    }
+
+    .timeline-item-dhcolor {
+        background-color: red;
+    }
+
+    .content-wg {
+        border: 1px solid #ffffff;
+        border-radius: 5px 5px 5px 5px;
+        background-color: #fbfafa;
+        margin-top: 5px;
+        margin-left: 20px;
+        padding: 0px;
+    }
+
+    .appuser {
+        text-align: right;
+        padding: 0 15px 0 0;
+        color: #000000;
+        font-size: 14px;
+    }
+
+    .appusername {
+        color: #000000;
+        padding: 5px 0px 10px 0px;
+    }
+
+    .flownode {
+        border-bottom: solid 1px #e6e0e0;
+        padding: 6px 0px 6px 5px;
+        border-radius: 5px 5px 0 0;
+        font-size: 16px;
+    }
+
+    .appyijian {
+        padding: 5px 8px 8px 8px;
+        font-size: 14px;
+    }
+
+    .msgcontent {
+        width: 100%;
+        padding: 0px 5px 0px 0px;
+        text-align: center;
+        margin: 10px 10px 8px 5px;
+    }
+
+    .sucmsgdiv {
+        width: 98%;
+        height: 75px;
+        background-color: #07C160;
+        border-radius: 8px;
+        font-size: 14px;
+        color: #fff;
+        border: 3px solid #FFF;
+    }
+
+    .sucmsgdiv-left {
+        width: 48%;
+        float: left;
+        text-align: left;
+        padding: 8px 0 8px 10px;
+        /* border:1px solid #FFF;*/
+    }
+
+    .sucmsgdiv-left-next {
+        margin-top: 5px;
+    }
+
+    .sucmsgdiv-right {
+        width: 42%;
+        float: left;
+        text-align: right;
+        padding: 8px 10px 8px 0px;
+        /* border:1px solid #FFF;*/
+    }
+
+    .sucmsgdiv-right-next {
+        border: 1px solid #FFF;
+        border-radius: 10px;
+        width: 75px;
+        float: right;
+        text-align: center;
+        margin-top: 5px;
+        cursor: default;
+    }
+
+    .msgcolse {
+        cursor: default;
+    }
+
+    .textpaen-body {
+        padding: 15px 5px 0px 5px;
+    }
+
+    .textload {
+        margin-top: 2px;
+        border-radius: 5px 5px 5px 5px;
+        height: 50px;
+        border: solid 1px #CCC;
+        font-size: 18px;
+        text-align: left;
+        vertical-align: middle;
+        padding: 0px;
+        display: flex;
+        /*实现垂直居中*/
+        align-items: center;
+        text-align: justify;
+    }
+
+    .textbtn {
+        padding: 0px;
+        /* text-align:left;
+                padding:10px 5px 10px 8px;
+                height:50px;
+                font-size:18px;
+                margin-top:15px;
+                border-radius: 5px 5px 5px 5px;*/
+    }
+    .texaea{
+        border:0px;
+    }
+
+</style>
+
+<a href="/Home/Eees" type="hidden" id="wxnamenull"></a>
+
+<div class="page page-back">
+    @*<div class="page__hd">
+        <div class="weui-btn_primary weui-header hide" id="shenpi">
+        <div class="weui-header-left"> <a class="icon icon-109 f-white"></a>  </div>
+        <h1 class="weui-header-title">审批</h1>
+        <div class="weui-header-right"><a class="icon icon-115 f-white"></a></div>
+        </div>
+        </div>*@
+    <div class="page__bd">
+        @*审批事项用于判断是否有审批按钮*@
+        <input type="hidden" id="WfItem" name="WfItem" />
+        @*类别ID*@
+        <input type="hidden" id="HtLbId" name="HtLbId" />
+        @*审批实例ID*@
+        <input type="hidden" id="InstId" name="InstId" />
+        <input type="hidden" id="NodeId" name="NodeId" />
+        @*节点*@
+        <input type="hidden" id="NodeStrId" name="NodeStrId" />
+        @*合同金额*@
+        <input type="hidden" id="HtJeD" name="HtJeD" />
+        @*合同ID*@
+        <input type="hidden" id="contId" name="contId" value="@ViewData["contId"]" />
+        @* 下一条审批合同ID*@
+        <input type="hidden" id="nextcontId" name="nextcontId" />
+        <input type="hidden" id="WxCurrUserId" name="WxCurrUserId" value="@ViewData["WxCurrUserId"]" />
+        <div class="msgcontent hide" id="msgcontent">
+            <div id="spsucmsg" class="sucmsgdiv">
+
+                <div class="sucmsgdiv-left">
+                    <div><i class="icon icon-71"></i><span style="margin-left:5px;">处理成功</span></div>
+                    <div>您还有<span id="approwcount">0</span>条待处理审批</div>
+                </div>
+                <div class="sucmsgdiv-right">
+                    <div id="msgcolse" class="msgcolse">X</div>
+                    <div class="sucmsgdiv-right-next" id="nextrow">处理下一条</div>
+                </div>
+            </div>
+
+        </div>
+
+        @*签约信息----begin*@
+        <div class="weui-panel weui-panel_access weui-cells">
+            <div class="weui-panel__hd">
+                <span class="weui-header-left">签约信息</span>
+                @*<span class="right f-orange"><a class="open-popup" href="javascript:;" data-target="#full">审批详情</a></span>*@
+            </div>
+            <div class="weui-panel__bd">
+                <div class="weui-cell weui-cell_active weui-cell_readonly">
+                    <div class="weui-cell__hd"><label class="weui-label">名称</label></div>
+                    <div class="weui-cell__bd">
+                        <input class="weui-input" name="Name" id="Name" readonly />
+                    </div>
+                </div>
+                <div class="weui-cell weui-cell_active weui-cell_disabled">
+                    <div class="weui-cell__hd"><label class="weui-label">编号</label></div>
+                    <div class="weui-cell__bd">
+                        <input class="weui-input" name="Code" id="Code" disabled />
+                    </div>
+                </div>
+                <div class="weui-cell weui-cell_active weui-cell_disabled">
+                    <div class="weui-cell__hd"><label class="weui-label">类别</label></div>
+                    <div class="weui-cell__bd">
+                        <input class="weui-input" name="ContClssName" id="ContClssName" disabled />
+                    </div>
+                </div>
+                <div class="weui-cell weui-cell_active weui-cell_disabled">
+                    <div class="weui-cell__hd"><label class="weui-label">合同对方</label></div>
+                    <div class="weui-cell__bd">
+                        <input class="weui-input" name="ComName" id="ComName" disabled />
+                    </div>
+                </div>
+                <div class="weui-cell weui-cell_active weui-cell_disabled">
+                    <div class="weui-cell__hd"><label class="weui-label">签约主体</label></div>
+                    <div class="weui-cell__bd">
+                        <input class="weui-input" name="MdeptName" id="MdeptName" disabled />
+                    </div>
+                </div>
+                <div class="weui-cell weui-cell_active weui-cell_disabled">
+                    <div class="weui-cell__hd"><label class="weui-label">合同金额</label></div>
+                    <div class="weui-cell__bd">
+                        <input class="weui-input" name="HtJe" id="HtJe" disabled />
+                    </div>
+                </div>
+                 <div class="weui-cell weui-cell_active weui-cell_disabled">
+                    <div class="weui-cell__hd"><label class="weui-label">合同项目内容</label></div>
+                    <div class="weui-cell__bd">
+                         <textarea class="weui-form-area texaea" name="HtXmnr" id="HtXmnr" readonly="readonly" rows="3" cols="60"></textarea>
+                    </div>
+                  </div>
+            </div>
+        </div>
+
+        @*签约方信息-----end*@
+
+        @*基本信息----begin*@
+        <div class="weui-panel weui-panel_access weui-cells">
+
+            <div class="weui-panel__hd">合同基本信息</div>
+            <div class="weui-panel__bd">
+                @*<div class="weui-cell weui-cell_active weui-cell_disabled">
+                    <div class="weui-cell__hd"><label class="weui-label">所属项目</label></div>
+                    <div class="weui-cell__bd">
+                    <input class="weui-input" name="ProjName" id="ProjName" disabled />
+                    </div>
+                    </div>*@
+                @*<div class="weui-cell weui-cell_active weui-cell_disabled">
+                    <div class="weui-cell__hd"><label class="weui-label">合同对方编号</label></div>
+                    <div class="weui-cell__bd">
+                    <input class="weui-input" name="OtherCode" id="OtherCode" disabled />
+                    </div>
+                    </div>*@
+                <div class="weui-cell weui-cell_active weui-cell_disabled">
+                    <div class="weui-cell__hd"><label class="weui-label">执行部门</label></div>
+                    <div class="weui-cell__bd">
+                        <input class="weui-input" name="Dname" id="Dname" disabled />
+                    </div>
+                </div>
+
+
+                @*<div class="weui-cell weui-cell_active weui-cell_disabled">
+                    <div class="weui-cell__hd"><label class="weui-label">签订日期</label></div>
+                    <div class="weui-cell__bd">
+                    <input class="weui-input" name="Sdate" id="Sdate" disabled />
+                    </div>
+                    </div>
+                    <div class="weui-cell weui-cell_active weui-cell_disabled">
+                    <div class="weui-cell__hd"><label class="weui-label">生效日期</label></div>
+                    <div class="weui-cell__bd">
+                    <input class="weui-input" name="EfDate" id="EfDate" disabled />
+                    </div>
+                    </div>*@
+                @*<div class="weui-cell weui-cell_active weui-cell_disabled">
+                    <div class="weui-cell__hd"><label class="weui-label">计划完成日期</label></div>
+                    <div class="weui-cell__bd">
+                    <input class="weui-input" name="Pdate" id="Pdate" disabled />
+                    </div>
+                    </div>
+                    <div class="weui-cell weui-cell_active weui-cell_disabled">
+                    <div class="weui-cell__hd"><label class="weui-label">负责人</label></div>
+                    <div class="weui-cell__bd">
+                    <input class="weui-input" name="Fzr" id="Fzr" disabled />
+                    </div>
+                    </div>*@
+
+                <div class="weui-cell weui-cell_active weui-cell_disabled">
+                    <div class="weui-cell__hd"><label class="weui-label">合同属性</label></div>
+                    <div class="weui-cell__bd">
+                        <input class="weui-input" name="ContPro" id="ContPro" disabled />
+                    </div>
+                </div>
+                <div class="weui-cell weui-cell_active weui-cell_disabled">
+                    <div class="weui-cell__hd"><label class="weui-label">合同状态</label></div>
+                    <div class="weui-cell__bd">
+                        <input class="weui-input" name="HtZt" id="HtZt" disabled />
+                    </div>
+                </div>
+                <div class="weui-cell weui-cell_active weui-cell_disabled">
+                    <div class="weui-cell__hd"><label class="weui-label">建立人</label></div>
+                    <div class="weui-cell__bd">
+                        <input class="weui-input" name="Cjr" id="Cjr" disabled />
+                    </div>
+                </div>
+                <div class="weui-cell weui-cell_active weui-cell_disabled">
+                    <div class="weui-cell__hd"><label class="weui-label">建立时间</label></div>
+                    <div class="weui-cell__bd">
+                        <input class="weui-input" name="Cjsj" id="Cjsj" disabled />
+                    </div>
+                </div>
+
+                 
+               
+
+            </div>
+
+
+
+        </div>
+        @*基本信息----end*@
+        @*合同文本----begin*@
+        <div class="weui-panel weui-panel_access weui-cells">
+            <div class="weui-panel__hd">合同文本</div>
+            <div class="weui-panel__bd" id="ShowFile" style="margin-bottom:38px;">
+            </div>
+        </div>
+
+        @*合同文本-----end*@
+
+        @*审批节点begin*@
+        <div class="weui-panel weui-panel_access weui-cells">
+            <div class="weui-panel__hd">审批信息</div>
+            <div class="weui-panel__bd" id="wooflowtime" style="margin-bottom:100px;">
+                <div class="timeline" id="timelineui">
+                </div>
+            </div>
+        </div>
+        @*审批节点end*@
+    </div>
+    @*漂浮图片*@
+    <img src="~/lib/weui/images/icon_shenpi.png" class="shenpibtn hide " id="shenpi" />
+</div>
+
+@*<div id="full" class='weui-popup__container'>
+    <div class="weui-popup__overlay"></div>
+    <div class="weui-popup__modal">
+    <a href="javascript:;" class="weui-btn weui-btn_primary close-popup">关闭</a>
+    <div class="timeline">
+    <ul id="timelineui">
+    </ul>
+    </div>
+    </div>
+    </div>*@
+<script type="text/javascript" src="~/lib/modules/contract/contract-detail.js"></script>
+
+
+
+

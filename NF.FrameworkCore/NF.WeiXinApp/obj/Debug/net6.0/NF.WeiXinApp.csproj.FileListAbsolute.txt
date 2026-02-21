@@ -1,0 +1,8 @@
+D:\MyCode\V3.0\NF.FrameworkCore\NF.WeiXinApp\obj\Debug\net6.0\NF.WeiXinApp.csproj.AssemblyReference.cache
+D:\MyCode\V3.0\NF.FrameworkCore\NF.WeiXinApp\obj\Debug\net6.0\NF.WeiXinApp.GeneratedMSBuildEditorConfig.editorconfig
+D:\MyCode\V3.0\NF.FrameworkCore\NF.WeiXinApp\obj\Debug\net6.0\NF.WeiXinApp.AssemblyInfoInputs.cache
+D:\MyCode\V3.0\NF.FrameworkCore\NF.WeiXinApp\obj\Debug\net6.0\NF.WeiXinApp.AssemblyInfo.cs
+D:\MyCode\V3.0\NF.FrameworkCore\NF.WeiXinApp\obj\Debug\net6.0\NF.WeiXinApp.csproj.CoreCompileInputs.cache
+D:\MyCode\V3.0\NF.FrameworkCore\NF.WeiXinApp\obj\Debug\net6.0\NF.WeiXinApp.MvcApplicationPartsAssemblyInfo.cache
+D:\MyCode\V3.0\NF.FrameworkCore\NF.WeiXinApp\obj\Debug\net6.0\NF.WeiXinApp.RazorAssemblyInfo.cache
+D:\MyCode\V3.0\NF.FrameworkCore\NF.WeiXinApp\obj\Debug\net6.0\NF.WeiXinApp.RazorAssemblyInfo.cs

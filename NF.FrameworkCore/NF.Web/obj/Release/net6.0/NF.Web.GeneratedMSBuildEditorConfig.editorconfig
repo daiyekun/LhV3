@@ -1,0 +1,868 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = NF.Web
+build_property.RootNamespace = NF.Web
+build_property.ProjectDir = D:\MyCode\V3.0\NF.FrameworkCore\NF.Web\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = D:\MyCode\V3.0\NF.FrameworkCore\NF.Web
+build_property._RazorSourceGeneratorDebug = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/Business/Views/BcAttachment/Build.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQnVzaW5lc3NcVmlld3NcQmNBdHRhY2htZW50XEJ1aWxkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/Business/Views/BcInstance/Build.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQnVzaW5lc3NcVmlld3NcQmNJbnN0YW5jZVxCdWlsZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/Business/Views/BcInstance/Detail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQnVzaW5lc3NcVmlld3NcQmNJbnN0YW5jZVxEZXRhaWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/Business/Views/BcInstance/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQnVzaW5lc3NcVmlld3NcQmNJbnN0YW5jZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/Business/Views/BusinessCategory/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQnVzaW5lc3NcVmlld3NcQnVzaW5lc3NDYXRlZ29yeVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/CaseManagement/Views/Ajfj/Build.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ2FzZU1hbmFnZW1lbnRcVmlld3NcQWpmalxCdWlsZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/CaseManagement/Views/Ajfj/Builds.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ2FzZU1hbmFnZW1lbnRcVmlld3NcQWpmalxCdWlsZHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/CaseManagement/Views/AjglSpws/Build.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ2FzZU1hbmFnZW1lbnRcVmlld3NcQWpnbFNwd3NcQnVpbGQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/CaseManagement/Views/AjglSsBqFile/Build.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ2FzZU1hbmFnZW1lbnRcVmlld3NcQWpnbFNzQnFGaWxlXEJ1aWxkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/CaseManagement/Views/Ajgl/Build.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ2FzZU1hbmFnZW1lbnRcVmlld3NcQWpnbFxCdWlsZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/CaseManagement/Views/Ajgl/Detail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ2FzZU1hbmFnZW1lbnRcVmlld3NcQWpnbFxEZXRhaWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/CaseManagement/Views/Ajgl/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ2FzZU1hbmFnZW1lbnRcVmlld3NcQWpnbFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/CaseManagement/Views/Jfsb/Build.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ2FzZU1hbmFnZW1lbnRcVmlld3NcSmZzYlxCdWlsZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/CaseManagement/Views/Jfsb/Detail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ2FzZU1hbmFnZW1lbnRcVmlld3NcSmZzYlxEZXRhaWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/CaseManagement/Views/Jfsb/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ2FzZU1hbmFnZW1lbnRcVmlld3NcSmZzYlxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/Common/Views/InportData/Inport.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ29tbW9uXFZpZXdzXElucG9ydERhdGFcSW5wb3J0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/Company/Views/CompAttachment/Build.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ29tcGFueVxWaWV3c1xDb21wQXR0YWNobWVudFxCdWlsZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/Company/Views/CompContact/Build.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ29tcGFueVxWaWV3c1xDb21wQ29udGFjdFxCdWlsZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/Company/Views/CompDescription/Build.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ29tcGFueVxWaWV3c1xDb21wRGVzY3JpcHRpb25cQnVpbGQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/Company/Views/Customer/Build.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ29tcGFueVxWaWV3c1xDdXN0b21lclxCdWlsZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/Company/Views/Customer/Detail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ29tcGFueVxWaWV3c1xDdXN0b21lclxEZXRhaWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/Company/Views/Customer/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ29tcGFueVxWaWV3c1xDdXN0b21lclxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/Company/Views/Other/Build.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ29tcGFueVxWaWV3c1xPdGhlclxCdWlsZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/Company/Views/Other/Detail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ29tcGFueVxWaWV3c1xPdGhlclxEZXRhaWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/Company/Views/Other/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ29tcGFueVxWaWV3c1xPdGhlclxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/Company/Views/Supplier/Build.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ29tcGFueVxWaWV3c1xTdXBwbGllclxCdWlsZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/Company/Views/Supplier/Detail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ29tcGFueVxWaWV3c1xTdXBwbGllclxEZXRhaWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/Company/Views/Supplier/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ29tcGFueVxWaWV3c1xTdXBwbGllclxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/ContractDraft/Views/ContText/Build.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ29udHJhY3REcmFmdFxWaWV3c1xDb250VGV4dFxCdWlsZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/ContractDraft/Views/ContText/ContTextArchive.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ29udHJhY3REcmFmdFxWaWV3c1xDb250VGV4dFxDb250VGV4dEFyY2hpdmUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/ContractDraft/Views/ContText/ContTextBorrow.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ29udHJhY3REcmFmdFxWaWV3c1xDb250VGV4dFxDb250VGV4dEJvcnJvdy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/ContractDraft/Views/ContText/ContTextCollIndex.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ29udHJhY3REcmFmdFxWaWV3c1xDb250VGV4dFxDb250VGV4dENvbGxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/ContractDraft/Views/ContText/ContTextPayIndex.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ29udHJhY3REcmFmdFxWaWV3c1xDb250VGV4dFxDb250VGV4dFBheUluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/ContractDraft/Views/ContText/ContTextSeal.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ29udHJhY3REcmFmdFxWaWV3c1xDb250VGV4dFxDb250VGV4dFNlYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/ContractDraft/Views/ContText/ContTextViewSeal.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ29udHJhY3REcmFmdFxWaWV3c1xDb250VGV4dFxDb250VGV4dFZpZXdTZWFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/ContractDraft/Views/ContText/DraftTxtInfo.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ29udHJhY3REcmFmdFxWaWV3c1xDb250VGV4dFxEcmFmdFR4dEluZm8uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/ContractDraft/Views/ContText/PictureView.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ29udHJhY3REcmFmdFxWaWV3c1xDb250VGV4dFxQaWN0dXJlVmlldy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/ContractDraft/Views/ContText/PicView.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ29udHJhY3REcmFmdFxWaWV3c1xDb250VGV4dFxQaWNWaWV3LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/ContractDraft/Views/ContText/ShowViewPdf.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ29udHJhY3REcmFmdFxWaWV3c1xDb250VGV4dFxTaG93Vmlld1BkZi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/ContractDraft/Views/ContText/TempPcToPDF.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ29udHJhY3REcmFmdFxWaWV3c1xDb250VGV4dFxUZW1wUGNUb1BERi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/Contract/Views/ContAttachment/Build.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ29udHJhY3RcVmlld3NcQ29udEF0dGFjaG1lbnRcQnVpbGQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/Contract/Views/ContDescription/Build.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ29udHJhY3RcVmlld3NcQ29udERlc2NyaXB0aW9uXEJ1aWxkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/Contract/Views/ContractChange/SelContCompareView.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ29udHJhY3RcVmlld3NcQ29udHJhY3RDaGFuZ2VcU2VsQ29udENvbXBhcmVWaWV3LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/Contract/Views/ContractChange/SelContView.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ29udHJhY3RcVmlld3NcQ29udHJhY3RDaGFuZ2VcU2VsQ29udFZpZXcuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/Contract/Views/ContractCollection/Build.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ29udHJhY3RcVmlld3NcQ29udHJhY3RDb2xsZWN0aW9uXEJ1aWxkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/Contract/Views/ContractCollection/Builds.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ29udHJhY3RcVmlld3NcQ29udHJhY3RDb2xsZWN0aW9uXEJ1aWxkcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/Contract/Views/ContractCollection/Change.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ29udHJhY3RcVmlld3NcQ29udHJhY3RDb2xsZWN0aW9uXENoYW5nZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/Contract/Views/ContractCollection/Detail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ29udHJhY3RcVmlld3NcQ29udHJhY3RDb2xsZWN0aW9uXERldGFpbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/Contract/Views/ContractCollection/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ29udHJhY3RcVmlld3NcQ29udHJhY3RDb2xsZWN0aW9uXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/Contract/Views/ContractPayment/Build.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ29udHJhY3RcVmlld3NcQ29udHJhY3RQYXltZW50XEJ1aWxkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/Contract/Views/ContractPayment/Change.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ29udHJhY3RcVmlld3NcQ29udHJhY3RQYXltZW50XENoYW5nZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/Contract/Views/ContractPayment/Detail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ29udHJhY3RcVmlld3NcQ29udHJhY3RQYXltZW50XERldGFpbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/Contract/Views/ContractPayment/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ29udHJhY3RcVmlld3NcQ29udHJhY3RQYXltZW50XEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/Contract/Views/ContSubDelivery/CollectionIndex.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ29udHJhY3RcVmlld3NcQ29udFN1YkRlbGl2ZXJ5XENvbGxlY3Rpb25JbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/Contract/Views/ContSubDelivery/JiaoFu.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ29udHJhY3RcVmlld3NcQ29udFN1YkRlbGl2ZXJ5XEppYW9GdS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/Contract/Views/ContSubDelivery/PaymentIndex.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ29udHJhY3RcVmlld3NcQ29udFN1YkRlbGl2ZXJ5XFBheW1lbnRJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/Contract/Views/ContSubjectMatter/Build.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ29udHJhY3RcVmlld3NcQ29udFN1YmplY3RNYXR0ZXJcQnVpbGQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/Contract/Views/ContSubjectMatter/CollContSubmetIndex.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ29udHJhY3RcVmlld3NcQ29udFN1YmplY3RNYXR0ZXJcQ29sbENvbnRTdWJtZXRJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/Contract/Views/ContSubjectMatter/PayContSubmetIndex.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ29udHJhY3RcVmlld3NcQ29udFN1YmplY3RNYXR0ZXJcUGF5Q29udFN1Ym1ldEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/Finance/Views/ActFinceFile/Build.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRmluYW5jZVxWaWV3c1xBY3RGaW5jZUZpbGVcQnVpbGQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/Finance/Views/ContActualFinance/ActualFinanceCollBuild.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRmluYW5jZVxWaWV3c1xDb250QWN0dWFsRmluYW5jZVxBY3R1YWxGaW5hbmNlQ29sbEJ1aWxkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/Finance/Views/ContActualFinance/ActualFinanceCollDetail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRmluYW5jZVxWaWV3c1xDb250QWN0dWFsRmluYW5jZVxBY3R1YWxGaW5hbmNlQ29sbERldGFpbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/Finance/Views/ContActualFinance/ActualFinanceCollIndex.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRmluYW5jZVxWaWV3c1xDb250QWN0dWFsRmluYW5jZVxBY3R1YWxGaW5hbmNlQ29sbEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/Finance/Views/ContActualFinance/ActualFinancePayBuild.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRmluYW5jZVxWaWV3c1xDb250QWN0dWFsRmluYW5jZVxBY3R1YWxGaW5hbmNlUGF5QnVpbGQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/Finance/Views/ContActualFinance/ActualFinancePayDetail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRmluYW5jZVxWaWV3c1xDb250QWN0dWFsRmluYW5jZVxBY3R1YWxGaW5hbmNlUGF5RGV0YWlsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/Finance/Views/ContActualFinance/ActualFinancePayIndex.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRmluYW5jZVxWaWV3c1xDb250QWN0dWFsRmluYW5jZVxBY3R1YWxGaW5hbmNlUGF5SW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/Finance/Views/ContInvoice/BuildInvoice.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRmluYW5jZVxWaWV3c1xDb250SW52b2ljZVxCdWlsZEludm9pY2UuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/Finance/Views/ContInvoice/BuildInvoiceOut.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRmluYW5jZVxWaWV3c1xDb250SW52b2ljZVxCdWlsZEludm9pY2VPdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/Finance/Views/ContInvoice/DetailInvoice.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRmluYW5jZVxWaWV3c1xDb250SW52b2ljZVxEZXRhaWxJbnZvaWNlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/Finance/Views/ContInvoice/DetailInvoiceOut.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRmluYW5jZVxWaWV3c1xDb250SW52b2ljZVxEZXRhaWxJbnZvaWNlT3V0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/Finance/Views/ContInvoice/InvoiceIndex.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRmluYW5jZVxWaWV3c1xDb250SW52b2ljZVxJbnZvaWNlSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/Finance/Views/ContInvoice/InvoiceOutIndex.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRmluYW5jZVxWaWV3c1xDb250SW52b2ljZVxJbnZvaWNlT3V0SW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/Finance/Views/ContPlanFinance/Build.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRmluYW5jZVxWaWV3c1xDb250UGxhbkZpbmFuY2VcQnVpbGQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/Finance/Views/ContPlanFinance/PlanFinanceCollIndex.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRmluYW5jZVxWaWV3c1xDb250UGxhbkZpbmFuY2VcUGxhbkZpbmFuY2VDb2xsSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/Finance/Views/ContPlanFinance/PlanFinancePayIndex.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRmluYW5jZVxWaWV3c1xDb250UGxhbkZpbmFuY2VcUGxhbkZpbmFuY2VQYXlJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/Finance/Views/InvoFile/Build.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcRmluYW5jZVxWaWV3c1xJbnZvRmlsZVxCdWlsZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/Inquiry/Views/IabelPage/TheWinningUnitBuild.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSW5xdWlyeVxWaWV3c1xJYWJlbFBhZ2VcVGhlV2lubmluZ1VuaXRCdWlsZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/Inquiry/Views/InqAttachment/Build.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSW5xdWlyeVxWaWV3c1xJbnFBdHRhY2htZW50XEJ1aWxkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/Inquiry/Views/InquiryAttachment/Build.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSW5xdWlyeVxWaWV3c1xJbnF1aXJ5QXR0YWNobWVudFxCdWlsZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/Inquiry/Views/Inquiry/Build.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSW5xdWlyeVxWaWV3c1xJbnF1aXJ5XEJ1aWxkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/Inquiry/Views/Inquiry/Detail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSW5xdWlyeVxWaWV3c1xJbnF1aXJ5XERldGFpbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/Inquiry/Views/Inquiry/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSW5xdWlyeVxWaWV3c1xJbnF1aXJ5XEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/MobileApp/Views/WorkInfo/CompanyDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTW9iaWxlQXBwXFZpZXdzXFdvcmtJbmZvXENvbXBhbnlEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/MobileApp/Views/WorkInfo/ComQitaDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTW9iaWxlQXBwXFZpZXdzXFdvcmtJbmZvXENvbVFpdGFEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/MobileApp/Views/WorkInfo/CustomerDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTW9iaWxlQXBwXFZpZXdzXFdvcmtJbmZvXEN1c3RvbWVyRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/MobileApp/Views/WorkInfo/FukuanDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTW9iaWxlQXBwXFZpZXdzXFdvcmtJbmZvXEZ1a3VhbkRldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/MobileApp/Views/WorkInfo/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTW9iaWxlQXBwXFZpZXdzXFdvcmtJbmZvXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/MobileApp/Views/WorkInfo/KaipiaoDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTW9iaWxlQXBwXFZpZXdzXFdvcmtJbmZvXEthaXBpYW9EZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/MobileApp/Views/WorkInfo/PRROJDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTW9iaWxlQXBwXFZpZXdzXFdvcmtJbmZvXFBSUk9KRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/MobileApp/Views/WorkInfo/ShoupiaoDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTW9iaWxlQXBwXFZpZXdzXFdvcmtJbmZvXFNob3VwaWFvRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/MobileApp/Views/WorkInfo/_ShenpiDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTW9iaWxlQXBwXFZpZXdzXFdvcmtJbmZvXF9TaGVucGlEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/NfCommon/Views/NfAttachment/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTmZDb21tb25cVmlld3NcTmZBdHRhY2htZW50XEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/NfCommon/Views/SelectItem/SelectBcInstance.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTmZDb21tb25cVmlld3NcU2VsZWN0SXRlbVxTZWxlY3RCY0luc3RhbmNlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/NfCommon/Views/SelectItem/SelectContract.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTmZDb21tb25cVmlld3NcU2VsZWN0SXRlbVxTZWxlY3RDb250cmFjdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/NfCommon/Views/SelectItem/SelectTxtTemp.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcTmZDb21tb25cVmlld3NcU2VsZWN0SXRlbVxTZWxlY3RUeHRUZW1wLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/Project/Views/ProjAttachment/Build.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUHJvamVjdFxWaWV3c1xQcm9qQXR0YWNobWVudFxCdWlsZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/Project/Views/ProjDescription/Build.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUHJvamVjdFxWaWV3c1xQcm9qRGVzY3JpcHRpb25cQnVpbGQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/Project/Views/ProjectManager/Build.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUHJvamVjdFxWaWV3c1xQcm9qZWN0TWFuYWdlclxCdWlsZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/Project/Views/ProjectManager/Detail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUHJvamVjdFxWaWV3c1xQcm9qZWN0TWFuYWdlclxEZXRhaWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/Project/Views/ProjectManager/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUHJvamVjdFxWaWV3c1xQcm9qZWN0TWFuYWdlclxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/Project/Views/ProjSchedule/Build.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUHJvamVjdFxWaWV3c1xQcm9qU2NoZWR1bGVcQnVpbGQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/Questioning/Views/QuestioningAttachment/Build.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUXVlc3Rpb25pbmdcVmlld3NcUXVlc3Rpb25pbmdBdHRhY2htZW50XEJ1aWxkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/Questioning/Views/Questioning/Build.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUXVlc3Rpb25pbmdcVmlld3NcUXVlc3Rpb25pbmdcQnVpbGQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/Questioning/Views/Questioning/Detail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUXVlc3Rpb25pbmdcVmlld3NcUXVlc3Rpb25pbmdcRGV0YWlsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/Questioning/Views/Questioning/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUXVlc3Rpb25pbmdcVmlld3NcUXVlc3Rpb25pbmdcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/Questioning/Views/Winning/Build.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUXVlc3Rpb25pbmdcVmlld3NcV2lubmluZ1xCdWlsZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/ReportForms/Views/ReportForms/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcUmVwb3J0Rm9ybXNcVmlld3NcUmVwb3J0Rm9ybXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/Schedule/Views/ScheduleDetailAttachment/Build.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU2NoZWR1bGVcVmlld3NcU2NoZWR1bGVEZXRhaWxBdHRhY2htZW50XEJ1aWxkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/Schedule/Views/ScheduleDetail/Build.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU2NoZWR1bGVcVmlld3NcU2NoZWR1bGVEZXRhaWxcQnVpbGQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/Schedule/Views/ScheduleDetail/Detail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU2NoZWR1bGVcVmlld3NcU2NoZWR1bGVEZXRhaWxcRGV0YWlsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/Schedule/Views/ScheduleDetail/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU2NoZWR1bGVcVmlld3NcU2NoZWR1bGVEZXRhaWxcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/Schedule/Views/ScheduleDetail/PdBuild.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU2NoZWR1bGVcVmlld3NcU2NoZWR1bGVEZXRhaWxcUGRCdWlsZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/Schedule/Views/ScheduleList/Build.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU2NoZWR1bGVcVmlld3NcU2NoZWR1bGVMaXN0XEJ1aWxkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/Schedule/Views/ScheduleManagementAttachment/Build.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU2NoZWR1bGVcVmlld3NcU2NoZWR1bGVNYW5hZ2VtZW50QXR0YWNobWVudFxCdWlsZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/Schedule/Views/ScheduleManagement/Build.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU2NoZWR1bGVcVmlld3NcU2NoZWR1bGVNYW5hZ2VtZW50XEJ1aWxkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/Schedule/Views/ScheduleManagement/Detail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU2NoZWR1bGVcVmlld3NcU2NoZWR1bGVNYW5hZ2VtZW50XERldGFpbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/Schedule/Views/ScheduleManagement/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU2NoZWR1bGVcVmlld3NcU2NoZWR1bGVNYW5hZ2VtZW50XEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/System/Views/ActionLog/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU3lzdGVtXFZpZXdzXEFjdGlvbkxvZ1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/System/Views/ContTxtTemp/Build.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU3lzdGVtXFZpZXdzXENvbnRUeHRUZW1wXEJ1aWxkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/System/Views/ContTxtTemp/Detail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU3lzdGVtXFZpZXdzXENvbnRUeHRUZW1wXERldGFpbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/System/Views/ContTxtTemp/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU3lzdGVtXFZpZXdzXENvbnRUeHRUZW1wXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/System/Views/ContTxtTemp/SetWaterMark.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU3lzdGVtXFZpZXdzXENvbnRUeHRUZW1wXFNldFdhdGVyTWFyay5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/System/Views/CurrencyManager/Build.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU3lzdGVtXFZpZXdzXEN1cnJlbmN5TWFuYWdlclxCdWlsZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/System/Views/CurrencyManager/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU3lzdGVtXFZpZXdzXEN1cnJlbmN5TWFuYWdlclxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/System/Views/DataDictionary/Build.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU3lzdGVtXFZpZXdzXERhdGFEaWN0aW9uYXJ5XEJ1aWxkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/System/Views/DataDictionary/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU3lzdGVtXFZpZXdzXERhdGFEaWN0aW9uYXJ5XEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/System/Views/Department/Build.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU3lzdGVtXFZpZXdzXERlcGFydG1lbnRcQnVpbGQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/System/Views/Department/Detail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU3lzdGVtXFZpZXdzXERlcGFydG1lbnRcRGV0YWlsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/System/Views/Department/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU3lzdGVtXFZpZXdzXERlcGFydG1lbnRcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/System/Views/Department/SelectWinMultDept.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU3lzdGVtXFZpZXdzXERlcGFydG1lbnRcU2VsZWN0V2luTXVsdERlcHQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/System/Views/Department/ShowDeptTree.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU3lzdGVtXFZpZXdzXERlcGFydG1lbnRcU2hvd0RlcHRUcmVlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/System/Views/Email/SetEmail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU3lzdGVtXFZpZXdzXEVtYWlsXFNldEVtYWlsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/System/Views/InitData/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU3lzdGVtXFZpZXdzXEluaXREYXRhXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/System/Views/InitData/UpdateLog.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU3lzdGVtXFZpZXdzXEluaXREYXRhXFVwZGF0ZUxvZy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/System/Views/LoginLog/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU3lzdGVtXFZpZXdzXExvZ2luTG9nXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/System/Views/Remind/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU3lzdGVtXFZpZXdzXFJlbWluZFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/System/Views/Role/Build.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU3lzdGVtXFZpZXdzXFJvbGVcQnVpbGQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/System/Views/Role/Detail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU3lzdGVtXFZpZXdzXFJvbGVcRGV0YWlsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/System/Views/Role/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU3lzdGVtXFZpZXdzXFJvbGVcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/System/Views/Role/Test.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU3lzdGVtXFZpZXdzXFJvbGVcVGVzdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/System/Views/SealManager/Build.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU3lzdGVtXFZpZXdzXFNlYWxNYW5hZ2VyXEJ1aWxkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/System/Views/SysField/Build.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU3lzdGVtXFZpZXdzXFN5c0ZpZWxkXEJ1aWxkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/System/Views/SysField/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU3lzdGVtXFZpZXdzXFN5c0ZpZWxkXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/System/Views/SysFunction/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU3lzdGVtXFZpZXdzXFN5c0Z1bmN0aW9uXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/System/Views/SysFunction/PermissonAllot.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU3lzdGVtXFZpZXdzXFN5c0Z1bmN0aW9uXFBlcm1pc3NvbkFsbG90LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/System/Views/SysFunction/UserPermissonAllot.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU3lzdGVtXFZpZXdzXFN5c0Z1bmN0aW9uXFVzZXJQZXJtaXNzb25BbGxvdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/System/Views/SysModel/Build.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU3lzdGVtXFZpZXdzXFN5c01vZGVsXEJ1aWxkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/System/Views/SysModel/Detail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU3lzdGVtXFZpZXdzXFN5c01vZGVsXERldGFpbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/System/Views/SysModel/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU3lzdGVtXFZpZXdzXFN5c01vZGVsXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/System/Views/SysModel/IndexTree.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU3lzdGVtXFZpZXdzXFN5c01vZGVsXEluZGV4VHJlZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/System/Views/SysModel/SelectModel.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU3lzdGVtXFZpZXdzXFN5c01vZGVsXFNlbGVjdE1vZGVsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/System/Views/UerEs/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU3lzdGVtXFZpZXdzXFVlckVzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/System/Views/UserInfor/Build.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU3lzdGVtXFZpZXdzXFVzZXJJbmZvclxCdWlsZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/System/Views/UserInfor/Detail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU3lzdGVtXFZpZXdzXFVzZXJJbmZvclxEZXRhaWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/System/Views/UserInfor/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU3lzdGVtXFZpZXdzXFVzZXJJbmZvclxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/System/Views/UserInfor/Info.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU3lzdGVtXFZpZXdzXFVzZXJJbmZvclxJbmZvLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/System/Views/UserInfor/SelectUser.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU3lzdGVtXFZpZXdzXFVzZXJJbmZvclxTZWxlY3RVc2VyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/System/Views/UserInfor/SetPassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU3lzdGVtXFZpZXdzXFVzZXJJbmZvclxTZXRQYXNzd29yZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/System/Views/UserInfor/UserSetRoles.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcU3lzdGVtXFZpZXdzXFVzZXJJbmZvclxVc2VyU2V0Um9sZXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/Tender/Views/TenderAttachment/Build.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVGVuZGVyXFZpZXdzXFRlbmRlckF0dGFjaG1lbnRcQnVpbGQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/Tender/Views/TendererNameLabel/Build.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVGVuZGVyXFZpZXdzXFRlbmRlcmVyTmFtZUxhYmVsXEJ1aWxkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/Tender/Views/TenderInfo/Build.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVGVuZGVyXFZpZXdzXFRlbmRlckluZm9cQnVpbGQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/Tender/Views/TenderInfo/Detail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVGVuZGVyXFZpZXdzXFRlbmRlckluZm9cRGV0YWlsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/Tender/Views/TenderInfo/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVGVuZGVyXFZpZXdzXFRlbmRlckluZm9cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/Tender/Views/WinningItems/Build.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcVGVuZGVyXFZpZXdzXFdpbm5pbmdJdGVtc1xCdWlsZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/Workbench/Views/Gzdesk/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcV29ya2JlbmNoXFZpZXdzXEd6ZGVza1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/Workbench/Views/Mydesk/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcV29ya2JlbmNoXFZpZXdzXE15ZGVza1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/WorkFlow/Views/AppInst/AppPendingList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcV29ya0Zsb3dcVmlld3NcQXBwSW5zdFxBcHBQZW5kaW5nTGlzdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/WorkFlow/Views/AppInst/AppProcessedList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcV29ya0Zsb3dcVmlld3NcQXBwSW5zdFxBcHBQcm9jZXNzZWRMaXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/WorkFlow/Views/AppInst/ApprovePage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcV29ya0Zsb3dcVmlld3NcQXBwSW5zdFxBcHByb3ZlUGFnZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/WorkFlow/Views/AppInst/AppSponsorList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcV29ya0Zsb3dcVmlld3NcQXBwSW5zdFxBcHBTcG9uc29yTGlzdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/WorkFlow/Views/AppInst/BeBackList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcV29ya0Zsb3dcVmlld3NcQXBwSW5zdFxCZUJhY2tMaXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/WorkFlow/Views/AppInst/ShowAllOpinion.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcV29ya0Zsb3dcVmlld3NcQXBwSW5zdFxTaG93QWxsT3Bpbmlvbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/WorkFlow/Views/AppInst/ShowFlow.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcV29ya0Zsb3dcVmlld3NcQXBwSW5zdFxTaG93Rmxvdy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/WorkFlow/Views/AppInst/ViewFlow.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcV29ya0Zsb3dcVmlld3NcQXBwSW5zdFxWaWV3Rmxvdy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/WorkFlow/Views/AppInst/WoShenPiDh.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcV29ya0Zsb3dcVmlld3NcQXBwSW5zdFxXb1NoZW5QaURoLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/WorkFlow/Views/AppInst/WoShenPiTg.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcV29ya0Zsb3dcVmlld3NcQXBwSW5zdFxXb1NoZW5QaVRnLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/WorkFlow/Views/FlowDocToPdf/ContractPDF.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcV29ya0Zsb3dcVmlld3NcRmxvd0RvY1RvUGRmXENvbnRyYWN0UERGLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/WorkFlow/Views/FlowDocToPdf/CustomerPDF.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcV29ya0Zsb3dcVmlld3NcRmxvd0RvY1RvUGRmXEN1c3RvbWVyUERGLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/WorkFlow/Views/FlowDocToPdf/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcV29ya0Zsb3dcVmlld3NcRmxvd0RvY1RvUGRmXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/WorkFlow/Views/FlowDocToPdf/InquiryPDF.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcV29ya0Zsb3dcVmlld3NcRmxvd0RvY1RvUGRmXElucXVpcnlQREYuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/WorkFlow/Views/FlowDocToPdf/InvoiceInPDF.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcV29ya0Zsb3dcVmlld3NcRmxvd0RvY1RvUGRmXEludm9pY2VJblBERi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/WorkFlow/Views/FlowDocToPdf/InvoiceOutPDF.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcV29ya0Zsb3dcVmlld3NcRmxvd0RvY1RvUGRmXEludm9pY2VPdXRQREYuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/WorkFlow/Views/FlowDocToPdf/OtherPDF.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcV29ya0Zsb3dcVmlld3NcRmxvd0RvY1RvUGRmXE90aGVyUERGLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/WorkFlow/Views/FlowDocToPdf/PaymentPDF.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcV29ya0Zsb3dcVmlld3NcRmxvd0RvY1RvUGRmXFBheW1lbnRQREYuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/WorkFlow/Views/FlowDocToPdf/ProjectPDF.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcV29ya0Zsb3dcVmlld3NcRmxvd0RvY1RvUGRmXFByb2plY3RQREYuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/WorkFlow/Views/FlowDocToPdf/QuestioningPDF.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcV29ya0Zsb3dcVmlld3NcRmxvd0RvY1RvUGRmXFF1ZXN0aW9uaW5nUERGLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/WorkFlow/Views/FlowDocToPdf/SupplierPDF.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcV29ya0Zsb3dcVmlld3NcRmxvd0RvY1RvUGRmXFN1cHBsaWVyUERGLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/WorkFlow/Views/FlowDocToPdf/TeInfoPDF.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcV29ya0Zsb3dcVmlld3NcRmxvd0RvY1RvUGRmXFRlSW5mb1BERi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/WorkFlow/Views/FlowTempNode/SetNodeInfo.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcV29ya0Zsb3dcVmlld3NcRmxvd1RlbXBOb2RlXFNldE5vZGVJbmZvLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/WorkFlow/Views/FlowTemp/Build.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcV29ya0Zsb3dcVmlld3NcRmxvd1RlbXBcQnVpbGQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/WorkFlow/Views/FlowTemp/Detail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcV29ya0Zsb3dcVmlld3NcRmxvd1RlbXBcRGV0YWlsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/WorkFlow/Views/FlowTemp/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcV29ya0Zsb3dcVmlld3NcRmxvd1RlbXBcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/WorkFlow/Views/FlowTemp/SetFlowNode.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcV29ya0Zsb3dcVmlld3NcRmxvd1RlbXBcU2V0Rmxvd05vZGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/WorkFlow/Views/GroupInfo/Build.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcV29ya0Zsb3dcVmlld3NcR3JvdXBJbmZvXEJ1aWxkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/WorkFlow/Views/GroupInfo/Detail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcV29ya0Zsb3dcVmlld3NcR3JvdXBJbmZvXERldGFpbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/WorkFlow/Views/GroupInfo/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcV29ya0Zsb3dcVmlld3NcR3JvdXBJbmZvXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Areas/WorkFlow/Views/GroupInfo/SelectGroups.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcV29ya0Zsb3dcVmlld3NcR3JvdXBJbmZvXFNlbGVjdEdyb3Vwcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Views/Home/Console.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxDb25zb2xlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Views/Home/Dbsx.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxEYnN4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Views/Login/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Views/Login/LoginOut.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cTG9naW5PdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Views/Shared/GooFlowPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEdvb0Zsb3dQYXJ0aWFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Views/Shared/_ContStatePartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Db250U3RhdGVQYXJ0aWFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Views/Shared/_dcConditionCont.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9kY0NvbmRpdGlvbkNvbnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Views/Shared/_ExportExcelSetPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9FeHBvcnRFeGNlbFNldFBhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Views/Shared/_LayuiScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXl1aVNjcmlwdHNQYXJ0aWFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Views/Shared/_WorkFlowPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Xb3JrRmxvd1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/MyCode/V3.0/NF.FrameworkCore/NF.Web/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 

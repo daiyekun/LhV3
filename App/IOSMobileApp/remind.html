@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>恒润基EBP移动终端</title>
+    <!--Styles-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="vendor/jquery.mobile-1.4.0-rc.1.css" />
+    <link rel="stylesheet" href="vendor/mobiscroll/css/mobiscroll.custom-2.6.2.min.css" />
+    <link rel="stylesheet" href="vendor/jqpagination.css" />
+    <link rel="stylesheet" href="vendor/jquery.fileupload.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <!--Scripts-->
+    <script type="text/javascript" src="vendor/jquery-1.10.2.js"></script>
+    <script type="text/javascript" src="vendor/jquery.validate.js"></script>
+    <script type="text/javascript" src="vendor/jquery.mobile-1.4.0-rc.1.js"></script>
+    <script type="text/javascript" src="vendor/mobiscroll/js/mobiscroll.custom-2.6.2.min.js"></script>
+    <script type="text/javascript" src="vendor/jquery.jqpagination.js"></script>
+    <script type="text/javascript" src="vendor/jquery.fileupload.js"></script>
+    <script type="text/javascript" src="vendor/jquery.iframe-transport.js"></script>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="ContactView.js"></script>
+    <script type="text/javascript" src="js/woo.js"></script>
+    <script type="text/javascript" src="js/remind.js"></script>
+</head>
+
+<body>
+    <!--首页-->
+    <div data-role="page" id="index">
+        <div data-role="header">
+            <h1>提醒</h1>
+        </div>
+        <div data-role="content">
+            <input type="hidden" data-role="none" id="detailId" />
+            <a href="#" class="ui-btn ui-btn-inline ui-corner-all ui-icon-bullets ui-btn-icon-left" id="readAll">全部设置为已读</a>
+            <a href="#" class="ui-btn ui-btn-inline ui-corner-all ui-icon-delete ui-btn-icon-left" id="deleteAll">全部删除</a>
+            <ul data-role="listview" data-inset="true" class="view" id="remind_listview"
+                data-filter="true" data-filter-placeholder="搜索提醒..." data-split-icon="delete" data-inset="true"></ul>
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="index.html#index" data-icon="c-yewu" data-ajax="false" id="menu_index">业务</a></li>
+                    <li><a href="approve.html" data-icon="c-shenpi" data-ajax="false" id="menu_approve">审批</a></li>
+                    <li>
+                        <a href="remind.html" data-icon="c-tixing" data-ajax="false" id="menu_remind"
+                           class="ui-btn-active">提醒</a>
+                    </li>
+                    <li><a href="system.html" data-icon="c-shezhi" data-ajax="false" id="menu_system">设置</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>

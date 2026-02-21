@@ -1,0 +1,246 @@
+﻿
+@{
+    ViewData["Title"] = "合同文本归档";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="layui-fluid">
+    <!--基本信息begin-->
+    <div class="layui-form" lay-filter="NF-ContTextArchiveForm">
+        @*当前ID*@
+        @*<input type="hidden" id="Id" name="Id" />*@
+        @*修改时合同文本ID*@
+        <input type="hidden" id="ContTextId" name="ContTextId" />
+        @*文件存储文件夹名称*@
+        <input type="hidden" name="FolderName" />
+        <!--Guid名称-->
+        <input type="hidden" name="GuidFileName" />
+      
+        <div class="layui-card ">
+            <div class="layui-card-header">归档信息-<spna>已归档份数：</spna><input name="ArcSumNumber" style="border:0px;color:#FF5722" value="0" /></div>
+            <div class="layui-card-body" style="padding: 15px;">
+                <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                    <div class="layui-col-lg4 layui-col-md4 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">归档号</label>
+                        <div class="layui-input-inline" style="width:70%;">
+                            <input type="text" name="ArcCode" id="ArcCode" class="layui-input pen" />
+                        </div>
+                    </div>
+                    <div class="layui-col-lg4 layui-col-md4 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">归档柜号</label>
+                        <div class="layui-input-inline" style="width:70%;">
+                            <input type="text" name="ArcCabCode" id="ArcCabCode" class="layui-input pen" />
+                        </div>
+                    </div>
+                    <div class="layui-col-lg4 layui-col-md4 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">归档份数</label>
+                        <div class="layui-input-inline" style="width:70%;">
+                            <input type="number" name="ArcNumber" class="layui-input pen" />
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                    <div class="layui-col-lg4 layui-col-md4 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">归档文件电子版</label>
+                        <div class="layui-input-inline" style="width:70%;">
+                            <input type="text" name="FileName" class="layui-input" />
+                        </div>
+                        <div class="layui-form-mid layui-word-aux" style="margin-top:-9px;">
+                            <button class="layui-btn layui-btn layui-btn-sm " id="textArchive-attUpload" style="height:38px;line-height:38px;">浏览</button>
+                        </div>
+                    </div>
+                    <div class="layui-col-lg4 layui-col-md4 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">提交人</label>
+                        <div class="layui-input-inline" style="width:70%;">
+                            <input type="text" name="SubUser" class="layui-input pen" />
+                        </div>
+                    </div>
+                    <div class="layui-col-lg4 layui-col-md4 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label" >提交日期</label>
+                        <div class="layui-input-inline" style="width:70%;">
+                            <input type="text" name="SubDateTime" id="SubDateTime" class="layui-input pen" />
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                    <div class="layui-col-lg12 layui-col-md12 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">归档说明</label>
+                        <div class="layui-input-inline" style="width:70%;">
+                            <textarea name="ArcRemark" class="layui-textarea"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!--需要在最后加这个或者没有也加一个 <div class="layui-form-item">，这样不会导致隐藏菜单是显示问题-->
+                <div class="layui-form-item">
+
+                </div>
+            </div>
+        </div>
+        @*归档明细*@
+        <div class="layui-card ">
+            <div class="layui-card-header">
+                <span>
+                    归档份数:<input name="ArcSumNumber" style="border:0;color:#FF5722;width:50px;" value="0" />
+                    已借份数:<input name="BorrSumNumber" style="border:0;color:#FF5722;width:50px;" value="0" />
+                    剩余份数:<input name="ResidueNumber" style="border:0;color:#FF5722;width:50px;" value="0" />
+                </span>
+            </div>
+            <div class="layui-card-body" style="padding: 15px;">
+                <table id="NF-ContTextArchive-Index" lay-filter="NF-ContTextArchive-Index"></table>
+                <script type="text/html" id="table-conttextarch-bar">
+                    <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del"><i class="layui-icon layui-icon-delete"></i>删除</a>
+                    {{#  if(d.FileName == ''||d.FileName ==null){ }}
+                    <a class="layui-btn layui-btn-disabled layui-btn-xs"><i class="layui-icon layui-icon-edit"></i>下载</a>
+                    {{#  } else { }}
+                    <a class="layui-btn layui-btn-xs" lay-event="download"><i class="layui-icon layui-icon-edit"></i>下载</a>
+                    {{#  } }}
+                </script>
+            </div>
+        </div>
+
+        <div class="layui-form-item layui-layout-admin layui-hide">
+            <div class="layui-input-block">
+                <div class="layui-footer" style="left: 0;">
+                    <button class="layui-btn" id="NF-ContTextArchive-FormSubmit" lay-submit lay-filter="NF-ContTextArchive-FormSubmit">保存</button>
+                    <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+@{
+    Html.RenderPartial("_LayuiScriptsPartial");
+}
+<script>
+
+    layui.config({
+        base: '/lib/layuiadmin/'
+    }).extend({
+        index: 'lib/index',
+        viewPageEdit: 'viewpage-edit/viewPageEdit'
+        //,commonnf: 'common-nf/commonnf',
+
+    }).use(['index', 'form', 'upload', 'laydate', 'table', 'viewPageEdit'], function () {
+
+          var $ = layui.$
+          , admin = layui.admin
+          , form = layui.form
+          //, commonnf = layui.commonnf
+          , upload = layui.upload
+          , laydate = layui.laydate
+          , table = layui.table
+           , viewPageEdit = layui.viewPageEdit
+          , setter = layui.setter ;
+        var txtId = wooutil.getQueryString('txtId');
+        var contId = wooutil.getQueryString('contId');
+        $("#ContTextId").val(txtId);
+        //提交日期
+        laydate.render({ elem: '#SubDateTime' });
+        //上传组件
+        var uploadtextInst = upload.render({
+            elem: '#textArchive-attUpload'
+              , url: setter.layupload.uploadIp + '/NfCommon/NfAttachment/Upload?folderIndex=7'
+              , accept: setter.layupload.accept
+              , exts: setter.layupload.exts
+              , size: setter.layupload.size
+              , before: function (obj) {
+                  layer.load(); //上传loading
+              }
+              , done: function (res, index, upload) { //上传完毕回调
+                  $("input[name=FolderName]").val(res.RetValue.FolderName);
+                  $("input[name=GuidFileName]").val(res.RetValue.GuidFileName);
+                  $("input[name=FileName]").val(res.RetValue.SourceFileName);
+                  $("input[name=Name]").val(res.RetValue.NotExtenFileName);
+                  layer.closeAll('loading');
+              }
+              , error: function (index, upload) {
+                  //请求异常回调
+                  layer.closeAll('loading');
+                  layer.msg('网络异常，请稍后重试！');
+              }
+
+        });
+        /**
+        *归档明细
+        **/
+        table.render({
+        elem: '#NF-ContTextArchive-Index'
+       , url: '/ContractDraft/ContText/GetTextArchiveItem?txtId=' + txtId + '&rand=' + wooutil.getRandom()
+       , toolbar: '#toolconttextcoll'
+       , defaultToolbar: ['filter']
+       , cellMinWidth: 80
+       , cols: [[
+             { type: 'numbers', fixed: 'left' }
+           , { field: 'CreateUserName', title: '经办人', width: 120 }
+           , { field: 'CreateDateTime', title: '归档日期', width: 120 }
+           , { field: 'ArcNumber', title: '归档份数', width: 110 }
+           , { field: 'ArcRemark', title: '归档说明', width: 120 }
+           , { field: 'SubUser', title: '提交人', width: 120 }
+           , { field: 'SubDateTime', title: '提交日期', width: 120 }
+           , { title: '操作', width: 150, align: 'center', fixed: 'right', toolbar: '#table-conttextarch-bar' }
+
+       ]]
+        , page: false
+        , loading: true
+        , height: setter.table.height_tab
+        , limit: setter.table.limit_tab
+        });
+        table.on('tool(NF-ContTextArchive-Index)', function (obj) {
+            switch (obj.event) {
+                case "del"://删除
+                    wooutil.deleteInfo({ tableId: "NF-ContTextArchive-Index", data: obj, url: '/ContractDraft/ContText/DeleteArchItem?conttextId=' + txtId });
+                    break;
+                case "download"://下载电子文件
+                    wooutil.download({
+                        url: '/NfCommon/NfAttachment/Download',
+                        Id: obj.data.Id,
+                        folder: 7//合同归档电子版
+
+
+                    });
+                    break;
+            }
+        });
+
+        var suc = function (rdata) {
+            if (rdata.Id > 0) {//存在归档
+                $("input[name=ArcCode]").addClass("detail");
+                $("input[name=ArcCabCode]").addClass("detail");
+                $("input[name=ArcCode]").attr("readonly", "readonly");
+                $("input[name=ArcCabCode]").attr("readonly", "readonly");
+                //归档号
+                viewPageEdit.render({
+                    elem: '#ArcCode',
+                    edittype: 'text',
+                    objid: txtId,
+                    fieldname: "ArcCode",
+                    verify: 'required',
+                    url: '/ContractDraft/ContText/UpdateAchField'
+
+                });
+                //归档柜号
+                viewPageEdit.render({
+                    elem: '#ArcCabCode',
+                    edittype: 'text',
+                    objid: txtId,
+                    fieldname: "ArcCabCode",
+                    verify: 'required',
+                    url: '/ContractDraft/ContText/UpdateAchField'
+
+                });
+            }
+        }
+        //归档信息
+         wooutil.showView({
+            objId: txtId,
+            url: '/ContractDraft/ContText/ArchiveShowView',
+            formFilter: 'NF-ContTextArchiveForm',
+            form: form,
+            success: suc
+         });
+
+    });
+</script>
+

@@ -1,0 +1,281 @@
+﻿
+@{
+    ViewData["Title"] = "Detail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="layui-fluid">
+    <!--用户基本信息begin-->
+    <div class="layui-form" lay-filter="Nf-SystemAdmin-RoleForm">
+        <input type="hidden" id="Id" name="Id" />
+        <div class="layui-card ">
+            <div class="layui-card-header">角色基本信息</div>
+            <div class="layui-card-body" style="padding: 15px;">
+                <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                    <div class="layui-col-lg4 layui-col-md4 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">角色名称</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="Name" class="layui-input detail" />
+                        </div>
+                    </div>
+                    <div class="layui-col-lg4 layui-col-md4 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">角色编号</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="No" class="layui-input detail" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+
+                    <div class="layui-col-lg12 layui-col-md12 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">备注</label>
+                        <div class="layui-input-block">
+                            <textarea name="Remark" class="layui-textarea detail"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!--需要在最后加这个或者没有也加一个 <div class="layui-form-item">，这样不会导致隐藏菜单是显示问题-->
+                <div class="layui-form-item">
+
+                </div>
+
+            </div>
+        </div>
+
+        <div class="layui-card">
+            <div class="layui-card-header">当前角色拥有的用户信息</div>
+            <div class="layui-form layui-card-header layuiadmin-card-header-auto">
+                <div class="layui-form-item">
+                    <div class="layui-inline">
+                        <button class="layui-btn layuiadmin-btn-role" data-type="add"> 新增</button>
+                        <button class="layui-btn layuiadmin-btn-role" data-type="batchdel">批量删除</button>
+
+                    </div>
+                </div>
+            </div>
+            <div class="layui-card-body">
+                <table id="NF-system-roleUser" lay-filter="NF-system-roleUser"></table>
+                @*操作*@
+                <script type="text/html" id="table-system-roleusertbar">
+                    <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del"><i class="layui-icon layui-icon-delete"></i>删除</a>
+                </script>
+
+                @*状态*@
+                <script type="text/html" id="userstateTpl">
+                    {{#  if(d.Ustart ==1){ }}
+                    <span style="color:blue;">启用</span>
+                    {{#  } else { }}
+                    <span style="color:red;">禁用</span>
+                    {{#  } }}
+
+                </script>
+                @*性别*@
+                <script type="text/html" id="userSexTpl">
+                    {{#  if(d.Sex ===0){ }}
+                    <span style="color:red;">{{ d.SexDic }}</span>
+                    {{#  } else { }}
+                    <span style="color:blue;">{{ d.SexDic }}</span>
+
+                    {{#  } }}
+                </script>
+
+            </div>
+        </div>
+
+
+        <!--按钮begin-->
+        <div class="layui-form-item layui-layout-admin layui-hide">
+            <div class="layui-input-block">
+                <div class="layui-footer" style="left: 0;">
+                    <button class="layui-btn" id="Nf-SystemAdmin-RoleFormSubmit" lay-submit lay-filter="Nf-SystemAdmin-RoleFormSubmit">保存</button>
+                    <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                </div>
+            </div>
+        </div>
+        <!--按钮begin-->
+    </div>
+    <!--用户基本信息end-->
+
+</div>
+
+@{
+    Html.RenderPartial("_LayuiScriptsPartial");
+}
+<script>
+    layui.config({
+        base: '/lib/layuiadmin/'
+    }).extend({
+        index: 'lib/index', //主入口模块
+        systemRoles: 'system-nf/NF-system-roles'
+    }).use(['index', 'form', 'systemRoles', 'table'], function () {
+        var $ = layui.$
+            , admin = layui.admin
+            , element = layui.element
+            , layer = layui.layer
+            , table = layui.table
+            , setter = layui.setter
+            , form = layui.form;
+        var byId = wooutil.getUrlVar('Id');
+        //--------------------------修改的时候赋值----------------------------------
+
+        if (byId != "" && byId != undefined) {
+            admin.req({
+                url: '/System/Role/ShowView',
+                data: { Id: byId, rand: wooutil.getRandom() },
+                done: function (res) {
+                    //layer.alert(JSON.stringify(res.Data));
+                    form.val("Nf-SystemAdmin-RoleForm", res.Data);
+
+                }
+            });
+            /**
+             * 
+             * 显示角色用户
+             */
+            table.render({
+                elem: '#NF-system-roleUser'
+                , url: '/System/Role/GetListUser?roleId=' + byId+'&rand=' + wooutil.getRandom()
+                , cols: [[
+                    { type: 'checkbox', fixed: 'left' }
+                    , { field: 'Name', title: '用户名称', minWidth: 160, templet: '#nameTpl', fixed: 'left' }
+                    , { field: 'DeptName', title: '所属机构', width: 130 }
+                    , { field: 'DisplyName', title: '显示名称', width: 110 }
+                    , { field: 'SexDic', width: 100, title: '性别', templet: '#userSexTpl' }
+                    , { field: 'Age', width: 100, title: '年龄' }
+                    , { field: 'Tel', width: 100, title: '电话' }
+                    , { field: 'Mobile', width: 120, title: '手机' }
+                    , { field: 'Email', width: 120, title: 'E-Mail' }
+                    , { field: 'Ustart', width: 80, title: '状态', templet: '#userstateTpl', unresize: true }
+                    , { title: '操作', width: 150, align: 'center', fixed: 'right', toolbar: '#table-system-roleusertbar' }
+                ]]
+                , page: true
+                , loading: true
+                , height: setter.table.height_2
+                , limit: setter.table.limit
+                , limits: setter.table.limits
+
+            });
+
+        }
+        //-------------------------------------修改赋值end--------------------------------------------
+            form.render(null, 'Nf-SystemAdmin-RoleForm');
+
+            //删除角色用户
+            function delRoleUser(_tmpIds,_roleId) { 
+                admin.req({
+                    url: "/System/Role/DeleteRoleUser",
+                    data: { userIds: _tmpIds.toString(), roleId: _roleId },
+                    done: function (res) {
+
+                        layer.msg('删除成功', { time: 500 }, function () {
+                            table.reload("NF-system-roleUser", {
+                                where: {
+
+                                    rand: wooutil.getRandom()
+
+                                },
+                                page: {
+                                    curr: 1 //重新从第 1 页开始
+                                }
+                            });
+
+                        });
+
+                    }
+
+                });
+            }
+
+            //事件
+            var active = {
+                batchdel: function () {//删除
+                    
+                    var checkStatus = table.checkStatus("NF-system-roleUser")
+                        , checkData = checkStatus.data; //得到选中的数据
+                    if (checkData.length === 0) {
+                        return layer.msg('请选择数据');
+                    }
+                    var tmpIds = [];
+                    for (var i = 0; i < checkData.length; i++) {
+                        tmpIds.push(checkData[i].Id);
+                    }
+
+                    delRoleUser(tmpIds, byId);
+
+                    
+                },
+                add: function () {
+                    layer.open({
+                        type: 2
+                        , title: '选择用户'
+                        , content: '/System/UserInfor/SelectUser'
+                        , maxmin: true
+                        , area: ['60%', '90%']
+                        , btn: ['确定', '取消']
+                        , btnAlign: 'c'
+                        , skin: "layer-ext-myskin"
+                        , yes: function (index, layero) {
+                            var iframeWindow = window['layui-layer-iframe' + index];
+                            var checkStatus = iframeWindow.layui.table.checkStatus('NF-system-selectUser')
+                            checkData = checkStatus.data; //得到选中的数据
+                            if (checkData.length == 0) {
+                                return layer.msg('请选择数据');
+                            } 
+                            var tempId = [];
+                            for (var i = 0; i < checkData.length; i++) {
+                                tempId.push(checkData[i].Id);
+                            }
+                            admin.req({
+                                url: "/System/Role/AddRoleUser",
+                                data: { userIds: tempId.toString(), roleId: byId },
+                                done: function (res) {
+
+                                    layer.msg('保存成功', { time: 500 }, function () {
+                                        table.reload("NF-system-roleUser", {
+                                            where: {
+
+                                                rand: wooutil.getRandom()
+
+                                            },
+                                            page: {
+                                                curr: 1 //重新从第 1 页开始
+                                            }
+                                        });
+                                        layer.close(index); //关闭弹层
+                                    });
+
+                                }
+
+                            });
+
+                        
+                        },
+                        success: function (layero, index) {
+                            //layer.full(index);
+                            //wooutil.openTip();
+                        }
+                    });
+                }
+            }
+            $('.layui-btn.layuiadmin-btn-role').on('click', function () {
+                var type = $(this).data('type');
+                active[type] ? active[type].call(this) : '';
+            });
+
+            //监听工具条
+            table.on('tool(NF-system-roleUser)', function (obj) {
+                var _data = obj.data;
+                if (obj.event === 'del') {
+                    var tmpIds = [];
+                    tmpIds.push(obj.data.Id);
+                    delRoleUser(tmpIds, byId);
+                    
+                }
+            })
+
+        });
+</script>
+
+
+

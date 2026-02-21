@@ -1,0 +1,336 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>恒润基EBP移动终端</title>
+    <!--Styles-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="vendor/jquery.mobile-1.4.0-rc.1.css" />
+    <link rel="stylesheet" href="vendor/mobiscroll/css/mobiscroll.custom-2.6.2.min.css" />
+    <link rel="stylesheet" href="vendor/jqpagination.css" />
+    <link rel="stylesheet" href="vendor/jquery.fileupload.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <!--Scripts-->
+    <script type="text/javascript" src="vendor/jquery-1.10.2.js"></script>
+    <script type="text/javascript" src="vendor/jquery.validate.js"></script>
+    <script type="text/javascript" src="vendor/jquery.mobile-1.4.0-rc.1.js"></script>
+    <script type="text/javascript" src="vendor/mobiscroll/js/mobiscroll.custom-2.6.2.min.js"></script>
+    <script type="text/javascript" src="vendor/jquery.jqpagination.js"></script>
+    <script type="text/javascript" src="vendor/jquery.fileupload.js"></script>
+    <script type="text/javascript" src="vendor/jquery.iframe-transport.js"></script>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="ContactView.js"></script>
+    <script type="text/javascript" src="js/woo.js"></script>
+    <script type="text/javascript" src="js/company.js"></script>
+</head>
+
+<body>
+    <!--首页-->
+    <div data-role="page" id="index">
+        <div data-role="header">
+            <a href="#" class="ui-btn ui-btn-left ui-nodisc-icon ui-btn-icon-notext ui-icon-back" id="backtoindex">返回</a>
+            <h1></h1>
+            <!--<a href="#" data-role="btn" class="ui-btn-right" data-icon="plus" id="add_data" data-iconpos="right">新建</a>-->
+        </div>
+        <div data-role="content">
+            <input type="hidden" data-role="none" id="detailId" />
+            <form id="searchform">
+                <input type="search" name="search" id="search" placeholder="名称、编号" data-clear-btn="true" />
+            </form>
+            <table data-role="table" id="list-table" data-mode="reflow" class="woo-list">
+                <thead>
+                    <tr>
+                        <th data-priority="1">序号</th>
+                        <th data-priority="persist">名称</th>
+                        <th data-priority="2">编号</th>
+                        <th data-priority="3">联系人</th>
+                        <th data-priority="4">联系方式</th>
+
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+            <div class="gigantic pagination">
+                <a href="#" class="first" data-action="first">&laquo;</a>
+                <a href="#" class="previous" data-action="previous">&lsaquo;</a>
+                <input type="text" readonly="readonly" data-role="none" />
+                <a href="#" class="next" data-action="next">&rsaquo;</a>
+                <a href="#" class="last" data-action="last">&raquo;</a>
+            </div>
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <div data-role="navbar">
+                <ul>
+                    <li>
+                        <a href="index.html#index" data-icon="c-yewu" data-ajax="false" id="menu_index"
+                           class="ui-btn-active">业务</a>
+                    </li>
+                    <li><a href="approve.html" data-icon="c-shenpi" data-ajax="false" id="menu_approve">审批</a></li>
+                    <li><a href="remind.html" data-icon="c-tixing" data-ajax="false" id="menu_remind">提醒</a></li>
+                    <li><a href="system.html" data-icon="c-shezhi" data-ajax="false" id="menu_system">设置</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!--新建/修改合同对方-->
+    <div data-role="page" id="add">
+        <div data-role="header">
+            <a href="#" data-role="btn" data-icon="delete" id="addform_cancel">取消</a>
+            <h1></h1>
+            <a href="#" data-role="btn" data-icon="plus" id="addform_submit" data-iconpos="right">保存</a>
+        </div>
+        <div data-role="content">
+            <div id="submiting" data-role="popup" class="popup">保存中，请稍等...</div>
+            <div id="submiterror" data-role="popup" class="popup">保存失败！</div>
+            <form id="addform">
+                <div data-role="collapsible" data-collapsed="false">
+                    <h4>基本信息</h4>
+                    <div class="ui-field-contain">
+                        <label for="name">名称:</label>
+                        <input type="text" name="name" id="name" placeholder="名称" required />
+                    </div>
+                    <div class="ui-field-contain">
+                        <label for="no">编号:</label>
+                        <input type="text" name="no" id="no" placeholder="编号" required />
+                    </div>
+                    <div class="ui-field-contain">
+                        <label for="category">类别:</label>
+                        <select name="category" id="category" placeholder="类别" required></select>
+                    </div>
+                    <div class="ui-field-contain">
+                        <label for="level">级别:</label>
+                        <select name="level" id="level" placeholder="级别" required></select>
+                    </div>
+                    <div class="ui-field-contain">
+                        <label for="clevel">信用等级:</label>
+                        <select name="clevel" id="clevel" placeholder="信用等级" required></select>
+                    </div>
+                    <div class="ui-field-contain">
+                        <a href="#" class="ui-btn ui-corner-all" id="selectMainContact">选择手机联系人</a>
+                        <label for="contactname">联系人姓名:</label>
+                        <input type="text" name="contactname" id="contactname" placeholder="联系人姓名" />
+                    </div>
+                    <div class="ui-field-contain">
+                        <label for="contactjob">职位:</label>
+                        <input type="text" name="contactjob" id="contactjob" placeholder="职位" />
+                    </div>
+                    <div class="ui-field-contain">
+                        <label for="contacttel">办公电话:</label>
+                        <input type="text" name="contacttel" id="contacttel" placeholder="办公电话" />
+                    </div>
+                    <div class="ui-field-contain">
+                        <label for="contactmobile">移动电话:</label>
+                        <input type="text" name="contactmobile" id="contactmobile" placeholder="移动电话" />
+                    </div>
+                    <div class="ui-field-contain">
+                        <label for="contactemail">Email:</label>
+                        <input type="email" name="contactemail" id="contactemail" placeholder="Email" />
+                    </div>
+                </div>
+                <div data-role="collapsible" data-collapsed="false" id="collapsible_contact">
+                    <h4>联系人</h4>
+                    <a href="#" class="ui-btn ui-corner-all" id="selectContact">选择手机联系人</a>
+                    <a href="#" class="ui-btn ui-corner-all" id="addContact">新增联系人</a>
+                </div>
+                <div data-role="collapsible" data-collapsed="false" id="collapsible_file">
+                    <h4>资质文件</h4>
+                    <a href="#" class="ui-btn ui-corner-all" id="selectFile">增加文件</a>
+                    <div id="uploadfailure" data-role="popup" class="popup">上传文件失败！</div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!--查看-->
+    <div data-role="page" id="detail">
+        <div data-role="panel" id="detail_menu" data-position="right" data-theme="b" data-display="overlay">
+            <ul data-role="listview">
+                <li><a href="#" data-collapsible-id="detail_basic">基本信息</a></li>
+                <li><a href="#" data-collapsible-id="detail_contacts">联系人</a></li>
+                <li><a href="#" data-collapsible-id="detail_files">附件</a></li>
+                <!-- <li><a href="#" data-collapsible-id="detail_finance">资金统计</a></li>-->
+                <!--<li><a href="#" data-collapsible-id="detail_remark">沟通记录</a></li>-->
+                <li data-role="list-divider"></li>
+                <li><a href="#detail_addContact">添加联系人</a></li>
+                <li><a href="#detail_addFile">添加资质文件</a></li>
+                <li><a href="#detail_addRemark">添加沟通记录</a></li>
+                <li><a href="#detail_changeState">修改状态</a></li>
+            </ul>
+        </div>
+        <div data-role="header">
+            <a href="#" data-role="btn" data-icon="back" id="detail_back">返回</a>
+            <h1></h1>
+            <!--<a href="#detail_menu" data-role="btn" data-icon="bars" data-iconpos="notext" class="ui-btn-right"></a>-->
+        </div>
+        <div data-role="content">
+            <div data-role="collapsible" data-collapsed="false" id="detail_basic">
+                <h4>基本信息</h4>
+                <ul data-role="listview" data-inset="true" class="view">
+                    <li>名称:<span name="name"></span></li>
+                    <li>编号:<span name="no"></span></li>
+                    <li>类别:<span name="category"></span></li>
+                    <li>级别:<span name="level"></span></li>
+                    <li>信用等级:<span name="clevel"></span></li>
+                    <li>状态:<span name="state"></span></li>
+                    <li>建立人:<span name="buildUser"></span></li>
+                    <li>负责人:<span name="principalUser"></span></li>
+                    <li data-role="list-divider"></li>
+                    <li>联系人姓名:<span name="contactname"></span></li>
+                    <li>职位:<span name="contactjob"></span></li>
+                    <li>办公电话:<span name="contacttel"></span></li>
+                    <li>移动电话:<span name="contactmobile"></span></li>
+                    <li>Email:<span name="contactemail"></span></li>
+                </ul>
+            </div>
+            <div data-role="collapsible" data-collapsed="false" id="detail_contacts">
+                <h4>联系人</h4>
+                <table data-role="table" id="detail_contacts_table" data-mode="reflow" class="woo-list">
+                    <thead>
+                        <tr>
+                            <th data-priority="1">序号</th>
+                            <th data-priority="persist">联系人姓名</th>
+                            <th data-priority="2">职位</th>
+                            <th data-priority="3">办公电话</th>
+                            <th data-priority="4">移动电话</th>
+                            <th data-priority="5">Email</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+            <div data-role="collapsible" data-collapsed="false" id="detail_files">
+                <h4>附件</h4>
+                <table data-role="table" id="detail_files_table" data-mode="reflow" class="woo-list">
+                    <thead>
+                        <tr>
+                            <th data-priority="1">序号</th>
+                            <th data-priority="2">附件名称</th>
+                            <th data-priority="3">附件类别</th>
+                            <th data-priority="4">类别文件名</th>
+                            <th data-priority="5">上传日期</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+
+    <!--增加联系人-->
+    <div data-role="page" id="detail_addContact">
+        <div data-role="header">
+            <h1>增加联系人</h1>
+        </div>
+        <div data-role="content">
+            <form id="detail_addContact_form">
+                <a href="#" class="ui-btn ui-corner-all" id="detail_addContact_selectContact">选择手机联系人</a>
+
+                <div class="ui-field-contain">
+                    <label>联系人姓名:</label>
+                    <input type="text" name="contactname" placeholder="联系人姓名" />
+                </div>
+                <div class="ui-field-contain">
+                    <label>职位:</label>
+                    <input type="text" name="contactjob" placeholder="职位" />
+                </div>
+                <div class="ui-field-contain">
+                    <label>办公电话:</label>
+                    <input type="text" name="contacttel" placeholder="办公电话" />
+                </div>
+                <div class="ui-field-contain">
+                    <label>移动电话:</label>
+                    <input type="text" name="contactmobile" placeholder="移动电话" />
+                </div>
+                <div class="ui-field-contain">
+                    <label>Email:</label>
+                    <input type="email" name="contactemail" placeholder="Email" />
+                </div>
+                <input type="submit" value="保存" data-theme="b" />
+                <a href="#" class="ui-btn cancel">取消</a>
+            </form>
+        </div>
+    </div>
+
+    <!--增加附件-->
+    <div data-role="page" id="detail_addFile">
+        <div data-role="header">
+            <h1>增加资质文件</h1>
+        </div>
+        <div data-role="content">
+            <form id="detail_addFile_form">
+                <div class="ui-field-contain">
+                    <a href="#" class="ui-btn ui-corner-all" id="choose_upload">选择文件</a>
+                    <input type="file" name="file_upload" data-role="none" />
+                    <input type="hidden" name="file_name" />
+                    <input type="hidden" name="file_pre" />
+                </div>
+                <div class="ui-field-contain">
+                    <label>名称:</label>
+                    <input type="text" name="file_displayname" placeholder="名称" />
+                </div>
+                <div class="ui-field-contain">
+                    <label>类别:</label>
+                    <select name="file_type" placeholder="类别"></select>
+                </div>
+                <div class="ui-field-contain">
+                    <label>说明:</label>
+                    <input type="text" name="file_remark" placeholder="说明" />
+                </div>
+                <input type="submit" value="保存" data-theme="b" />
+                <a href="#" class="ui-btn cancel">取消</a>
+            </form>
+        </div>
+    </div>
+
+    <!--增加沟通记录-->
+    <div data-role="page" id="detail_addRemark">
+        <div data-role="header">
+            <h1>增加沟通记录</h1>
+        </div>
+        <div data-role="content">
+            <form id="detail_addRemark_form">
+                <div class="ui-field-contain">
+                    <label>事项:</label>
+                    <input type="text" name="item" placeholder="事项" />
+                </div>
+                <div class="ui-field-contain">
+                    <label>内容:</label>
+                    <textarea name="content" placeholder="内容"></textarea>
+                </div>
+                <a href="#" class="ui-btn ui-btn-b" id="detail_addRemark_form_submit">保存</a>
+                <a href="#" class="ui-btn cancel">取消</a>
+            </form>
+        </div>
+    </div>
+
+    <!--修改状态-->
+    <div data-role="page" id="detail_changeState">
+        <div data-role="header">
+            <h1>修改状态</h1>
+        </div>
+        <div data-role="content">
+            <form id="detail_changeState_form">
+                <select name="state"></select>
+                <input type="submit" value="保存" data-theme="b" />
+                <a href="#" class="ui-btn cancel">取消</a>
+            </form>
+        </div>
+    </div>
+
+    <!--选择联系人-->
+    <div data-role="dialog" id="detail_selectContact">
+        <div data-role="header">
+            <h1>选择手机联系人</h1>
+        </div>
+        <div data-role="content">
+            <ul data-role="listview" data-filter="true" data-filter-placeholder="查找联系人..." data-filter-theme="a"
+                data-inset="true" id="detail_selectContact_list" class="contactlist">
+                <li id="detail_selectContact_list_loading">联系人载入中，请稍等...</li>
+            </ul>
+        </div>
+    </div>
+
+</body>
+</html>

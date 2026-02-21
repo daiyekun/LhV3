@@ -1,0 +1,65 @@
+﻿@{
+    ViewData["Title"] = "初始化数据";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@{
+    ViewData["Title"] = "更新日志";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="layui-fluid">
+    <div class="layui-card">
+        <div class="layui-form layui-card-header layuiadmin-card-header-auto">
+            <blockquote class="layui-elem-quote">新产品V3.NF_NET5系统更新日志20220225开始</blockquote>
+        </div>
+        <div class="layui-card-body">
+            <ul class="layui-timeline">
+                <li class="layui-timeline-item">
+                    <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+                    <div class="layui-timeline-content layui-text">
+                        <h3 class="layui-timeline-title">2022-2-25 SVN7775 </h3>
+                        <p>kf SVN7638-SVN7775</p>
+                        <ul>
+                            <li>【优化】选择合同模板模板时保存的数据不作为最终数据<i class="layui-icon layui-icon-rate-solid" style="color: #1E9FFF;"></i></li>
+                            <li>【优化】选择合同文本模板改成行事件</li>
+                            <li>【优化】去掉几个必填项</li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="layui-timeline-item">
+                    <i class="layui-icon layui-timeline-axis">&#xe63f;</i>
+                    <div class="layui-timeline-content layui-text">
+                        <div class="layui-timeline-title">未来</div>
+                    </div>
+                </li>
+
+            </ul>
+
+
+
+        </div>
+    </div>
+</div>
+@{
+    Html.RenderPartial("_LayuiScriptsPartial");
+}
+<script>
+    layui.config({
+        base: '/lib/layuiadmin/'
+    }).extend({
+        index: 'lib/index', //主入口模块
+        }).use(['index',], function () {
+               var $ = layui.$
+                , form = layui.form
+                , admin = layui.admin;
+
+
+
+
+    });
+</script>
+
+

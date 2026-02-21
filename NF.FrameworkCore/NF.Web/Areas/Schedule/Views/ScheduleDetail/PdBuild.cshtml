@@ -1,0 +1,69 @@
+﻿
+@{
+    ViewData["Title"] = "评定";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="layui-fluid">
+    <!--合同基本信息begin-->
+    <div class="layui-form" lay-filter="NF-schContractCollection-Form">
+        <!--修改时使用-->
+        <input type="hidden" id="Id" name="Id" />
+        <input type="hidden" id="Zbdw" name="Zbdw" />
+        <input type="hidden" id="Zje" name="Zje" />
+        <div class="layui-card " id="ScheduleList">
+            <div class="layui-card-header"></div>
+            <div class="layui-card-body" style="padding: 15px;">
+
+                <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                    <label class="layui-form-label">评定描述</label>
+                    <div class="layui-input-block">
+                        <textarea class="layui-textarea layui-input" id="Pdescription" name="Pdescription"></textarea>
+                    </div>
+                </div>
+                <!--需要在最后加这个或者没有也加一个 <div class="layui-form-item">，这样不会导致隐藏菜单是显示问题-->
+                <div class="layui-form-item">
+
+                </div>
+
+            </div>
+        </div>
+
+
+        <!--按钮begin-->
+        <div class="layui-form-item layui-layout-admin layui-hide">
+            <div class="layui-input-block">
+                <div class="layui-footer" style="left: 0;">
+                    <button class="layui-btn" id="NF-schContractCollection-FormSubmit" lay-submit lay-filter="NF-schContractCollection-FormSubmit">保存</button>
+                    <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                </div>
+            </div>
+        </div>
+        <!--按钮end-->
+    </div>
+    <!--合同基本信息end-->
+
+
+
+</div>
+@{
+    Html.RenderPartial("_LayuiScriptsPartial");
+}
+
+<script>
+            layui.config({
+                base: '/lib/layuiadmin/'
+            }).extend({
+                index: 'lib/index', //主入口模块
+                nfcontents: 'contents-nf/nfcontents',
+                commonnf: 'common-nf/commonnf',
+                tableSelect: 'layui-nf-plugs/tableSelect',
+                selectnfitem: 'common-nf/selectnfitem',
+                ScheduleDetailBuild: 'Schedule-nf/ScheduleDetail-build',
+                treeSelect: 'layui-nf-plugs/treeselect',
+               // subMetBuild:'subjectmatter-nf/submet-build',
+                wordAddin:'addin-nf/wordAddin'
+            }).use(['index', 'ScheduleDetailBuild'], function () {
+
+
+            });
+</script>

@@ -1,0 +1,157 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>恒润基EBP移动终端</title>
+    <!--Styles-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="vendor/jquery.mobile-1.4.0-rc.1.css"/>
+    <link rel="stylesheet" href="vendor/mobiscroll/css/mobiscroll.custom-2.6.2.min.css"/>
+    <link rel="stylesheet" href="vendor/jqpagination.css"/>
+    <link rel="stylesheet" href="vendor/jquery.fileupload.css"/>
+    <link rel="stylesheet" href="css/style.css"/>
+    <!--Scripts-->
+    <script type="text/javascript" src="vendor/jquery-1.10.2.js"></script>
+    <script type="text/javascript" src="vendor/jquery.validate.js"></script>
+    <script type="text/javascript" src="vendor/jquery.mobile-1.4.0-rc.1.js"></script>
+    <script type="text/javascript" src="vendor/mobiscroll/js/mobiscroll.custom-2.6.2.min.js"></script>
+    <script type="text/javascript" src="vendor/jquery.jqpagination.js"></script>
+    <script type="text/javascript" src="vendor/jquery.fileupload.js"></script>
+    <script type="text/javascript" src="vendor/jquery.iframe-transport.js"></script>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="ContactView.js"></script>
+    <script type="text/javascript" src="js/woo.js"></script>
+    <script type="text/javascript" src="js/design_change.js"></script>
+</head>
+<body>
+<!--首页-->
+<div data-role="page" id="index">
+    <div data-role="header">
+        <a href="#" class="ui-btn ui-btn-left ui-nodisc-icon ui-btn-icon-notext ui-icon-back" id="backtoindex">返回</a>
+        <h1></h1>
+    </div>
+    <div data-role="content">
+        <input type="hidden" data-role="none" id="detailId"/>
+        <form id="searchform">
+            <input type="search" name="search" id="search" placeholder="工程名称、合同编号..." data-clear-btn="true"/>
+        </form>
+        <table data-role="table" id="list-table" data-mode="reflow" class="woo-list">
+            <thead>
+                <tr>
+                    <th data-priority="1">序号</th>
+                    <th data-priority="persist">编号</th>
+                    <th data-priority="2">工程名称</th>
+                    <th data-priority="3">合同编号</th>
+                    <th data-priority="4">创建人</th>
+                    <th data-priority="5">创建时间</th>
+                    <th data-priority="6">当前节点</th>
+                    <th data-priority="7">状态</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+        <div class="gigantic pagination">
+            <a href="#" class="first" data-action="first">&laquo;</a>
+            <a href="#" class="previous" data-action="previous">&lsaquo;</a>
+            <input type="text" readonly="readonly" data-role="none"/>
+            <a href="#" class="next" data-action="next">&rsaquo;</a>
+            <a href="#" class="last" data-action="last">&raquo;</a>
+        </div>
+    </div>
+    <div data-role="footer" data-position="fixed">
+        <div data-role="navbar">
+            <ul>
+                <li><a href="index.html#index" data-icon="c-yewu" data-ajax="false" id="menu_index"
+                       class="ui-btn-active">业务</a></li>
+                <li><a href="approve.html" data-icon="c-shenpi" data-ajax="false" id="menu_approve">审批</a></li>
+                <li><a href="remind.html" data-icon="c-tixing" data-ajax="false" id="menu_remind">提醒</a></li>
+                <li><a href="system.html" data-icon="c-shezhi" data-ajax="false" id="menu_system">设置</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+<!--查看-->
+<div data-role="page" id="detail">
+    <div data-role="panel" id="detail_menu" data-position="right" data-theme="b" data-display="overlay">
+        <ul data-role="listview">
+            <li><a href="#" data-collapsible-id="detail_basic">基本信息</a></li>
+            <li><a href="#" data-collapsible-id="detail_files">附件</a></li>
+            <li><a href="#" data-collapsible-id="detail_workflow">审批记录</a></li>
+            <li data-role="list-divider"></li>
+            <li><a href="#detail_updateState">修改状态</a></li>
+        </ul>
+    </div>
+    <div data-role="header">
+        <a href="#" data-role="btn" data-icon="back" id="detail_back">返回</a>
+        <h1></h1>
+        <a href="#detail_menu" data-role="btn" data-icon="bars" data-iconpos="notext" class="ui-btn-right"></a>
+    </div>
+    <div data-role="content">
+        <div data-role="collapsible" data-collapsed="false" id="detail_basic">
+            <h4>基本信息</h4>
+            <ul data-role="listview" data-inset="true" class="view">
+                <li>编号:<span name="no"></span></li>
+                <li>工程名称:<span name="gcname"></span></li>
+                <li>合同编号:<span name="htno"></span></li>
+                <li>联系单位:<span name="lxdw"></span></li>
+                <li>变更原因:<span name="bgyy"></span></li>
+                <li>变更内容:<span name="bgnr"></span></li>
+                <li>创建人:<span name="cjr"></span></li>
+                <li>创建时间:<span name="cjsj"></span></li>
+                <li>状态:<span name="state"></span></li>
+            </ul>
+        </div>       
+        <div data-role="collapsible" data-collapsed="false" id="detail_files">
+            <h4>附件</h4>
+            <table data-role="table" id="detail_files_table" data-mode="reflow" class="woo-list">
+                <thead>
+                <tr>
+                    <th data-priority="1">序号</th>
+                    <th data-priority="persist">名称</th>
+                    <th data-priority="2">类别</th>
+                    <th data-priority="3">说明</th>
+                </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>    
+        <div data-role="collapsible" data-collapsed="false" id="detail_workflow">
+            <h4>审批记录</h4>
+            <table data-role="table" id="detail_workflow_table" data-mode="reflow" class="woo-list">
+                <thead>
+                <tr>
+                    <th data-priority="1">序号</th>
+                    <th data-priority="persist">审批事项</th>
+                    <th data-priority="2">审批发起日期</th>
+                    <th data-priority="3">审批完成日期</th>
+                    <th data-priority="4">当前审批节点</th>
+                    <th data-priority="5">流程状态</th>
+                </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!--修改状态-->
+<div data-role="page" id="detail_updateState">
+    <div data-role="header">
+        <h1>修改状态</h1>
+    </div>
+    <div data-role="content">
+        <form id="detail_updateState_form">
+            <select name="state">
+            </select>
+            <input type="submit" value="保存" data-theme="b"/>
+            <a href="#" class="ui-btn cancel">取消</a>
+        </form>
+    </div>
+</div>
+</body>
+</html>

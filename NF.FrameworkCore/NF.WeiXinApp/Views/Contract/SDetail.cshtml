@@ -1,0 +1,83 @@
+﻿
+@{
+    ViewData["Title"] = "SDetail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<a href="/Home/Eees" type="hidden" id="wxnamenull"></a>
+<input type="hidden" id="id" value="@ViewData["Id"]" />
+<div class="weui_panel">
+    <div class="weui_panel_bd">
+        <div class="weui_media_box weui_media_small_appmsg">
+            <div class="weui_cells weui_cells_access">
+                <a href="javascript:;" class="weui_cell" onclick="selectmenu('5');">
+                    <div class="weui_cell_hd"><i class="icon icon-81" style="color: #18b4ed"></i></div>
+                    <div class="weui_cell_bd weui_cell_primary">
+                        <p>合同基本信息</p>
+                    </div>
+                    <span id="cell_5" class="icon icon-74 f-green"></span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div style="display: none;" id="menu_5">
+        <div class="weui_cells" id="kfMainDetail" style="margin:0;padding:0;">
+        </div>
+    </div>
+</div>
+@*<%-- 资质附件begin--%>*@
+<div class="weui_panel">
+    <div class="weui_panel_bd">
+        <div class="weui_media_box weui_media_small_appmsg">
+            <div class="weui_cells weui_cells_access">
+                <a href="javascript:;" class="weui_cell" onclick="selectmenu('2');">
+                    <div class="weui_cell_hd"><i class="icon icon-111 " style="color: #18b4ed"></i></div>
+                    <div class="weui_cell_bd weui_cell_primary">
+                        <p>合同附件</p>
+                    </div>
+                    <span id="cell_2" class="icon icon-74 f-green"></span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div style="display: none;" id="menu_2">
+        <div class="weui_panel_bd" id="ShowFile" style='background-color: #f8f8f8;'>
+
+
+        </div>
+    </div>
+</div>
+
+
+<script src="~/lib/modules/contract/contract-sdetail.js"></script>
+<script>
+    function selectmenu(n) {
+        var eleMore = document.getElementById("menu_" + n);
+        if (eleMore.style.display == "none") {
+            eleMore.style.display = 'block';
+            $("#cell_" + n).removeClass("icon-74");
+            $("#cell_" + n).addClass("icon-35 ");
+            //显示内容
+            ShowContext(n);
+        } else {
+            eleMore.style.display = 'none';
+            $("#cell_" + n).removeClass("icon-35");
+            $("#cell_" + n).addClass("icon-74");
+        }
+    }
+    /***显示标签内容**/
+    function ShowContext(n) {
+        switch (n) {
+            case 2://附件
+            case "2":
+                ShowFile();
+                break;
+        }
+    }
+</script>
+
+
+<script>
+    selectmenu(5);
+
+
+</script>

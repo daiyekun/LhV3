@@ -1,0 +1,273 @@
+﻿@{
+    ViewData["Title"] = "角色";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style type="text/css">
+    .downpanel {
+        padding: 0;
+    }
+
+        .downpanel .layui-select-title {
+            padding-right: 30px;
+            padding-left: 10px;
+        }
+
+        .downpanel dl {
+            color: #000;
+            top: 30px;
+            font-size: 14px;
+        }
+
+        .downpanel .layui-select-title i {
+            border-top-color: #fff;
+        }
+</style>
+<div class="layui-fluid">
+    <input type="hidden" name="hide_keyWord" />
+    <div class="layui-card">
+        <div class="layui-form layui-card-header layuiadmin-card-header-auto">
+            <div class="layui-form-item">
+                <div class="layui-inline">
+
+                    <input type="text" name="keyWord" placeholder="角色名称" style="width:240px;" autocomplete="off" class="layui-input">
+                </div>
+                <div class="layui-inline">
+                    <button class="layui-btn layuiadmin-btn-useradmin NF-role-front-search" lay-submit lay-filter="NF-system-role-search">
+                        <i class="layui-icon layui-icon-search layuiadmin-button-btn"></i>
+                    </button>
+                    <button class="layui-btn layuiadmin-btn-role" data-type="add"> 新增</button>
+                    <button class="layui-btn layuiadmin-btn-role" data-type="batchdel">批量删除</button>
+                    <button class="layui-btn layuiadmin-btn-role" data-type="menuallot">菜单权限</button>
+                    <button class="layui-btn layuiadmin-btn-role" data-type="actionallot">功能权限</button>
+
+                </div>
+            </div>
+        </div>
+        <div class="layui-card-body">
+            <table id="NF-system-role" lay-filter="NF-system-role"></table>
+            <script type="text/html" id="nameTpl">
+                <a class="layui-table-link hand" lay-text="查看角色信息" lay-event="detail">
+                    <cite>{{d.Name}}</cite>
+                </a>
+            </script>
+            @*操作*@
+            <script type="text/html" id="table-system-roletbar">
+                <a class="layui-btn layui-btn-normal layui-btn-xs" lay-event="edit"><i class="layui-icon layui-icon-edit"></i>修改</a>
+                {{#  if(d.Id ==1){ }}
+                <a class="layui-btn layui-btn-disabled layui-btn-xs"><i class="layui-icon layui-icon-delete"></i>删除</a>
+                {{#  } else { }}
+                <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del"><i class="layui-icon layui-icon-delete"></i>删除</a>
+                {{#  } }}
+            </script>
+            @*状态*@
+            <script type="text/html" id="rolestateTpl">
+                <input type="checkbox" name="Ustart" value="{{d.Id}}" lay-skin="switch" lay-text="启用|禁用" lay-filter="rolestate" {{ d.Rstate == 1 ? 'checked' : '' }}>
+            </script>
+        </div>
+    </div>
+</div>
+@{
+    Html.RenderPartial("_LayuiScriptsPartial");
+}
+<script>
+    layui.config({
+        base: '/lib/layuiadmin/'
+    }).extend({
+        index: 'lib/index', //主入口模块
+        systemRoles:'system-nf/NF-system-roles'
+        }).use(['index', 'table', 'systemRoles'], function () {
+        var $ = layui.$
+            , form = layui.form
+            , admin = layui.admin
+            , table = layui.table;
+
+        //监听搜索
+        form.on('submit(NF-system-role-search)', function (data) {
+            var field = data.field;
+
+            //执行重载
+            table.reload('NF-system-role', {
+                where: field
+            });
+        });
+
+        //监听状态操作
+        form.on('switch(rolestate)', function (obj) {
+            var state = obj.elem.checked ? 1 : 0;//状态
+            admin.req({
+                url: '/System/Role/UpdateField',
+                data: { Id: this.value, fieldName: "Rstate", fieldValue: state },
+                done: function (res) {
+                    layer.msg('修改成功！');
+
+                }
+
+            });
+        });
+
+
+        //事件
+            var active = {
+                batchdel: function () {//删除
+                    wooutil.deleteDatas({
+                        table: table,
+                        tableId: 'NF-system-role',
+                        url:'/System/Role/Delete',
+                    });
+                },
+                add: function () {
+                    layer.open({
+                        type: 2
+                        , title: '新增角色'
+                        , content: '/System/Role/Build'
+                        , maxmin: true
+                        , area: ['60%', '80%']
+                        , btn: ['确定', '取消']
+                        , btnAlign: 'c'
+                        , skin: "layer-ext-myskin"
+                        , yes: function (index, layero) {
+                            var iframeWindow = window['layui-layer-iframe' + index]
+                                , submitID = 'Nf-SystemAdmin-RoleFormSubmit'
+                                , submit = layero.find('iframe').contents().find('#' + submitID);
+                            //监听提交
+                            iframeWindow.layui.form.on('submit(' + submitID + ')', function (data) {
+                                var field = data.field; //获取提交的字段
+                                var res = wooutil.UniqueValObj({
+                                    url: '/System/Role/CheckInputValExist',
+                                    fieldName: 'Name',
+                                    inputVal: data.field.Name,
+                                    CurrId:0
+                                });
+                                if (!res) {
+                                    wooutil.OpenSubmitForm({
+                                        table: table,
+                                        url: "/System/Role/AddSave",
+                                        tableId: 'NF-system-role',
+                                        data: field,
+                                        index: index
+                                    });
+                                   
+                                } else {
+                                    layer.msg('当前角色已经存在！');
+
+                                }
+                                return false;
+
+
+                            });
+
+                            submit.trigger('click');
+                        },
+                        success: function (layero, index) {
+                            //layer.full(index);
+                            //wooutil.openTip();
+                        }
+                    });
+                }, menuallot: function () {//菜单权限
+                    var checkStatus = table.checkStatus("NF-system-role")
+                        ,checkData = checkStatus.data; //得到选中的数据
+                    if (checkData.length === 0) {
+                        return layer.msg('请选择数据');
+                    } else if (checkData.length > 1) {
+                        return layer.msg('有且只能选择一条数据！');
+                    }
+                    var tmpId = checkData[0].Id;
+                    
+                    layer.open({
+                        type: 2
+                        , title: '菜单分配'
+                        , content: '/System/SysModel/SelectModel?Id=' + tmpId +"&setType=1&rand=" + wooutil.getRandom()
+                        , maxmin: true
+                         ,area: ['60%', '80%']   
+                       // , area:['550px','600px'] //[window.screen.width / 2 + 'px', window.screen.height / 2 + 'px'] //宽高
+                        , btn: ['确定', '取消']
+                        , btnAlign: 'c'
+                        , yes: function (index, layero) {
+                         
+                            var iframeWindow = window['layui-layer-iframe' + index]
+                                , submitID = 'Nf-SystemAdmin-RoleModelSubmit'
+                                , submit = layero.find('iframe').contents().find('#' + submitID);
+                            //监听提交
+                       
+                            iframeWindow.layui.form.on('submit(' + submitID + ')', function (data) {
+                              var field = data.field; //获取提交的字段
+                              //wooutil.SaveForm(null, "/System/Role/AllotSysModels", "", field, '操作成功！', index);
+                         
+                              wooutil.OpenSubmitForm({
+                                  table: null,
+                                  url: "/System/Role/AllotSysModels",
+                                  tableId: '',
+                                  data: field,
+                                  index: index
+                              });
+                              return false;
+
+                            });
+                           
+                            submit.trigger('click');
+                        },
+                        success: function (layero, index) {
+                            layer.full(index);
+                            wooutil.openTip();
+                        }
+                    });
+
+
+                }, actionallot: function () {//功能权限
+
+                    var checkStatus = table.checkStatus("NF-system-role")
+                        , checkData = checkStatus.data; //得到选中的数据
+                    if (checkData.length === 0) {
+                        return layer.msg('请选择数据');
+                    } else if (checkData.length > 1) {
+                        return layer.msg('有且只能选择一条数据！');
+                    }
+                    var tmpId = checkData[0].Id;
+
+                    layer.open({
+                        type: 2
+                        , title: '功能权限分配'
+                        , content: '/System/SysFunction/PermissonAllot?Id=' + tmpId + "&setType=1&rand=" + wooutil.getRandom()
+                        , maxmin: true
+                        , area: ['60%', '80%']
+                        ,success: function (layero, index) {
+                            layer.full(index);
+                            wooutil.openTip();
+                        }
+                    });
+
+                },
+                test: function () {
+                    var checkStatus = table.checkStatus("NF-system-role")
+                        , checkData = checkStatus.data; //得到选中的数据
+                    if (checkData.length === 0) {
+                        return layer.msg('请选择数据');
+                    } else if (checkData.length > 1) {
+                        return layer.msg('有且只能选择一条数据！');
+                    }
+                    var tmpId = checkData[0].Id;
+                    layer.open({
+                        type: 2
+                        , title: '测试页面'
+                        , content: '/System/Role/Test?Id=' + tmpId
+                        , maxmin: true
+                        , area: ['60%', '80%']
+                        , success: function (layero, index) {
+                            layer.full(index);
+                            wooutil.openTip();
+                        }
+                    });
+
+
+                }
+
+
+            };
+          $('.layui-btn.layuiadmin-btn-role').on('click', function () {
+            var type = $(this).data('type');
+            active[type] ? active[type].call(this) : '';
+            });
+
+    });
+</script>
+

@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewData["Title"] = "操作失败";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="weui-msg"  id="fialmsg">
+    <div class="weui-msg__icon-area"><i class="weui-icon-warn  weui-icon_msg"></i></div>
+    <div class="weui-msg__text-area">
+        <h2 class="weui-msg__title">操作失败</h2>
+        <p class="weui-msg__desc">操作失败,系统出现异常,消息：@ViewData["errmsg"]，请截图说明并联系服务商！@*<a href="javascript:void(0);">文字链接</a>*@</p>
+    </div>
+    <div class="weui-msg__opr-area">
+        <p class="weui-btn-area">
+            <a href="/Home/Index" class="weui-btn weui-btn_primary">首页</a>
+            <a href="/Home/ApproveIndex" class="weui-btn weui-btn_default">审批</a>
+        </p>
+    </div>
+    <div class="weui-msg__extra-area">
+
+    </div>
+</div>
+

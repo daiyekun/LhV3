@@ -1,0 +1,24 @@
+﻿
+@{
+    ViewData["Title"] = "LogOut";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{
+    Html.RenderPartial("_LayuiScriptsPartial");
+}
+<script>
+    layui.config({
+        base: '/lib/layuiadmin/'
+    }).extend({
+        index: 'lib/index' //主入口模块
+    }).use(['index'], function () {
+     var  layer = layui.layer
+       , admin = layui.admin;
+        layer.ready(function () {
+            admin.exit(function () {
+                top.location.href = '/';
+            });
+        });
+    });
+</script>

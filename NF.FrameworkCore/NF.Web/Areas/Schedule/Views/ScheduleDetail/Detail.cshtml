@@ -1,0 +1,145 @@
+﻿
+@{
+    ViewData["Title"] = "进度明细详情";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="layui-fluid">
+    <!--合同基本信息begin-->
+    <div class="layui-form" lay-filter="NF-ContractCollection-Form">
+        <!--修改时使用-->
+        <input type="hidden" id="Id" name="Id" />
+        <input type="hidden" id="Zbdw" name="Zbdw" />
+        <input type="hidden" id="Zje" name="Zje" />
+        <div class="layui-card " id="ScheduleList">
+            <div class="layui-card-header">进度明细</div>
+            <div class="layui-card-body" style="padding: 15px;">
+                <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">名称</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="ScheduleName" id="ScheduleName"  class="layui-input detail" />
+                        </div>
+                    </div>
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">进度名称</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="ScheduleSerName" id="ScheduleSerName" class="layui-input detail" />
+                            <input type="hidden" name="ScheduleSer" id="ScheduleSer" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                    <label class="layui-form-label">描述</label>
+                    <div class="layui-input-block">
+                        <textarea class="layui-textarea layui-input detail" name="Description"></textarea>
+                    </div>
+
+                </div>
+                <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                    <label class="layui-form-label">评定描述</label>
+                    <div class="layui-input-block">
+                        <textarea class="layui-textarea layui-input detail" name="Pdescription"></textarea>
+                    </div>
+
+                </div>
+                <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">完成%</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="Wancheng" id="Wancheng"  class="layui-input detail" />
+                        </div>
+                    </div>
+                </div>
+                <!--需要在最后加这个或者没有也加一个 <div class="layui-form-item">，这样不会导致隐藏菜单是显示问题-->
+                <div class="layui-form-item">
+
+                </div>
+
+            </div>
+        </div>
+
+
+        <!--按钮begin-->
+        <div class="layui-form-item layui-layout-admin layui-hide">
+            <div class="layui-input-block">
+                <div class="layui-footer" style="left: 0;">
+                    <button class="layui-btn" id="NF-ContractCollection-FormSubmit" lay-submit lay-filter="NF-ContractCollection-FormSubmit">保存</button>
+                    <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                </div>
+            </div>
+        </div>
+        <!--按钮end-->
+    </div>
+    <!--合同基本信息end-->
+    <!--进度明细附件begin-->
+    <div class="layui-card " id="ScheduleAttachment">
+        <div class="layui-card-header">进度明细附件</div>
+        <div class="layui-card-body" style="padding: 15px;">
+            <table id="NF-ScheduleAttachment" lay-filter="NF-ScheduleAttachment"></table>
+            <!--表格工具栏-->
+            <script id="toolScheduleAttachment" type="text/html">
+                <div class="layui-inline">
+                    <button class="layui-btn " lay-event="add"><i class="layui-icon layui-icon-edit"></i> 新增</button>
+                    <button class="layui-btn  layui-btn-danger" lay-event="batchdel"><i class="layui-icon layui-icon-delete"></i>批量删除</button>
+                </div>
+            </script>
+            <script type="text/html" id="tabl-ScheduleAttachmentbar">
+                <a class="layui-btn layui-btn-xs" lay-event="download"><i class="layui-icon layui-icon-edit"></i>下载</a>
+                <a class="layui-btn layui-btn-normal layui-btn-xs" lay-event="edit"><i class="layui-icon layui-icon-edit"></i>修改</a>
+                <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del"><i class="layui-icon layui-icon-delete"></i>删除</a>
+            </script>
+
+        </div>
+    </div>
+    <!--进度明细附件--end-->
+    <!--任务列表begin-->
+    <!--<div class="layui-card " id="ScheduleList">
+        <div class="layui-card-header">任务列表</div>
+        <div class="layui-card-body" style="padding: 15px;">
+            <table id="NF-ScheduleList" lay-filter="NF-ScheduleList"></table>-->
+            <!--表格工具栏-->
+            <!--<script id="toolScheduleList" type="text/html">
+                <div class="layui-inline">
+                    <button class="layui-btn " lay-event="add"><i class="layui-icon layui-icon-edit"></i> 新增</button>
+                    <button class="layui-btn  layui-btn-danger" lay-event="batchdel"><i class="layui-icon layui-icon-delete"></i>批量删除</button>
+                </div>
+            </script>
+            <script type="text/html" id="table-ScheduleListbar">
+                <a class="layui-btn layui-btn-normal layui-btn-xs" lay-event="edit"><i class="layui-icon layui-icon-edit"></i>修改</a>
+                <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del"><i class="layui-icon layui-icon-delete"></i>删除</a>
+            </script>
+
+        </div>
+    </div>-->
+    <!--任务列表-end-->
+
+</div>
+<!--目录-->
+<ul class="site-dir layui-layer-wrap nf-ml-ul layui-hide" id="customernva">
+    <li><a href="#ScheduleList" rel="external nofollow" class="current">基本信息</a></li>
+    <li><a href="#ScheduleAttachment" rel="external nofollow">进度明细附件</a></li>
+    @*<li><a href="#ScheduleList" rel="external nofollow">任务列表</a></li>*@
+</ul>
+@{
+    Html.RenderPartial("_LayuiScriptsPartial");
+}
+
+<script>
+            layui.config({
+                base: '/lib/layuiadmin/'
+            }).extend({
+                index: 'lib/index', //主入口模块
+                nfcontents: 'contents-nf/nfcontents',
+                commonnf: 'common-nf/commonnf',
+                tableSelect: 'layui-nf-plugs/tableSelect',
+                selectnfitem: 'common-nf/selectnfitem',
+                ScheduleDetailBuild: 'Schedule-nf/ScheduleDetail-build',
+                treeSelect: 'layui-nf-plugs/treeselect',
+               // subMetBuild:'subjectmatter-nf/submet-build',
+                wordAddin:'addin-nf/wordAddin'
+            }).use(['index', 'ScheduleDetailBuild'], function () {
+
+
+            });
+</script>

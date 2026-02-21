@@ -1,0 +1,38 @@
+﻿ @*
+    导出Excel弹框设置界面分部视图
+ *@
+<div class="layui-form layui-hide layui-text-center" id="ExportExcelSet">
+    <div class="layui-card ">
+
+        <div class="layui-card-body" style="padding: 15px;">
+            @*高级查询*@
+            <input type="hidden" name="advwhere" />
+            <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                <div class="layui-col-lg12 layui-col-md12 layui-col-xs12 layui-col-sm12">
+                    <div class="layui-input-block">
+                        <input type="radio" name="selrow" value="0" title="导出所有行(当前所有行)">
+                    </div>
+                </div>
+                <div class="layui-col-lg12 layui-col-md12 layui-col-xs12 layui-col-sm12">
+                    <div class="layui-input-block">
+                        <input type="radio" name="selrow" value="1" title="导出所选行(当前所选择的行)" checked>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                <div class="layui-col-lg12 layui-col-md12 layui-col-xs12 layui-col-sm12">
+                    <div class="layui-input-block">
+                        <input type="radio" name="selcell" value="0" title="导出所有列(全部数据列)">
+                    </div>
+                </div>
+                <div class="layui-col-lg12 layui-col-md12 layui-col-xs12 layui-col-sm12">
+                    <div class="layui-input-block">
+                        <input type="radio" name="selcell" value="1" title="导出所选列(当前显示数据列)" checked>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+

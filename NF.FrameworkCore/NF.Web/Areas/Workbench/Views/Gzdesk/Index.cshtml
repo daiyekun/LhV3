@@ -1,0 +1,125 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/lib/layuiadmin/modules/layui-nf-plugs/soulTable/soulTable.css" rel="stylesheet" />
+<div>
+    <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+        <ul class="layui-tab-title layui-tab-brief">
+            <li class="layui-this">
+                跟踪列表
+            </li>
+            <li>
+                关闭列表
+            </li>
+        </ul>
+        <div class="layui-tab-content" style="height:100px;">
+            <div class="layui-tab-item layui-show">
+                <div class="layui-fluid">
+                    <input type="hidden" name="hide_keyWord" />
+                    <div class="layui-card">
+                        <div class="layui-card-body">
+                            <table id="NF-Gztable-Index" lay-filter="NF-Gztable-Index"></table>
+                          
+                            <!--表格工具栏-->
+                            <script id="toolWork3" type="text/html">
+                                <div class="layui-inline">
+                                    <input class="layui-input" type="text" name="keyWord" placeholder="任务名称、任务归属" style="width:220px;" />
+                                </div>
+                                <div class="layui-inline">
+                                    <button class="layui-btn" lay-event="search">
+                                        <i class="layui-icon layui-icon-search layuiadmin-button-btn"></i>
+                                    </button>
+
+
+                                    <button class="layui-btn" lay-event="updstatec">
+                                        重做
+                                    </button>
+                                    <button class="layui-btn" lay-event="updstateg">
+                                        关闭
+                                    </button>
+                                    <button class="layui-btn" lay-event="exportexcel">
+                                        <i class="layui-icon layui-icon-export layuiadmin-button-btn"></i>导出Excel
+                                    </button>
+                                    <button class="layui-btn" lay-event="clear" style="width:100px;margin:5px;">
+                                        <i class="layui-icon layui-icon-edit layuiadmin-button-btn"></i>清除
+                                    </button>
+                                </div>
+                            </script>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-tab-item">
+                <div class="layui-fluid">
+                    <input type="hidden" name="hide_keyWord" />
+                    <div class="layui-card">
+                        <div class="layui-card-body">
+                            <table id="NF-Gbtable-Index" lay-filter="NF-Gbtable-Index"></table>
+                           
+                            <!--表格工具栏-->
+                            <script id="toolWork3" type="text/html">
+                                <div class="layui-inline">
+                                    <input class="layui-input" type="text" name="keyWord" placeholder="任务名称、任务归属" style="width:220px;" />
+                                </div>
+                                <div class="layui-inline">
+                                    <button class="layui-btn" lay-event="search">
+                                        <i class="layui-icon layui-icon-search layuiadmin-button-btn"></i>
+                                    </button>
+                                    <button class="layui-btn" lay-event="updstatec" style="width:100px;margin:5px;">
+                                        <i class="layui-icon layui-icon-export layuiadmin-button-btn"></i>重做
+                                    </button>
+                                    <button class="layui-btn" lay-event="updstateg" style="width:100px;margin:5px;">
+                                        <i class="layui-icon layui-icon-edit layuiadmin-button-btn"></i>关闭
+                                    </button>
+                                    <button class="layui-btn" lay-event="clear" style="width:100px;margin:5px;">
+                                        <i class="layui-icon layui-icon-edit layuiadmin-button-btn"></i>清除
+                                    </button>
+                                </div>
+                            </script>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="~/lib/layuiadmin/layui/layui.js" type="text/javascript"></script>
+<script>
+    layui.config({
+        base: '/lib/layuiadmin/'
+    }).extend({
+        index: 'lib/index',
+        Gztable: 'fgztabl-nf/gztable-index',
+        Gbtable: 'fgztabl-nf/gbtable-index',
+        commonnf: 'common-nf/commonnf'
+        , dynamicCondition: 'layui-nf-plugs/dynamicCondition/dynamicCondition'
+        , treeSelect: 'layui-nf-plugs/treeselect'
+        , gzdescutility: 'common-nf/gzdescutility'
+        , gbdescutility: 'common-nf/gbdescutility'
+        , appflowutility: 'common-nf/appflowutility'
+        , soulTable: 'layui-nf-plugs/soulTable/soulTable',
+        tableChild: 'layui-nf-plugs/soulTable/tableChild',
+        tableMerge: 'layui-nf-plugs/soulTable/tableMerge',
+        tableFilter: 'layui-nf-plugs/soulTable/tableFilter',
+        excel: 'layui-nf-plugs/soulTable/excel',
+      
+
+    }).use(['index', 'commonnf', 'Gztable', 'Gbtable', 'element'], function () {
+        var element = layui.element;
+        var Gztable = layui.Gztable;
+        var $ = layui.jquery,
+            element = layui.element;
+        element.on('tab(tab-all)', function (data) {
+            var status = $(this).attr('data-status')
+
+
+        })
+
+    })
+
+
+</script>
+

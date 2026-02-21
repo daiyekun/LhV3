@@ -1,0 +1,69 @@
+
+======================================================================================
+
+
+--------------------------------------------------------------------------------------
+
+日志时间：2021-07-29 11:13:50,034 [30] 
+日志级别：ERROR 
+日 志 类：类名：NF.Web.Utility.TimeJob
+	方法名：OpLogRedisListToDb [(null)] 
+Object reference not set to an instance of an object. 
+
+
+--------------------------------------------------------------------------------------
+
+日志时间：2021-07-29 11:16:43,872 [33] 
+日志级别：ERROR 
+日 志 类：类名：NF.Web.Utility.TimeJob
+	方法名：OpLogRedisListToDb [(null)] 
+Timeout performing EXISTS (3000ms), active: RPUSH OptionLogRedis, next: INFO, inst: 1, qu: 0, qs: 2, aw: False, rs: CompletePendingMessage, ws: Idle, in: 0, in-pipe: 330, out-pipe: 0, serverEndpoint: 127.0.0.1:6379, mgr: 9 of 10 available, clientName: DESKTOP-27QSEB9, IOCP: (Busy=0,Free=1000,Min=4,Max=1000), WORKER: (Busy=4,Free=32763,Min=4,Max=32767), v: 2.0.601.3402 (Please take a look at this article for some common client-side issues that can cause timeouts: https://stackexchange.github.io/StackExchange.Redis/Timeouts) 
+
+
+--------------------------------------------------------------------------------------
+
+日志时间：2021-07-29 11:16:43,875 [60] 
+日志级别：ERROR 
+日 志 类：类名：NF.Web.Utility.Filters
+	方法名：OnException [(null)] 
+Timeout performing RPUSH (3000ms), active: RPUSH OptionLogRedis, next: INFO, inst: 1, qu: 0, qs: 2, aw: False, rs: CompletePendingMessage, ws: Idle, in: 0, in-pipe: 330, out-pipe: 0, serverEndpoint: 127.0.0.1:6379, mgr: 9 of 10 available, clientName: DESKTOP-27QSEB9, IOCP: (Busy=0,Free=1000,Min=4,Max=1000), WORKER: (Busy=3,Free=32764,Min=4,Max=32767), v: 2.0.601.3402 (Please take a look at this article for some common client-side issues that can cause timeouts: https://stackexchange.github.io/StackExchange.Redis/Timeouts) 
+
+
+--------------------------------------------------------------------------------------
+
+日志时间：2021-07-29 11:16:50,016 [58] 
+日志级别：ERROR 
+日 志 类：类名：NF.Web.Utility.TimeJob
+	方法名：OpLogRedisListToDb [(null)] 
+Object reference not set to an instance of an object. 
+
+======================================================================================
+
+
+--------------------------------------------------------------------------------------
+
+日志时间：2021-07-29 11:22:05,619 [8] 
+日志级别：ERROR 
+日 志 类：类名：NF.Web.Utility.Filters
+	方法名：OnActionExecuting [(null)] 
+添加操作日志错误:Object reference not set to an instance of an object. 
+
+
+--------------------------------------------------------------------------------------
+
+日志时间：2021-07-29 11:27:20,784 [18] 
+日志级别：ERROR 
+日 志 类：类名：NF.Web.Utility.Filters
+	方法名：OnActionExecuting [(null)] 
+添加操作日志错误:Object reference not set to an instance of an object. 
+
+======================================================================================
+
+
+--------------------------------------------------------------------------------------
+
+日志时间：2021-07-29 11:28:33,960 [10] 
+日志级别：ERROR 
+日 志 类：类名：NF.Web.Utility.Filters
+	方法名：OnActionExecuting [(null)] 
+添加操作日志错误:Object reference not set to an instance of an object. 

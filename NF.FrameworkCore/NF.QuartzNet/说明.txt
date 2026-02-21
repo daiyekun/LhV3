@@ -1,0 +1,11 @@
+﻿Quartz.NET官网地址：https://www.quartz-scheduler.net/
+
+Quartz.NET文档地址：https://www.quartz-scheduler.net/documentation/index.html
+
+Cron表达式在线生成器：http://cron.qqe2.com/
+
+Cron表达式详细介绍：https://www.jianshu.com/p/e9ce1a7e1ed1
+
+参考文章：
+https://www.cnblogs.com/miskis/p/8487634.html（比较全）
+http://www.cnblogs.com/Ivan-Wu/p/9829244.html（简单调用）

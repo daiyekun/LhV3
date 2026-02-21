@@ -1,0 +1,111 @@
+﻿
+@{
+    ViewData["Title"] = "数据字典";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="layui-fluid" id="LAY-component-grid-all">
+    <div class="layui-row layui-col-space5">
+        <div class="layui-col-xs6 layui-col-sm5 layui-col-md3">
+            <div class="layui-card">
+                <div class="layui-card-header">数据字典</div>
+                <div class="layui-card-body">
+                    <div id="dic_Tree"  style="width: 100%; height:98%; overflow:auto;"></div>
+                </div>
+            </div>
+        </div>
+        <div class="layui-col-xs6 layui-col-sm7 layui-col-md9">
+            <div class="layui-card">
+                <div class="layui-card-header">
+                    <form class="layui-form">
+                        <div class="layui-inline">
+                            @*adddic_btn*@
+                            <a class="layui-btn layuiadmin-btn-tags " data-type="add">添加</a>
+                        </div>
+
+                        <div class="layui-inline">
+                            <a class="layui-btn delAll_btn">批量删除</a>
+                        </div>
+                        <input type="hidden" name="dataType" />
+                    </form>
+                </div>
+                <div class="layui-card-body">
+                    <table id="LAY-dicTable" lay-filter="LAY-dicTable"></table>
+                    <script type="text/html" id="layuiadmin-app-cont-tagsbar">
+                        <a class="layui-btn layui-btn-normal layui-btn-xs" lay-event="edit"><i class="layui-icon layui-icon-edit"></i>编辑</a>
+                        <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del"><i class="layui-icon layui-icon-delete"></i>删除</a>
+                    </script>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="/lib/layuiadmin/layui/layui.js"></script>
+<script type="text/javascript">
+    layui.config({
+        base: '/lib/layuiadmin/' //静态资源所在路径
+    }).extend({
+        index: 'lib/index', //主入口模块
+        systemDataDictionary:'system-nf/nf-system-datadictionary'
+        }).use(['index', 'table', 'systemDataDictionary'], function ()
+        {
+
+            var table = layui.table;
+
+            var $ = layui.$, active = {
+                add: function () {
+                    layer.open({
+                        type: 2
+                        , title: '添加字典'
+                        , content: '/System/DataDictionary/Build'
+                        , area: ['60%', '80%']
+                        , btnAlign: 'c'
+                        , maxmin: true
+                        , btn: ['确定', '取消']
+                        , yes: function (index, layero) {
+
+                            var iframeWindow = window['layui-layer-iframe' + index]
+                                , submitID = 'Nf-System-DataDicFormSubmit'
+                                , submit = layero.find('iframe').contents().find('#' + submitID);
+                            //监听提交
+                            iframeWindow.layui.form.on('submit(' + submitID + ')', function (data) {
+                                wooutil.OpenSubmitForm({
+                                    table: table,
+                                    url: "/System/DataDictionary/Save",
+                                    tableId: 'LAY-dicTable',
+                                    data: data.field,
+                                    index: index
+                                });
+                                return false;
+
+
+                            });
+
+                            submit.trigger('click');
+
+
+                        },
+                        success: function (layero, index) {
+                            
+                            //设置选择字典类别
+                            var $dataType = $("input[name='dataType']").val();
+                            var body = layui.layer.getChildFrame('body', index);
+                            body.find("input[name='DtypeNumber']").val($dataType);
+
+
+                        }
+
+                    });
+                }
+            };
+            $('.layui-btn.layuiadmin-btn-tags').on('click', function () {
+                var type = $(this).data('type');
+                active[type] ? active[type].call(this) : '';
+            });
+
+
+        });
+</script>
+
+
+
+

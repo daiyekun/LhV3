@@ -1,0 +1,24 @@
+
+======================================================================================
+
+
+--------------------------------------------------------------------------------------
+
+日志时间：2021-07-07 09:07:10,076 [57] 
+日志级别：ERROR 
+日 志 类：类名：NF.OfficeComm
+	方法名：DeleteDocStateBehavior [(null)] 
+System.Runtime.InteropServices.COMException (0x800A11FD): 此命令无效。
+   at Microsoft.Office.Interop.Word.DocumentClass.DeleteAllCommentsShown()
+   at NF.OfficeComm.WordDocHiper.DeleteDocStateBehavior(Document document) in D:\MyCode\V3.0FZ\NF.FrameworkCore\NF.OfficeComm\WordDocHiper.cs:line 121 
+
+
+--------------------------------------------------------------------------------------
+
+日志时间：2021-07-07 09:17:16,242 [108] 
+日志级别：ERROR 
+日 志 类：类名：NF.OfficeComm
+	方法名：DeleteDocStateBehavior [(null)] 
+System.Runtime.InteropServices.COMException (0x800A11FD): 此命令无效。
+   at Microsoft.Office.Interop.Word.DocumentClass.DeleteAllCommentsShown()
+   at NF.OfficeComm.WordDocHiper.DeleteDocStateBehavior(Document document) in D:\MyCode\V3.0FZ\NF.FrameworkCore\NF.OfficeComm\WordDocHiper.cs:line 121 

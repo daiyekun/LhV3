@@ -1,0 +1,6 @@
+D:\MyCode\V3.0\NF.FrameworkCore\NF.WebAPI\obj\Debug\net6.0\NF.WebAPI.csproj.AssemblyReference.cache
+D:\MyCode\V3.0\NF.FrameworkCore\NF.WebAPI\obj\Debug\net6.0\NF.WebAPI.GeneratedMSBuildEditorConfig.editorconfig
+D:\MyCode\V3.0\NF.FrameworkCore\NF.WebAPI\obj\Debug\net6.0\NF.WebAPI.AssemblyInfoInputs.cache
+D:\MyCode\V3.0\NF.FrameworkCore\NF.WebAPI\obj\Debug\net6.0\NF.WebAPI.AssemblyInfo.cs
+D:\MyCode\V3.0\NF.FrameworkCore\NF.WebAPI\obj\Debug\net6.0\NF.WebAPI.csproj.CoreCompileInputs.cache
+D:\MyCode\V3.0\NF.FrameworkCore\NF.WebAPI\obj\Debug\net6.0\NF.WebAPI.MvcApplicationPartsAssemblyInfo.cache

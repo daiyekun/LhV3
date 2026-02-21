@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewData["Title"] = "选择合同";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="layui-fluid">
+    <input type="hidden" name="hide_keyWord" />
+    @*弹框索引，别动*@
+    <input type="hidden" name="currIndex" id="currIndex" />
+     @*选择类型0：收票、1：开票、2：实际收款、3：实际付款*@
+    <input type="hidden" name="selType" id="selType" />
+    <div class="layui-card">
+        <div class="layui-card-body">
+            <table id="NF-SelectContract-Index" lay-filter="NF-SelectContract-Index"></table>
+            <!--表格工具栏-->
+            <script id="toolcontract" type="text/html">
+                <div class="layui-inline">
+                    <input class="layui-input" type="text" name="keyWord" placeholder="名称、编号" style="width:300px;" />
+                </div>
+                <div class="layui-inline">
+                 <button class="layui-btn" lay-event="search">
+                  <i class="layui-icon layui-icon-search layuiadmin-button-btn"></i>
+                 </button>
+                </div>
+            </script>            
+
+        </div>
+    </div>
+</div>
+@{
+    Html.RenderPartial("_LayuiScriptsPartial");
+    Html.RenderPartial("_ContStatePartial");
+}
+
+<script>
+    layui.config({
+        base: '/lib/layuiadmin/'
+    }).extend({
+        index: 'lib/index', //主入口模块
+        SelectContract:'common-nf/selectcontract'
+    }).use(['index', 'SelectContract'], function () {
+     });
+</script>
+

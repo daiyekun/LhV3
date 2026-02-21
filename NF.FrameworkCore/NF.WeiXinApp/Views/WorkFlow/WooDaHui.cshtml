@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewData["Title"] = "我打回";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<input type="hidden" id="Pag" />
+<input type="hidden" id="Ts" />
+<input type="hidden" id="keyWord" />
+<input type="hidden" id="Wx" value="@ViewData["wxzh"]" />
+<input type="hidden" id="HtType" value="@ViewData["HtTye"]" />
+<a href="/Home/Eees" type="hidden" id="wxnamenull"></a>
+<input type="hidden" id="wshenpiType" value="0" />
+<div class="weui-search-bar">
+    <input type="search" class="search-input" id='searchInput' placeholder='名称、编号' /><button class="weui-btn weui-btn_mini weui-btn_primary" id="btnsearch"><i class="icon icon-4"></i></button>
+</div>
+<div class="weui-panel weui-panel_access">
+    <div class="weui-panel__bd page-back list-box" id="rank-list"> </div>
+
+    <div class="weui-panel__ft" style="margin-bottom:100px;">
+        <a href="javascript:void(0);" class="weui-cell weui-cell_access weui-cell_link">
+            <div class="weui-cell__bd list-more" id="getmore">查看更多<i id="loading" class="weui-loading"></i></div>
+        </a>
+    </div>
+</div>
+<script src="~/lib/modules/workflow/Wdh-index.js"></script>
+

@@ -1,0 +1,86 @@
+﻿<#@ template debug="true" hostspecific="false" language="C#" #>
+<#@ assembly name="System.Core" #>
+<#@ assembly name="System.Data"#>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="System.Text" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="System.Data.Common" #>
+<#@ import namespace="System.Data.SqlClient" #>
+<#@ output extension=".cs" #>
+<#
+ var builder = new T4Builder("Server=192.168.0.189;Database=LH.NET5_V3.0_ZY;Persist Security Info=True;User ID=sa;password=Sasa123;");
+
+#>
+using NF.IBLL;
+using NF.Common.Utility;
+using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Linq.Expressions;
+using Microsoft.EntityFrameworkCore;
+using System.Data.Common;
+using System.Linq;
+using NF.Model.Models;
+///****************************************************
+///代码自动生成,需要修改builder里构造函数数据库连接字符串即可
+///如果有个性业务在建立一个public partial interface 
+///如有报错，添加引用NuGet  PetaPoco.NetCore (1.0.1)、T4 (2.0.1)
+///****************************************************
+namespace NF.BLL
+{
+<#
+   foreach(var item in builder.TableList)
+   {
+#> 
+ public partial class <#=item#>Service : BaseService<<#=item#>>, I<#=item#>Service
+    {
+        private DbSet<<#=item#>> _<#=item#>Set = null;
+        public <#=item#>Service(DbContext dbContext)
+           : base(dbContext)
+        {
+            _<#=item#>Set = base.Db.Set<<#=item#>>();
+        }
+		
+		public <#=item#>Service(){}
+    }
+    
+   
+    <#
+     }
+     #>
+
+}
+
+<#+
+    public class T4Builder
+    {
+        public List<String> TableList = new List<String>();
+
+       
+
+        public T4Builder(string conectionstring)
+        {
+            SqlConnection con = new SqlConnection(conectionstring);
+            con.Open();
+
+            SqlCommand cmd = new SqlCommand("select name from sysobjects where xtype='u'", con);
+            var reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                var tablename = reader.GetValue(0).ToString();
+                TableList.Add(tablename);
+            }
+
+           
+            con.Close();
+            con.Dispose();
+        }
+
+       
+    }
+
+
+   
+
+
+#>

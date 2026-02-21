@@ -1,0 +1,27 @@
+﻿@using NF.Common.Utility;
+@using NF.ViewModel.Models;
+@using NF.Model.Models;
+<table border="0" cellpadding="0" cellspacing="0">
+    <tr>
+        <td colspan="4" class="TopTb">审批</td>
+    </tr>
+    <tr>
+        <td class="ConText">节点名称</td>
+        <td class="ConText">用户名</td>
+        <td class="ConInfoText">审批意见</td>
+        <td class="ConText">审批时间</td>
+    </tr>
+    @{
+        foreach (var item in ViewData["data"] as List<APPcontractSPD>)
+        {
+            <tr>
+                <td class="ConText">@item.CurrentNodeName</td>
+                <td class="ConText">@item.CuName</td>
+                <td class="ConInfoText">@item.Opin</td>
+                <td class="ConText">@item.copnData</td>
+            </tr>
+        }
+    }
+
+
+</table>

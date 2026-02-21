@@ -1,0 +1,167 @@
+﻿
+@{
+    ViewData["Title"] = "发票详情";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<a href="/Home/Eees" type="hidden" id="wxnamenull"></a>
+<div class="page">
+    @* 审批框不用了 用下面的图标 *@
+    @*<div class="page__hd">
+            <div class="weui-btn_primary weui-header hide" id="shenpi">
+                <div class="weui-header-left"> <a class="icon icon-109 f-white"></a>  </div>
+                <h1 class="weui-header-title">审批</h1>
+                <div class="weui-header-right"><a class="icon icon-115 f-white"></a></div>
+            </div>
+        </div>*@
+    <div class="page__bd">
+        @*审批事项用于判断是否有审批按钮*@
+        <input type="hidden" id="WfItem" name="WfItem" />
+        @*类别ID*@
+        <input type="hidden" id="HtLbId" name="HtLbId" />
+        @*审批实例ID*@
+        <input type="hidden" id="InstId" name="InstId" />
+        <input type="hidden" id="NodeId" name="NodeId" />
+        @*节点*@
+        <input type="hidden" id="NodeStrId" name="NodeStrId" />
+        @*合同金额*@
+        <input type="hidden" id="HtJeD" name="HtJeD" />
+        <input hidden id="contId" name="contId" value="@ViewData["contId"]" />
+        <input type="hidden" id="wxzh" value="@ViewData["wxzh"]" />
+        <input type="hidden" id="Htid" value="@ViewData["Htid"]" />
+        <input type="hidden" id="Itype" value="@ViewData["Itype"]" />
+        @*基本信息----begin*@
+        <div class="weui-panel weui-panel_access">
+
+            <div class="weui-panel__hd">基本信息</div>
+            <div class="weui-panel__bd">
+                <div class="weui-cell weui-cell_active weui-cell_readonly">
+                    <div class="weui-cell__hd"><label class="weui-label">发票类型</label></div>
+                    <div class="weui-cell__bd">
+                        <input class="weui-input" name="InTypeName" id="InTypeName" readonly />
+                    </div>
+                </div>
+                <div class="weui-cell weui-cell_active weui-cell_disabled">
+                    <div class="weui-cell__hd"><label class="weui-label">发票金额</label></div>
+                    <div class="weui-cell__bd">
+                        <input class="weui-input" name="AmountMoneyThod" id="AmountMoneyThod" disabled />
+                    </div>
+                </div>
+                <div class="weui-cell weui-cell_active weui-cell_disabled">
+                    <div class="weui-cell__hd"><label class="weui-label">开票日期</label></div>
+                    <div class="weui-cell__bd">
+                        <input class="weui-input" name="MakeOutDateTime" id="MakeOutDateTime" disabled />
+                    </div>
+                </div>
+                <div class="weui-cell weui-cell_active weui-cell_disabled">
+                    <div class="weui-cell__hd"><label class="weui-label">发票号</label></div>
+                    <div class="weui-cell__bd">
+                        <input class="weui-input" name="InCode" id="InCode" disabled />
+                    </div>
+                </div>
+                <div class="weui-cell weui-cell_active weui-cell_disabled">
+                    <div class="weui-cell__hd"><label class="weui-label">备用1</label></div>
+                    <div class="weui-cell__bd">
+                        <input class="weui-input" name="Reserve1" id="Reserve1" disabled />
+                    </div>
+                </div>
+                <div class="weui-cell weui-cell_active weui-cell_disabled">
+                    <div class="weui-cell__hd"><label class="weui-label">备用2</label></div>
+                    <div class="weui-cell__bd">
+                        <input class="weui-input" name="Reserve2" id="Reserve2" disabled />
+                    </div>
+                </div>
+                <div class="weui-cell weui-cell_active weui-cell_disabled">
+                    <div class="weui-cell__hd"><label class="weui-label">创建人</label></div>
+                    <div class="weui-cell__bd">
+                        <input class="weui-input" name="CreateUserName" id="CreateUserName" disabled />
+                    </div>
+                </div>
+                <div class="weui-cell weui-cell_active weui-cell_disabled">
+                    <div class="weui-cell__hd"><label class="weui-label">创建时间</label></div>
+                    <div class="weui-cell__bd">
+                        <input class="weui-input" name="CreateDateTime" id="CreateDateTime" disabled />
+                    </div>
+                </div>
+                <div class="weui-cell weui-cell_active weui-cell_disabled">
+                    <div class="weui-cell__hd"><label class="weui-label">确认人</label></div>
+                    <div class="weui-cell__bd">
+                        <input class="weui-input" name="ConfirmUserName" id="ConfirmUserName" disabled />
+                    </div>
+                </div>
+                <div class="weui-cell weui-cell_active weui-cell_disabled">
+                    <div class="weui-cell__hd"><label class="weui-label">确认时间</label></div>
+                    <div class="weui-cell__bd">
+                        <input class="weui-input" name="ConfirmDateTime" id="ConfirmDateTime" disabled />
+                    </div>
+                </div>
+                <div class="weui-cell weui-cell_active weui-cell_disabled">
+                    <div class="weui-cell__hd"><label class="weui-label">发票状态</label></div>
+                    <div class="weui-cell__bd">
+                        <input class="weui-input" name="InStateDic" id="InStateDic" disabled />
+                    </div>
+                </div>
+                <div class="weui-cell weui-cell_active weui-cell_disabled">
+                    <div class="weui-cell__hd"><label class="weui-label">备注</label></div>
+                    <div class="weui-cell__bd">
+                        <input class="weui-input" name="Remark" id="Remark" disabled />
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+
+        @*<div class="weui-panel weui-panel_access" id="FK23">
+                <div class="weui-panel__hd">发票内容</div>
+                <div class="weui-panel__bd" id="Fpdetail">
+                </div>
+            </div>*@
+
+        @*基本信息----end*@
+        <div class="weui-panel weui-panel_access">
+            <div class="weui-panel__hd">发票附件</div>
+            <div class="weui-panel__bd" id="FpFile">
+            </div>
+        </div>
+        @*合同基本信息----begin*@
+        <div class="weui-panel weui-panel_access">
+            <div class="weui-panel__hd">合同基本信息</div>
+            <div class="weui-panel__bd" id="HtInfo">
+            </div>
+        </div>
+        @*合同基本信息-----end*@
+        @*审批历史----begin*@
+        @*<div class="weui-panel weui-panel_access">
+                <div class="weui-panel__hd">审批历史</div>
+                <div class="weui-panel__bd" id="XmSpLs">
+                </div>
+            </div>*@
+        @*审批历史-----end*@
+        @*计划资金----begin*@
+        @*<div class="weui-panel weui-panel_access">
+                <div class="weui-panel__hd">计划资金</div>
+                <div class="weui-panel__bd" id="Jfzj">
+                </div>
+            </div>*@
+        @*计划资金-----end*@
+
+
+
+
+    </div>
+    @*漂浮图片*@
+    <img src="~/lib/weui/images/icon_shenpi.png" class="shenpibtn hide"  id="shenpi" />
+</div>
+
+<div id="full" class='weui-popup__container'>
+    <div class="weui-popup__overlay"></div>
+    <div class="weui-popup__modal">
+        <a href="javascript:;" class="weui-btn weui-btn_primary close-popup">关闭</a>
+        <div class="timeline">
+            <ul id="timelineui">
+            </ul>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="~/lib/modules/Invoice/Invoice-detail.js"></script>

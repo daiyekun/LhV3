@@ -1,0 +1,66 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "91f7186d-2dcf-4f3d-a71d-1b5c174bbc05": {
+      "ProjectGuid": "91f7186d-2dcf-4f3d-a71d-1b5c174bbc05",
+      "DisplayName": "ImportData",
+      "ColorIndex": 0
+    },
+    "128d65e1-0eb6-4fc0-9dae-9cc1935c425d": {
+      "ProjectGuid": "128d65e1-0eb6-4fc0-9dae-9cc1935c425d",
+      "DisplayName": "NF.Web",
+      "ColorIndex": 1
+    },
+    "55720a6b-8dac-49ac-9bbc-defeec155294": {
+      "ProjectGuid": "55720a6b-8dac-49ac-9bbc-defeec155294",
+      "DisplayName": "NF.Model",
+      "ColorIndex": 2
+    },
+    "e18367de-f260-4c25-856f-0b7b50c00523": {
+      "ProjectGuid": "e18367de-f260-4c25-856f-0b7b50c00523",
+      "DisplayName": "NF.BLL",
+      "ColorIndex": 3
+    },
+    "0ba4cf35-4f08-409e-87f1-6ca00969eac6": {
+      "ProjectGuid": "0ba4cf35-4f08-409e-87f1-6ca00969eac6",
+      "DisplayName": "NF.ViewModel",
+      "ColorIndex": 4
+    },
+    "9910abb0-b735-4c0f-a293-4a26492e0a02": {
+      "ProjectGuid": "9910abb0-b735-4c0f-a293-4a26492e0a02",
+      "DisplayName": "NF.IBLL",
+      "ColorIndex": 5
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "杂项文件",
+      "ColorIndex": -1
+    },
+    "5ebb68bd-5cde-4c00-8d8a-dd5e61a48831": {
+      "ProjectGuid": "5ebb68bd-5cde-4c00-8d8a-dd5e61a48831",
+      "DisplayName": "NF.AutoMapper",
+      "ColorIndex": 6
+    },
+    "5dad6e6a-cd13-407b-bf8e-283105c9d4c9": {
+      "ProjectGuid": "5dad6e6a-cd13-407b-bf8e-283105c9d4c9",
+      "DisplayName": "NF.Common",
+      "ColorIndex": 7
+    },
+    "88991910-2cf6-45f8-96f6-251ee7b6a561": {
+      "ProjectGuid": "88991910-2cf6-45f8-96f6-251ee7b6a561",
+      "DisplayName": "NF.OfficeComm",
+      "ColorIndex": 8
+    },
+    "06f219c3-e02a-4f94-9f6e-8b1063126ef3": {
+      "ProjectGuid": "06f219c3-e02a-4f94-9f6e-8b1063126ef3",
+      "DisplayName": "NF.WeiXinApp",
+      "ColorIndex": 9
+    },
+    "2b520b9e-98a2-46a1-84e6-1e88d56b5dd8": {
+      "ProjectGuid": "2b520b9e-98a2-46a1-84e6-1e88d56b5dd8",
+      "DisplayName": "NF.WeiXin.Lib",
+      "ColorIndex": 10
+    }
+  },
+  "NextColorIndex": 11
+}

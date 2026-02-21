@@ -1,0 +1,139 @@
+﻿
+@{
+    ViewData["Title"] = "用户";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/lib/layuiadmin/modules/layui-nf-plugs/soulTable/soulTable.css" rel="stylesheet" />
+<div class="layui-fluid">
+    <div class="layui-card">
+        <input type="hidden" name="hide_keyWord" />
+        <script id="tooluser" type="text/html">
+            <div class="layui-form-item">
+                <div class="layui-inline">
+
+                    <input type="text" name="keyWord" placeholder="用户名称、所属机构" style="width:200px;" autocomplete="off" class="layui-input">
+                </div>
+                <div class="layui-inline">
+                    <button class="layui-btn" lay-event="search">
+                        <i class="layui-icon layui-icon-search layuiadmin-button-btn"></i>
+                    </button>
+                    <button class="layui-btn layuiadmin-btn-user " lay-event="add"> 新增</button>
+                    <button class="layui-btn layuiadmin-btn-user" lay-event="menuallot">菜单权限</button>
+                    <button class="layui-btn layuiadmin-btn-user" lay-event="actionallot">功能权限</button>
+                    <div class="layui-btn  layui-unselect layui-form-select downpanel">
+                        <div class="layui-select-title">
+                            状态流转
+                            <i class="layui-edge"></i>
+                        </div>
+                        <dl class="layui-anim layui-anim-upbit datastate"></dl>
+                    </div>
+                    <ul class="layui-nav layui-btn layui-bg-green " style="font-size: 12px;float: right;padding:0px 0px 0px 0px;margin-left: 14px;">
+                        <li class="layui-nav-item" style="line-height: 33px;font-size: 12px;">
+                            <a style="color:white;font-size: 12px;padding: 2px 30px 3px 20px;letter-spacing:1px;width:88px" id="moreClick">更多操作<i class="layui-edge"></i></a>
+                            <dl class="layui-nav-child" style="top: 30px;line-height: 30px;width:188px;background-color:#fff ;border:white" id="moreEncrypt">
+                                <!-- 二级菜单 -->
+                                <dd>
+                                    <button class="layui-btn" lay-event="batchdel" style="width:168px;margin:5px;">
+                                        <i class="layui-icon layui-icon-delete layuiadmin-button-btn"></i>批量删除
+                                    </button>
+                                </dd>
+                                <dd>
+                                    <button class="layui-btn" lay-event="clear" style="width:168px;margin:5px;">
+                                        <i class="layui-icon layui-icon-edit layuiadmin-button-btn"></i>清除
+                                    </button>
+                                </dd>
+                            </dl>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+        </script>
+        <div class="layui-card-body">
+            <table id="NF-system-user" lay-filter="NF-system-user"></table>
+
+            <script type="text/html" id="nameTpl">
+                <a class="layui-table-link hand" lay-text="查看用户信息" lay-event="detail">
+                    <cite>{{d.Name}}</cite>
+                </a>
+
+            </script>
+            @*性别*@
+            <script type="text/html" id="userSexTpl">
+                {{#  if(d.Sex ===0){ }}
+                <span style="color:red;">{{ d.SexDic }}</span>
+                {{#  } else { }}
+                <span style="color:blue;">{{ d.SexDic }}</span>
+
+                {{#  } }}
+            </script>
+            @*合同状态*@
+            <script type="text/html" id="userstateDic">
+                {{#  if(d.State ===0){ }}@*未启用*@
+                <span style="color:#0ed356;">{{d.StateDic}}</span>
+                {{#  } else if(d.State ===1) { }} @*启用*@
+                <span style="color:blue;">{{d.StateDic}}</span>
+                {{#  } else if(d.State ===2){ }}@*离职*@
+                <span style="color:darkgrey;">{{d.StateDic}}</span>
+                {{#  } }}
+            </script>
+
+            @*操作*@
+            <script type="text/html" id="table-system-user">
+                <a class="layui-btn layui-btn-normal layui-btn-xs" lay-event="edit"><i class="layui-icon layui-icon-edit"></i>修改</a>
+                {{#  if(d.Id ==1){ }}
+                <a class="layui-btn layui-btn-disabled layui-btn-xs"><i class="layui-icon layui-icon-delete"></i>删除</a>
+                {{#  } else { }}
+                <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del"><i class="layui-icon layui-icon-delete"></i>删除</a>
+                {{#  } }}
+                <a class="layui-btn layui-btn-normal layui-btn-xs" lay-event="setrole"><i class="layui-icon layui-icon-edit"></i>设置</a>
+            </script>
+            @*状态*@
+            <script type="text/html" id="userstateTpl">
+                <input type="checkbox" name="Ustart" value="{{d.Id}}" lay-skin="switch" lay-text="启用|禁用" lay-filter="userstate" {{ d.Ustart == 1 ? 'checked' : '' }}>
+            </script>
+        </div>
+    </div>
+</div>
+
+@{
+    Html.RenderPartial("_LayuiScriptsPartial");
+}
+<script>
+    layui.config({
+        base: '/lib/layuiadmin/'
+    }).extend({
+        index: 'lib/index', //主入口模块
+        systemUserinfor: 'system-nf/nf-system-userinfor'
+        , userinfoutility: 'common-nf/userinfoutility'
+        , soulTable: 'layui-nf-plugs/soulTable/soulTable',
+        tableChild: 'layui-nf-plugs/soulTable/tableChild',
+        tableMerge: 'layui-nf-plugs/soulTable/tableMerge',
+        tableFilter: 'layui-nf-plugs/soulTable/tableFilter',
+        excel: 'layui-nf-plugs/soulTable/excel'
+        }).use(['index', 'table', 'systemUserinfor'], function () {
+            var $ = layui.$
+            , form = layui.form
+            , admin = layui.admin
+            , table = layui.table;
+
+      
+            //监听状态操作
+            form.on('switch(userstate)', function (obj) {
+              var state = obj.elem.checked ? 1 : 0;//状态
+                admin.req({
+                    url: '/System/UserInfor/updateField',
+                    data: { Id: this.value, fieldName:"Ustart", fieldValue:state},
+                    done: function (res) {
+                        layer.msg('修改成功！');
+
+                    }
+
+                });
+            });
+           
+
+       
+       
+    });
+</script>

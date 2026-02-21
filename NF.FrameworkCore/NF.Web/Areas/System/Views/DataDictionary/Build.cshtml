@@ -1,0 +1,193 @@
+﻿
+@{
+    ViewData["Title"] = "新建数据字典";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="layui-fluid">
+    <!--用户基本信息begin-->
+    <div class="layui-form" lay-filter="Nf-system-datadicForm" id="Nf-system-datadicForm">
+        <input type="hidden" name="DtypeNumber" />
+        <input type="hidden" name="Id" />
+        <div class="layui-card ">
+            <div class="layui-card-header">字典基本信息</div>
+            <div class="layui-card-body" style="padding: 15px;">
+                <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12 layui-hide Pid">
+                        <label class="layui-form-label">上级名称</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="Pid" lay-filter="Pid" id="Pid"  class="layui-input" />
+                        </div>
+                    </div>
+                    <div class="layui-col-lg4 layui-col-md4 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">名称</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="Name" lay-verify="required" placeholder="请输入..." autocomplete="off" class="layui-input pen">
+
+                        </div>
+                    </div>
+                    <div class="layui-col-lg4 layui-col-md4 layui-col-xs12 layui-col-sm12 layui-hide FundsNature">
+                        <label class="layui-form-label">资金性质</label>
+                        <div class="layui-input-block">
+                            <select name="FundsNature" lay-verify="required">
+                                <option value="0">收款</option>
+                                <option value="1">付款</option>
+                                <option value="2" selected="selected">收付款</option>
+                            </select>
+
+                        </div>
+                    </div>
+                    <div class="layui-col-lg4 layui-col-md4 layui-col-xs12 layui-col-sm12 layui-hide ShortName">
+                        <label class="layui-form-label">简称</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="ShortName" class="layui-input" />
+
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+
+                    <div class="layui-col-lg12 layui-col-md12 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">备注</label>
+                        <div class="layui-input-block">
+                            <textarea name="Remark" class="layui-textarea"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!--需要在最后加这个或者没有也加一个 <div class="layui-form-item">，这样不会导致隐藏菜单是显示问题-->
+                <div class="layui-form-item">
+
+                </div>
+
+            </div>
+        </div>
+
+
+        <!--按钮begin-->
+        <div class="layui-form-item layui-layout-admin layui-hide">
+            <div class="layui-input-block">
+                <div class="layui-footer" style="left: 0;">
+                    <button class="layui-btn" id="Nf-System-DataDicFormSubmit" lay-submit lay-filter="Nf-System-DataDicFormSubmit">保存</button>
+                    <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                </div>
+            </div>
+        </div>
+        <!--按钮begin-->
+    </div>
+    <!--用户基本信息end-->
+
+</div>
+
+
+
+
+@{
+    Html.RenderPartial("_LayuiScriptsPartial");
+}
+<script type="text/javascript">
+    layui.config({
+        base: '/lib/layuiadmin/'
+    }).extend({
+        index: '/lib/index' //主入口模块
+        ,treeSelect: 'layui-nf-plugs/treeselect'
+    }).use(['index', 'form', 'table','treeSelect'], function () {
+        var layer = layui.layer
+            , form = layui.form
+            , admin = layui.admin
+            , treeSelect = layui.treeSelect
+            , $ = layui.$;
+        var byId = wooutil.getUrlVar('Id');
+
+        //判断显示
+        function Showfield(_dicType) {
+            admin.req({
+                url: layui.setter.base + 'json/nfdata/nf-datadic.js?v=' + wooutil.getRandom(),
+                done: function (res) {
+                    $.each(res.Data, function (_i, obj) {
+                        if (obj.dataType.toString() === _dicType.toString()) {
+                            $.each(obj.fields, function (_k, fobj) {
+                                var dclass = fobj.Name;
+                                $("div ." + fobj.Name).removeClass("layui-hide");
+                                //if (fobj.Name === "Pid") {
+                                //    if ($("#" + fobj.Name).attr("lay-verify") !== "required" ) {
+                                //        $("#" + fobj.Name).attr("lay-verify", "required");
+                                //    }
+                                //}
+                            });
+
+                        }
+
+                    });
+
+                }
+
+            });
+        }
+        /**
+        *初始数据字典树
+        **/
+        function InitDataTree(tvl,dtype) {
+            treeSelect.render(
+                {
+                    elem: "#Pid",
+                    data: '/System/DataDictionary/GetTreeSelectData?dataType=' + dtype,
+                    method: "GET",
+                    verify: true,
+                    click: function (d) {
+                        $("input[name=Pid]").val(d.current.id);
+                    },
+                    success: function (d) {
+                        if (tvl != null) {
+                            treeSelect.checkNode("Pid", tvl);
+                        }
+
+
+                    }
+
+                });
+        }
+
+
+       
+        /**页面加载完毕*/
+        layer.ready(function () {
+            //去掉下拉框小笔头
+            wooutil.removeselpen();
+            //赋值
+            if (byId !== "" && byId !== undefined) {
+                admin.req({
+                    url: '/System/DataDictionary/ShowView',
+                    data: { Id: byId, rand: wooutil.getRandom() },
+                    done: function (res) {
+                        //layer.alert(JSON.stringify(res.Data));
+                        form.val("Nf-system-datadicForm", res.Data);
+                       
+                        Showfield(res.Data.DtypeNumber);
+                        if (res.Data.DtypeNumber === 1 || res.Data.DtypeNumber==="1") {
+
+                       
+                            InitDataTree(res.Data.Pid, res.Data.DtypeNumber);
+                        }
+
+                    }
+                });
+
+            } else {
+                var _dttype = $("input[name=DtypeNumber]").val();
+                Showfield(_dttype);
+               
+                if (_dttype === 1 || _dttype=="1") {
+                    InitDataTree(null, _dttype);
+                }
+                
+            }
+            
+            
+            //-------------------------------------修改赋值end--------------------------------------------
+            form.render(null, 'Nf-system-datadicForm');
+            
+
+            });
+    });
+    </script>

@@ -1,0 +1,283 @@
+﻿
+@{
+    ViewData["Title"] = "项目新建";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="layui-fluid">
+    <!--基本信息begin-->
+    <div class="layui-form" lay-filter="NF-Project-BuildForm">
+        <!--修改时使用-->
+        <input type="hidden" id="Id" name="Id" />
+        <!--标识-->
+        <input type="hidden" name="Ctype" />
+        <div class="layui-card " id="projectInfo">
+            <div class="layui-card-header">基本信息</div>
+            <div class="layui-card-body" style="padding: 15px;">
+                <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">名称</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="Name" lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input pen" />
+                        </div>
+                    </div>
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">编号</label>
+                        <div class="layui-input-block">
+                            @*<input type="text" name="Code" class="layui-input" readonly="readonly" />*@
+                            <input type="text" name="Code" lay-verify="required" class="layui-input pen" />
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">负责人</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="PriUserName" id="PriUserName" lay-verify="required" readonly="readonly" class="layui-input pen" />
+                            <input type="hidden" name="PrincipalUserId" id="PrincipalUserId" />
+
+                        </div>
+                    </div>
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">类别</label>
+                        <div class="layui-input-block">
+                            <select name="CategoryId" id="CategoryId" lay-verify="required" lay-search>
+                                <option value="">请选择..</option>
+                            </select>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">预算收款</label>
+                        <div class="layui-input-block">
+                            @* BugetCollectAmountMoneyThod
+                            <input type="text" value="0" name="BugetCollectAmountMoney" class="layui-input lhmoney" /> *@
+                            <input type="text" value="0" name="BugetCollectAmountMoneyThod" class="layui-input lhmoney" />
+                        </div>
+                    </div>
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">收款币种</label>
+                        <div class="layui-input-block">
+                            <select name="BudgetCollectCurrencyId" id="BudgetCollectCurrencyId" lay-search lay-filter="BudgetCollectCurrencyId"></select>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">预算付款</label>
+                        <div class="layui-input-block">
+                            @*BudgetPayAmountMoneyThod
+        <input type="text" value="0" name="BudgetPayAmountMoney" class="layui-input lhmoney" />*@
+                            <input type="text" value="0" name="BudgetPayAmountMoneyThod" class="layui-input lhmoney" />
+                        </div>
+                    </div>
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">付款币种</label>
+                        <div class="layui-input-block">
+                            <select name="BudgetPayCurrencyId" id="BudgetPayCurrencyId" lay-search lay-filter="BudgetPayCurrencyId"></select>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">计划开始时间</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="PlanBeginDateTime" id="PlanBeginDateTime" lay-verify="required" class="layui-input pen" />
+                        </div>
+                    </div>
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">计划完成时间</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="PlanCompleteDateTime" id="PlanCompleteDateTime" lay-verify="required" class="layui-input pen" />
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">项目来源</label>
+                        <div class="layui-input-block">
+                            <select name="ProjectSource" id="ProjectSource" lay-verify="required" lay-search>
+                                <option value="">请选择..</option>
+                            </select>
+                        </div>
+                    </div>
+                 
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">备用1</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="Reserve1" class="layui-input" />
+                        </div>
+                    </div>
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">备用2</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="Reserve2" class="layui-input" />
+                        </div>
+                    </div>
+
+                </div>
+                <!--需要在最后加这个或者没有也加一个 <div class="layui-form-item">，这样不会导致隐藏菜单是显示问题-->
+                <div class="layui-form-item">
+
+                </div>
+
+            </div>
+        </div>
+        <!--按钮begin-->
+        <div class="layui-form-item layui-layout-admin layui-hide">
+            <div class="layui-input-block">
+                <div class="layui-footer" style="left: 0;">
+                    <button class="layui-btn" id="NF-project-formsubmit" lay-submit lay-filter="NF-project-formsubmit">保存</button>
+                    <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                </div>
+            </div>
+        </div>
+        <!--按钮begin-->
+    </div>
+    <!--基本信息end-->
+    <!--备忘begin-->
+    <div class="layui-card " id="projDescription">
+        <div class="layui-card-header">项目备忘</div>
+        <div class="layui-card-body" style="padding: 15px;">
+            <table id="NF-projDescription" lay-filter="NF-projDescription"></table>
+            <!--表格工具栏-->
+            <script id="toolprojDescription" type="text/html">
+                <div class="layui-inline">
+                    <button class="layui-btn " lay-event="add"><i class="layui-icon layui-icon-edit"></i> 新增</button>
+                    <button class="layui-btn  layui-btn-danger" lay-event="batchdel"><i class="layui-icon layui-icon-delete"></i>批量删除</button>
+                </div>
+            </script>
+            <script type="text/html" id="table-projDescriptionbar">
+                <a class="layui-btn layui-btn-normal layui-btn-xs" lay-event="edit"><i class="layui-icon layui-icon-edit"></i>修改</a>
+                <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del"><i class="layui-icon layui-icon-delete"></i>删除</a>
+            </script>
+        </div>
+    </div>
+    <!--备忘end-->
+    <!--项目时间列表begin-->
+    <div class="layui-card " id="projSchedule">
+        <div class="layui-card-header">项目时间表</div>
+        <div class="layui-card-body" style="padding: 15px;">
+            <table id="NF-projSchedule" lay-filter="NF-projSchedule"></table>
+            <!--表格工具栏-->
+            <script id="toolprojSchedule" type="text/html">
+                <div class="layui-inline">
+                    <button class="layui-btn " lay-event="add"><i class="layui-icon layui-icon-edit"></i> 新增</button>
+                    <button class="layui-btn  layui-btn-danger" lay-event="batchdel"><i class="layui-icon layui-icon-delete"></i>批量删除</button>
+                </div>
+            </script>
+            <script type="text/html" id="table-projSchedulebar">
+                <a class="layui-btn layui-btn-normal layui-btn-xs" lay-event="edit"><i class="layui-icon layui-icon-edit"></i>修改</a>
+                <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del"><i class="layui-icon layui-icon-delete"></i>删除</a>
+            </script>
+
+        </div>
+    </div>
+    <!--项目时间列表end-->
+    <!--附件begin-->
+    <div class="layui-card " id="projAttachment">
+        <div class="layui-card-header">项目附件</div>
+        <div class="layui-card-body" style="padding: 15px;">
+            <table id="NF-projAttachment" lay-filter="NF-projAttachment"></table>
+            <!--表格工具栏-->
+            <script id="toolprojAttachment" type="text/html">
+                <div class="layui-inline">
+                    <button class="layui-btn " lay-event="add"><i class="layui-icon layui-icon-edit"></i> 新增</button>
+                    <button class="layui-btn  layui-btn-danger" lay-event="batchdel"><i class="layui-icon layui-icon-delete"></i>批量删除</button>
+                </div>
+            </script>
+            <script type="text/html" id="table-projAttachmentbar">
+                <a class="layui-btn layui-btn-xs" lay-event="download"><i class="layui-icon layui-icon-edit"></i>下载</a>
+                <a class="layui-btn layui-btn-normal layui-btn-xs" lay-event="edit"><i class="layui-icon layui-icon-edit"></i>修改</a>
+                <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del"><i class="layui-icon layui-icon-delete"></i>删除</a>
+            </script>
+
+        </div>
+    </div>
+    <!--附件end-->
+
+</div>
+<!--目录-->
+<ul class="site-dir layui-layer-wrap nf-ml-ul layui-hide" id="customernva">
+    <li><a href="#projectInfo" rel="external nofollow" class="current">基本信息</a></li>
+    <li><a href="#projDescription" rel="external nofollow">项目备忘</a></li>
+    <li><a href="#projSchedule" rel="external nofollow">项目时间表</a></li>
+    <li><a href="#projAttachment" rel="external nofollow">项目附件</a></li>
+</ul>
+
+
+@{
+    Html.RenderPartial("_LayuiScriptsPartial");
+}
+<script>
+
+            layui.config({
+                base: '/lib/layuiadmin/'
+            }).extend({
+                index: 'lib/index', //主入口模块
+                nfcontents: 'contents-nf/nfcontents',
+                commonnf: 'common-nf/commonnf',
+                tableSelect: 'layui-nf-plugs/tableSelect',
+                selectnfitem: 'common-nf/selectnfitem',
+                projectManagerBuild: 'projectmanager-nf/projectmanager-build'
+                }).use(['index', 'form', 'laydate', 'nfcontents', 'commonnf', 'tableSelect','selectnfitem','projectManagerBuild'], function () {
+                var $ = layui.$
+                    , admin = layui.admin
+                    , element = layui.element
+                    , layer = layui.layer
+                    , laydate = layui.laydate
+                    , table = layui.table
+                    , form = layui.form
+                    , nfcontents = layui.nfcontents
+                    , commonnf = layui.commonnf
+                    , tableSelect = layui.tableSelect
+                    ,selectnfitem = layui.selectnfitem
+
+                    wootool.wooMoneyThod();
+                var byId = wooutil.getUrlVar('Id');
+
+                    //类别
+                commonnf.getdatadic({ dataenum: 13, selectEl: "#CategoryId" });
+                //币种
+                    commonnf.getCurrency({ selectEls: ["#BudgetCollectCurrencyId", "#BudgetPayCurrencyId"] });
+                    //项目来源
+                    commonnf.getdatadic({ dataenum: 34, selectEl: "#ProjectSource" });
+                
+                    //目录
+                    nfcontents.render({ content: '#customernva' });
+                    laydate.render({ elem: '#PlanBeginDateTime', trigger: 'click' });
+                    laydate.render({ elem: '#PlanCompleteDateTime', trigger: 'click' });
+                    //清除部分下拉小笔头
+                    wooutil.selpen();
+                    //负责人
+                    selectnfitem.selectRoleUserItem(
+                        {
+                            tableSelect: tableSelect,
+                            elem: '#PriUserName',
+                            hide_elem: '#PrincipalUserId'
+
+                        });
+
+                    /***************************************修改***************************************************/
+                    
+                    wooutil.showView({
+                        objId: byId,
+                        url: '/Project/ProjectManager/ShowView',
+                        formFilter: "NF-Project-BuildForm",
+                        form: form
+                        
+
+                    });
+                   
+                    /****************************************修改end******************************************************/
+
+            });
+</script>

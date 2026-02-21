@@ -1,0 +1,49 @@
+﻿
+@{
+    ViewData["Title"] = "审批页面";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="layui-fluid">
+    <div class="layui-form" lay-filter="NF-FlowOption">
+        <div class="layui-row layui-col-space1 layui-form-item layui-col-lg12">
+            <div class="layui-card">
+
+                <div class="layui-card-body">
+                    <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                        <div class="layui-col-lg12 layui-col-md12 layui-col-xs12 layui-col-sm12">
+                            <div class="layui-input-normal">
+                                <textarea name="AppOption" class="layui-textarea" lay-verify="required" rows="5"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="layui-form-item layui-layout-admin layui-hide">
+                <div class="layui-input-block">
+                    <div class="layui-footer" style="left: 0;">
+                        <button class="layui-btn" id="NF-Flow-FormSubmit" lay-submit lay-filter="NF-Flow-FormSubmit">保存</button>
+                        <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@{
+    Html.RenderPartial("_LayuiScriptsPartial");
+}
+
+<script>
+    layui.config({
+        base: '/lib/layuiadmin/'
+    }).extend({
+        index: 'lib/index' //主入口模块
+    }).use(['index'], function () {
+
+     });
+</script>
+
+
+

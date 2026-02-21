@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<!---->
+<MigrationScript version="2" type="MigrationScript">
+  <Name>DatabaseRepository 3061 to 3149</Name>
+  <FromVersion version="1" type="VersionInfoRaw">
+    <Version>3061</Version>
+    <ScriptFolderLocation>&lt;?xml version="1.0" encoding="utf-16" standalone="yes"?&gt;
+&lt;!----&gt;
+&lt;ISOCCompareLocation version="1" type="SvnLocation"&gt;
+  &lt;RepositoryUrl&gt;https://192.168.10.188:8443/svn/decode/trunk/V282.NF/Docs/SQLToolBar/DatabaseRepository/&lt;/RepositoryUrl&gt;
+&lt;/ISOCCompareLocation&gt;</ScriptFolderLocation>
+  </FromVersion>
+  <ToVersion version="1" type="VersionInfoRaw">
+    <Version>3149</Version>
+    <ScriptFolderLocation>&lt;?xml version="1.0" encoding="utf-16" standalone="yes"?&gt;
+&lt;!----&gt;
+&lt;ISOCCompareLocation version="1" type="SvnLocation"&gt;
+  &lt;RepositoryUrl&gt;https://192.168.10.188:8443/svn/decode/trunk/V282.NF/Docs/SQLToolBar/DatabaseRepository/&lt;/RepositoryUrl&gt;
+&lt;/ISOCCompareLocation&gt;</ScriptFolderLocation>
+  </ToVersion>
+  <ObjectIdentifiers type="ObjectIdentifiers" version="2">
+    <value version="1" type="ObjectIdentifier">
+      <FullyQualifiedName>[dbo].[ContSubjectMatterHistory]</FullyQualifiedName>
+      <Type>Table</Type>
+    </value>
+    <value version="1" type="ObjectIdentifier">
+      <FullyQualifiedName>[dbo].[ContSubjectMatter]</FullyQualifiedName>
+      <Type>Table</Type>
+    </value>
+  </ObjectIdentifiers>
+</MigrationScript>

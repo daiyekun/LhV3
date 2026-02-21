@@ -1,0 +1,16 @@
+﻿@*
+    流程相关，比如流程状态颜色标识
+*@
+<script type="text/html" id="wfstateTpl">
+    {{#  if(d.WfState ==0){ }}
+    <span style="color:blue;">{{d.WfStateDic}}</span>
+    {{#  } else if(d.WfState ==1) { }}
+    <span style="color:#1E9FFF;">{{d.WfStateDic}}</span>
+    {{#  } else if(d.WfState ==2){ }}
+    <span style="color:#009688;">{{d.WfStateDic}}</span>
+    {{#  } else if(d.WfState ==3) { }}
+    <span style="color:#FF5722;">{{d.WfStateDic}}</span>
+    {{#  } else { }}
+    <span style="color:gray;">{{d.WfStateDic}}</span>
+    {{#  } }}
+</script>

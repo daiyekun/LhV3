@@ -1,0 +1,76 @@
+﻿
+@{
+    ViewData["Title"] = "付款合同文本";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="layui-fluid">
+    <input type="hidden" name="hide_keyWord" />
+    <div class="layui-card">
+        <div class="layui-card-body">
+            <table id="NF-ContTextPay-Index" lay-filter="NF-ContTextPay-Index"></table>
+            <!--合同查看-->
+            <script type="text/html" id="contnameTpl">
+                <a class="layui-table-link hand" lay-text="查看合同详情" lay-event="contdetail">
+                    <cite>{{d.ContName}}</cite>
+                </a>
+            </script>
+            <script type="text/html" id="compTpl">
+                <a class="layui-table-link hand" lay-text="查看详情" lay-event="compdetail">
+                    <cite>{{d.CompName}}</cite>
+                </a>
+            </script>
+            <!--表格工具栏-->
+            <script id="toolconttextcoll" type="text/html">
+                <div class="layui-inline">
+                    <input class="layui-input" type="text" name="keyWord" placeholder="合同名称、编号、客户名称、编号" style="width:240px;" />
+                </div>
+                <div class="layui-inline">
+                    <button class="layui-btn" lay-event="search">
+                        <i class="layui-icon layui-icon-search layuiadmin-button-btn"></i>
+                    </button>
+                    <button class="layui-btn" lay-event="OnLineView">
+                        预览
+                    </button>
+
+                </div>
+            </script>
+            <script type="text/html" id="table-conttextcoll-bar">
+                <a class="layui-btn layui-btn-normal layui-btn-xs" lay-event="seal"><i class="layui-icon layui-icon-edit"></i>盖章</a>
+                <a class="layui-btn layui-btn-normal layui-btn-xs" lay-event="archive"><i class="layui-icon layui-icon-edit"></i>归档</a>
+                <a class="layui-btn layui-btn-normal layui-btn-xs" lay-event="borrow"><i class="layui-icon layui-icon-edit"></i>借阅</a>
+
+            </script>
+            @*下载*@
+            <script type="text/html" id="downloadTpl">
+                <a class="layui-table-link hand" lay-event="download">
+                    <cite>下载</cite>
+                </a>
+            </script>
+            <script type="text/html" id="downloadPdf">
+                <a class="layui-table-link hand" lay-event="downloadPdf">
+                    <cite>下载</cite>
+                </a>
+            </script>
+
+
+        </div>
+    </div>
+</div>
+@{
+    Html.RenderPartial("_LayuiScriptsPartial");
+    Html.RenderPartial("_ContStatePartial");
+}
+@*<script type="text/javascript" src="~/lib/signalr/dist/browser/signalr.min.js"></script>*@
+<script>
+    layui.config({
+        base: '/lib/layuiadmin/'
+    }).extend({
+        index: 'lib/index', //主入口模块
+        conttextPayIndex: 'conttext-nf/conttextpay-index'
+        , wordAddin: 'addin-nf/wordAddin'
+    }).use(['table', 'index', 'conttextPayIndex'], function () {
+
+    });
+</script>
+
+

@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<customUI xmlns="http://schemas.microsoft.com/office/2009/07/customui" onLoad="Ribbon_Load">
+  <commands>
+    <command idMso="ApplicationOptionsDialog" enabled="false"/>
+    <command idMso="ReviewDeleteComment" onAction="BtnDeletedCommentClicked"/>
+    <command idMso="ReviewDeleteAllCommentsShown" enabled="false"/>
+    <command idMso="ReviewDeleteAllCommentsInDocument" enabled="false"/>
+    <command idMso="TabNew" enabled="false"/>
+    <command idMso="TabShare" enabled="false"/>
+    <command idMso="FileNewDefault" enabled="false"/>
+    <command idMso="FileOpen" enabled="false"/>
+    <command idMso="FileSave" enabled="false"/>
+    <command idMso="FileSaveAs" enabled="false"/>
+    <command idMso="FileClose" enabled="false"/>
+    <command idMso="FileNew" enabled="false"/>
+    <command idMso="FileSendAsAttachment" enabled="false"/>
+    <command idMso="ReviewTrackChanges" enabled="false"/>
+    <command idMso="ReviewAcceptChange" enabled="false"/>
+    <command idMso="ReviewRejectChange" enabled="false"/>
+   <command idMso="File" enabled="false"/>
+  </commands>
+ 
+  <ribbon startFromScratch="false">
+    <qat>
+      <sharedControls>
+         <button idMso="OpenFile" visible="false"/>
+         <button idMso="SaveFile" visible="false"/>
+         <button idMso="PrintToPDF" visible="false"/>
+         <button idMso="Print" visible="false"/>
+         <button idMso="PrintPreview" visible="false"/>
+         <button idMso="Undo" visible="false"/>
+         <button idMso="Redo" visible="false"/>
+      </sharedControls>
+      <documentControls>
+        <button idMso="OpenFile" visible="false"/>
+         <button idMso="SaveFile" visible="false"/>
+         <button idMso="PrintToPDF" visible="false"/>
+         <button idMso="Print" visible="false"/>
+         <button idMso="PrintPreview" visible="false"/>
+         <button idMso="Undo" visible="false"/>
+         <button idMso="Redo" visible="false"/>
+      </documentControls>
+       
+      </qat>
+    <tabs>
+      <tab idMso="TabHome" getVisible="RibbonControl_ReturnVisible"/>
+      <tab idMso="TabInsert" getVisible="RibbonControl_ReturnVisible"/>
+      <tab idMso="TabPageLayoutWord" getVisible="RibbonControl_ReturnVisible"/>
+      <tab idMso="TabReferences" getVisible="RibbonControl_ReturnVisible"/>
+      <tab idMso="TabMailings" getVisible="RibbonControl_ReturnVisible"/>
+      <tab idMso="TabReviewWord" getVisible="RibbonControl_ReturnVisible"/>
+      <!--<tab idMso="TabReviewWord" visible="true"/>-->
+      <tab idMso="TabView" getVisible="RibbonControl_ReturnVisible"/>
+      <tab idMso="TabOutlining" getVisible="RibbonControl_ReturnVisible"/>
+      <tab idMso="TabDeveloper" visible="false"/>
+      <tab idMso="TabBlogPost" visible="false"/>
+      <tab idMso="TabWordDesign" visible="false"/>
+      <tab idMso="TabConflicts" visible="false"/>
+      <tab idMso="TabBackgroundRemova" visible="false"/>
+      <tab idMso="TabSmartArtToolsDesign" visible="false"/>
+      <tab idMso="TabSmartArtToolsFormat" visible="false"/>
+      <tab idMso="TabChartToolsDesignNew" visible="false"/>
+      <tab idMso="TabTableToolsLayout" visible="false"/>
+      <tab idMso="TabHeaderAndFooterToolsDesign" visible="false"/>
+      <tab idMso="TabPictureToolsFormatClassic" visible="false"/>
+      <tab idMso="TabPictureToolsFormat" visible="false"/>
+     
+      
+      <tab id="Tab_Lh_Mbqc" label="罗合" getVisible="RibbonControl_ReturnVisible">
+        <group id="Lh_Mbqc"  label="合同起草" getVisible="RibbonControl_ReturnVisible">
+          <button id="but_show_hide_RightPanel"  label="显示面板"  imageMso="GroupListContentTypeEdit"  size="large"  onAction="OnOptionWord" getVisible="RibbonControl_ReturnVisible"/>
+          <button id="but_design" label="设计模式"  imageMso="GroupCodeEventsControls" size="large" onAction="OnOptionWord" getVisible="RibbonControl_ReturnVisible"/>
+          <button id="BtnSaveDocReview" label="保存    " imageMso="BuildingBlocksSaveCoverPage" onAction="BtnContractAuthoringClicked" getVisible="RibbonControl_ReturnVisible" size="large"/>
+         
+        </group>
+        <group id="Lh_GroupComments" label=" 批 注 " getVisible="RibbonControl_ReturnVisible">
+          <!--<button idMso="ReviewNewComment"  visible="true"     size="large" />-->
+          <button id="LhReviewNewComment"  visible="true"  label="插入批注"  onAction="OnNewComment"   size="large" />
+          <splitButton idMso="ReviewDeleteCommentsMenu" visible="true" size="large" >
+          </splitButton>
+          <button idMso="ReviewPreviousComment"  visible="true" size="large"/>
+          <button idMso="ReviewNextComment"  visible="true" size="large"/>
+          <!--<splitButton idMso="ReviewReviewingPaneMenu" visible="true" size="large" >
+          </splitButton>-->
+
+        </group>
+         <group id="Lh_CTRevisions" label="修订模板" getVisible="RibbonControl_ReturnVisible">
+          <!--<button id="BtnReviewRejectChange" label="拒绝本人修订" imageMso="ReviewRejectChange" onAction="BtnReviewRejectChangeClicked" getVisible="RibbonControl_ReturnVisible" size="large"/>-->
+          <!--审阅窗格-->
+          <toggleButton idMso="ReviewReviewingPane" visible="true" size="large"/>
+          <splitButton idMso="ReviewAcceptChangeMenu" getVisible="RibbonControl_ReturnVisible" size="large"/>
+          <splitButton idMso="ReviewRejectChangeMenu" getVisible="RibbonControl_ReturnVisible" size="large"/>
+          <button idMso="ReviewPreviousChange" visible="true" size="large"/>
+          <button idMso="ReviewNextChange" visible="true" size="large"/>
+           <splitButton idMso="ReviewReviewingPaneMenu" visible="true" size="large">
+             
+           </splitButton>
+         
+          <!--以下下是修订状态
+          <splitButton idMso="ReviewTrackChangesMenu" visible="true">
+          </splitButton>
+          <toggleButton idMso="ReviewTrackChanges" visible="true"/>-->
+          <toggleButton idMso="ReviewTrackChanges" visible="false"/>
+        </group>
+        <!--<group id="CG_CTAuthoring" label="合同起草" getVisible="RibbonControl_ReturnVisible">
+          <button id="BtnShowContractAuthoringPanel" label="显示面板" imageMso="GroupListContentTypeEdit" onAction="BtnContractAuthoringClicked" getVisible="RibbonControl_ReturnVisible" size="large"/>
+          <button id="BtnSaveDocReview" label="保存    " imageMso="BuildingBlocksSaveCoverPage" onAction="BtnContractAuthoringClicked" getVisible="RibbonControl_ReturnVisible" size="large"/>
+        </group>-->
+        <group id="Lh_CTReview" label="合同文本审批" getVisible="RibbonControl_ReturnVisible">
+          <!--<button id="BtnShowContractTextReviewPanel" label="显示面板" imageMso="GroupListContentTypeEdit"  size="large" onAction="BtnContractAuthoringClicked" getVisible="RibbonControl_ReturnVisible"/>-->
+          <button id="BtnSaveContractTextReview" label="保存    " imageMso="BuildingBlocksSaveCoverPage" visible="true" onAction="BtnReviewSave"  size="large"/>
+        </group>
+        <!--比较文本-->
+        <group id="CG_GroupCompare" getVisible="RibbonControl_ReturnVisible">
+          <splitButton idMso="ReviewReviewingPane"/>
+          <gallery idMso="ReviewShowSourceDocumentsMenu" size="large"/>
+        </group>
+      </tab>
+    </tabs>
+  </ribbon>
+</customUI>
+

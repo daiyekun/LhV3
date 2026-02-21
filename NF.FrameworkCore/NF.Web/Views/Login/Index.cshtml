@@ -1,0 +1,297 @@
+﻿
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title id="sysTitles"></title>
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <link href="~/lib/layuiadmin/layui/css/layui.css" rel="stylesheet" media="all" />
+    <link href="~/lib/layuiadmin/style/admin.css" rel="stylesheet" media="all" />
+    <link href="~/lib/layuiadmin/style/login.css" rel="stylesheet" media="all" />
+    <link href="~/lib/layuiadmin/layui/css/layui.css" rel="stylesheet" media="all" />
+
+    @*<link rel="stylesheet" href="~/lib/layuiadmin/modules/login/css/login.css" media="all" />*@
+    <link rel="stylesheet" href="~/js/login/css/login.css" media="all" />
+    <style>
+        /* 覆盖原框架样式 */
+        .layui-elem-quote {
+            background-color: inherit !important;
+        }
+
+        .layui-input, .layui-select, .layui-textarea {
+            background-color: inherit;
+            padding-left: 30px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Head -->
+    <div class="layui-fluid">
+        <div class="layui-row layui-col-space15">
+            <div class="layui-col-sm12 layui-col-md12 zyl_mar_01">
+               
+                <blockquote class="layui-elem-quote"> <p id="TopText"></p></blockquote>
+            </div>
+        </div>
+    </div>
+    <!-- Head End -->
+    <!-- Carousel -->
+    <div class="layui-row">
+        <div class="layui-col-sm12 layui-col-md12">
+            <div class="layui-carousel zyl_login_height" id="zyllogin" lay-filter="zyllogin">
+                <div carousel-item="">
+                    <div>
+                        <div class="zyl_login_cont"></div>
+                    </div>
+                    <div>
+                        <img src="~/js/login/img/carousel/01.jpg" />
+                    </div>
+                    <div>
+                        <div class="background">
+                            <span></span><span></span><span></span>
+                            <span></span><span></span><span></span>
+                            <span></span><span></span><span></span>
+                            <span></span><span></span><span></span>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="~/js/login/img/carousel/03.jpg" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Carousel End -->
+    <!-- Footer -->
+    <div class="layui-row">
+        <div class="layui-col-sm12 layui-col-md12 zyl_center zyl_mar_01">
+            <p id="bottomText"></p>
+         
+        </div>
+    </div>
+    <!-- Footer End -->
+    <!-- LoginForm -->
+    <div class="zyl_lofo_main">
+
+        <div class="layadmin-user-login-box layadmin-user-login-header">
+            <h2 id="sysTitle"></h2>
+            <p id="sysTitlegs">@*甘肃有色工程勘察设计研究院*@</p>
+        </div>
+
+
+        <div class="layui-form zyl_pad_01 layui-row layui-col-space15 layui-form">
+
+            <div class="layui-col-sm12 layui-col-md12">
+                <div class="layui-row">
+                    <div class="layui-col-xs12">
+                        <label class="layadmin-user-login-icon layui-icon layui-icon-username" for="LAY-user-login-username"></label>
+                        <input type="text" name="username" id="LAY-user-login-username" lay-verify="required" placeholder="用户名" class="layui-input">
+                        @* <input type="text" name="userName" lay-verify="required|userName" autocomplete="off" placeholder="账号" class="layui-input">*@
+                    </div>
+                    </div>
+                </div>
+            <div class="layui-col-sm12 layui-col-md12">
+                <div class="layui-row">
+                    <div class="layui-col-xs12">
+                        <label class="layadmin-user-login-icon layui-icon layui-icon-password" for="LAY-user-login-password"></label>
+                        <input type="password" name="password" id="LAY-user-login-password" lay-verify="required" placeholder="密码" class="layui-input">
+                        @* <input type="password" name="nuse" lay-verify="required|pass" autocomplete="off" placeholder="密码" class="layui-input">*@
+                        @* <i class="layui-icon layui-icon-password zyl_lofo_icon"></i>*@
+                    </div>
+                    </div>
+                </div>
+            <div class="layui-col-sm12 layui-col-md12">
+                <div class="layui-row">
+                    <div class="layui-col-xs7">
+                        <label class="layadmin-user-login-icon layui-icon layui-icon-vercode" for="LAY-user-login-vercode"></label>
+                        <input type="text" name="vercode" id="LAY-user-login-vercode" lay-verify="required" placeholder="图形验证码" class="layui-input">
+                    </div>
+                    <div class="layui-col-xs5">
+                        <div style="margin-left: 10px;">
+                            <img id="CodemixImg" title="验证码" src="/VerifyCode/MixVerifyCode" alt="验证码" onclick="this.src=this.src+'?'" style="cursor:pointer;" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <button class="layui-btn layui-btn-fluid" lay-submit lay-filter="LAY-user-login-submit" id="LAY-user-login-submit">登 录</button>
+            </div>
+
+        </div>
+
+    </div>
+    <!-- LoginForm End -->
+    <!-- Jquery Js -->
+    @*<script type="text/javascript" src="~/lib/layuiadmin/modules/login/js/jquery.min.js"></script>*@
+    <script type="text/javascript" src="~/js/login/js/jquery.min.js"></script>
+    @*<script type="text/javascript" src="js/jquery.min.js"></script>*@
+    <!-- Layui Js -->
+    <script src="~/lib/layuiadmin/layui/layui.js"></script>
+    @*<script type="text/javascript" src="layui/layui.js"></script>*@
+    <!-- Jqarticle Js -->
+    @*<script type="text/javascript" src="~/lib/layuiadmin/modules/login/assembly/jqarticle/jparticle.min.js"></script>*@
+
+    @*<script type="text/javascript" src="assembly/jqarticle/jparticle.min.js"></script>*@
+    <!-- ZylVerificationCode Js-->
+    @*<s*@<!--cript type="text/javascript" src="~/lib/layuiadmin/modules/login/assembly/zylVerificationCode/zylVerificationCode.js"></script>-->
+    @*<script type="text/javascript" src="assembly/zylVerificationCode/zylVerificationCode.js"></script>*@
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script type="text/javascript" src="~/js/login/assembly/jqarticle/jparticle.min.js"></script>
+    <script src="~/js/md5/jquery.md5.js"></script>
+    <script>
+        layui.config({
+            base: 'lib/layuiadmin/' //静态资源所在路径
+        }).extend({
+            index: 'lib/index', //主入口模块
+
+        }).use(['index', 'carousel', 'user'], function () {
+            var $ = layui.$
+                , setter = layui.setter
+               
+                , carousel = layui.carousel
+                , admin = layui.admin
+                , form = layui.form
+
+                , router = layui.router()
+                , search = router.search;
+            $("#sysTitles").html(setter.NFData.dlname);
+            $("#sysTitle").html(setter.NFData.sysTitle);
+            $("#sysTitlegs").html(setter.NFData.sysGs);
+            $("#TopText").html(setter.NFData.TopText);
+            $("#bottomText").html(setter.NFData.bottomText);
+            //form.render();
+            //设置值
+            function setdata(res) {
+                layui.data(setter.tableName,
+                    {
+                        key: setter.NFData.userId
+                        , value: res.Data.Id
+                    });
+                layui.data(setter.tableName,
+                    {
+                        key: setter.NFData.detpId
+                        , value: res.Data.DepartmentId
+                    });
+                layui.data(setter.tableName,
+                    {
+                        key: setter.NFData.userName
+                        , value: res.Data.Name
+                    });
+                layui.data(setter.tableName,
+                    {
+                        key: setter.NFData.disName
+                        , value: res.Data.DisplyName
+                    });
+                //系统自带token->暂时没用
+                layui.data(setter.tableName,
+                    {
+                        key: setter.request.tokenName
+                        , value: "12345" //res.data.access_token
+                    });
+            }
+
+            //提交登录
+            form.on('submit(LAY-user-login-submit)', function (obj) {
+                var loadindex = layer.load(0, { shade: false });
+                admin.req({
+                    url: "/Login/CheckLogin"
+                    , type: 'POST'
+                    , data: {
+
+                        uName: obj.field.username,
+                        pwd: $.md5($.trim(obj.field.password))
+                        , vCode: obj.field.vercode,
+                        rand: Math.round(Math.random() * (10000 - 1)).toString()
+                    }
+                    , done: function (res) {
+                        if (res.Tag === 1) {
+                            layer.close(loadindex);
+                            //请求成功后，写入 access_token
+                            setdata(res);
+                            location.href = '/Home/Index'; //后台主页
+
+                        }
+                        else {
+                            layer.close(loadindex);
+                            layer.msg(res.Msg,
+                                {
+                                    offset: '15px'
+                                    , icon: 5
+                                });
+                            refresh();//刷新验证码
+                        }
+
+
+
+
+                    }
+                });
+
+            });
+            /**回车事件**/
+            $(function () {
+                document.onkeydown = function (e) {
+                    var ev = document.all ? window.event : e;
+                    if (ev.keyCode === 13) {
+                        $("#LAY-user-login-submit").trigger('click');
+                    }
+                };
+            });
+
+
+
+
+            //设置轮播主体高度
+            var zyl_login_height = $(window).height() / 1.3;
+            var zyl_car_height = $(".zyl_login_height").css("cssText", "height:" + zyl_login_height + "px!important");
+
+
+            //Login轮播主体
+            carousel.render({
+                elem: '#zyllogin'//指向容器选择器
+                , width: '100%' //设置容器宽度
+                , height: 'zyl_car_height'
+                , arrow: 'always' //始终显示箭头
+                , anim: 'fade' //切换动画方式
+                , autoplay: true //是否自动切换false true
+                , arrow: 'hover' //切换箭头默认显示状态||不显示：none||悬停显示：hover||始终显示：always
+                , indicator: 'none' //指示器位置||外部：outside||内部：inside||不显示：none
+                , interval: '5000' //自动切换时间:单位：ms（毫秒）
+            });
+
+            //监听轮播--案例暂未使用
+            carousel.on('change(zyllogin)', function (obj) {
+                var loginCarousel = obj.index;
+            });
+
+            //粒子线条
+            $(".zyl_login_cont").jParticle({
+                background: "rgba(0,0,0,0)",//背景颜色
+                color: "#fff",//粒子和连线的颜色
+                particlesNumber: 100,//粒子数量
+                //disableLinks:true,//禁止粒子间连线
+                //disableMouse:true,//禁止粒子间连线(鼠标)
+                particle: {
+                    minSize: 1,//最小粒子
+                    maxSize: 3,//最大粒子
+                    speed: 30,//粒子的动画速度
+                }
+            });
+
+
+        });
+
+                                                        ////验证码
+                                                        //function refresh() {
+                                                        //    var id = document.getElementById("CodemixImg");
+                                                        //    var str = "/VerifyCode/MixVerifyCode?random=" + Math.random();
+                                                        //    id.setAttribute("src", str);
+                                                        //}
+    </script>
+</body>
+</html>

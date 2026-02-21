@@ -1,0 +1,16 @@
+﻿
+@{
+    ViewData["Title"] = "其他联系人";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<a href="/Home/Eees" type="hidden" id="wxnamenull"></a>
+<input hidden id="contIds" name="contId" value="@ViewData["contIds"]" />
+<input hidden id="Wxzh" name="Wxzh" value="@ViewData["Wxzh"]" />
+<div class="page-bd-15">
+    <div class="weui-cells" id="rank-list">
+    </div>
+    <div class="weui-loadmore" id="more">
+    </div>
+</div>
+
+<script src="~/lib/modules/customer/company-qtlxr-index.js"></script>

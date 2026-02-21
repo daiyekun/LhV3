@@ -1,0 +1,108 @@
+﻿
+@{
+    ViewData["Title"] = "付款合同标的大列表";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/lib/layuiadmin/modules/layui-nf-plugs/soulTable/soulTable.css" rel="stylesheet" />
+<div class="layui-fluid">
+    <div class="layui-card">
+        <div class="layui-card-body">
+            <table id="NF-PaySubMetIndex" lay-filter="NF-PaySubMetIndex"></table>
+            <!--查看详情-->
+            <script type="text/html" id="nameTpl">
+                <a class="layui-table-link hand" lay-text="查看详情" lay-event="contdetail">
+                    <cite>{{d.ContName}}</cite>
+                </a>
+            </script>
+            <!--表格工具栏-->
+            <script id="toolPaySubMet" type="text/html">
+                <button class="layui-btn" lay-event="cateSearch">
+                    <i class="layui-icon layui-icon-triangle-d layuiadmin-button-btn"></i>显示业务品类
+                </button>
+                <div class="layui-inline">
+                    <input class="layui-input" type="text" name="keyWord" placeholder="合同名称、编号、标的名称" style="width:240px;" autocomplete="off" />
+                </div>
+                <div class="layui-inline">
+                    <button class="layui-btn" lay-event="search">
+                        <i class="layui-icon layui-icon-search layuiadmin-button-btn"></i>
+                    </button>
+                  
+                    <button class="layui-btn" lay-event="jiaoFu">
+                        交付
+                    </button>
+                    <button class="layui-btn" lay-event="jiaoFuMx">
+                        交付明细
+                    </button>
+                   
+
+                    <ul class="layui-nav layui-btn layui-bg-green " style="font-size: 12px;float: right;padding:0px 0px 0px 0px;margin-left: 14px;">
+                        <li class="layui-nav-item" style="line-height: 33px;font-size: 12px;">
+                            <a style="color:white;font-size: 12px;padding: 2px 30px 3px 20px;letter-spacing:1px;width:88px" id="moreClick">更多操作<i class="layui-edge"></i></a>
+                            <dl class="layui-nav-child" style="top: 30px;line-height: 30px;width:188px;background-color:#fff ;border:white" id="moreEncrypt">
+                                <!-- 二级菜单 -->
+                                <dd>
+                                    <button class="layui-btn" lay-event="exportexcel" style="width:168px;margin:5px" ;>
+                                        <i class="layui-icon layui-icon-export layuiadmin-button-btn"></i>导出Excel
+                                    </button>
+                                </dd>
+                                <dd>
+                                    <button class="layui-btn" lay-event="clear" style="width:168px;margin:5px;">
+                                        <i class="layui-icon layui-icon-edit layuiadmin-button-btn"></i>清除
+                                    </button>
+                                </dd>
+                            </dl>
+                        </li>
+                    </ul>
+                </div>
+
+            </script>
+
+            @*操作*@
+            <script type="text/html" id="table-PaySubMetIndex-bar">
+                <a class="layui-btn layui-btn-normal layui-btn-xs" lay-event="jiaofu"><i class="layui-icon layui-icon-edit"></i>交付</a>
+                <a class="layui-btn layui-btn-normal layui-btn-xs" lay-event="jiaofumx"><i class="layui-icon layui-icon-search"></i>交付明细</a>
+            </script>
+
+
+
+        </div>
+    </div>
+</div>
+<!--类别菜单容器-->
+<div class="layui-card layui-hide" id="cateDiv">
+    <div class="layui-card-body">
+        <input type="hidden" id="hdselCateIds" />
+        <div id="BcCategory_Tree" style="width: 100%; height:310px; overflow:auto;">
+
+        </div>
+    </div>
+</div>
+
+@{
+    Html.RenderPartial("_ContStatePartial");
+    Html.RenderPartial("_ExportExcelSetPartial");
+    Html.RenderPartial("_LayuiScriptsPartial");
+
+}
+
+<script>
+    layui.config({
+        base: '/lib/layuiadmin/'
+    }).extend({
+        index: 'lib/index', //主入口模块
+        payContSubmetIndex: 'subjectmatter-nf/paycontsubmetindex'
+        , nfBcTree: 'nf-plugs/biccatetree'
+        , dynamicCondition: 'layui-nf-plugs/dynamicCondition/dynamicCondition'
+        , soulTable: 'layui-nf-plugs/soulTable/soulTable',
+        tableChild: 'layui-nf-plugs/soulTable/tableChild',
+        tableMerge: 'layui-nf-plugs/soulTable/tableMerge',
+        tableFilter: 'layui-nf-plugs/soulTable/tableFilter',
+        excel: 'layui-nf-plugs/soulTable/excel'
+    }).use(['index', 'payContSubmetIndex'], function () {
+
+
+
+
+    });
+</script>
+

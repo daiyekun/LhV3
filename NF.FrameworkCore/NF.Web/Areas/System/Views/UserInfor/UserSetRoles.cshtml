@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewData["Title"] = "用户分配角色";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link rel="stylesheet" href="~/lib/transfer/css/cyType.css" media="all" />
+<link rel="stylesheet" href="~/lib/transfer/css/cyStyle.css" media="all" />
+<link href="~/lib/transfer/css/font-awesome.min.css" media="all" />
+<script src="~/lib/layuiadmin/layui/layui.js" type="text/javascript" charset="utf-8"></script>
+<script src="~/lib/transfer/js/jquery-1.10.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="~/lib/transfer/js/utils.js" type="text/javascript" charset="utf-8"></script>
+<script src="~/lib/transfer/js/transferTool.js" type="text/javascript" charset="utf-8"></script>
+<div class="layui-fluid">
+    <div class="layui-form" lay-filter="Nf-System-UserroleForm">
+        <input type="hidden" id="Id" name="Id" value="@ViewData["curruId"]" />
+        <div class="layui-card ">
+            <div class="layui-card-header">分配用户角色</div>
+            <div class="layui-card-body" style="padding: 15px;">
+                <button class="layui-btn layui-hide" lay-submit="" id="userRolesubmitForm" lay-filter="userRolesubmitForm"><i class="fa fa-floppy-o">&nbsp;</i>提交表单</button>
+                <div cyType="transferTool" cyProps="url:'/System/Role/GetListAll'" name="uroles[]" value="@ViewData["currRoleIds"]" />
+
+            </div>
+        </div>
+
+       
+    </div>
+</div>
+@*<script>
+    layui.config({
+        base: '/lib/layuiadmin/'
+    }).extend({
+        index: 'lib/index' //主入口模块
+    }).use(['index'], function () {
+        var $ = layui.$
+         , form = layui.form;
+       
+    });
+</script>*@
+
+

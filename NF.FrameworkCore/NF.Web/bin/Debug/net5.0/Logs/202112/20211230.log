@@ -1,0 +1,83 @@
+
+======================================================================================
+
+
+--------------------------------------------------------------------------------------
+
+日志时间：2021-12-30 10:17:19,912 [65] 
+日志级别：ERROR 
+日 志 类：类名：NF.Web.Utility.Filters
+	方法名：OnException [(null)] 
+A connection was successfully established with the server, but then an error occurred during the pre-login handshake. (provider: SSL Provider, error: 0 - 等待的操作过时。) 
+
+
+--------------------------------------------------------------------------------------
+
+日志时间：2021-12-30 10:38:31,124 [132] 
+日志级别：ERROR 
+日 志 类：类名：NF.Web.Utility.Filters
+	方法名：OnException [(null)] 
+Object reference not set to an instance of an object. 
+
+
+--------------------------------------------------------------------------------------
+
+日志时间：2021-12-30 10:38:32,585 [132] 
+日志级别：ERROR 
+日 志 类：类名：NF.Web.Utility.Filters
+	方法名：OnException [(null)] 
+Object reference not set to an instance of an object. 
+
+
+--------------------------------------------------------------------------------------
+
+日志时间：2021-12-30 10:38:35,050 [132] 
+日志级别：ERROR 
+日 志 类：类名：NF.Web.Utility.Filters
+	方法名：OnException [(null)] 
+Object reference not set to an instance of an object. 
+
+
+--------------------------------------------------------------------------------------
+
+日志时间：2021-12-30 10:38:38,482 [143] 
+日志级别：ERROR 
+日 志 类：类名：NF.Web.Utility.Filters
+	方法名：OnException [(null)] 
+Object reference not set to an instance of an object. 
+
+
+--------------------------------------------------------------------------------------
+
+日志时间：2021-12-30 10:38:46,558 [12] 
+日志级别：ERROR 
+日 志 类：类名：NF.Web.Utility.Filters
+	方法名：OnException [(null)] 
+Object reference not set to an instance of an object. 
+
+
+--------------------------------------------------------------------------------------
+
+日志时间：2021-12-30 10:38:50,696 [143] 
+日志级别：ERROR 
+日 志 类：类名：NF.Web.Utility.Filters
+	方法名：OnException [(null)] 
+Object reference not set to an instance of an object. 
+
+
+--------------------------------------------------------------------------------------
+
+日志时间：2021-12-30 10:39:59,329 [132] 
+日志级别：ERROR 
+日 志 类：类名：NF.Web.Utility.Filters
+	方法名：OnException [(null)] 
+Object reference not set to an instance of an object. 
+
+
+--------------------------------------------------------------------------------------
+
+日志时间：2021-12-30 10:43:16,347 [105] 
+日志级别：ERROR 
+日 志 类：类名：NF.Web.Utility.Filters
+	方法名：OnException [(null)] 
+Object reference not set to an instance of an object. 

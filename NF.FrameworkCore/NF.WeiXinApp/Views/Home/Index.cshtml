@@ -1,0 +1,100 @@
+﻿@{
+    ViewData["Title"] = "菜单";
+    ViewData["MyPage"] = "menuIndex";
+}
+<div class="page index-bg">
+    @*<input type="hidden" id="Usid" />
+    <input type="hidden" id="mypage" value="0" />*@
+    <input type="hidden" id="Wxid" value="@ViewData["WxCurrUserId"]" />
+    <a href="/Home/Eees" type="hidden" id="wxnamenull"></a>
+    <div class="page__hd menu_hd">
+        <h2 class="page__title menu_hd_Title1">欢迎使用合同管理系统</h2>
+        <p class="page__desc menu_hd_Title2">罗合（北京）科技有限公司</p>
+    </div>
+    <div class="page__bd">
+
+        <div class="weui-grids">
+            <a href="/Company/CustomerIndex?wxzh=@ViewData["WxCurrUserId"]&FinanceType=0" class="weui-grid index-menubtn">
+                <div class="weui-grid__icon">
+                    <img src="~/lib/weui/images/icon_kf.png" alt="客户">
+                </div>
+                <p class="weui-grid__label menu_font">客户</p>
+            </a>
+            <a href="/Company/SupplierIndex?wxzh=@ViewData["WxCurrUserId"]&FinanceType=1" class="weui-grid index-menubtn">
+                <div class="weui-grid__icon">
+                    <img src="~/lib/weui/images/icon_gys.png" alt="供应商">
+                </div>
+                <p class="weui-grid__label menu_font">供应商</p>
+            </a>
+            <a href="/Company/OtherIndex?wxzh=@ViewData["WxCurrUserId"]&FinanceType=2" class="weui-grid index-menubtn">
+                <div class="weui-grid__icon">
+                    <img src="~/lib/weui/images/icon_qtdf.png" alt="其他对方">
+                </div>
+                <p class="weui-grid__label menu_font">其他对方</p>
+            </a>
+            <a href="/Project/ProjectIndex?wxzh=@ViewData["WxCurrUserId"]" class="weui-grid index-menubtn">
+                <div class="weui-grid__icon">
+                    <img src="~/lib/weui/images/icon_xm.png" alt="项目">
+                </div>
+                <p class="weui-grid__label menu_font">项目</p>
+            </a>
+            @*//  <a href="Company/CustomerIndex" class="weui-grid">*@
+            <a href="/Contract/SIndex?wxzh=@ViewData["WxCurrUserId"]&FinanceType=0" class="weui-grid index-menubtn">
+                <div class="weui-grid__icon">
+                    <img src="~/lib/weui/images/icon_skht.png" alt="收款合同">
+                </div>
+                <p class="weui-grid__label menu_font">收款合同</p>
+            </a>
+            <a href="/Contract/SIndex?wxzh=@ViewData["WxCurrUserId"]&FinanceType=1" class="weui-grid index-menubtn">
+                <div class="weui-grid__icon">
+                    <img src="~/lib/weui/images/icon_fkht.png" alt="付款合同">
+                </div>
+                <p class="weui-grid__label menu_font">付款合同</p>
+            </a>
+            <a href="/ActualFinance/Index?wxzh=@ViewData["WxCurrUserId"]&Ftype=0" class="weui-grid index-menubtn">
+                <div class="weui-grid__icon">
+                    <img src="~/lib/weui/images/icon_sjsk.png" alt="实际收款">
+                </div>
+                <p class="weui-grid__label menu_font">实际收款</p>
+            </a>
+            <a href="/ActualFinance/Index?wxzh=@ViewData["WxCurrUserId"]&Ftype=1" class="weui-grid index-menubtn">
+                <div class="weui-grid__icon">
+                    <img src="~/lib/weui/images/icon_sjfk.png" alt="实际付款">
+                </div>
+                <p class="weui-grid__label menu_font">实际付款</p>
+            </a>
+            <a href="/ContInvoice/Index?wxzh=@ViewData["WxCurrUserId"]&Itype=1" class="weui-grid index-menubtn">
+                <div class="weui-grid__icon">
+                    <img src="~/lib/weui/images/icon_sp.png" alt="收票">
+                </div>
+                <p class="weui-grid__label menu_font">收票</p>
+            </a>
+            <a href="/ContInvoice/Index?wxzh=@ViewData["WxCurrUserId"]&Itype=0" class="weui-grid index-menubtn">
+                <div class="weui-grid__icon">
+                    <img src="~/lib/weui/images/icon_kp.png" alt="开票">
+                </div>
+                <p class="weui-grid__label menu_font">开票</p>
+            </a>
+
+        </div>
+
+
+
+    </div>
+</div>
+<style>
+    body{
+        background-color:#ffffff;
+    }
+</style>
+
+<script type="text/javascript" src="~/lib/modules/Home/home-index.js"></script>
+
+
+
+
+
+
+
+
+

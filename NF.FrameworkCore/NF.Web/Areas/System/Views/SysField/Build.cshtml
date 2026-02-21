@@ -1,0 +1,155 @@
+﻿
+@{
+    ViewData["Title"] = "新建系统新增字段";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="layui-fluid">
+    <!--基本信息begin-->
+    <div class="layui-form" lay-filter="Nf-SystemAdmin-SysField">
+        <!--修改时使用-->
+        <input type="hidden" id="Id" name="Id" />
+        <input type="hidden" id="Isqy" name="Isqy" />
+        <input type="hidden" id="Zbpx" name="Zbpx" />
+        <div class="layui-card " id="contractfo">
+            <div class="layui-card-header">基本信息</div>
+            <div class="layui-card-body" style="padding: 15px;">
+                <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">字段标题</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="Lable" id="Lable" lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input pen" />
+                        </div>
+                    </div>
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">字段名字</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="Fname" id="Fname" lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input pen" />
+                        </div>
+                    </div>
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">字段类型</label>
+                        <div class="layui-input-block">
+                            <select id="FieldType" name="FieldType" lay-verify="required">
+                                <option value=""></option>
+                                <option value="0">文本框</option>
+                                <option value="1">选择框</option>
+                                <option value="2">时间框</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">显示列表</label>
+                        <div class="layui-input-block">
+                            <select id="IsList" name="IsList" lay-verify="required">
+                                <option value="0">否</option>
+                                <option value="1">是</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">用于模块</label>
+                        <div class="layui-input-block">
+                            <select id="Tag" name="Tag" lay-verify="required">
+                                <option value="0">合同</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">必填</label>
+                        <div class="layui-input-block">
+                            <select id="Required" name="Required" lay-verify="required">
+                                <option value="0">否</option>
+                                <option value="1">是</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+
+                    <div class="layui-col-lg12 layui-col-md12 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">选择框类容</label>
+                        <div class="layui-input-block">
+                            <textarea name="SelData" placeholder="请输入以;结束" class="layui-textarea"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <!--需要在最后加这个或者没有也加一个 <div class="layui-form-item">，这样不会导致隐藏菜单是显示问题-->
+                <div class="layui-form-item">
+                </div>
+            </div>
+        </div>
+        <!--按钮begin-->
+        <div class="layui-form-item layui-layout-admin layui-hide">
+            <div class="layui-input-block">
+                <div class="layui-footer" style="left: 0;">
+                    <button class="layui-btn" id="Nf-System-SysFieldSubmit" lay-submit lay-filter="Nf-System-SysFieldSubmit">保存</button>
+                    <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                </div>
+            </div>
+        </div>
+        <!--按钮begin-->
+
+    </div>
+
+
+  
+</div>
+<!--基本信息end-->
+<!--目录-->
+@{
+    Html.RenderPartial("_LayuiScriptsPartial");
+}
+<script>
+    layui.config({
+        base: '/lib/layuiadmin/'
+    }).extend({
+        index: 'lib/index' //主入口模块
+        , treeSelect: 'layui-nf-plugs/treeselect'
+    }).use(['index', 'form', 'laydate', 'treeSelect'], function () {
+        var $ = layui.$
+            , admin = layui.admin
+            , element = layui.element
+            , layer = layui.layer
+            , laydate = layui.laydate
+            , treeSelect = layui.treeSelect
+            , table = layui.table
+            , form = layui.form;
+        var byId = wooutil.getUrlVar('Id');
+
+    
+        //--------------------------修改的时候赋值----------------------------------
+
+        if (byId !== "" && byId !== undefined) {
+            admin.req({
+                url: '/System/SysField/ShowView',
+                data: { Id: byId, rand: wooutil.getRandom() },
+                done: function (res) {
+                    //layer.alert(JSON.stringify(res.Data));
+                    form.val("Nf-SystemAdmin-SysField", res.Data);
+
+                  
+
+                }
+            });
+
+        } else {
+         
+        }
+        //-------------------------------------修改赋值end--------------------------------------------
+   
+
+
+
+
+        form.render(null, 'Nf-SystemAdmin-SysField');
+
+    });
+</script>
+

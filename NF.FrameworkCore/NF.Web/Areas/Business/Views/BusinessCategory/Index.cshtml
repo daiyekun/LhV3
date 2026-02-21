@@ -1,0 +1,112 @@
+﻿
+@{
+    ViewData["Title"] = "业务品类设置";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="layui-fluid" id="LAY-component-grid-all">
+    <div class="layui-row layui-col-space5">
+        <div class="layui-col-xs6 layui-col-sm5 layui-col-md3">
+            <div class="layui-card">
+                <div class="layui-card-header">业务品类</div>
+                <div class="layui-card-body">
+                    <div id="BcCategory_Tree" style="width: 100%; height:500px; overflow:auto;"></div>
+                </div>
+            </div>
+        </div>
+        <div class="layui-col-xs6 layui-col-sm7 layui-col-md9">
+            <div class="layui-card">
+                <div class="layui-card-header">
+                    <input type="hidden" name="dataType" />
+                    <div class="layui-inline">
+                        <a class="layui-btn bccate-btn " data-type="add">增加业务品类</a>
+                    </div>
+                    <div class="layui-inline">
+                        <a class="layui-btn bccate-btn" data-type="addchild">新增子类</a>
+                    </div>
+                    <div class="layui-inline">
+                        <a class="layui-btn bccate-btn" data-type="delCate">删除</a>
+                    </div>
+                    <div style="float:right;">
+                        <a id="savebccate" class="layui-btn bccate-btn layui-btn-normal" save-btn="" data-type="save">保存</a>
+                    </div>
+
+                </div>
+                <div class="layui-card-body">
+                    @*修改时使用的ID*@
+                    <input type="hidden" name="Id" />
+                    @*父类*@
+                    <input type="hidden" name="tempPid" id="tempPid" />
+                    <input type="hidden" name="tempPName" id="tempPName" />
+                    <div class="layui-form layui-hide" lay-filter="NF-BcCategoryForm" id="NF-BcCategoryForm">
+                        <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                            <div class="layui-col-lg12 layui-col-md12 layui-col-xs12 layui-col-sm12">
+                                <label class="layui-form-label">品类名称</label>
+                                <div class="layui-input-block">
+
+                                    <input type="text" name="CaName" lay-verify="required" class="layui-input pen" />
+                                </div>
+                            </div>
+                            <div class="layui-col-lg12 layui-col-md12 layui-col-xs12 layui-col-sm12">
+                                <label class="layui-form-label">品类编号</label>
+                                <div class="layui-input-block">
+                                    <input type="text" name="CaCode" lay-verify="required" class="layui-input pen" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="layui-form-item layui-hide">
+                            <div class="layui-input-block">
+                                <button class="layui-btn" lay-submit lay-filter="btnCaSave" id="btnCaSave">save</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="layui-form layui-hide" lay-filter="NF-BcChirdCategoryForm" id="NF-BcChirdCategoryForm">
+                        <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                            <div class="layui-col-lg12 layui-col-md12 layui-col-xs12 layui-col-sm12">
+                                <label class="layui-form-label">所属类别</label>
+                                <div class="layui-input-block">
+                                    <input type="hidden" name="Pid" />
+                                    <input type="text" name="PName" class="layui-input layui-disabled" readonly="readonly" />
+                                </div>
+                            </div>
+                            <div class="layui-col-lg12 layui-col-md12 layui-col-xs12 layui-col-sm12">
+                                <label class="layui-form-label">子类名称</label>
+                                <div class="layui-input-block">
+                                    <input type="text" name="ChidName" lay-verify="required" class="layui-input pen" />
+                                </div>
+                            </div>
+                            <div class="layui-col-lg12 layui-col-md12 layui-col-xs12 layui-col-sm12">
+                                <label class="layui-form-label">子类编号</label>
+                                <div class="layui-input-block">
+                                    <input type="text" name="ChidCode" lay-verify="required" class="layui-input pen" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="layui-form-item layui-hide">
+                            <div class="layui-input-block">
+                                <button class="layui-btn" lay-submit lay-filter="btnChidCaSave" id="btnChidCaSave">save</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@{
+    Html.RenderPartial("_LayuiScriptsPartial");
+}
+<script type="text/javascript">
+    layui.config({
+        base: '/lib/layuiadmin/' //静态资源所在路径
+    }).extend({
+        index: 'lib/index', //主入口模块
+        businessCategory: 'business-nf/businessCategory'
+    }).use(['index', 'businessCategory'], function ()
+        {
+            
+
+
+        });
+</script>

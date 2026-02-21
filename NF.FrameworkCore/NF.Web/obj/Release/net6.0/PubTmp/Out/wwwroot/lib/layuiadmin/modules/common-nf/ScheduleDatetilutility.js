@@ -1,0 +1,192 @@
+﻿/**
+*进度明细
+***/
+
+layui.define(['table', 'form'], function (exports) {
+    var $ = layui.$
+        , admin = layui.admin
+    table = layui.table
+    form = layui.form
+   , setter = layui.setter;
+    var contractutility = {
+        stateEvent: function (param) {
+            /// <summary>注册状态流转按钮点击事件</summary>  
+            /// <param name="param.tableId" type="string">列表ID</param>
+            //状态流转
+            $(".downpanel").on("click", ".layui-select-title", function (e) {
+                $(this).parents(".layui-form-select").removeClass("layui-form-selected");
+                var checkStatus = table.checkStatus(param.tableId)
+                    , checkData = checkStatus.data; //得到选中的数据
+                if (checkData.length !== 1) {
+                    return layer.msg('请选择一条数据！');
+                } else if (checkData[0].State == 2) {//已终止
+                    return layer.msg('当前状态不允许修改！');
+                }
+                else {
+
+                    if (checkData[0].Wancheng != null || checkData[0].Wancheng != "") {
+                        $(".datastate").empty();
+                        if (checkData[0].State == 0) {
+                            $(".datastate").append('<dd lay-event="stateChange" flowitem="1" tostate="1"><i class="layui-icon layui-icon-edit"></i>未确认-->已确认</dd>');
+                            $(".datastate").append('<dd lay-event="stateChange" flowitem="2" tostate="2"><i class="layui-icon layui-icon-edit"></i>未确认-->已通过</dd>');
+                            $(".datastate").append('<dd lay-event="stateChange" flowitem="3" tostate="3"><i class="layui-icon layui-icon-edit"></i>未确认-->未通过</dd>');
+                        } else if (checkData[0].State == 1){
+                            $(".datastate").append('<dd lay-event="stateChange" flowitem="2" tostate="2"><i class="layui-icon layui-icon-edit"></i>已确认-->已通过</dd>');
+                        } else if (checkData[0].State == 3){
+                            $(".datastate").append('<dd lay-event="stateChange" flowitem="1" tostate="1"><i class="layui-icon layui-icon-edit"></i>未通过-->已确认</dd>');
+                        }
+                        $(".layui-form-select").not($(this).parents(".layui-form-select")).removeClass("layui-form-selected");
+                        $(this).parents(".layui-form-select").toggleClass("layui-form-selected");
+                        e.stopPropagation();
+                    } else {
+                        return layer.msg('当前进度拥有明细不允许修改！');
+                    }
+                }
+            });
+            //点击其他区域时
+            $(document).mouseup(function (e) {
+                var userSet_con = $('.datastate');
+                if (!userSet_con.is(e.target) && userSet_con.has(e.target).length === 0) {
+                    if ($(".layui-form-select").hasClass("layui-form-selected")) {
+                        $(".layui-form-select").toggleClass("layui-form-selected");
+                    }
+                    if ($(".datastate").parent().hasClass("layui-form-selected")) {
+                        $(".datastate").parent().removeClass("layui-form-selected")
+                    }
+                }
+            });
+            //更多操作---begin
+            $('#moreClick').hover(  //鼠标滑过导航栏目时
+
+                function () {
+                    $('#moreEncrypt').show();  //显示下拉列表
+                    //设置导航栏目样式
+                    //$(this).css({ 'color': 'red', 'background-color': 'orange' });
+                },
+
+                function () {
+                    $('#moreEncrypt').hide();  //鼠标移开后隐藏下拉列表
+                }
+            );
+            $('#moreEncrypt').hover(  //鼠标滑过下拉列表自身也要显示，防止无法点击下拉列表
+
+                function () {
+                    $('#moreEncrypt').show();
+                },
+                function () {
+                    $('#moreEncrypt').hide();
+                    //鼠标移开下拉列表后，导航栏目的样式也清除
+                    //$('#moreClick').css({ 'color': 'white', 'background-color': 'blue' });
+                }
+            );
+            //更多操作---end
+        },
+        showHideField: function (flowitem) {
+            switch (flowitem) {
+                case "1":
+                case "2":
+                case "3":
+                case 1:
+                case 2:
+                case 3:
+                    {
+                        $("#updateSchedulediv").removeClass("layui-hide");
+                       
+                    }
+                    break;
+            }
+        }
+        ,updateSate: function (param) {
+            /// <summary>修改状态</summary>  
+            /// <param name="param.tableId" type="string">列表ID</param>
+            /// <param name="param.url" type="string">修改时的URL路径</param>
+            var checkStatus = table.checkStatus(param.tableId)
+                , checkData = checkStatus.data; //得到选中的数据
+            var state = $(param.evtobj).attr("tostate");//修改状态
+            var flowitem = $(param.evtobj).attr("flowitem");
+            var _userId = layui.data(setter.tableName, { key: setter.NFData.userId });
+            contractutility.showHideField(flowitem);
+            var _fields = new Array();
+            var _Id = checkData[0].Id;
+            _fields.push({
+                Id: _Id,
+                FieldName: 'State',
+                FieldValue: state,
+                FieldType: 'int',
+                CurrUserId: _userId
+
+            });
+            switch (flowitem) {
+                case "1":
+                case "2":
+                case "3":
+                case 1:
+                case 2:
+                case 3:
+                    {
+                        layer.open({
+                            type: 1
+                            , title: '评定消息'
+                            , area: ['660px', '300px']
+                            , btn: ['确定', '取消']
+                            , content: $('#updateSchedulediv')
+                            , yes: function (index, layero) {
+                                $("#updateSchedulediv").addClass("layui-hide");
+                                var _Pdescription = $("#Pdescription").val();
+                                _fields.push({
+                                    Id: _Id,
+                                    FieldName: 'Pdescription',
+                                    FieldValue: _Pdescription,
+                                    FieldType: 'string',
+                                    CurrUserId: _userId
+
+                                });
+                                
+                                contractutility.requestUpdate(
+                                    {
+                                        url: param.url
+                                        , tableId: param.tableId
+                                        , fields: _fields
+                                    });
+                                layer.close(index);
+
+                            }, btn2: function (index, layero) {
+                                $("#updateSchedulediv").addClass("layui-hide");
+                            }, cancel: function () {
+                                $("#updateSchedulediv").addClass("layui-hide");
+                            }
+                        });
+
+                     }
+                break;
+
+            }
+
+            //admin.req({
+            //    url: param.url
+            //    , data: { Id: checkData[0].Id, fieldName: 'State', fieldVal: state }
+            //    , done: function (res) {
+            //        layer.msg("操作成功", { time: 500, icon: 6 }, function () {
+            //            table.reload(param.tableId);
+            //        });
+            //    }
+            //});
+           
+        },
+        requestUpdate: function (param) {
+            /// <summary>请求修改</summary>  
+            /// <param name="param.tableId" type="string">列表ID</param>
+            /// <param name="param.url" type="string">修改时的URL路径</param>
+            /// <param name="param.fields" type="array">当前需要修改的字段集合</param>
+            // layer.alert(JSON.stringify(param.fields));
+            $.post(param.url, { fields: param.fields }, function (res) {
+                layer.msg("操作成功", { time: 500, icon: 6 }, function () {
+                    table.reload(param.tableId);
+                });
+
+            });
+
+        }
+    }
+    exports('contractutility', contractutility);
+});

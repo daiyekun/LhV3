@@ -1,0 +1,61 @@
+
+======================================================================================
+
+
+--------------------------------------------------------------------------------------
+
+日志时间：2021-07-09 19:02:01,180 [28] 
+日志级别：INFO  
+日 志 类：类名：NF.WeiXin.Lib.Utility
+	方法名：SetSessionUser [(null)] 
+登录用户：{"UserId":"daiyekun","DeviceId":"9c6d9b839e74f85b","errcode":0,"errmsg":"ok"} 
+
+
+--------------------------------------------------------------------------------------
+
+日志时间：2021-07-09 19:09:40,018 [56] 
+日志级别：INFO  
+日 志 类：类名：NF.WeiXin.Lib.Utility
+	方法名：SubmitTextCardMsg [(null)] 
+{
+  "enable_id_trans": 0,
+  "enable_duplicate_check": 0,
+  "duplicate_check_interval": 1800,
+  "textcard": {
+    "btntxt": "详情",
+    "title": "您有一个收款合同需要审批",
+    "description": "<div class=\"gray\">2021年07月09日</div><div class=\"normal\">合同名称：测试审批</div><div class=\"normal\">合同编号：1313231</div><div class=\"normal\">合同对方：CS061703</div><div class=\"normal\">合同类别：重点工程类</div><div class=\"normal\">合同金额：1,000.00</div><div class=\"normal\">执行部门：测试机构</div><div class=\"highlight\">请尽快处理！！！</div>",
+    "url": "https://open.weixin.qq.com/connect/oauth2/authorize?appid=ww0e0b416346faf129&redirect_uri=http%3a%2f%2flhwx.vipgz4.idcfengye.com%2fWxRuKou%2fWxHttpRedirect%3fOBJID%3d1057&response_type=code&scope=snsapi_base&agentid=1000002&state=2020Contractdetail#wechat_redirect"
+  },
+  "touser": "daiyekun",
+  "toparty": null,
+  "totag": null,
+  "msgtype": "textcard",
+  "agentid": 1000002
+} 
+
+======================================================================================
+
+
+--------------------------------------------------------------------------------------
+
+日志时间：2021-07-09 19:29:20,378 [73] 
+日志级别：INFO  
+日 志 类：类名：NF.WeiXin.Lib.Utility
+	方法名：SubmitTextCardMsg [(null)] 
+{
+  "enable_id_trans": 0,
+  "enable_duplicate_check": 0,
+  "duplicate_check_interval": 1800,
+  "textcard": {
+    "btntxt": "详情",
+    "title": "您有一个收款合同需要审批",
+    "description": "<div class=\"gray\">2021年07月09日</div><div class=\"normal\">合同名称：测试审批流程100001</div><div class=\"normal\">合同编号：1123123123</div><div class=\"normal\">合同对方：测试客户10001</div><div class=\"normal\">合同类别：重点工程类</div><div class=\"normal\">合同金额：100.00</div><div class=\"normal\">执行部门：测试机构</div><div class=\"highlight\">请尽快处理！！！</div>",
+    "url": "https://open.weixin.qq.com/connect/oauth2/authorize?appid=ww0e0b416346faf129&redirect_uri=http%3a%2f%2flhwx.vipgz4.idcfengye.com%2fWxRuKou%2fWxHttpRedirect%3fOBJID%3d1054&response_type=code&scope=snsapi_base&agentid=1000002&state=2020Contractdetail#wechat_redirect"
+  },
+  "touser": "daiyekun",
+  "toparty": null,
+  "totag": null,
+  "msgtype": "textcard",
+  "agentid": 1000002
+} 

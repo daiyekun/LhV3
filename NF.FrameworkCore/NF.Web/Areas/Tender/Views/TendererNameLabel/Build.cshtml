@@ -1,0 +1,106 @@
+﻿
+@{
+    ViewData["Title"] = "招标人";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="layui-fluid">
+    <!--基本信息begin-->
+    <div class="layui-form" lay-filter="NF-ContDescriptionForm">
+        <!--修改时使用-->
+        <input type="hidden" id="Id" name="Id" />
+        <!--合同ID-->
+        <input type="hidden" name="ContId" id="ContId" />
+        <div class="layui-card ">
+            <div class="layui-card-header">基本信息</div>
+            <div class="layui-card-body" style="padding: 15px;">
+                <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">招标人</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="ContractEnforcementDepId" lay-filter="ContractEnforcementDepId" id="ContractEnforcementDepId" lay-verify="required" placeholder="请选择" class="layui-input pen" />
+                            <input type="hidden" name="ContractEnforcementDepName" id="ContractEnforcementDepName" />
+                        </div>
+                    </div>
+
+                </div>
+                <!--需要在最后加这个或者没有也加一个 <div class="layui-form-item">，这样不会导致隐藏菜单是显示问题-->
+                <div class="layui-form-item">
+
+                </div>
+            </div>
+        </div>
+
+        <div class="layui-form-item layui-layout-admin layui-hide">
+            <div class="layui-input-block">
+                <div class="layui-footer" style="left: 0;">
+                    <button class="layui-btn" id="NF-ContDescription-FormSubmit" lay-submit lay-filter="NF-ContDescription-FormSubmit">保存</button>
+                    <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+@{
+    Html.RenderPartial("_LayuiScriptsPartial");
+}
+<script>
+
+    layui.config({
+        base: '/lib/layuiadmin/'
+    }).extend({
+        index: 'lib/index'
+        , treeSelect: 'layui-nf-plugs/treeselect'
+    }).use(['index', 'form','treeSelect'], function () {
+        var $ = layui.$
+            , admin = layui.admin
+            , form = layui.form
+            , treeSelect = layui.treeSelect;
+        var _objId = wooutil.getQueryString('Id');
+
+                function InitenforTree(tval) {
+            treeSelect.render(
+                {
+                    elem: "#ContractEnforcementDepId",
+                    data: '/System/Department/GetTreeSelectDept',
+                    method: "GET",
+                    search: true,
+                    verify: true,
+                    click: function (d) {
+                        $("input[name=ContractEnforcementDepId]").val(d.current.id);
+                        $("input[name=ContractEnforcementDepName]").val(d.current.name);
+                    },
+                    success: function (d) {
+                        if (tval != null) {
+                            treeSelect.checkNode("ContractEnforcementDepId", tval);
+                        }
+
+
+                    }
+
+                });
+        }
+        /**
+       *修改绑定数据
+      **/
+        if (_objId !== "" && _objId !== undefined && parseInt(_objId) > 0) {
+            InitenforTree(null)
+            admin.req({
+                url: '/Contract/ContDescription/ShowView',
+                data: { Id: _objId, rand: wooutil.getRandom() },
+                done: function (res) {
+                    form.val('NF-ContDescriptionForm', res.Data);
+                }
+            });
+        }
+
+
+    });
+</script>
+
+
+
+
+
+
+

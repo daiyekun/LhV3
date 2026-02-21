@@ -1,0 +1,12 @@
+D:\MyCode\V3.0\NF.FrameworkCore\NF.Common\bin\Debug\net6.0\NF.Common.deps.json
+D:\MyCode\V3.0\NF.FrameworkCore\NF.Common\bin\Debug\net6.0\NF.Common.dll
+D:\MyCode\V3.0\NF.FrameworkCore\NF.Common\bin\Debug\net6.0\NF.Common.pdb
+D:\MyCode\V3.0\NF.FrameworkCore\NF.Common\obj\Debug\net6.0\NF.Common.csproj.AssemblyReference.cache
+D:\MyCode\V3.0\NF.FrameworkCore\NF.Common\obj\Debug\net6.0\NF.Common.GeneratedMSBuildEditorConfig.editorconfig
+D:\MyCode\V3.0\NF.FrameworkCore\NF.Common\obj\Debug\net6.0\NF.Common.AssemblyInfoInputs.cache
+D:\MyCode\V3.0\NF.FrameworkCore\NF.Common\obj\Debug\net6.0\NF.Common.AssemblyInfo.cs
+D:\MyCode\V3.0\NF.FrameworkCore\NF.Common\obj\Debug\net6.0\NF.Common.csproj.CoreCompileInputs.cache
+D:\MyCode\V3.0\NF.FrameworkCore\NF.Common\obj\Debug\net6.0\NF.Common.dll
+D:\MyCode\V3.0\NF.FrameworkCore\NF.Common\obj\Debug\net6.0\refint\NF.Common.dll
+D:\MyCode\V3.0\NF.FrameworkCore\NF.Common\obj\Debug\net6.0\NF.Common.pdb
+D:\MyCode\V3.0\NF.FrameworkCore\NF.Common\obj\Debug\net6.0\ref\NF.Common.dll

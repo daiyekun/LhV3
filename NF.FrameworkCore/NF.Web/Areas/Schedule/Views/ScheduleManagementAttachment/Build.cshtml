@@ -1,0 +1,141 @@
+﻿
+@{
+    ViewData["Title"] = "进度管理附件";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="layui-fluid">
+    <!--基本信息begin-->
+    <div class="layui-form" lay-filter="NF-ScheduleAttachmentForm">
+        <!--修改时使用-->
+        <input type="hidden" id="Id" name="Id" />
+        <!--项目ID-->
+        <input type="hidden" name="SchedulemId" id="SchedulemId" />
+        @*文件存储文件夹名称*@
+        <input type="hidden" name="FolderName" />
+        <!--Guid名称-->
+        <input type="hidden" name="GuidFileName" />
+        <div class="layui-card ">
+            <div class="layui-card-header">基本信息</div>
+            <div class="layui-card-body" style="padding: 15px;">
+                <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                    <div class="layui-col-lg4 layui-col-md4 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">文件名</label>
+                        @*<div class="layui-input-block">*@
+                        <div class="layui-input-inline" style="width:70%;">
+                            <input type="text" name="FileName" lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input pen" />
+                        </div>
+                        <div class="layui-form-mid layui-word-aux" style="margin-top:-9px;">
+                            <button class="layui-btn layui-btn layui-btn-sm " id="contract-attUpload" style="height:38px;line-height:38px;">浏览</button>
+                        </div>
+                    </div>
+                    <div class="layui-col-lg4 layui-col-md4 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">附件名称</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="Name" lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input pen" />
+                        </div>
+                    </div>
+                    <div class="layui-col-lg4 layui-col-md4 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">附件类别</label>
+                        <div class="layui-input-block">
+                            <select name="CategoryId" id="CategoryId" lay-search>
+                                <option value="">请选择..</option>
+
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+
+                    <div class="layui-col-lg12 layui-col-md12 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">附件说明</label>
+                        <div class="layui-input-block">
+                            <textarea name="Remark" class="layui-textarea"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <!--需要在最后加这个或者没有也加一个 <div class="layui-form-item">，这样不会导致隐藏菜单是显示问题-->
+                <div class="layui-form-item">
+
+                </div>
+            </div>
+        </div>
+
+        <div class="layui-form-item layui-layout-admin layui-hide">
+            <div class="layui-input-block">
+                <div class="layui-footer" style="left: 0;">
+                    <button class="layui-btn" id="NF-ScheduleAttachment-FormSubmit" lay-submit lay-filter="NF-ScheduleAttachment-FormSubmit">保存</button>
+                    <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+@{
+    Html.RenderPartial("_LayuiScriptsPartial");
+}
+<script>
+
+    layui.config({
+        base: '/lib/layuiadmin/'
+    }).extend({
+        index: 'lib/index',
+        commonnf: 'common-nf/commonnf',
+    }).use(['index', 'form', 'commonnf', 'upload'], function () {
+
+        var $ = layui.$
+            , admin = layui.admin
+          , form = layui.form
+          , commonnf = layui.commonnf
+          , upload = layui.upload
+         , setter = layui.setter ;
+           var _objId = wooutil.getQueryString('Id');
+          //附件类别
+           commonnf.getdatadic({ dataenum: 18, selectEl: "#CategoryId" });
+          //上传14
+        var uploadcontractInst = upload.render({
+                elem: '#contract-attUpload'
+               , url: setter.layupload.uploadIp + '/NfCommon/NfAttachment/Upload?folderIndex=12'
+               , accept: setter.layupload.accept
+               , exts: setter.layupload.exts
+               , size: setter.layupload.size
+            , before: function (obj) {
+                   layer.load(); //上传loading
+               }
+            , done: function (res, index, upload) { //上传完毕回调
+                   $("input[name=FolderName]").val(res.RetValue.FolderName);
+                   $("input[name=GuidFileName]").val(res.RetValue.GuidFileName);
+                   $("input[name=FileName]").val(res.RetValue.SourceFileName);
+                   $("input[name=Name]").val(res.RetValue.NotExtenFileName);
+                   layer.closeAll('loading');
+               }
+            , error: function (index, upload) {
+                   //请求异常回调
+                   layer.closeAll('loading');
+                   layer.msg('网络异常，请稍后重试！');
+               }
+
+             });
+
+
+
+        /**
+        *修改绑定数据
+       **/
+           if (_objId !== "" && _objId !== undefined && parseInt(_objId) > 0) {
+               admin.req({
+                   url: '/Schedule/ScheduleManagementAttachment/ShowView',
+                   data: { Id: _objId, rand: wooutil.getRandom() },
+                   done: function (res) {
+                       form.val('NF-ScheduleAttachmentForm', res.Data);
+                   }
+               });
+           }
+
+    });
+</script>
+
+
+

@@ -1,0 +1,114 @@
+﻿@{
+    ViewData["Title"] = "新建其他联系人";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="layui-fluid">
+    <!--基本信息begin-->
+    <div class="layui-form" lay-filter="Nf-Company-CompContactBuildForm">
+        <!--修改时使用-->
+        <input type="hidden" id="Id" name="Id" />
+        <!--标识客户-->
+        <input type="hidden" name="Ctype" />
+        <!--客户-供应商-其他对方ID-->
+        <input type="hidden" name="CompanyId" id="build_CompanyId" />
+        <div class="layui-card ">
+            <div class="layui-card-header">基本信息</div>
+            <div class="layui-card-body" style="padding: 15px;">
+                <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                    <div class="layui-col-lg4 layui-col-md4 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">姓名</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="Name" lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input pen" />
+                        </div>
+                    </div>
+                    <div class="layui-col-lg4 layui-col-md4 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">职位</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="Position" lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input pen" />
+                        </div>
+                    </div>
+                    <div class="layui-col-lg4 layui-col-md4 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">办公电话</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="Tel" lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input pen" />
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                    <div class="layui-col-lg4 layui-col-md4 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">移动电话</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="Mobile" class="layui-input" />
+                        </div>
+                    </div>
+                    <div class="layui-col-lg4 layui-col-md4 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">传真</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="Fax" class="layui-input" />
+                        </div>
+                    </div>
+                    <div class="layui-col-lg4 layui-col-md4 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">E-Mail</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="Email" class="layui-input" />
+                        </div>
+                    </div>
+
+                </div>
+                <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+
+                    <div class="layui-col-lg12 layui-col-md12 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">备注</label>
+                        <div class="layui-input-block">
+                            <textarea name="Remark" class="layui-textarea"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <!--需要在最后加这个或者没有也加一个 <div class="layui-form-item">，这样不会导致隐藏菜单是显示问题-->
+                <div class="layui-form-item">
+
+                </div>
+            </div>
+        </div>
+
+        <div class="layui-form-item layui-layout-admin layui-hide">
+            <div class="layui-input-block">
+                <div class="layui-footer" style="left: 0;">
+                    <button class="layui-btn" id="NF-CompContact-formsubmit" lay-submit lay-filter="NF-CompContact-formsubmit">保存</button>
+                    <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+@{
+    Html.RenderPartial("_LayuiScriptsPartial");
+}
+<script>
+
+    layui.config({
+        base: '/lib/layuiadmin/'
+    }).extend({
+        index: 'lib/index'
+    }).use(['index', 'form'], function () {
+        var $ = layui.$
+          , admin = layui.admin
+          , form = layui.form;
+          var _objId = wooutil.getQueryString('Id');
+        /**
+        *修改绑定数据
+        **/
+          if (_objId !== "" && _objId !== undefined && parseInt(_objId) > 0)
+          {
+               admin.req({
+               url: '/Company/CompContact/ShowView',
+               data: { Id: _objId, rand: wooutil.getRandom() },
+               done: function (res) {
+                form.val('Nf-Company-CompContactBuildForm', res.Data);
+                }
+               });
+          }
+
+    });
+</script>

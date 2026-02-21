@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" charset="utf-8" content="width=device-width,initial-scale=1,user-scalable=0" />
+    <title>微信应用-@ViewData["Title"]</title>
+    @*weui库样式*@
+    @*<link rel="stylesheet" href="~/lib/weui/css/weui.min.css" />*@
+    <link href="~/lib/weuix/css/weui.css" rel="stylesheet" />
+    <link href="~/lib/weuix/css/weuix.css" rel="stylesheet" />
+    @*自定义样式*@
+    <link rel="stylesheet" href="~/css/site.css" />
+    <script src="~/lib/weuix/js/zepto.min.js"></script>
+    <script src="~/lib/weuix/js/zepto.weui.js"></script>
+    <script src="~/js/woowx.js"></script>
+    <script src="~/lib/weui/js/iscroll.js"></script>
+    <script src="~/lib/weui/js/lazyimg.js"></script>
+    <script src="~/lib/weui/js/updown.js"></script>
+
+    @*当前登录微信账号*@
+    <script type="text/javascript">
+
+        $(function () {
+            woowx.currinfo.wxUserId = '@ViewData["WxCurrUserId"]';
+
+        })
+    </script>
+
+
+</head>
+<body>
+
+    <div class="container">
+        <input type="hidden" name="MyPage" id="MyPage" value="@ViewData["MyPage"]" />
+        <input type="hidden" name="CurrWxUserId" id="CurrWxUserId" value="@ViewData["WxCurrUserId"]" />
+        @RenderBody()
+
+    </div>
+
+    <footer class="border-top footer text-muted  tab-bottom">
+        <div class="weui-tabbar tab-bottom">
+            <a href="/Home/Index" mymen="fm_0" class="weui-tabbar__item weui-bar__item_on">
+                <img src="~/lib/weui/images/icon_home1.png" alt="菜单" class="weui-tabbar__icon">
+                <p class="weui-tabbar__label">菜单</p>
+            </a>
+            <a href="/Home/ApproveIndex" mymen="fm_1" class="weui-tabbar__item">
+                <img src="~/lib/weui/images/icon_sp1.png" alt="审批" class="weui-tabbar__icon">
+                <p class="weui-tabbar__label">审批</p>
+            </a>
+            <a href="/Home/WooIndex" mymen="fm_2" class="weui-tabbar__item">
+                <img src="~/lib/weui/images/icon_woo1.png" alt="我的" class="weui-tabbar__icon">
+                <p class="weui-tabbar__label">我的</p>
+            </a>
+        </div>
+    </footer>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
+

@@ -1,0 +1,477 @@
+﻿
+@{
+    ViewData["Title"] = "新建其他对方";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="layui-fluid">
+    <!--其他对方基本信息begin-->
+    <div class="layui-form" lay-filter="Nf-Company-OtherBuildForm">
+        <!--修改时使用-->
+        <input type="hidden" id="Id" name="Id" />
+        <!--标识其他对方-->
+        <input type="hidden" name="Ctype" />
+        <div class="layui-card " id="otherInfo">
+            <div class="layui-card-header">主信息</div>
+            <div class="layui-card-body" style="padding: 15px;">
+                <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">名称</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="Name" lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input pen" />
+                        </div>
+                    </div>
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">编号</label>
+                        <div class="layui-input-block">
+                            @*<input type="text" name="Code" class="layui-input" readonly="readonly" />*@
+                            <input type="text" name="Code" lay-verify="required" class="layui-input pen" autocomplete="off" />
+                        </div>
+                    </div>
+
+                </div>
+                <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">类别</label>
+                        <div class="layui-input-block">
+                            <select name="CompClassId" id="CompClassId" lay-verify="required" lay-search>
+                                <option value="">请选择..</option>
+
+                            </select>
+                        </div>
+                    </div>
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">首要联系人</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="FirstContact" class="layui-input" autocomplete="off" />
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">职位</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="FirstContactPosition" class="layui-input" autocomplete="off" />
+                        </div>
+                    </div>
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">联系地址</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="Address" class="layui-input" autocomplete="off" />
+                        </div>
+                    </div>
+
+                </div>
+                <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">办公电话</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="FirstContactTel" class="layui-input" autocomplete="off" />
+                        </div>
+                    </div>
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">移动电话</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="FirstContactMobile" class="layui-input" autocomplete="off" />
+                        </div>
+                    </div>
+                </div>
+
+                
+                <!--需要在最后加这个或者没有也加一个 <div class="layui-form-item">，这样不会导致隐藏菜单是显示问题-->
+                <div class="layui-form-item">
+
+                </div>
+
+            </div>
+        </div>
+
+        <div class="layui-collapse">
+            <div class="layui-colla-item" id="otherInfoTwo">
+                <h2 class="layui-colla-title">次要信息</h2>
+                <div class="layui-colla-content">
+                    <div class="layui-card">
+                        <div class="layui-card-body" style="padding: 15px;">
+                            <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+
+                                <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                                    <label class="layui-form-label">级别</label>
+                                    <div class="layui-input-block">
+                                        <select name="LevelId" id="LevelId" lay-search="">
+                                            <option value="">请选择..</option>
+
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                                    <label class="layui-form-label">信用等级</label>
+                                    <div class="layui-input-block">
+                                        <select name="CareditId" id="CareditId" lay-search="" fi>
+                                            <option value="">请选择..</option>
+
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                                <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                                    <label class="layui-form-label">国家</label>
+                                    <div class="layui-input-block">
+                                        <select name="CountryId" lay-search lay-filter="CountryId">
+                                            <option value="">请选择..</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                                    <label class="layui-form-label">省</label>
+                                    <div class="layui-input-block">
+                                        <select name="ProvinceId" lay-search lay-filter="ProvinceId"></select>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                                <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                                    <label class="layui-form-label">市</label>
+                                    <div class="layui-input-block">
+                                        <select name="CityId" lay-search lay-filter="CityId"></select>
+                                    </div>
+                                </div>
+                                <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                                    <label class="layui-form-label">行业</label>
+                                    <div class="layui-input-block">
+                                        <input type="text" name="Trade" class="layui-input" autocomplete="off" />
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                                <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                                    <label class="layui-form-label">邮编</label>
+                                    <div class="layui-input-block">
+                                        <input type="text" name="PostCode" class="layui-input" autocomplete="off" />
+                                    </div>
+                                </div>
+                                <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                                    <label class="layui-form-label">公司网址</label>
+                                    <div class="layui-input-block">
+                                        <input type="text" name="WebSite" class="layui-input" autocomplete="off" />
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+                            <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+
+                                <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                                    <label class="layui-form-label">传真</label>
+                                    <div class="layui-input-block">
+                                        <input type="text" name="Fax" class="layui-input" autocomplete="off" />
+                                    </div>
+                                </div>
+                                <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                                    <label class="layui-form-label">E-mail</label>
+                                    <div class="layui-input-block">
+                                        <input type="text" name="FirstContactEmail" class="layui-input" autocomplete="off" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                                <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                                    <label class="layui-form-label">QQ/MSN</label>
+                                    <div class="layui-input-block">
+                                        <input type="text" name="FirstContactQq" class="layui-input" autocomplete="off" />
+                                    </div>
+                                </div>
+                                <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                                    <label class="layui-form-label">法人代表</label>
+                                    <div class="layui-input-block">
+                                        <input type="text" name="LegalPerson" class="layui-input" autocomplete="off" />
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                                <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                                    <label class="layui-form-label">注册资本</label>
+                                    <div class="layui-input-block">
+                                        <input type="text" name="RegisterCapital" value="0.00" class="layui-input lhmoney" autocomplete="off" />
+                                    </div>
+                                </div>
+                                <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                                    <label class="layui-form-label">实收资本</label>
+                                    <div class="layui-input-block">
+                                        <input type="text" name="PaidUpCapital" value="0.00" class="layui-input lhmoney" autocomplete="off" />
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+
+                                <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                                    <label class="layui-form-label">公司类型</label>
+                                    <div class="layui-input-block">
+                                        <select name="CompTypeId" id="CompTypeId" lay-search="">
+                                            <option value="">请选择..</option>
+
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                                    <label class="layui-form-label">注册地址</label>
+                                    <div class="layui-input-block">
+                                        <input type="text" name="RegisterAddress" class="layui-input" autocomplete="off" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                                <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                                    <label class="layui-form-label">成立日期</label>
+                                    <div class="layui-input-block">
+                                        <input type="text" name="FoundDateTime" id="FoundDateTime" class="layui-input" autocomplete="off" />
+                                    </div>
+                                </div>
+
+                                <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                                    <label class="layui-form-label">截止日期</label>
+                                    <div class="layui-input-block">
+                                        <input type="text" placeholder="营业截止日期" name="ExpirationDateTime" id="ExpirationDateTime" class="layui-input" autocomplete="off" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                                <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                                    <label class="layui-form-label">负责人</label>
+                                    <div class="layui-input-block">
+                                        <input type="text" name="PrincipalUserDisplayName" id="PrincipalUserDisplayName" class="layui-input" autocomplete="off" />
+                                        <input type="hidden" name="PrincipalUserId" id="PrincipalUserId" />
+                                    </div>
+                                </div>
+                                <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                                    <label class="layui-form-label">经营范围</label>
+                                    <div class="layui-input-block">
+                                        <input type="text" name="BusinessScope" class="layui-input" autocomplete="off" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                                <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                                    <label class="layui-form-label">备注1</label>
+                                    <div class="layui-input-block">
+                                        <input type="text" name="Reserve1" id="Reserve1" class="layui-input" autocomplete="off" />
+                                    </div>
+                                </div>
+                                <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                                    <label class="layui-form-label">备注2</label>
+                                    <div class="layui-input-block">
+                                        <input type="text" name="Reserve2" class="layui-input" autocomplete="off" />
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="layui-form-item">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                 </div>
+
+                </div>
+
+
+        <!--按钮begin-->
+        <div class="layui-form-item layui-layout-admin layui-hide">
+            <div class="layui-input-block">
+                <div class="layui-footer" style="left: 0;">
+                    <button class="layui-btn" id="NF-other-formsubmit" lay-submit lay-filter="NF-other-formsubmit">保存</button>
+                    <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                </div>
+            </div>
+        </div>
+        <!--按钮begin-->
+    </div>
+    <!--其他对方基本信息end-->
+    <div class="layui-collapse">
+        <div class="layui-colla-item" id="otherContact">
+            <h2 class="layui-colla-title">其他联系人</h2>
+            <div class="layui-colla-content ">
+                <!--其他联系人begin-->
+                <div class="layui-card " >
+                    @*<div class="layui-card-header">其他联系人</div>*@
+                    <div class="layui-card-body" style="padding: 15px;">
+                        <table id="NF-other-build-otherContact" lay-filter="NF-other-build-otherContact"></table>
+                        <!--表格工具栏-->
+                        <script id="toolother_otherContact" type="text/html">
+                            <div class="layui-inline">
+                                <button class="layui-btn " lay-event="add"><i class="layui-icon layui-icon-edit"></i> 新增</button>
+                                <button class="layui-btn  layui-btn-danger" lay-event="batchdel"><i class="layui-icon layui-icon-delete"></i>批量删除</button>
+                            </div>
+                        </script>
+                        <script type="text/html" id="table-other-otherContactbar">
+                            <a class="layui-btn layui-btn-normal layui-btn-xs" lay-event="edit"><i class="layui-icon layui-icon-edit"></i>修改</a>
+                            <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del"><i class="layui-icon layui-icon-delete"></i>删除</a>
+                        </script>
+                    </div>
+                </div>
+                <!--其他联系人end-->
+
+            </div>
+        </div>
+        <div class="layui-colla-item" id="otherAttachment">
+            <h2 class="layui-colla-title">其他对方附件</h2>
+            <div class="layui-colla-content">
+                <!--其他对方附件begin-->
+                <div class="layui-card " >
+                    @*<div class="layui-card-header">其他对方附件</div>*@
+                    <div class="layui-card-body" style="padding: 15px;">
+                        <table id="NF-other-build-CompAttachment" lay-filter="NF-other-build-CompAttachment"></table>
+                        <!--表格工具栏-->
+                        <script id="toolother_CompAttachment" type="text/html">
+                            <div class="layui-inline">
+                                <button class="layui-btn " lay-event="add"><i class="layui-icon layui-icon-edit"></i> 新增</button>
+                                <button class="layui-btn  layui-btn-danger" lay-event="batchdel"><i class="layui-icon layui-icon-delete"></i>批量删除</button>
+                            </div>
+                        </script>
+                        <script type="text/html" id="table-other-CompAttachmentbar">
+                            <a class="layui-btn layui-btn-xs" lay-event="download"><i class="layui-icon layui-icon-edit"></i>下载</a>
+                            <a class="layui-btn layui-btn-normal layui-btn-xs" lay-event="edit"><i class="layui-icon layui-icon-edit"></i>修改</a>
+                            <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del"><i class="layui-icon layui-icon-delete"></i>删除</a>
+                        </script>
+
+                    </div>
+                </div>
+                <!--其他对方附件end-->
+            </div>
+        </div>
+        <div class="layui-colla-item" id="otherDesc">
+            <h2 class="layui-colla-title">备忘录</h2>
+            <div class="layui-colla-content ">
+                <!--备忘录begin-->
+                <div class="layui-card " >
+                    @*<div class="layui-card-header">备忘录</div>*@
+                    <div class="layui-card-body" style="padding: 15px;">
+                        <table id="NF-other-build-CompDescription" lay-filter="NF-other-build-CompDescription"></table>
+                        <!--表格工具栏-->
+                        <script id="toolother_CompDescription" type="text/html">
+                            <div class="layui-inline">
+                                <button class="layui-btn " lay-event="add"><i class="layui-icon layui-icon-edit"></i> 新增</button>
+                                <button class="layui-btn  layui-btn-danger" lay-event="batchdel"><i class="layui-icon layui-icon-delete"></i>批量删除</button>
+                            </div>
+                        </script>
+                        <script type="text/html" id="table-other-CompDescriptionbar">
+                            <a class="layui-btn layui-btn-normal layui-btn-xs" lay-event="edit"><i class="layui-icon layui-icon-edit"></i>修改</a>
+                            <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del"><i class="layui-icon layui-icon-delete"></i>删除</a>
+                        </script>
+
+                    </div>
+                </div>
+                <!--备忘录end-->
+            </div>
+        </div>
+    </div>
+    
+    
+    
+
+
+</div>
+<!--目录-->
+<ul class="site-dir layui-layer-wrap nf-ml-ul layui-hide" id="othernva">
+    <li><a href="#otherInfo" rel="external nofollow" class="current">主要信息</a></li>
+    <li><a href="#otherInfoTwo" rel="external nofollow" >次要信息</a></li>
+    <li><a href="#otherContact" rel="external nofollow">其他联系人</a></li>
+    <li><a href="#otherAttachment" rel="external nofollow">其他对方附件</a></li>
+    <li><a href="#otherDesc" rel="external nofollow">备忘录</a></li>
+</ul>
+
+
+@{
+    Html.RenderPartial("_LayuiScriptsPartial");
+}
+<script>
+
+            layui.config({
+                base: '/lib/layuiadmin/'
+            }).extend({
+                index: 'lib/index', //主入口模块
+                nfcontents: 'contents-nf/nfcontents',
+                commonnf: 'common-nf/commonnf',
+                address: 'layui-nf-plugs/address',
+                tableSelect: 'layui-nf-plugs/tableSelect',
+                selectnfitem: 'common-nf/selectnfitem',
+                otherBuild: 'other-nf/other-build'
+            }).use(['index','element', 'form', 'laydate', 'nfcontents', 'commonnf', 'address', 'tableSelect', 'selectnfitem', 'otherBuild'], function () {
+                var $ = layui.$
+                    , admin = layui.admin
+                    , element = layui.element
+                    , layer = layui.layer
+                    , laydate = layui.laydate
+                    , table = layui.table
+                    , form = layui.form
+                    , nfcontents = layui.nfcontents
+                    , commonnf = layui.commonnf
+                    , address = layui.address()
+                    , tableSelect = layui.tableSelect
+                    ,selectnfitem = layui.selectnfitem
+                wootool.wooMoneyThod();
+
+                var byId = wooutil.getUrlVar('Id');
+
+                    //其他对方类别
+                    commonnf.getdatadic({ dataenum: 4, selectEl: "#CompClassId" });
+                    //其他对方级别
+                    commonnf.getdatadic({ dataenum: 12, selectEl: "#LevelId" });
+                    //信用等级
+                    commonnf.getdatadic({ dataenum: 6, selectEl: "#CareditId" });
+                    //公司类型
+                    commonnf.getdatadic({ dataenum: 7, selectEl: "#CompTypeId" });
+                    //目录
+                    nfcontents.render({ content: '#othernva' });
+                    laydate.render({ elem: '#FoundDateTime', trigger: 'click' });
+                    laydate.render({ elem: '#ExpirationDateTime', trigger: 'click' });
+                    //清除部分下拉小笔头
+                    wooutil.selpen();
+                    //负责人
+                selectnfitem.selectUserItemQ(
+                        {
+                            tableSelect: tableSelect,
+                            elem: '#PrincipalUserDisplayName',
+                            hide_elem: '#PrincipalUserId'
+
+                        });
+
+
+
+
+                    /***************************************修改***************************************************/
+
+                    if (byId !== "" && byId !== undefined) {
+                        admin.req({
+                            url: '/Company/Other/ShowView',
+                            data: { Id: byId, rand: wooutil.getRandom() },
+                            done: function (res) {
+                                //layer.alert(JSON.stringify(res.Data));
+
+                                form.val("Nf-Company-OtherBuildForm", res.Data);
+                                commonnf.setSelectVal({ name: 'CountryId', val: res.Data.CountryId });
+                                commonnf.setSelectVal({ name: 'ProvinceId', val: res.Data.ProvinceId });
+                                commonnf.setSelectVal({ name: 'CityId', val: res.Data.CityId });
+
+                            }
+                        });
+
+                    }
+                    /****************************************修改end******************************************************/
+
+
+
+
+
+
+
+               
+            });
+</script>

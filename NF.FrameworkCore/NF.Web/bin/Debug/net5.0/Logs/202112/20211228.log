@@ -1,0 +1,85 @@
+
+======================================================================================
+
+
+--------------------------------------------------------------------------------------
+
+日志时间：2021-12-28 10:43:47,107 [40] 
+日志级别：ERROR 
+日 志 类：类名：NF.BLL
+	方法名：GetConsoleReminder [(null)] 
+Err-->mesgInfo.DqjhskNum:Object reference not set to an instance of an object. 
+
+
+--------------------------------------------------------------------------------------
+
+日志时间：2021-12-28 10:43:47,184 [40] 
+日志级别：ERROR 
+日 志 类：类名：NF.BLL
+	方法名：GetConsoleReminder [(null)] 
+Err-->mesgInfo.DqjhfkNum:Object reference not set to an instance of an object. 
+
+
+--------------------------------------------------------------------------------------
+
+日志时间：2021-12-28 10:43:48,111 [5] 
+日志级别：ERROR 
+日 志 类：类名：NF.BLL
+	方法名：GetConsoleReminder [(null)] 
+Err-->mesgInfo.DqjhskNum:Object reference not set to an instance of an object. 
+
+
+--------------------------------------------------------------------------------------
+
+日志时间：2021-12-28 10:43:48,150 [5] 
+日志级别：ERROR 
+日 志 类：类名：NF.BLL
+	方法名：GetConsoleReminder [(null)] 
+Err-->mesgInfo.DqjhfkNum:Object reference not set to an instance of an object. 
+
+======================================================================================
+
+
+--------------------------------------------------------------------------------------
+
+日志时间：2021-12-28 11:48:46,488 [46] 
+日志级别：ERROR 
+日 志 类：类名：NF.Web.Utility.Filters
+	方法名：OnException [(null)] 
+Object reference not set to an instance of an object. 
+
+
+--------------------------------------------------------------------------------------
+
+日志时间：2021-12-28 11:48:49,343 [34] 
+日志级别：ERROR 
+日 志 类：类名：NF.Web.Utility.Filters
+	方法名：OnException [(null)] 
+Object reference not set to an instance of an object. 
+
+
+--------------------------------------------------------------------------------------
+
+日志时间：2021-12-28 11:48:50,462 [34] 
+日志级别：ERROR 
+日 志 类：类名：NF.Web.Utility.Filters
+	方法名：OnException [(null)] 
+Object reference not set to an instance of an object. 
+
+
+--------------------------------------------------------------------------------------
+
+日志时间：2021-12-28 11:48:51,950 [44] 
+日志级别：ERROR 
+日 志 类：类名：NF.Web.Utility.Filters
+	方法名：OnException [(null)] 
+Object reference not set to an instance of an object. 
+
+
+--------------------------------------------------------------------------------------
+
+日志时间：2021-12-28 11:48:53,065 [43] 
+日志级别：ERROR 
+日 志 类：类名：NF.Web.Utility.Filters
+	方法名：OnException [(null)] 
+Object reference not set to an instance of an object. 

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<!---->
+<MigrationScript version="2" type="MigrationScript">
+  <Name>DatabaseRepository 6084 to 6111</Name>
+  <FromVersion version="1" type="VersionInfoRaw">
+    <Version>6084</Version>
+    <ScriptFolderLocation>&lt;?xml version="1.0" encoding="utf-16" standalone="yes"?&gt;
+&lt;!----&gt;
+&lt;ISOCCompareLocation version="1" type="SvnLocation"&gt;
+  &lt;RepositoryUrl&gt;https://192.168.0.188:8443/svn/decode/devs/V2.8/LhV283XiuGai/LhSVN5970_NET5.0/Docs/SQLToolBar/DatabaseRepository/&lt;/RepositoryUrl&gt;
+&lt;/ISOCCompareLocation&gt;</ScriptFolderLocation>
+  </FromVersion>
+  <ToVersion version="1" type="VersionInfoRaw">
+    <Version>6111</Version>
+    <ScriptFolderLocation>&lt;?xml version="1.0" encoding="utf-16" standalone="yes"?&gt;
+&lt;!----&gt;
+&lt;ISOCCompareLocation version="1" type="SvnLocation"&gt;
+  &lt;RepositoryUrl&gt;https://192.168.0.188:8443/svn/decode/devs/V2.8/LhV283XiuGai/LhSVN5970_NET5.0/Docs/SQLToolBar/DatabaseRepository/&lt;/RepositoryUrl&gt;
+&lt;/ISOCCompareLocation&gt;</ScriptFolderLocation>
+  </ToVersion>
+  <ObjectIdentifiers type="ObjectIdentifiers" version="2">
+    <value version="1" type="ObjectIdentifier">
+      <FullyQualifiedName>[dbo].[ContTextHistory]</FullyQualifiedName>
+      <Type>Table</Type>
+    </value>
+    <value version="1" type="ObjectIdentifier">
+      <FullyQualifiedName>[dbo].[InvoFile]</FullyQualifiedName>
+      <Type>Table</Type>
+    </value>
+    <value version="1" type="ObjectIdentifier">
+      <FullyQualifiedName>[dbo].[ContText]</FullyQualifiedName>
+      <Type>Table</Type>
+    </value>
+  </ObjectIdentifiers>
+</MigrationScript>

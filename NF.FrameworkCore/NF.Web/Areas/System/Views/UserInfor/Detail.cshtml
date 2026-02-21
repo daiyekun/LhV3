@@ -1,0 +1,190 @@
+﻿
+@{
+    ViewData["Title"] = "Detail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="layui-fluid">
+    <!--用户基本信息begin-->
+    <div class="layui-form" lay-filter="Nf-SystemAdmin-UserDetailForm">
+        <input type="hidden" id="Id" name="Id" />
+        <div class="layui-card ">
+            <div class="layui-card-header">用户基本信息</div>
+            <div class="layui-card-body" style="padding: 15px;">
+                <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">用户名</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="Name" class="layui-input detail" />
+                        </div>
+                    </div>
+
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">显示名称</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="DisplyName" class="layui-input detail" />
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">所属机构</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="DeptName" class="layui-input detail" />
+                        </div>
+                    </div>
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">性别</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="SexDic" class="layui-input detail" />
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">年龄</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="Age" class="layui-input detail">
+                        </div>
+                    </div>
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">身份证号码</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="IdNo" autocomplete="off" class="layui-input detail">
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">办公电话</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="Tel" autocomplete="off" class="layui-input detail">
+                        </div>
+                    </div>
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">移动电话</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="Mobile" autocomplete="off" class="layui-input detail">
+                        </div>
+                    </div>
+
+                </div>
+                <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">入职时间</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="EntryDatetime" placeholder="yyyy-MM-dd" class="layui-input detail">
+                        </div>
+                    </div>
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">E-Mail</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="Email" class="layui-input detail">
+                        </div>
+                    </div>
+
+                </div>
+                <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">住址</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="Address" class="layui-input detail">
+                        </div>
+                    </div>
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">用户状态</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="StateDic" class="layui-input detail">
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">微信账号</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="WxCode" class="layui-input detail">
+                        </div>
+                    </div>
+                   
+                </div>
+                <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                    <div class="layui-col-lg12 layui-col-md12 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">备注</label>
+                        <div class="layui-input-block">
+                            <textarea name="Remark" class="layui-textarea detail"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!--需要在最后加这个或者没有也加一个 <div class="layui-form-item">，这样不会导致隐藏菜单是显示问题-->
+                <div class="layui-form-item">
+
+                </div>
+
+            </div>
+        </div>
+
+
+        <!--按钮begin-->
+        <div class="layui-form-item layui-layout-admin layui-hide">
+            <div class="layui-input-block">
+                <div class="layui-footer" style="left: 0;">
+                    <button class="layui-btn" id="Nf-SystemAdmin-UserFormSubmit" lay-submit lay-filter="Nf-SystemAdmin-UserFormSubmit">保存</button>
+                    <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                </div>
+            </div>
+        </div>
+        <!--按钮begin-->
+    </div>
+
+    @*用户基本信息*@
+
+</div>
+
+@{
+    Html.RenderPartial("_LayuiScriptsPartial");
+}
+<script>
+    layui.config({
+        base: '/lib/layuiadmin/'
+    }).extend({
+        index: 'lib/index' //主入口模块
+        }).use(['index', 'form', 'laydate'], function () {
+        var $ = layui.$
+            , admin = layui.admin
+            , element = layui.element
+            , layer = layui.layer
+            , laydate = layui.laydate
+            , table = layui.table
+            , form = layui.form;
+        var byId = wooutil.getUrlVar('Id');
+
+            //--------------------------修改的时候赋值----------------------------------
+
+            if (byId != "" && byId != undefined)
+            {
+            admin.req({
+                url: '/System/UserInfor/ShowView',
+                data: { Id: byId },
+                done: function (res)
+                {
+                    //layer.alert(JSON.stringify(res.Data));
+                    form.val("Nf-SystemAdmin-UserDetailForm", res.Data);
+                   
+
+                }
+                });
+
+            }
+            //-------------------------------------显示end--------------------------------------------
+            form.render(null, 'Nf-SystemAdmin-UserDetailForm');
+
+
+    });
+</script>
+
+
+
+

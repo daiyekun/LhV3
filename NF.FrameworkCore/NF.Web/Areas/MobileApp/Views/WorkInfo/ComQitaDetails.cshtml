@@ -1,0 +1,56 @@
+﻿@using NF.Common.Utility;
+@using NF.ViewModel.Models;
+@using NF.Model.Models;
+@model APPWFLayPageInfo<CompanyViewDTO>;
+@{
+    ViewData["Title"] = "CustomerDetails";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<html>
+<head runat="server">
+    <title>其他对方审批</title>
+    <link href="~/css/DetailsPage.css" type="text/css" rel="stylesheet" />
+    <meta name="format-detection" content="telephone=no" />
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="TopTitle">
+            <h1 style="text-align: center;"><strong style="border-bottom-style: double; border-color: red">其 他 对 方 审 批</strong></h1>
+        </div>
+        @*其他对方信息*@
+        <table border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td colspan="4" class="TopTb">其他对方信息</td>
+            </tr>
+            <tr>
+                <td class="ConInfoId" id="contractNameTD">其他对方名称</td>
+                <td colspan="3">@Model.WFInstanceList[0].Name</td>
+            </tr>
+            <tr>
+                <td class="ConInfoId">其他对方编号</td>
+                <td class="ConInfoText">@Model.WFInstanceList[0].Code</td>
+                <td class="ConInfoId">其他对方类别</td>
+                <td class="ConInfoText">@Model.WFInstanceList[0].CompanyTypeClass</td>
+            </tr>
+            <tr>
+                <td class="ConInfoId">其他1对方行业</td>
+                <td class="ConInfoText">@Model.WFInstanceList[0].Trade</td>
+                <td class="ConInfoId">负责人</td>
+                <td class="ConInfoText"></td>
+            </tr>
+            <tr>
+                <td class="ConInfoId">创建人</td>
+                <td class="ConInfoText">@Model.WFInstanceList[0].CreateUserDisplayName</td>
+                <td class="ConInfoId">创建时间</td>
+                <td class="ConInfoText">@Model.WFInstanceList[0].CreateDateTime</td>
+            </tr>
+        </table>
+        <br />
+        @{
+            Html.RenderPartial("_ShenpiDetails");
+        }
+    </form>
+</body>
+</html>
+
+

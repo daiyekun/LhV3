@@ -1,0 +1,11 @@
+D:\MyCode\V3.0\NF.FrameworkCore\LhCode\bin\Debug\net6.0\LhCode.deps.json
+D:\MyCode\V3.0\NF.FrameworkCore\LhCode\bin\Debug\net6.0\LhCode.dll
+D:\MyCode\V3.0\NF.FrameworkCore\LhCode\bin\Debug\net6.0\LhCode.pdb
+D:\MyCode\V3.0\NF.FrameworkCore\LhCode\obj\Debug\net6.0\LhCode.GeneratedMSBuildEditorConfig.editorconfig
+D:\MyCode\V3.0\NF.FrameworkCore\LhCode\obj\Debug\net6.0\LhCode.AssemblyInfoInputs.cache
+D:\MyCode\V3.0\NF.FrameworkCore\LhCode\obj\Debug\net6.0\LhCode.AssemblyInfo.cs
+D:\MyCode\V3.0\NF.FrameworkCore\LhCode\obj\Debug\net6.0\LhCode.csproj.CoreCompileInputs.cache
+D:\MyCode\V3.0\NF.FrameworkCore\LhCode\obj\Debug\net6.0\LhCode.dll
+D:\MyCode\V3.0\NF.FrameworkCore\LhCode\obj\Debug\net6.0\refint\LhCode.dll
+D:\MyCode\V3.0\NF.FrameworkCore\LhCode\obj\Debug\net6.0\LhCode.pdb
+D:\MyCode\V3.0\NF.FrameworkCore\LhCode\obj\Debug\net6.0\ref\LhCode.dll

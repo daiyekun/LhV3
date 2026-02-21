@@ -1,0 +1,64 @@
+﻿@using NF.Common.Utility;
+@using NF.ViewModel.Models;
+@using NF.Model.Models;
+@model APPWFLayPageInfo<ContInvoiceListViewDTO>
+@{
+    ViewData["Title"] = "KaipiaoDetails";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<html>
+<head runat="server">
+    <title>开票审批</title>
+    <link href="~/css/DetailsPage.css" type="text/css" rel="stylesheet" />
+    <meta name="format-detection" content="telephone=no" />
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="TopTitle">
+            <h1 style="text-align: center;"><strong style="border-bottom-style: double; border-color: red">开 票 审 批</strong></h1>
+        </div>
+        @*开票信息*@
+        <table border="0" cellpadding="0" cellspacing="0">
+            <tr>
+                <td colspan="4" class="TopTb">开票信息</td>
+            </tr>
+            <tr>
+                <td class="ConInfoId" id="contractNameTD">合同名称</td>
+                <td colspan="3">@Model.WFInstanceList[0].ContName</td>
+            </tr>
+            <tr>
+                <td class="ConInfoId">合同编号</td>
+                <td class="ConInfoText">@Model.WFInstanceList[0].ContCode</td>
+                <td class="ConInfoId">合同类别</td>
+                <td class="ConInfoText">@Model.WFInstanceList[0].ContCategoryName</td>
+            </tr>
+            <tr>
+                <td class="ConInfoId" id="contractNameTD">合同对方</td>
+                <td colspan="3">@Model.WFInstanceList[0].CompName</td>
+            </tr>
+            <tr>
+                <td class="ConInfoId">发票类别</td>
+                <td class="ConInfoText">@Model.WFInstanceList[0].InTypeName</td>
+                <td class="ConInfoId">发票号</td>
+                <td class="ConInfoText">@Model.WFInstanceList[0].InCode</td>
+            </tr>
+            <tr>
+                <td class="ConInfoId">付款金额</td>
+                <td class="ConInfoText">@Model.WFInstanceList[0].AmountMoneyThod</td>
+                <td class="ConInfoId">开票日期</td>
+                <td class="ConInfoText">@Model.WFInstanceList[0].MakeOutDateTime</td>
+            </tr>
+            <tr>
+                <td class="ConInfoId">创建人</td>
+                <td class="ConInfoText">@Model.WFInstanceList[0].CreateUserName</td>
+                <td class="ConInfoId">创建时间</td>
+                <td class="ConInfoText">@Model.WFInstanceList[0].CreateDateTime</td>
+            </tr>
+        </table>
+        <br />
+        @{
+            Html.RenderPartial("_ShenpiDetails");
+        }
+    </form>
+</body>
+</html>

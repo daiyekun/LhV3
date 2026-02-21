@@ -1,0 +1,52 @@
+﻿
+/***查看页面的颜色*/
+.detail {
+    border: 0;
+    border-bottom: 1px #ccc solid;
+    background: none;
+    margin-bottom: 5px;
+}
+/**添加文本框小笔头*/
+.pen {
+    background: url(/images/pen.gif) no-repeat 3px center;
+    padding-left: 15px;
+    position: relative;
+}
+/**添加下拉框下拉树小笔头*/
+/*.layui-form-select .layui-input {
+    background:url(/images/pen.gif) no-repeat 3px center;
+    padding-left:15px;
+}*/
+.selectpen {
+    background: url(/images/pen.gif) no-repeat 3px center;
+    padding-left: 15px;
+}
+/***a标签手样式*/
+.hand {
+    cursor: pointer
+}
+/**下拉按钮*/
+.downpanel {
+    padding: 0;
+    z-index: 9999999999;
+}
+
+    .downpanel .layui-select-title {
+        padding-right: 30px;
+        padding-left: 10px;
+    }
+
+    .downpanel dl {
+        color: #000;
+        top: 30px;
+        font-size: 14px;
+    }
+
+    .downpanel .layui-select-title i {
+        border-top-color: #fff;
+    }
+/**下拉按钮结束*/
+
+
+
+

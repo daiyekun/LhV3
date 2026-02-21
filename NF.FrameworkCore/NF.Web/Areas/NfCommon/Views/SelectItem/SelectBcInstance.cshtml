@@ -1,0 +1,57 @@
+﻿
+@{
+    ViewData["Title"] = "选择单品";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="layui-fluid">
+    <div class="layui-row layui-col-space5">
+        <div class="layui-col-xs6 layui-col-sm5 layui-col-md3">
+            <div class="layui-card">
+                <div class="layui-card-header">业务品类</div>
+                <div class="layui-card-body">
+                    <div id="bc_Tree" style="width: 100%; height:90%; overflow:auto;">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="layui-col-xs6 layui-col-sm7 layui-col-md9">
+            <div class="layui-card">
+                <div class="layui-card-header">
+                    单品列表
+                </div>
+                <div class="layui-card-body">
+                    <input type="hidden" name="hide_keyWord" />
+                    @*弹框索引，别动*@
+                    <input type="hidden" name="currIndex" id="currIndex" />
+                    <table id="NF-SelectBcInstance-Index" lay-filter="NF-SelectBcInstance-Index"></table>
+                    <!--表格工具栏-->
+                    <script id="toolbcinstance" type="text/html">
+                        <div class="layui-inline">
+                            <input class="layui-input" type="text" name="keyWord" placeholder="名称、编号" style="width:240px;" />
+                        </div>
+                        <div class="layui-inline">
+                            <button class="layui-btn" lay-event="search">
+                                <i class="layui-icon layui-icon-search layuiadmin-button-btn"></i>
+                            </button>
+                        </div>
+                    </script>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@{
+    Html.RenderPartial("_LayuiScriptsPartial");
+}
+
+<script>
+    layui.config({
+        base: '/lib/layuiadmin/'
+    }).extend({
+        index: 'lib/index', //主入口模块
+        selectBcInstance: 'common-nf/selectbcinstance'
+    }).use(['index', 'selectBcInstance'], function () {
+     });
+</script>
+
+

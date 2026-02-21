@@ -1,0 +1,63 @@
+﻿
+@{
+    ViewData["Title"] = "SelectUser";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="layui-fluid">
+    <div class="layui-card">
+       <div class="layui-card-body">
+            <input type="hidden" id="currRoleId" />
+            <table id="NF-system-selectUser" lay-filter="NF-system-selectUser"></table>
+            @*状态*@
+            <script type="text/html" id="userstateTpl">
+                {{#  if(d.Ustart ==1){ }}
+                <span style="color:blue;">启用</span>
+                {{#  } else { }}
+                <span style="color:red;">禁用</span>
+                {{#  } }}
+
+            </script>
+            <script id="toolSelectUser" type="text/html">
+                <div class="layui-inline">
+                    <input class="layui-input"  type="text" name="keyWord" placeholder="用户名、显示名称" style="width:300px;" autocomplete="off" />
+                   
+                </div>
+                <div class="layui-inline">
+                    <button class="layui-btn layuiadmin-btn-useradmin NF-role-front-search" lay-submit lay-filter="NF-system-selectUser-search">
+                        <i class="layui-icon layui-icon-search layuiadmin-button-btn"></i>
+                    </button>
+                </div>
+            </script>
+
+        </div>
+    </div>
+</div>
+
+@{
+    Html.RenderPartial("_LayuiScriptsPartial");
+}
+<script>
+    layui.config({
+        base: '/lib/layuiadmin/'
+    }).extend({
+        index: 'lib/index' //主入口模块
+        }).use(['index', 'nf-selectItems', 'table'], function () {
+        var $ = layui.$
+            , form = layui.form
+            , admin = layui.admin
+            , setter = layui.setter
+            , table = layui.table;
+
+        //监听搜索
+        form.on('submit(NF-system-selectUser-search)', function (data) {
+            var field = data.field;
+            //执行重载
+            table.reload('NF-system-selectUser', {
+                where: field
+            });
+        });
+        
+    });
+</script>
+

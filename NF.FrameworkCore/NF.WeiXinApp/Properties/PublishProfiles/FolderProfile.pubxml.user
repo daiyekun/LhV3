@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <_PublishTargetUrl>D:\MyCode\V3.0\NF.FrameworkCore\NF.WeiXinApp\bin\Release\net5.0\publish\</_PublishTargetUrl>
+    <History>True|2022-02-25T11:16:52.6237779Z;True|2022-02-25T19:08:48.3477279+08:00;True|2022-02-25T16:39:57.9570438+08:00;</History>
+  </PropertyGroup>
+</Project>

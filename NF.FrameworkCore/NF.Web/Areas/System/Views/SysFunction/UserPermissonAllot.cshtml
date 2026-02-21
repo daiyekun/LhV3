@@ -1,0 +1,156 @@
+﻿
+@{
+    ViewData["Title"] = "用户功能数据权限分配";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="layui-fluid" id="LAY-sysuserfuncallot-grid-all">
+    <div class="layui-row layui-col-space5">
+        <div class="layui-col-xs6 layui-col-sm5 layui-col-md3">
+            <div class="layui-card">
+                <div class="layui-card-header">菜单</div>
+                <div class="layui-card-body">
+                    <ul id="sysleft_Tree"></ul>
+                </div>
+            </div>
+        </div>
+        <div class="layui-col-xs6 layui-col-sm7 layui-col-md9">
+            <div class="layui-card">
+                <div class="layui-card-header">
+
+
+                    <form class="layui-form">
+                        <div class="layui-inline"> 模块功能列表</div>
+                        <div class="layui-inline" style="float:right;">
+                            <a class="layui-btn layuiadmin-btn-tags" data-type="savepermssion">保存</a>
+                        </div>
+                        @*用户、角色、岗位ID*@
+                        <input type="hidden" name="Id" />
+                        @*菜单ID*@
+                        <input type="hidden" name="modelId" />
+                        @*分配对象类型1、角色。0用户*@
+                        <input type="hidden" name="setType" />
+                    </form>
+                </div>
+                <div class="layui-card-body">
+                    <table id="NF-sysfuncpermssionallotTable" lay-filter="NF-sysfuncpermssionallotTable"></table>
+                    <script type="text/html" id="table-functionallooption">
+                        {{#  if(d.PrmssionType ==1){ }}
+                        <input type="radio" name="premssion_{{d.Id}}" value="4" funcId="{{d.Id}}" funccode="{{d.FunIdentify}}" modelId="{{d.ModelId}}" title="是" />
+                        <input type="radio" name="premssion_{{d.Id}}" value="5" funcId="{{d.Id}}" funccode="{{d.FunIdentify}}" modelId="{{d.ModelId}}" title="否" />
+                        {{#  } else { }}
+                        <input type="radio" name="premssion_{{d.Id}}" value="1" funcId="{{d.Id}}" funccode="{{d.FunIdentify}}" modelId="{{d.ModelId}}" title="个人" />
+                        <input type="radio" name="premssion_{{d.Id}}" value="2" funcId="{{d.Id}}" funccode="{{d.FunIdentify}}" modelId="{{d.ModelId}}" title="机构" lay-filter="nfradiodept" />
+                        <input type="radio" name="premssion_{{d.Id}}" value="3" funcId="{{d.Id}}" funccode="{{d.FunIdentify}}" modelId="{{d.ModelId}}" title="全部" />
+                        <input type="radio" name="premssion_{{d.Id}}" value="6" funcId="{{d.Id}}" funccode="{{d.FunIdentify}}" modelId="{{d.ModelId}}" title="本部门" />
+                        <input type="radio" name="premssion_{{d.Id}}" value="7" funcId="{{d.Id}}" funccode="{{d.FunIdentify}}" modelId="{{d.ModelId}}" title="本部门及子机构" />
+                        <input type="radio" name="premssion_{{d.Id}}" value="8" funcId="{{d.Id}}" funccode="{{d.FunIdentify}}" modelId="{{d.ModelId}}" title="无权限" />
+                        {{#  } }}
+                        <input type="hidden" name="modeIds_{{d.Id}}" value="0" />
+
+
+                    </script>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@{
+    Html.RenderPartial("_LayuiScriptsPartial");
+}
+<script type="text/javascript">
+    layui.config({
+        base: '/lib/layuiadmin/' //静态资源所在路径
+    }).extend({
+        index: 'lib/index' //主入口模块
+        ,nfsystempermssionallot: 'system-nf/nf-system-permssionallot'
+    }).use(['index', 'nfsystempermssionallot', 'table'], function () {
+        var table = layui.table
+            , layer = layui.layer
+            , form = layui.form
+            , $ = layui.$;
+        //角色-用户-岗位-等ID
+        var Id = wooutil.getUrlVar('Id');
+       //类型-标识是角色-用户-岗位设置权限
+        var setType = wooutil.getUrlVar('setType');
+        $("input[name=Id]").val(Id);
+        $("input[name=setType]").val(setType);
+
+        //选择机构
+        form.on('radio(nfradiodept)', function (data)
+        {
+            //功能ID
+            var funcId = this.getAttribute("funcId");
+            layer.open({
+                type: 2
+                , title: '选择数据部门'
+                , content: '/System/Department/SelectWinMultDept?funcId=' + funcId + '&Id=' + Id + '&setType=' + setType+'&rand=' + wooutil.getRandom()
+                , area: ['60%', '98%']
+                , maxmin: true
+                , btnAlign: 'c'
+                , btn: ['确定', '取消']
+                , yes: function (index, layero) {
+                    var iframeWindow = window['layui-layer-iframe' + index]
+                        , submitID = 'Nf-System-functiondeptSubmit'
+                        , submit = layero.find('iframe').contents().find('#' + submitID);
+                    //监听提交
+                    iframeWindow.layui.form.on('submit(' + submitID + ')', function (data) {
+                        var field = data.field; //获取提交的字段{deptIds: "2,29,30", funcId: "1", Id: "17", setType: "1"}
+                        // wooutil.SaveForm(null, "/System/UserInfor/AllotSysModels", "", field, '操作成功！', index);
+                        $("input[name=modeIds_" + funcId + "]").val(field.deptIds);
+                        layer.close(index);
+                        return false;
+
+                    });
+                    submit.trigger('click');
+
+                },
+                success: function (layero, index) {
+
+
+
+                }
+
+            });
+        });
+        //相关事件
+        var active = {
+            savepermssion: function () {
+
+                var postdata = [];
+                $('input:radio:checked').each(function (_index, element) {
+                  
+                    var _funcId = $(this).attr("funcId");
+                    var funccode = $(this).attr("funccode");
+                    var modeId = $(this).attr("modelId");
+                    postdata.push({
+                        "UserId": Id,
+                        "FuncId": _funcId,
+                        "FuncCode": funccode,
+                        "FuncType": $(this).val(),
+                        "DeptIds":$(this).val() !== 2 && $(this).val() !=="2"?0:$("input[name=modeIds_" + _funcId + "]").val(),
+                        "ModeId": modeId
+
+                    });
+
+                    //console.log($(this).val() + ">" + funcId + ">" + funccode + ">" + modeId);
+
+                });
+               
+               $.post('/System/UserInfor/AllotFuncPermssion', { userPermissions: postdata}, function (res)
+                {
+                    layer.msg("操作成功！");
+                });
+
+            }
+        };
+
+        $('.layui-btn.layuiadmin-btn-tags').on('click', function () {
+            var type = $(this).data('type');
+            active[type] ? active[type].call(this) : '';
+        });
+
+
+    });
+</script>
+

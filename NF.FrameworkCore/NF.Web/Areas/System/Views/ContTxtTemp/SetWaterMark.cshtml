@@ -1,0 +1,91 @@
+﻿
+@{
+    ViewData["Title"] = "水印设置";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="layui-fluid">
+    <div class="layui-card">
+        <div class="layui-card-body">
+            <blockquote class="layui-elem-quote">设置合同文本模板水印，生成PDF带水印。上传格式:dotx</blockquote>
+            <span id="showmsg" class="layui-hide layui-bg-red">上传成功</span>
+            <div class="layui-upload">
+                <button type="button" class="layui-btn layui-btn-normal" id="selFile">选择文件</button>
+              
+                <button type="button" class="layui-btn" id="uploadfile">开始上传</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+@{
+    Html.RenderPartial("_LayuiScriptsPartial");
+}
+<script>
+
+    layui.config({
+        base: '/lib/layuiadmin/'
+    }).extend({
+        index: 'lib/index',
+        commonnf: 'common-nf/commonnf',
+    }).use(['index', 'form','upload'], function () {
+         var $ = layui.$
+         , admin = layui.admin
+          , form = layui.form
+          , upload = layui.upload
+         , setter = layui.setter ;
+
+         upload.render({
+             elem: '#selFile'
+            , url: setter.layupload.uploadIp + '/NfCommon/NfAttachment/Upload?folderIndex=11'
+           , auto: false
+           , accept: 'file'
+           , exts: 'dotx'
+           , bindAction: '#uploadfile'
+           
+           , done: function (res) {
+               layer.msg("上传成功", { icon: 1, time: 500 }, function () {
+                   $("#showmsg").removeClass("layui-hide");
+               });
+
+              
+           },error: function (index, upload) {
+               //请求异常回调
+               layer.msg('网络异常，请稍后重试！');
+           }
+         });
+
+          ////上传14
+          // var uploadcontextInst = upload.render({
+          //      elem: '#conttext-attUpload'
+          //     , url: setter.layupload.uploadIp + '/NfCommon/NfAttachment/UploadAsync?folderIndex=6'
+          //     , accept: setter.layupload.accept
+          //     , exts: setter.layupload.exts
+          //     , size: setter.layupload.size
+          //     ,before: function(obj){
+          //         layer.load(); //上传loading
+          //     }
+          //     ,done: function (res, index, upload) { //上传完毕回调
+          //         $("input[name=FolderName]").val(res.RetValue.FolderName);
+          //         $("input[name=GuidFileName]").val(res.RetValue.GuidFileName);
+          //         $("input[name=FileName]").val(res.RetValue.SourceFileName);
+          //         $("input[name=Name]").val(res.RetValue.NotExtenFileName);
+          //         $("input[name=ExtenName]").val(res.RetValue.Extension);
+
+          //         layer.closeAll('loading');
+          //     }
+          //     , error: function (index, upload) {
+          //         //请求异常回调
+          //         layer.closeAll('loading');
+          //         layer.msg('网络异常，请稍后重试！');
+          //     }
+
+          //   });
+
+
+
+
+    });
+</script>
+
+

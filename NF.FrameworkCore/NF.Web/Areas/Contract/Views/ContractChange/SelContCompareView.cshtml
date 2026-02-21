@@ -1,0 +1,365 @@
+﻿
+@{
+    ViewData["Title"] = "选择合同对比查看";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="layui-fluid">
+    <!--基本信息begin-->
+    <div class="layui-form" lay-filter="NF-SelContChangeForm">
+        <div class="layui-card ">
+            <div class="layui-card-body" style="padding: 15px;">
+                <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+                    <ul class="layui-tab-title">
+                        <li class="layui-this">变更报告</li>
+                        <li>基本信息</li>
+                        <li>合同标的</li>
+                        <li>计划资金</li>
+                        <li>合同文本</li>
+                        <li>资金条款</li>
+                    </ul>
+                    <div class="layui-tab-content">
+                        <div class="layui-tab-item layui-show">
+                            <textarea name="ChangeDesc" class="layui-textarea"></textarea>
+                        </div>
+                        <div class="layui-tab-item">
+                            <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                                <div class="layui-col-lg4 layui-col-md4 layui-col-xs12 layui-col-sm12">
+                                    <label class="layui-form-label">合同名称</label>
+                                    <div class="layui-input-block">
+                                        <input type="text" name="Name" class="layui-input detail" />
+                                    </div>
+                                </div>
+                                <div class="layui-col-lg4 layui-col-md4 layui-col-xs12 layui-col-sm12">
+                                    <label class="layui-form-label">合同编号</label>
+                                    <div class="layui-input-block">
+                                        <input type="text" name="Code" class="layui-input detail" />
+                                    </div>
+                                </div>
+                                <div class="layui-col-lg4 layui-col-md4 layui-col-xs12 layui-col-sm12">
+                                    <label class="layui-form-label">合同金额</label>
+                                    <div class="layui-input-block">
+                                        <input type="text" name="ContAmThod" class="layui-input detail" />
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                                <div class="layui-col-lg4 layui-col-md4 layui-col-xs12 layui-col-sm12">
+                                    <label class="layui-form-label">币种</label>
+                                    <div class="layui-input-block">
+                                        <input type="text" name="CurrencyName" class="layui-input detail" />
+                                    </div>
+                                </div>
+                                <div class="layui-col-lg4 layui-col-md4 layui-col-xs12 layui-col-sm12">
+                                    <label class="layui-form-label">合同类别</label>
+                                    <div class="layui-input-block">
+                                        <input type="text" name="ContTypeName" class="layui-input detail" />
+                                    </div>
+                                </div>
+                                <div class="layui-col-lg4 layui-col-md4 layui-col-xs12 layui-col-sm12">
+                                    <label class="layui-form-label">印花税</label>
+                                    <div class="layui-input-block">
+                                        <input type="text" name="StampTaxThod" class="layui-input detail" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                                <div class="layui-col-lg4 layui-col-md4 layui-col-xs12 layui-col-sm12">
+                                    <label class="layui-form-label">经办机构</label>
+                                    <div class="layui-input-block">
+                                        <input type="text" name="DeptName" class="layui-input detail" />
+                                    </div>
+                                </div>
+                                <div class="layui-col-lg4 layui-col-md4 layui-col-xs12 layui-col-sm12">
+                                    <label class="layui-form-label">签订日期</label>
+                                    <div class="layui-input-block">
+                                        <input type="text" name="SngnDateTime" class="layui-input detail" />
+                                    </div>
+                                </div>
+                                <div class="layui-col-lg4 layui-col-md4 layui-col-xs12 layui-col-sm12">
+                                    <label class="layui-form-label">生效日期</label>
+                                    <div class="layui-input-block">
+                                        <input type="text" name="EffectiveDateTime" class="layui-input detail" />
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                                <div class="layui-col-lg4 layui-col-md4 layui-col-xs12 layui-col-sm12">
+                                    <label class="layui-form-label">合同对方</label>
+                                    <div class="layui-input-block">
+                                        <input type="text" name="CompName" class="layui-input detail" />
+                                    </div>
+                                </div>
+                                <div class="layui-col-lg4 layui-col-md4 layui-col-xs12 layui-col-sm12">
+                                    <label class="layui-form-label">签约主体</label>
+                                    <div class="layui-input-block">
+                                        <input type="text" name="MdeptName" class="layui-input detail" />
+                                    </div>
+                                </div>
+                                <div class="layui-col-lg4 layui-col-md4 layui-col-xs12 layui-col-sm12">
+                                    <label class="layui-form-label">所属项目</label>
+                                    <div class="layui-input-block">
+                                        <input type="text" name="ProjName" class="layui-input detail" />
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                                <div class="layui-col-lg4 layui-col-md4 layui-col-xs12 layui-col-sm12">
+                                    <label class="layui-form-label">合同来源</label>
+                                    <div class="layui-input-block">
+                                        <input type="text" name="ContSName" class="layui-input detail" />
+                                    </div>
+                                </div>
+                                <div class="layui-col-lg4 layui-col-md4 layui-col-xs12 layui-col-sm12">
+                                    <label class="layui-form-label">第三方</label>
+                                    <div class="layui-input-block">
+                                        <input type="text" name="Comp3Name" class="layui-input detail" />
+                                    </div>
+                                </div>
+                                <div class="layui-col-lg4 layui-col-md4 layui-col-xs12 layui-col-sm12">
+                                    <label class="layui-form-label">第四方</label>
+                                    <div class="layui-input-block">
+                                        <input type="text" name="Comp4Name" class="layui-input detail" />
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="layui-tab-item">
+                            @*合同标的*@
+                            <table id="NF-ContSubHistory" lay-filter="NF-ContSubHistory"></table>
+
+                        </div>
+                        <div class="layui-tab-item">
+                            @*计划资金*@
+                            <table id="NF-ContPlanceHistory" lay-filter="NF-ContPlanceHistory"></table>
+                        </div>
+                        <div class="layui-tab-item">
+                            @*合同文本*@
+                            <table id="NF-ContTextHistory" lay-filter="NF-ContTextHistory"></table>
+                            <script type="text/html" id="table-conttxthistorybar">
+                                <a class="layui-btn layui-btn-xs" lay-event="download"><i class="layui-icon layui-icon-edit"></i>下载</a>
+
+                            </script>
+                        </div>
+                        <div class="layui-tab-item">
+                            @*资金条款*@
+                            <textarea name="FinanceTerms" class="layui-textarea"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!--需要在最后加这个或者没有也加一个 <div class="layui-form-item">，这样不会导致隐藏菜单是显示问题-->
+                <div class="layui-form-item">
+
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+    <hr class="layui-bg-blue">
+    @*第二个合同begin*@
+    <!--基本信息begin-->
+    <div class="layui-form" lay-filter="NF-SelContChangeFormTwo">
+
+        <div class="layui-card ">
+            <div class="layui-card-body" style="padding: 15px;">
+                <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBriefTwo">
+                    <ul class="layui-tab-title">
+                        <li class="layui-this">变更报告</li>
+                        <li>基本信息</li>
+                        <li>合同标的</li>
+                        <li>计划资金</li>
+                        <li>合同文本</li>
+                        <li>资金条款</li>
+                    </ul>
+                    <div class="layui-tab-content">
+                        <div class="layui-tab-item layui-show">
+                            <textarea name="ChangeDesc" class="layui-textarea"></textarea>
+                        </div>
+                        <div class="layui-tab-item">
+                            <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                                <div class="layui-col-lg4 layui-col-md4 layui-col-xs12 layui-col-sm12">
+                                    <label class="layui-form-label">合同名称</label>
+                                    <div class="layui-input-block">
+                                        <input type="text" name="Name" class="layui-input detail" />
+                                    </div>
+                                </div>
+                                <div class="layui-col-lg4 layui-col-md4 layui-col-xs12 layui-col-sm12">
+                                    <label class="layui-form-label">合同编号</label>
+                                    <div class="layui-input-block">
+                                        <input type="text" name="Code" class="layui-input detail" />
+                                    </div>
+                                </div>
+                                <div class="layui-col-lg4 layui-col-md4 layui-col-xs12 layui-col-sm12">
+                                    <label class="layui-form-label">合同金额</label>
+                                    <div class="layui-input-block">
+                                        <input type="text" name="ContAmThod" class="layui-input detail" style="color:red;"  />
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                                <div class="layui-col-lg4 layui-col-md4 layui-col-xs12 layui-col-sm12">
+                                    <label class="layui-form-label">币种</label>
+                                    <div class="layui-input-block">
+                                        <input type="text" name="CurrencyName" class="layui-input detail" />
+                                    </div>
+                                </div>
+                                <div class="layui-col-lg4 layui-col-md4 layui-col-xs12 layui-col-sm12">
+                                    <label class="layui-form-label">合同类别</label>
+                                    <div class="layui-input-block">
+                                        <input type="text" name="ContTypeName" class="layui-input detail" />
+                                    </div>
+                                </div>
+                                <div class="layui-col-lg4 layui-col-md4 layui-col-xs12 layui-col-sm12">
+                                    <label class="layui-form-label">印花税</label>
+                                    <div class="layui-input-block">
+                                        <input type="text" name="StampTaxThod" class="layui-input detail" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                                <div class="layui-col-lg4 layui-col-md4 layui-col-xs12 layui-col-sm12">
+                                    <label class="layui-form-label">经办机构</label>
+                                    <div class="layui-input-block">
+                                        <input type="text" name="DeptName" class="layui-input detail" />
+                                    </div>
+                                </div>
+                                <div class="layui-col-lg4 layui-col-md4 layui-col-xs12 layui-col-sm12">
+                                    <label class="layui-form-label">签订日期</label>
+                                    <div class="layui-input-block">
+                                        <input type="text" name="SngnDateTime" class="layui-input detail" />
+                                    </div>
+                                </div>
+                                <div class="layui-col-lg4 layui-col-md4 layui-col-xs12 layui-col-sm12">
+                                    <label class="layui-form-label">生效日期</label>
+                                    <div class="layui-input-block">
+                                        <input type="text" name="EffectiveDateTime" class="layui-input detail" />
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                                <div class="layui-col-lg4 layui-col-md4 layui-col-xs12 layui-col-sm12">
+                                    <label class="layui-form-label">合同对方</label>
+                                    <div class="layui-input-block">
+                                        <input type="text" name="CompName" class="layui-input detail" />
+                                    </div>
+                                </div>
+                                <div class="layui-col-lg4 layui-col-md4 layui-col-xs12 layui-col-sm12">
+                                    <label class="layui-form-label">签约主体</label>
+                                    <div class="layui-input-block">
+                                        <input type="text" name="MdeptName" class="layui-input detail" />
+                                    </div>
+                                </div>
+                                <div class="layui-col-lg4 layui-col-md4 layui-col-xs12 layui-col-sm12">
+                                    <label class="layui-form-label">所属项目</label>
+                                    <div class="layui-input-block">
+                                        <input type="text" name="ProjName" class="layui-input detail" />
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                                <div class="layui-col-lg4 layui-col-md4 layui-col-xs12 layui-col-sm12">
+                                    <label class="layui-form-label">合同来源</label>
+                                    <div class="layui-input-block">
+                                        <input type="text" name="ContSName" class="layui-input detail" />
+                                    </div>
+                                </div>
+                                <div class="layui-col-lg4 layui-col-md4 layui-col-xs12 layui-col-sm12">
+                                    <label class="layui-form-label">第三方</label>
+                                    <div class="layui-input-block">
+                                        <input type="text" name="Comp3Name" class="layui-input detail" />
+                                    </div>
+                                </div>
+                                <div class="layui-col-lg4 layui-col-md4 layui-col-xs12 layui-col-sm12">
+                                    <label class="layui-form-label">第四方</label>
+                                    <div class="layui-input-block">
+                                        <input type="text" name="Comp4Name" class="layui-input detail" />
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="layui-tab-item">
+                            @*合同标的*@
+                            <table id="NF-ContSubHistoryTwo" lay-filter="NF-ContSubHistoryTwo"></table>
+
+                        </div>
+                        <div class="layui-tab-item">
+                            @*计划资金*@
+                            <table id="NF-ContPlanceHistoryTwo" lay-filter="NF-ContPlanceHistoryTwo"></table>
+                        </div>
+                        <div class="layui-tab-item">
+                            @*合同文本*@
+                            <table id="NF-ContTextHistoryTwo" lay-filter="NF-ContTextHistoryTwo"></table>
+                            <script type="text/html" id="table-conttxthistorybarTwo">
+                                <a class="layui-btn layui-btn-xs" lay-event="download"><i class="layui-icon layui-icon-edit"></i>下载</a>
+                            </script>
+                        </div>
+                        <div class="layui-tab-item">
+                            @*资金条款*@
+                            <textarea name="FinanceTerms" class="layui-textarea"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!--需要在最后加这个或者没有也加一个 <div class="layui-form-item">，这样不会导致隐藏菜单是显示问题-->
+                <div class="layui-form-item">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @*第二个合同end*@
+</div>
+
+@{
+    Html.RenderPartial("_LayuiScriptsPartial");
+}
+<script>
+    layui.config({
+        base: '/lib/layuiadmin/'
+    }).extend({
+        index: 'lib/index',
+        contractChangeCompare: 'contract-nf/ContractChangeCompare'
+    }).use(['index', 'form', 'contractChangeCompare'], function ()
+    {
+         var $ = layui.jquery
+          , element = layui.element
+          , form = layui.form
+          , admin = layui.admin
+          , layer = layui.layer
+          , table = layui.table;
+         var _objId = wooutil.getQueryString('Id');
+         var _objId2 = wooutil.getQueryString('Id2');
+       
+          admin.req({
+             url: '/Contract/ContractChange/SelChangeView',
+             data: { Id: _objId, rand: wooutil.getRandom() },
+             done: function (res) {
+                 form.val("NF-SelContChangeForm", res.Data);
+
+             }
+          });
+        //第二个表单
+          admin.req({
+              url: '/Contract/ContractChange/SelChangeView',
+              data: { Id: _objId2, rand: wooutil.getRandom() },
+              done: function (res) {
+                  form.val("NF-SelContChangeFormTwo", res.Data);
+
+              }
+          });
+
+    });
+</script>
+

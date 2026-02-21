@@ -1,0 +1,8 @@
+D:\MyProjectCode\NF2.83\WordAddin\WpsWordAddin\WpsCommon\obj\Debug\WpsCommon.csprojAssemblyReference.cache
+D:\MyProjectCode\NF2.83\WordAddin\WpsWordAddin\WpsCommon\obj\Debug\Interop.AddInDesignerObjects.dll
+D:\MyProjectCode\NF2.83\WordAddin\WpsWordAddin\WpsCommon\obj\Debug\Interop.WpsApiEx.dll
+D:\MyProjectCode\NF2.83\WordAddin\WpsWordAddin\WpsCommon\obj\Debug\WpsCommon.csproj.ResolveComReference.cache
+D:\MyProjectCode\NF2.83\WordAddin\WpsWordAddin\WpsCommon\bin\Debug\WpsCommon.dll
+D:\MyProjectCode\NF2.83\WordAddin\WpsWordAddin\WpsCommon\bin\Debug\WpsCommon.pdb
+D:\MyProjectCode\NF2.83\WordAddin\WpsWordAddin\WpsCommon\obj\Debug\WpsCommon.dll
+D:\MyProjectCode\NF2.83\WordAddin\WpsWordAddin\WpsCommon\obj\Debug\WpsCommon.pdb

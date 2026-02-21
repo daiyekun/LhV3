@@ -1,0 +1,11 @@
+﻿.nf-edit-div {
+    float: left;
+    margin-left: -50px;
+}
+.a-blue {
+    color: #01AAED; /*blue;*/
+    border-color: blue;
+    border: solid 1px;
+    padding: 2px;
+}
+

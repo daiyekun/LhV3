@@ -1,0 +1,139 @@
+﻿
+@{
+    ViewData["Title"] = "合同文本";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="layui-fluid">
+    <!--基本信息begin-->
+    <div class="layui-form" lay-filter="NF-ContTextForm">
+        @*修改时合同文本ID*@
+        <input type="hidden" id="Id" name="Id" />
+
+        @*修改时合同ID*@
+        <input type="hidden" name="ContId" id="ContId" />
+        @*文件存储文件夹名称*@
+        <input type="hidden" name="FolderName" />
+       @*合同文本GUID名称*@
+        <input type="hidden" name="GuidFileName" />
+        @*文件扩展*@
+        <input type="hidden" name="ExtenName" />
+        @*文本来源类型：0：上传，1模板起草*@
+        <input type="hidden" name="IsFromTemp" id="IsFromTemp" value="0" />
+        <div class="layui-card ">
+            <div class="layui-card-header">基本信息</div>
+            <div class="layui-card-body" style="padding: 15px;">
+                <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                    <div class="layui-col-lg4 layui-col-md4 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">文件名</label>
+                        @*<div class="layui-input-block">*@
+                        <div class="layui-input-inline" style="width:70%;">
+                            <input type="text" name="FileName" lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input pen" />
+                        </div>
+                        <div class="layui-form-mid layui-word-aux" style="margin-top:-9px;">
+                            <button class="layui-btn layui-btn layui-btn-sm " id="conttext-attUpload" style="height:38px;line-height:38px;">浏览</button>
+                        </div>
+                    </div>
+                    <div class="layui-col-lg4 layui-col-md4 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">文件名称</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="Name" lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input pen" />
+                        </div>
+                    </div>
+                    <div class="layui-col-lg4 layui-col-md4 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">文件类别</label>
+                        <div class="layui-input-block">
+                            <select name="CategoryId" id="CategoryId" lay-verify="required" lay-search>
+                                <option value="">请选择..</option>
+
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+
+                    <div class="layui-col-lg12 layui-col-md12 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">文件说明</label>
+                        <div class="layui-input-block">
+                            <textarea name="Remark" class="layui-textarea"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <!--需要在最后加这个或者没有也加一个 <div class="layui-form-item">，这样不会导致隐藏菜单是显示问题-->
+                <div class="layui-form-item">
+
+                </div>
+            </div>
+        </div>
+
+        <div class="layui-form-item layui-layout-admin layui-hide">
+            <div class="layui-input-block">
+                <div class="layui-footer" style="left: 0;">
+                    <button class="layui-btn" id="NF-ContText-FormSubmit" lay-submit lay-filter="NF-ContText-FormSubmit">保存</button>
+                    <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+@{
+    Html.RenderPartial("_LayuiScriptsPartial");
+}
+<script>
+
+    layui.config({
+        base: '/lib/layuiadmin/'
+    }).extend({
+        index: 'lib/index',
+        commonnf: 'common-nf/commonnf',
+    }).use(['index', 'form', 'commonnf', 'upload'], function () {
+
+        var $ = layui.$
+            , admin = layui.admin
+          , form = layui.form
+          , commonnf = layui.commonnf
+          , upload = layui.upload
+         , setter = layui.setter ;
+        var _objId = wooutil.getQueryString('Id');
+          //附件类别
+        commonnf.getdatadic({ dataenum: 16, selectEl: "#CategoryId", wooverify: true });
+          //上传14
+           var uploadcontextInst = upload.render({
+                elem: '#conttext-attUpload'
+               , url: setter.layupload.uploadIp + '/NfCommon/NfAttachment/Upload?folderIndex=6'
+               , accept: setter.layupload.accept
+               , exts: setter.layupload.exts
+               , size: setter.layupload.size
+               ,before: function(obj){
+                   layer.load(); //上传loading
+               }
+               ,done: function (res, index, upload) { //上传完毕回调
+                   $("input[name=FolderName]").val(res.RetValue.FolderName);
+                   $("input[name=GuidFileName]").val(res.RetValue.GuidFileName);
+                   $("input[name=FileName]").val(res.RetValue.SourceFileName);
+                   $("input[name=Name]").val(res.RetValue.NotExtenFileName);
+                   $("input[name=ExtenName]").val(res.RetValue.Extension);
+                   
+                   layer.closeAll('loading');
+               }
+               , error: function (index, upload) {
+                   //请求异常回调
+                   layer.closeAll('loading');
+                   layer.msg('网络异常，请稍后重试！');
+               }
+
+             });
+
+
+         wooutil.showView({
+            objId: _objId,
+            url: '/ContractDraft/ContText/ShowView',
+            formFilter: 'NF-ContTextForm',
+            form: form
+        });
+
+    });
+</script>
+

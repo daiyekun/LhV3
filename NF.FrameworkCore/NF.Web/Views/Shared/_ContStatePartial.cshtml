@@ -1,0 +1,18 @@
+﻿@*合同状态*@
+<script type="text/html" id="contractstateTpl">
+    {{#  if(d.ContState ===0){ }}@*未执行*@
+    <span style="color:blue;">{{d.ContStateDic}}</span>
+    {{#  } else if(d.ContState ===1) { }} @*执行中*@
+    <span style="color:green;">{{d.ContStateDic}}</span>
+    {{#  } else if(d.ContState ===2){ }}@*已终止*@
+    <span style="color:red;">{{d.ContStateDic}}</span>
+    {{#  } else if(d.ContState ===3){ }}@*已作废*@
+    <span style="color:#c2c2c2;">{{d.ContStateDic}}</span>
+    {{#  } else if(d.ContState ===6){ }}@*已完成*@
+    <span style="color:#393D49;">{{d.ContStateDic}}</span>
+    {{#  } else if(d.ContState ===8){ }}@*审批通过*@
+    <span style="color:#0ed356;">{{d.ContStateDic}}</span>
+    {{#  } else{ }}
+    <span style="color:gray;">{{d.ContStateDic}}</span>
+    {{#  } }}
+</script>

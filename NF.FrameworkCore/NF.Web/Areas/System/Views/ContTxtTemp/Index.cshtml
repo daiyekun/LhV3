@@ -1,0 +1,81 @@
+﻿
+@{
+    ViewData["Title"] = "合同模板列表";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="layui-fluid">
+    <input type="hidden" name="hide_keyWord" />
+    <div class="layui-card">
+        <div class="layui-card-body">
+            <table id="NF-ContTxtTemp-Index" lay-filter="NF-ContTxtTemp-Index"></table>
+            <!--查看详情-->
+            <script type="text/html" id="nameTpl">
+                <a class="layui-table-link hand" lay-text="查看详情" lay-event="detail">
+                    <cite>{{d.Name}}</cite>
+                </a>
+            </script>
+            <!--表格工具栏-->
+            <script id="toolcontTxtTemp" type="text/html">
+                <div class="layui-inline">
+
+                    <input class="layui-input" type="text" name="keyWord" placeholder="名称" style="width:240px;" autocomplete="off" />
+
+                </div>
+                <div class="layui-inline">
+                    <button class="layui-btn" lay-event="search">
+                        <i class="layui-icon layui-icon-search layuiadmin-button-btn"></i>
+                    </button>
+                    <button class="layui-btn" lay-event="add">
+                        <i class="layui-icon layui-icon-edit layuiadmin-button-btn">
+                        </i>新增
+                    </button>
+                    <button class="layui-btn" lay-event="batchdel">
+                        <i class="layui-icon layui-icon-delete layuiadmin-button-btn"></i>批量删除
+                    </button>
+                    <button class="layui-btn" lay-event="addWater">
+                        <i class="layui-icon layui-icon-edit layuiadmin-button-btn"></i>上传水印
+                    </button>
+
+                </div>
+
+            </script>
+            @*是否编辑状态*@
+            <script type="text/html" id="wordEditTpl">
+                {{#  if(d.WordEdit ==1){ }}
+                <span style="color:blue;">是</span>
+                {{#  } else if(d.WordEdit ==0) { }}
+                <span style="color:#009688;">否</span>
+                {{#  } }}
+            </script>
+            @*状态*@
+            <script type="text/html" id="tstateTpl">
+                <input type="checkbox" name="Tstate" value="{{d.Id}}" lay-skin="switch" lay-text="启用|禁用" lay-filter="Tstate" {{ d.Tstate == 1 ? 'checked' : '' }}>
+            </script>
+            @*操作*@
+            <script type="text/html" id="table-conttxttemp-bar">
+                <a class="layui-btn layui-btn-normal layui-btn-xs" lay-event="edit"><i class="layui-icon layui-icon-edit"></i>修改</a>
+                <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del"><i class="layui-icon layui-icon-delete"></i>删除</a>
+            </script>
+        </div>
+    </div>
+</div>
+@{
+    Html.RenderPartial("_LayuiScriptsPartial");
+}
+@*<script type="text/javascript" src="~/lib/signalr/dist/browser/signalr.min.js"></script>*@
+<script>
+    layui.config({
+        base: '/lib/layuiadmin/'
+    }).extend({
+        index: 'lib/index', //主入口模块
+        contTxtTempIndex: 'conttxttemp-nf/conttxttemp-index'
+        , wordAddin: 'addin-nf/wordAddin'
+    }).use(['index', 'contTxtTempIndex'], function () {
+
+
+
+
+    });
+</script>
+

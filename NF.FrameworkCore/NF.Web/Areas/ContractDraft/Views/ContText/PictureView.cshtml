@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewData["Title"] = "图片预览";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    
+}
+
+<link rel="stylesheet" href="~/css/viewer.min.css" />
+
+
+<div class="layui-fluid">
+    <ul id="dowebok">
+        @foreach (var item in (List<NF.ViewModel.Models.PicViewDTO>)ViewBag.ListPics)
+        {
+           <li><img src="~/@item.Path" alt="@item.Name"></li>
+           
+        }
+        
+        
+
+    </ul>
+
+</div>
+@{
+    Html.RenderPartial("_LayuiScriptsPartial");
+}
+<script type="text/javascript" src="~/js/jquery-min.js"></script>
+<script type="text/javascript" src="~/js/viewer.min.js"></script>
+<script>
+    layui.config({
+        base: '/lib/layuiadmin/' //静态资源所在路径
+    }).extend({
+        index: 'lib/index'
+
+    }).use(['index'], function () {
+        var $ = layui.$;
+        $('#dowebok').viewer();
+
+    });
+</script>
+

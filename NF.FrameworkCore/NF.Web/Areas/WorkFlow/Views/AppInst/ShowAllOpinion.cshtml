@@ -1,0 +1,59 @@
+﻿@{
+    ViewData["Title"] = "查看所有审批意见";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="layui-fluid">
+    <div class="layui-card">
+        <div class="layui-card-body">
+            <table id="NF-Flow-Optinion" lay-filter="NF-Flow-Optinion"></table>
+        </div>
+    </div>
+</div>
+
+@{
+    Html.RenderPartial("_LayuiScriptsPartial");
+}
+
+<script>
+    layui.config({
+        base: '/lib/layuiadmin/'
+    }).extend({
+        index: 'lib/index', //主入口模块
+        tableMerge: 'layui-nf-plugs/tableMerge'
+    }).use(['index','table', 'tableMerge'], function () {
+    var $ = layui.$
+  , table = layui.table
+  , setter = layui.setter
+   , tableMerge = layui.tableMerge;
+    var instId= wooutil.getUrlVar('instId');
+    var nodestrId = wooutil.getUrlVar('nodestrId');
+    if (nodestrId == undefined) {
+        nodestrId = "";
+    }
+    table.render({
+        elem: '#NF-Flow-Optinion'
+       , url: '/WorkFlow/AppInstOption/GetWfOptinions?instId=' + instId + '&nodestrId=' + nodestrId + '&rand=' + wooutil.getRandom()
+       , page: true
+       , loading: true
+       , height: setter.table.height_4
+       , limit: setter.table.limit
+       , limits: setter.table.limits
+       , cols: [[
+          
+          { field: 'NodeName', title: '节点名称', merge: true, width: 188}
+        , { field: 'CreateUserName', title: '审批人', width: 130 }
+        , { field: 'Opinion', title: '审批意见', width: 400 }
+        , { field: 'ReceDateTime', title: '收到日期', width: 140 }
+        , { field: 'CreateDatetime', title:'审批时间', width: 140 }
+        
+    ]]
+    , done: function () {
+        tableMerge.render(this)
+    }
+    });
+
+
+
+     });
+</script>

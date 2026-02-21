@@ -1,0 +1,274 @@
+﻿
+@{
+    ViewData["Title"] = "查看";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="layui-fluid">
+
+    <div class="layui-form" lay-filter="NF-WorkFlow-GroupForm">
+        <input type="hidden" id="Id" name="Id" />
+        <div class="layui-card">
+            <div class="layui-card-header">基本信息</div>
+            <div class="layui-card-body" style="padding: 15px;">
+                <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                    <div class="layui-col-lg4 layui-col-md4 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">名称</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="Name" class="layui-input detail" />
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                    <div class="layui-col-lg12 layui-col-md12 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">说明</label>
+                        <div class="layui-input-block">
+                            <textarea name="Remark" class="layui-textarea detail"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!--需要在最后加这个或者没有也加一个 <div class="layui-form-item">，这样不会导致隐藏菜单是显示问题-->
+                <div class="layui-form-item">
+
+                </div>
+
+            </div>
+        </div>
+
+
+        <!--按钮begin-->
+        <div class="layui-form-item layui-layout-admin layui-hide">
+                <div class="layui-input-block">
+                    @*<div class="layui-footer" style="left: 0;">
+                        <button class="layui-btn" id="NF-WorkFlow-GroupFormSubmit" lay-submit lay-filter="NF-WorkFlow-GroupFormSubmit">保存</button>
+                        <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                    </div>*@
+                </div>
+            </div>
+        <!--按钮begin-->
+    </div>
+    <div class="layui-card ">
+        <div class="layui-card-header">用户列表</div>
+        <div class="layui-card-body" style="padding: 15px;">
+            <table id="NF-GroupInfo-User" lay-filter="NF-GroupInfo-User"></table>
+            <!--表格工具栏-->
+            <script id="tool-GroupInfo-User" type="text/html">
+                <div class="layui-inline">
+                    <button class="layui-btn " lay-event="add"><i class="layui-icon layui-icon-edit"></i> 新增</button>
+                    <button class="layui-btn  layui-btn-danger" lay-event="batchdel"><i class="layui-icon layui-icon-delete"></i>批量删除</button>
+                </div>
+            </script>
+            <script type="text/html" id="bar-GroupInfo-User">
+                <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del"><i class="layui-icon layui-icon-delete"></i>删除</a>
+            </script>
+            @*状态*@
+            <script type="text/html" id="userstateTpl">
+                {{#  if(d.Ustart ==1){ }}
+                <span style="color:blue;">启用</span>
+                {{#  } else { }}
+                <span style="color:red;">禁用</span>
+                {{#  } }}
+
+            </script>
+            @*性别*@
+            <script type="text/html" id="userSexTpl">
+                {{#  if(d.Sex ===0){ }}
+                <span style="color:red;">{{ d.SexDic }}</span>
+                {{#  } else { }}
+                <span style="color:blue;">{{ d.SexDic }}</span>
+
+                {{#  } }}
+            </script>
+
+        </div>
+    </div>
+
+</div>
+
+@{
+    Html.RenderPartial("_LayuiScriptsPartial");
+}
+<script>
+    layui.config({
+        base: '/lib/layuiadmin/'
+    }).extend({
+        index: 'lib/index' //主入口模块
+    }).use(['index', 'form'], function () {
+        var $ = layui.$
+            , admin = layui.admin
+            , element = layui.element
+            , layer = layui.layer
+            , table = layui.table
+            , setter = layui.setter
+            , form = layui.form;
+        var byId = wooutil.getUrlVar('Id');
+        //--------------------------修改的时候赋值----------------------------------
+
+        if (byId !== "" && byId !== undefined) {
+            admin.req({
+                url: '/WorkFlow/GroupInfo/ShowView',
+                data: { Id: byId, rand: wooutil.getRandom() },
+                done: function (res) {
+                    form.val("NF-WorkFlow-GroupForm", res.Data);
+
+                }
+            });
+            
+            /* 
+            * 显示组用户
+            */
+            table.render({
+                elem: '#NF-GroupInfo-User'
+                , url: '/WorkFlow/GroupInfo/GetListUser?groupId=' + byId + '&rand=' + wooutil.getRandom()
+                , toolbar: '#tool-GroupInfo-User'
+                , defaultToolbar: ['filter']
+                , cols: [[
+                    { type: 'checkbox', fixed: 'left' }
+                    , { field: 'Name', title: '用户名称', minWidth: 160, templet: '#nameTpl', fixed: 'left' }
+                    , { field: 'DeptName', title: '所属机构', width: 130 }
+                    , { field: 'DisplyName', title: '显示名称', width: 110 }
+                    , { field: 'SexDic', width: 100, title: '性别', templet: '#userSexTpl' }
+                    , { field: 'Age', width: 100, title: '年龄' }
+                    , { field: 'Tel', width: 100, title: '电话' }
+                    , { field: 'Mobile', width: 120, title: '手机' }
+                    , { field: 'Email', width: 120, title: 'E-Mail' }
+                    , { field: 'Ustart', width: 80, title: '状态', templet: '#userstateTpl', unresize: true }
+                    , { title: '操作', width: 150, align: 'center', fixed: 'right', toolbar: '#bar-GroupInfo-User' }
+                ]]
+                , page: true
+                , loading: true
+                , height: setter.table.height_2
+                , limit: setter.table.limit
+                , limits: setter.table.limits
+
+            });
+
+        }
+        //-------------------------------------修改赋值end--------------------------------------------
+         
+        //删除角色用户
+        function delGroupUser(_tmpIds, _roleId) {
+            admin.req({
+                url: "/WorkFlow/GroupInfo/DeleteGroupUser",
+                data: { userIds: _tmpIds.toString(), groupId: _roleId },
+                done: function (res) {
+                    layer.msg('删除成功', { time: 500 }, function () {
+                        table.reload("NF-GroupInfo-User", {
+                            where: {
+                                rand: wooutil.getRandom()
+                            },
+                            page: {
+                                curr: 1 //重新从第 1 页开始
+                            }
+                        });
+
+                    });
+
+                }
+
+            });
+        }
+
+        var active = {
+            batchdel: function () {//删除
+                var checkStatus = table.checkStatus("NF-GroupInfo-User")
+                    , checkData = checkStatus.data; //得到选中的数据
+                if (checkData.length === 0) {
+                    return layer.msg('请选择数据');
+                }
+                var tmpIds = [];
+                for (var i = 0; i < checkData.length; i++) {
+                    tmpIds.push(checkData[i].Id);
+                }
+
+                delGroupUser(tmpIds, byId);
+
+
+            },
+            add: function () {
+                layer.open({
+                    type: 2
+                    , title: '选择用户'
+                    , content: '/System/UserInfor/SelectUser'
+                    , maxmin: true
+                    , area: ['60%', '90%']
+                    , btn: ['确定', '取消']
+                    , btnAlign: 'c'
+                    , skin: "layer-ext-myskin"
+                    , yes: function (index, layero) {
+                        var iframeWindow = window['layui-layer-iframe' + index];
+                        var checkStatus = iframeWindow.layui.table.checkStatus('NF-system-selectUser')
+                        checkData = checkStatus.data; //得到选中的数据
+                        if (checkData.length == 0) {
+                            return layer.msg('请选择数据');
+                        }
+                        var tempId = [];
+                        for (var i = 0; i < checkData.length; i++) {
+                            tempId.push(checkData[i].Id);
+                        }
+                        admin.req({
+                            url: "/WorkFlow/GroupInfo/AddRoleUser",
+                            data: { userIds: tempId.toString(), groupId: byId },
+                            done: function (res) {
+
+                                layer.msg('保存成功', { time: 500 }, function () {
+                                    table.reload("NF-GroupInfo-User", {
+                                        where: {
+                                            rand: wooutil.getRandom()
+                                        },
+                                        page: {
+                                            curr: 1 //重新从第 1 页开始
+                                        }
+                                    });
+                                    layer.close(index); //关闭弹层
+                                });
+
+                            }
+
+                        });
+
+
+                    },
+                    success: function (layero, index) {
+                        //layer.full(index);
+                        //wooutil.openTip();
+                    }
+                });
+            }
+        }
+        /**
+        *列操作监听
+        **/
+        table.on('tool(NF-GroupInfo-User)', function (obj) {
+            var _data = obj.data;
+            if (obj.event === 'del') {
+                var tmpIds = [];
+                tmpIds.push(obj.data.Id);
+                delGroupUser(tmpIds, byId);
+
+            }
+        });
+
+
+
+        /**
+        *工具栏操作
+        ***/
+        table.on('toolbar(NF-GroupInfo-User)', function (obj) {
+            switch (obj.event) {
+                case 'add':
+                    active.add();
+                    break;
+                case 'batchdel':
+                    active.batchdel();
+                    break;
+              
+            };
+        });
+
+        });
+</script>
+

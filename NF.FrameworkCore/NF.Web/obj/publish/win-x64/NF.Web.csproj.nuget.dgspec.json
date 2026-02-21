@@ -1,0 +1,1022 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.Web\\NF.Web.csproj": {}
+  },
+  "projects": {
+    "D:\\MyCode\\V3.0\\NF.FrameworkCore\\LhCode\\LhCode.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\LhCode\\LhCode.csproj",
+        "projectName": "LhCode",
+        "projectPath": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\LhCode\\LhCode.csproj",
+        "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
+        "outputPath": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\LhCode\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "http://localhost:5000/v3/index.json": {},
+          "http://packages.nuget.org/v1/FeedService.svc/": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+        }
+      },
+      "runtimes": {
+        "win-x64": {
+          "#import": []
+        }
+      }
+    },
+    "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.AutoMapper\\NF.AutoMapper.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.AutoMapper\\NF.AutoMapper.csproj",
+        "projectName": "NF.AutoMapper",
+        "projectPath": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.AutoMapper\\NF.AutoMapper.csproj",
+        "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
+        "outputPath": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.AutoMapper\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "http://localhost:5000/v3/index.json": {},
+          "http://packages.nuget.org/v1/FeedService.svc/": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.Model\\NF.Model.csproj": {
+                "projectPath": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.Model\\NF.Model.csproj"
+              },
+              "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.ViewModel\\NF.ViewModel.csproj": {
+                "projectPath": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.ViewModel\\NF.ViewModel.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+        }
+      },
+      "runtimes": {
+        "win-x64": {
+          "#import": []
+        }
+      }
+    },
+    "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.BLL\\NF.BLL.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.BLL\\NF.BLL.csproj",
+        "projectName": "NF.BLL",
+        "projectPath": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.BLL\\NF.BLL.csproj",
+        "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
+        "outputPath": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.BLL\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "http://localhost:5000/v3/index.json": {},
+          "http://packages.nuget.org/v1/FeedService.svc/": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "D:\\MyCode\\V3.0\\NF.FrameworkCore\\LhCode\\LhCode.csproj": {
+                "projectPath": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\LhCode\\LhCode.csproj"
+              },
+              "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.AutoMapper\\NF.AutoMapper.csproj": {
+                "projectPath": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.AutoMapper\\NF.AutoMapper.csproj"
+              },
+              "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.Common\\NF.Common.csproj": {
+                "projectPath": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.Common\\NF.Common.csproj"
+              },
+              "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.IBLL\\NF.IBLL.csproj": {
+                "projectPath": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.IBLL\\NF.IBLL.csproj"
+              },
+              "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.Model\\NF.Model.csproj": {
+                "projectPath": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.Model\\NF.Model.csproj"
+              },
+              "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.ViewModel\\NF.ViewModel.csproj": {
+                "projectPath": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.ViewModel\\NF.ViewModel.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+        }
+      },
+      "runtimes": {
+        "win-x64": {
+          "#import": []
+        }
+      }
+    },
+    "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.Common\\NF.Common.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.Common\\NF.Common.csproj",
+        "projectName": "NF.Common",
+        "projectPath": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.Common\\NF.Common.csproj",
+        "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
+        "outputPath": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.Common\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "http://localhost:5000/v3/index.json": {},
+          "http://packages.nuget.org/v1/FeedService.svc/": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "MailKit": {
+              "target": "Package",
+              "version": "[2.4.1, )"
+            },
+            "Microsoft.AspNetCore.Http.Extensions": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.Session": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.Extensions.Configuration": {
+              "target": "Package",
+              "version": "[3.0.0, )"
+            },
+            "Microsoft.Extensions.Configuration.Json": {
+              "target": "Package",
+              "version": "[3.0.0, )"
+            },
+            "Microsoft.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[3.0.0, )"
+            },
+            "Microsoft.Extensions.Options.ConfigurationExtensions": {
+              "target": "Package",
+              "version": "[3.0.0, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[12.0.3, )"
+            },
+            "StackExchange.Redis": {
+              "target": "Package",
+              "version": "[2.0.601, )"
+            },
+            "ZKWeb.System.Drawing": {
+              "target": "Package",
+              "version": "[4.0.1, )"
+            },
+            "log4net": {
+              "target": "Package",
+              "version": "[2.0.8, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+        }
+      },
+      "runtimes": {
+        "win-x64": {
+          "#import": []
+        }
+      }
+    },
+    "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.IBLL\\NF.IBLL.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.IBLL\\NF.IBLL.csproj",
+        "projectName": "NF.IBLL",
+        "projectPath": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.IBLL\\NF.IBLL.csproj",
+        "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
+        "outputPath": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.IBLL\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "http://localhost:5000/v3/index.json": {},
+          "http://packages.nuget.org/v1/FeedService.svc/": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.Common\\NF.Common.csproj": {
+                "projectPath": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.Common\\NF.Common.csproj"
+              },
+              "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.Model\\NF.Model.csproj": {
+                "projectPath": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.Model\\NF.Model.csproj"
+              },
+              "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.ViewModel\\NF.ViewModel.csproj": {
+                "projectPath": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.ViewModel\\NF.ViewModel.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+        }
+      },
+      "runtimes": {
+        "win-x64": {
+          "#import": []
+        }
+      }
+    },
+    "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.Model\\NF.Model.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.Model\\NF.Model.csproj",
+        "projectName": "NF.Model",
+        "projectPath": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.Model\\NF.Model.csproj",
+        "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
+        "outputPath": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.Model\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "http://localhost:5000/v3/index.json": {},
+          "http://packages.nuget.org/v1/FeedService.svc/": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.2, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.2, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.2, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer.Design": {
+              "target": "Package",
+              "version": "[1.1.6, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+        }
+      },
+      "runtimes": {
+        "win-x64": {
+          "#import": []
+        }
+      }
+    },
+    "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.OfficeComm\\NF.OfficeComm.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.OfficeComm\\NF.OfficeComm.csproj",
+        "projectName": "NF.OfficeComm",
+        "projectPath": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.OfficeComm\\NF.OfficeComm.csproj",
+        "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
+        "outputPath": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.OfficeComm\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "http://localhost:5000/v3/index.json": {},
+          "http://packages.nuget.org/v1/FeedService.svc/": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.Common\\NF.Common.csproj": {
+                "projectPath": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.Common\\NF.Common.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+        }
+      },
+      "runtimes": {
+        "win-x64": {
+          "#import": []
+        }
+      }
+    },
+    "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.QuartzNet\\NF.QuartzNet.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.QuartzNet\\NF.QuartzNet.csproj",
+        "projectName": "NF.QuartzNet",
+        "projectPath": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.QuartzNet\\NF.QuartzNet.csproj",
+        "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
+        "outputPath": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.QuartzNet\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "http://localhost:5000/v3/index.json": {},
+          "http://packages.nuget.org/v1/FeedService.svc/": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.Common\\NF.Common.csproj": {
+                "projectPath": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.Common\\NF.Common.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Quartz": {
+              "target": "Package",
+              "version": "[3.0.7, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+        }
+      },
+      "runtimes": {
+        "win-x64": {
+          "#import": []
+        }
+      }
+    },
+    "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.ViewModel\\NF.ViewModel.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.ViewModel\\NF.ViewModel.csproj",
+        "projectName": "NF.ViewModel",
+        "projectPath": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.ViewModel\\NF.ViewModel.csproj",
+        "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
+        "outputPath": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.ViewModel\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "http://localhost:5000/v3/index.json": {},
+          "http://packages.nuget.org/v1/FeedService.svc/": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {
+              "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.Common\\NF.Common.csproj": {
+                "projectPath": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.Common\\NF.Common.csproj"
+              },
+              "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.Model\\NF.Model.csproj": {
+                "projectPath": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.Model\\NF.Model.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+        }
+      },
+      "runtimes": {
+        "win-x64": {
+          "#import": []
+        }
+      }
+    },
+    "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.Web\\NF.Web.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.Web\\NF.Web.csproj",
+        "projectName": "NF.Web",
+        "projectPath": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.Web\\NF.Web.csproj",
+        "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
+        "outputPath": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.Web\\obj\\publish\\win-x64\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "http://localhost:5000/v3/index.json": {},
+          "http://packages.nuget.org/v1/FeedService.svc/": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "D:\\MyCode\\V3.0\\NF.FrameworkCore\\LhCode\\LhCode.csproj": {
+                "projectPath": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\LhCode\\LhCode.csproj"
+              },
+              "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.AutoMapper\\NF.AutoMapper.csproj": {
+                "projectPath": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.AutoMapper\\NF.AutoMapper.csproj"
+              },
+              "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.BLL\\NF.BLL.csproj": {
+                "projectPath": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.BLL\\NF.BLL.csproj"
+              },
+              "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.Common\\NF.Common.csproj": {
+                "projectPath": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.Common\\NF.Common.csproj"
+              },
+              "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.IBLL\\NF.IBLL.csproj": {
+                "projectPath": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.IBLL\\NF.IBLL.csproj"
+              },
+              "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.Model\\NF.Model.csproj": {
+                "projectPath": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.Model\\NF.Model.csproj"
+              },
+              "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.OfficeComm\\NF.OfficeComm.csproj": {
+                "projectPath": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.OfficeComm\\NF.OfficeComm.csproj"
+              },
+              "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.QuartzNet\\NF.QuartzNet.csproj": {
+                "projectPath": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.QuartzNet\\NF.QuartzNet.csproj"
+              },
+              "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.ViewModel\\NF.ViewModel.csproj": {
+                "projectPath": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\NF.ViewModel\\NF.ViewModel.csproj"
+              },
+              "D:\\MyCode\\V3.0\\NF.FrameworkCore\\SignalR.Client\\SignalR.Client.csproj": {
+                "projectPath": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\SignalR.Client\\SignalR.Client.csproj"
+              },
+              "D:\\MyCode\\V3.0\\NF.FrameworkCore\\SignalR.Server\\SignalR.Server.csproj": {
+                "projectPath": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\SignalR.Server\\SignalR.Server.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Autofac.Configuration": {
+              "target": "Package",
+              "version": "[6.0.0, )"
+            },
+            "Autofac.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[7.1.0, )"
+            },
+            "EPPlus": {
+              "target": "Package",
+              "version": "[5.5.1, )"
+            },
+            "Huanent.Logging.File": {
+              "target": "Package",
+              "version": "[2.1.0, )"
+            },
+            "Huanent.Logging.File.UI": {
+              "target": "Package",
+              "version": "[1.1.3, )"
+            },
+            "Microsoft.AspNetCore.Cors": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.DataProtection.Redis": {
+              "target": "Package",
+              "version": "[0.4.1, )"
+            },
+            "Microsoft.AspNetCore.Http.Extensions": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.Mvc.Cors": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.Mvc.NewtonsoftJson": {
+              "target": "Package",
+              "version": "[5.0.2, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.2, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.2, )"
+            },
+            "Microsoft.Extensions.Caching.Redis": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.Extensions.Logging.Debug": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[5.0.2, )"
+            },
+            "Quartz": {
+              "target": "Package",
+              "version": "[3.2.3, )"
+            },
+            "Rotativa.AspNetCore": {
+              "target": "Package",
+              "version": "[1.2.0-beta, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[5.6.3, )"
+            },
+            "TimedJob": {
+              "target": "Package",
+              "version": "[2.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[5.0.17, 5.0.17]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+        }
+      },
+      "runtimes": {
+        "win-x64": {
+          "#import": []
+        }
+      }
+    },
+    "D:\\MyCode\\V3.0\\NF.FrameworkCore\\SignalR.Client\\SignalR.Client.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\SignalR.Client\\SignalR.Client.csproj",
+        "projectName": "SignalR.Client",
+        "projectPath": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\SignalR.Client\\SignalR.Client.csproj",
+        "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
+        "outputPath": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\SignalR.Client\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "http://localhost:5000/v3/index.json": {},
+          "http://packages.nuget.org/v1/FeedService.svc/": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.SignalR.Client": {
+              "target": "Package",
+              "version": "[5.0.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+        }
+      },
+      "runtimes": {
+        "win-x64": {
+          "#import": []
+        }
+      }
+    },
+    "D:\\MyCode\\V3.0\\NF.FrameworkCore\\SignalR.Server\\SignalR.Server.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\SignalR.Server\\SignalR.Server.csproj",
+        "projectName": "SignalR.Server",
+        "projectPath": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\SignalR.Server\\SignalR.Server.csproj",
+        "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
+        "outputPath": "D:\\MyCode\\V3.0\\NF.FrameworkCore\\SignalR.Server\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "http://localhost:5000/v3/index.json": {},
+          "http://packages.nuget.org/v1/FeedService.svc/": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.SignalR": {
+              "target": "Package",
+              "version": "[1.1.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+        }
+      },
+      "runtimes": {
+        "win-x64": {
+          "#import": []
+        }
+      }
+    }
+  }
+}

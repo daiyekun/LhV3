@@ -1,0 +1,38 @@
+
+======================================================================================
+
+
+--------------------------------------------------------------------------------------
+
+日志时间：2021-03-05 14:22:50,028 [42] 
+日志级别：ERROR 
+日 志 类：类名：NF.Web.Utility.TimeJob
+	方法名：OpLogRedisListToDb [(null)] 
+Object reference not set to an instance of an object. 
+
+
+--------------------------------------------------------------------------------------
+
+日志时间：2021-03-05 14:23:00,009 [29] 
+日志级别：ERROR 
+日 志 类：类名：NF.Web.Utility.TimeJob
+	方法名：OpLogRedisListToDb [(null)] 
+Object reference not set to an instance of an object. 
+
+
+--------------------------------------------------------------------------------------
+
+日志时间：2021-03-05 14:23:10,002 [40] 
+日志级别：ERROR 
+日 志 类：类名：NF.Web.Utility.TimeJob
+	方法名：OpLogRedisListToDb [(null)] 
+Object reference not set to an instance of an object. 
+
+
+--------------------------------------------------------------------------------------
+
+日志时间：2021-03-05 14:23:20,009 [42] 
+日志级别：ERROR 
+日 志 类：类名：NF.Web.Utility.TimeJob
+	方法名：OpLogRedisListToDb [(null)] 
+Object reference not set to an instance of an object. 

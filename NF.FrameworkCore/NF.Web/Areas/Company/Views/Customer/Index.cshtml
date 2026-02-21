@@ -1,0 +1,160 @@
+﻿
+@{
+    ViewData["Title"] = "客户";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/lib/layuiadmin/modules/layui-nf-plugs/soulTable/soulTable.css" rel="stylesheet" />
+<div class="layui-fluid">
+    <input type="hidden" name="hide_keyWord" />
+    <div class="layui-card">
+        <div class="layui-card-body">
+            <table id="NF-customer-index" lay-filter="NF-customer-index"></table>
+            <!--查看详情-->
+            <script type="text/html" id="nameTpl">
+                <a class="layui-table-link hand" lay-text="查看详情" lay-event="detail">
+                    <cite>{{d.Name}}</cite>
+                </a>
+            </script>
+            <!--表格工具栏-->
+            <script id="toolcustomer" type="text/html">
+                <div class="layui-inline">
+                    <input class="layui-input" type="text" name="keyWord" placeholder="名称、编号" style="width:220px;" />
+                    @*<input class="layui-input" type="text" name="keyWord" placeholder="名称、编号" style="width:220px;" />*@
+
+                </div>
+                <div class="layui-inline">
+                    <button class="layui-btn" lay-event="search">
+                        <i class="layui-icon layui-icon-search layuiadmin-button-btn"></i>
+                    </button>
+                    <button class="layui-btn" lay-event="add">
+                        <i class="layui-icon layui-icon-edit layuiadmin-button-btn">
+                        </i>新增
+                    </button>
+
+                    <div class="layui-btn  layui-unselect layui-form-select downpanel">
+                        <div id="Ty" class="layui-select-title gt">
+                            状态流转
+                            <i class="layui-edge"></i>
+                        </div>
+                        <dl class="layui-anim layui-anim-upbit datastate"></dl>
+                    </div>
+                    <ul class="layui-nav layui-btn layui-bg-green " style="font-size: 12px;float: right;padding:0px 0px 0px 0px;margin-left: 14px;">
+                        <li class="layui-nav-item" style="line-height: 33px;font-size: 12px;">
+                            <a style="color:white;font-size: 12px;padding: 2px 30px 3px 20px;letter-spacing:1px;width:88px" id="moreClick">更多操作<i class="layui-edge"></i></a>
+                            <dl class="layui-nav-child" style="top: 30px;line-height: 30px;width:188px;background-color:#fff ;border:white" id="moreEncrypt">
+                                <!-- 二级菜单 -->
+                                <dd>
+                                    <button class="layui-btn" lay-event="advQuery" style="width:168px;margin:5px;">
+                                        <i class="layui-icon layui-icon-search layuiadmin-button-btn"></i>高级查询
+                                    </button>
+                                </dd>
+                                <dd>
+                                    <button class="layui-btn" lay-event="batchdel" style="width:168px;margin:5px;">
+                                        <i class="layui-icon layui-icon-delete layuiadmin-button-btn"></i>批量删除
+                                    </button>
+                                </dd>
+                                <dd>
+                                    <button class="layui-btn" lay-event="exportexcel" style="width:168px;margin:5px;">
+                                        <i class="layui-icon layui-icon-export layuiadmin-button-btn"></i>导出Excel
+                                    </button>
+                                </dd>
+                                <dd>
+                                    <button class="layui-btn" lay-event="clear" style="width:168px;margin:5px;">
+                                        <i class="layui-icon layui-icon-edit layuiadmin-button-btn"></i>清除
+                                    </button>
+                                </dd>
+                            </dl>
+                        </li>
+                    </ul>
+
+                </div>
+
+            </script>
+            <!--状态-->
+            <script type="text/html" id="customerstateTpl">
+                {{#  if(d.Cstate ==0){ }}
+                <span style="color:blue;">{{d.CstateDic}}</span>
+                {{#  } else if(d.Cstate ==1) { }}
+                <span style="color:#009688;">{{d.CstateDic}}</span>
+                {{#  } else if(d.Cstate ==2){ }}
+                <span style="color:#ffd800;">{{d.CstateDic}}</span>
+                {{#  } else{ }}
+                <span style="color:gray;">{{d.CstateDic}}</span>
+                {{#  } }}
+            </script>
+            @*操作*@
+            <script type="text/html" id="table-customer-bar">
+                <a class="layui-btn layui-btn-normal layui-btn-xs" lay-event="edit"><i class="layui-icon layui-icon-edit"></i>修改</a>
+                <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del"><i class="layui-icon layui-icon-delete"></i>删除</a>
+            </script>
+            <ul id="dynamicCondition" style="display:none;">
+                <li field="Name" title="名称" ops="equal,like" edit="text"></li>
+                <li field="Code" title="编号" ops="equal,like" edit="text"></li>
+                <li field="CompClassId" title="类别" ops="equal" edit="select" templet="#selectLb"></li>
+                <li field="FirstContact" title="首要联系人" ops="equal,like" edit="text"></li>
+                <li field="Reserve1" title="备用1" ops="equal,like" edit="text" layVerify=""></li>
+                <li field="Reserve2" title="备用2" ops="equal,like" edit="text" layVerify=""></li>
+                <li field="CreateDateTime" title="建立日期" ops="between" edit="date"></li>
+                <li field="CreateUserId" title="建立人" ops="equal,like" edit="text" layVerify=""></li>
+                @*<li field="ProvinceId" title="省份" ops="equal" edit="selectProvince" templet="#dict-province" layVerify="" allowDel="false"></li>
+                    <li field="CityId" title="城市" ops="equal" edit="selectCity" templet="#dict-city" layVerify="" allowDel="false"></li>*@
+                <li field="Trade" title="行业" edit="text" layVerify=""></li>
+                <li field="PrincipalUserId" title="负责人" ops="equal,like" edit="text" layVerify=""></li>
+                <li field="Cstate" title="状态" ops="equal" edit="select" templet="#selectZt"></li>
+                <li field="WfCurrNodeName" title="当前节点" edit="text" layVerify=""></li>
+
+            </ul>
+            @*类别*@
+            <script type="text/html" id="selectLb">
+
+            </script>
+            @*状态*@
+            <script type="text/html" id="selectZt">
+                <select id="selectZt" name="selectZt" lay-filter="selectZt">
+                    <option value="">请选择</option>
+                    <option value="0">未审核</option>
+                    <option value="1">审核通过</option>
+                    <option value="2">已终止</option>
+                </select>
+
+            </script>
+
+
+
+
+
+        </div>
+    </div>
+</div>
+
+
+
+@{
+    Html.RenderPartial("_WorkFlowPartial");
+    Html.RenderPartial("_ExportExcelSetPartial");
+    Html.RenderPartial("_LayuiScriptsPartial");
+
+}
+
+<script>
+    layui.config({
+        base: '/lib/layuiadmin/'
+    }).extend({
+        index: 'lib/index' //主入口模块
+        , commonnf: 'common-nf/commonnf'
+        , dynamicCondition: 'layui-nf-plugs/dynamicCondition/dynamicCondition'
+        , customerIndex: 'customer-nf/customer-index'
+        , companyutility: 'common-nf/companyutility'
+        , appflowutility: 'common-nf/appflowutility'
+        ,soulTable: 'layui-nf-plugs/soulTable/soulTable',
+        tableChild: 'layui-nf-plugs/soulTable/tableChild',
+        tableMerge: 'layui-nf-plugs/soulTable/tableMerge',
+        tableFilter: 'layui-nf-plugs/soulTable/tableFilter',
+        excel: 'layui-nf-plugs/soulTable/excel'
+    }).use(['index', 'customerIndex', 'commonnf'], function () {
+         var commonnf = layui.commonnf;
+        commonnf.getdatadic({ dataenum: 3, selectEl: "CompClassId", script: "script",scriptEl:"selectLb" });
+    });
+</script>
+
+

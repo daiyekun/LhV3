@@ -1,0 +1,177 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <UserSecretsId>67e54c9c-c171-4aad-aa79-d3f30f35efbc</UserSecretsId>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <WarningLevel>1</WarningLevel>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="wwwroot\js\json\**" />
+    <Compile Remove="wwwroot\Uploads\CustomerFile123\**" />
+    <Compile Remove="wwwroot\Uploads\CustomerFile\**" />
+    <Compile Remove="wwwroot\Uploads\ExcelExport\**" />
+    <Content Remove="wwwroot\js\json\**" />
+    <Content Remove="wwwroot\Uploads\CustomerFile123\**" />
+    <Content Remove="wwwroot\Uploads\CustomerFile\**" />
+    <Content Remove="wwwroot\Uploads\ExcelExport\**" />
+    <EmbeddedResource Remove="wwwroot\js\json\**" />
+    <EmbeddedResource Remove="wwwroot\Uploads\CustomerFile123\**" />
+    <EmbeddedResource Remove="wwwroot\Uploads\CustomerFile\**" />
+    <EmbeddedResource Remove="wwwroot\Uploads\ExcelExport\**" />
+    <None Remove="wwwroot\js\json\**" />
+    <None Remove="wwwroot\Uploads\CustomerFile123\**" />
+    <None Remove="wwwroot\Uploads\CustomerFile\**" />
+    <None Remove="wwwroot\Uploads\ExcelExport\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Autofac.Configuration" Version="6.0.0" />
+    <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="7.1.0" />
+    <PackageReference Include="EPPlus" Version="5.5.1" />
+    <PackageReference Include="Huanent.Logging.File" Version="2.1.0" />
+    <PackageReference Include="Huanent.Logging.File.UI" Version="1.1.3" />
+    <PackageReference Include="Microsoft.AspNetCore.Cors" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.DataProtection.Redis" Version="0.4.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Http.Extensions" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Cors" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="5.0.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.2">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.2">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Caching.Redis" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="5.0.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.2" />
+    <PackageReference Include="Quartz" Version="3.4.0" />
+    <PackageReference Include="Rotativa.AspNetCore" Version="1.2.0-beta" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
+    <PackageReference Include="TimedJob" Version="2.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\LhCode\LhCode.csproj" />
+    <ProjectReference Include="..\NF.AutoMapper\NF.AutoMapper.csproj" />
+    <ProjectReference Include="..\NF.BLL\NF.BLL.csproj" />
+    <ProjectReference Include="..\NF.Common\NF.Common.csproj" />
+    <ProjectReference Include="..\NF.IBLL\NF.IBLL.csproj" />
+    <ProjectReference Include="..\NF.Model\NF.Model.csproj" />
+    <ProjectReference Include="..\NF.OfficeComm\NF.OfficeComm.csproj" />
+    <ProjectReference Include="..\NF.QuartzNet\NF.QuartzNet.csproj" />
+    <ProjectReference Include="..\NF.ViewModel\NF.ViewModel.csproj" />
+    <ProjectReference Include="..\SignalR.Client\SignalR.Client.csproj" />
+    <ProjectReference Include="..\SignalR.Server\SignalR.Server.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="appsettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\layuiadmin\modules\system-nf\nf-system-datadictionary.js">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Areas\Business\Data\" />
+    <Folder Include="Areas\Business\Models\" />
+    <Folder Include="Areas\Company\Data\" />
+    <Folder Include="Areas\Company\Models\" />
+    <Folder Include="Areas\ContractDraft\Data\" />
+    <Folder Include="Areas\Contract\Data\" />
+    <Folder Include="Areas\Contract\Models\" />
+    <Folder Include="Areas\Finance\Data\" />
+    <Folder Include="Areas\Finance\Models\" />
+    <Folder Include="Areas\MobileApp\Data\" />
+    <Folder Include="Areas\MobileApp\Models\" />
+    <Folder Include="Areas\NfCommon\Data\" />
+    <Folder Include="Areas\NfCommon\Models\" />
+    <Folder Include="Areas\Others\Data\" />
+    <Folder Include="Areas\Others\Models\" />
+    <Folder Include="Areas\Others\Views\" />
+    <Folder Include="Areas\Project\Data\" />
+    <Folder Include="Areas\Project\Models\" />
+    <Folder Include="Areas\System\Data\" />
+    <Folder Include="Areas\System\Models\" />
+    <Folder Include="Areas\WeiXin\Data\" />
+    <Folder Include="Areas\WeiXin\Models\" />
+    <Folder Include="Areas\WeiXin\Views\" />
+    <Folder Include="Areas\Workbench\Data\" />
+    <Folder Include="Areas\Workbench\Models\" />
+    <Folder Include="Areas\WorkFlow\Models\" />
+    <Folder Include="wwwroot\lib\layuiadmin\modules\finance-nf\common\" />
+    <Folder Include="wwwroot\lib\signalr\" />
+    <Folder Include="wwwroot\Uploads\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\lib\gooflow\codebase\fonts\iconflow.js" />
+    <None Include="wwwroot\lib\gooflow\codebase\fonts\iconflow.svg" />
+    <None Include="wwwroot\lib\gooflow\codebase\GooFlow.color.js" />
+    <None Include="wwwroot\lib\gooflow\codebase\GooFlow.export.js" />
+    <None Include="wwwroot\lib\gooflow\codebase\GooFlow.js" />
+    <None Include="wwwroot\lib\gooflow\codebase\GooFunc.js" />
+    <None Include="wwwroot\lib\gooflow\demo\child.js" />
+    <None Include="wwwroot\lib\gooflow\demo\data.js" />
+    <None Include="wwwroot\lib\gooflow\demo\data2.js" />
+    <None Include="wwwroot\lib\gooflow\plugin\canvg.js" />
+    <None Include="wwwroot\lib\gooflow\plugin\html2canvas.js" />
+    <None Include="wwwroot\lib\gooflow\plugin\html2canvas.min.js" />
+    <None Include="wwwroot\lib\gooflow\plugin\jquery.min.js" />
+    <None Include="wwwroot\lib\gooflow\plugin\jquery.min.map" />
+    <None Include="wwwroot\lib\gooflow\plugin\json2.js" />
+    <None Include="wwwroot\lib\gooflow\plugin\printThis.js" />
+    <None Include="wwwroot\lib\gooflow\plugin\promise.min.js" />
+    <None Include="wwwroot\lib\layuiadmin\layui\font\iconfont.svg" />
+    <None Include="wwwroot\lib\layuiadmin\layui\layui.all.js" />
+    <None Include="wwwroot\lib\layuiadmin\layui\layui.js" />
+    <None Include="wwwroot\lib\layuiadmin\layui\lay\all-mobile.js" />
+    <None Include="wwwroot\lib\layuiadmin\layui\lay\all.js" />
+    <None Include="wwwroot\lib\layuiadmin\layui\lay\modules\carousel.js" />
+    <None Include="wwwroot\lib\layuiadmin\layui\lay\modules\code.js" />
+    <None Include="wwwroot\lib\layuiadmin\layui\lay\modules\colorpicker.js" />
+    <None Include="wwwroot\lib\layuiadmin\layui\lay\modules\element.js" />
+    <None Include="wwwroot\lib\layuiadmin\layui\lay\modules\flow.js" />
+    <None Include="wwwroot\lib\layuiadmin\layui\lay\modules\form.js" />
+    <None Include="wwwroot\lib\layuiadmin\layui\lay\modules\jquery.js" />
+    <None Include="wwwroot\lib\layuiadmin\layui\lay\modules\laydate.js" />
+    <None Include="wwwroot\lib\layuiadmin\layui\lay\modules\layedit.js" />
+    <None Include="wwwroot\lib\layuiadmin\layui\lay\modules\layer.js" />
+    <None Include="wwwroot\lib\layuiadmin\layui\lay\modules\layim.js" />
+    <None Include="wwwroot\lib\layuiadmin\layui\lay\modules\laypage.js" />
+    <None Include="wwwroot\lib\layuiadmin\layui\lay\modules\laytpl.js" />
+    <None Include="wwwroot\lib\layuiadmin\layui\lay\modules\mobile.js" />
+    <None Include="wwwroot\lib\layuiadmin\layui\lay\modules\mobile\layer-mobile.js" />
+    <None Include="wwwroot\lib\layuiadmin\layui\lay\modules\mobile\layim-mobile-open.js" />
+    <None Include="wwwroot\lib\layuiadmin\layui\lay\modules\mobile\layim-mobile.js" />
+    <None Include="wwwroot\lib\layuiadmin\layui\lay\modules\mobile\upload-mobile.js" />
+    <None Include="wwwroot\lib\layuiadmin\layui\lay\modules\mobile\zepto.js" />
+    <None Include="wwwroot\lib\layuiadmin\layui\lay\modules\rate.js" />
+    <None Include="wwwroot\lib\layuiadmin\layui\lay\modules\slider.js" />
+    <None Include="wwwroot\lib\layuiadmin\layui\lay\modules\table.js" />
+    <None Include="wwwroot\lib\layuiadmin\layui\lay\modules\tree.js" />
+    <None Include="wwwroot\lib\layuiadmin\layui\lay\modules\upload.js" />
+    <None Include="wwwroot\lib\layuiadmin\layui\lay\modules\util.js" />
+    <None Include="wwwroot\lib\layuiadmin\lib\admin.js" />
+    <None Include="wwwroot\lib\layuiadmin\lib\extend\echarts.js" />
+    <None Include="wwwroot\lib\layuiadmin\lib\extend\echartsTheme.js" />
+    <None Include="wwwroot\lib\layuiadmin\lib\index.js" />
+    <None Include="wwwroot\lib\layuiadmin\lib\view.js" />
+    <None Include="wwwroot\lib\layuiadmin\modules\layui-nf-plugs\dynamicCondition\dcConfig.js" />
+    <None Include="wwwroot\lib\layuiadmin\modules\layui-nf-plugs\dynamicCondition\dynamicCondition.js" />
+    <None Include="wwwroot\lib\layuiadmin\modules\layui-nf-plugs\soulTable\font\iconfont.svg" />
+    <None Include="wwwroot\lib\layuiadmin\modules\layui-nf-plugs\soulTable\font\iconfont.woff2" />
+    <None Include="wwwroot\lib\layuiadmin\modules\layui-nf-plugs\soulTable\font\README.md" />
+  </ItemGroup>
+
+  <ProjectExtensions><VisualStudio><UserProperties appsettings_1json__JSONSchema="" /></VisualStudio></ProjectExtensions>
+
+</Project>

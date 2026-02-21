@@ -1,0 +1,120 @@
+﻿
+@{
+    ViewData["Title"] = "计划资金";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="layui-fluid">
+    <!--基本信息begin-->
+    <div class="layui-form" lay-filter="NF-ContPlanFinanceForm">
+        <!--修改时使用-->
+        <input type="hidden" id="Id" name="Id" />
+        @*资金收付款*@
+        <input type="hidden" id="Ftype" name="Ftype" />
+        <!--合同ID-->
+        <input type="hidden" name="ContId" id="ContId" />
+        @*是否是框架合同*@
+        <input type="hidden" name="IsFramework" id="IsFramework" value="0" />
+        <div class="layui-card ">
+            <div class="layui-card-header">基本信息</div>
+            <div class="layui-card-body" style="padding: 15px;">
+                <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                    <div class="layui-col-lg4 layui-col-md4 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">名称</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="Name" lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input pen" />
+                        </div>
+                    </div>
+                    <div class="layui-col-lg4 layui-col-md4 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">计划完成日期</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="PlanCompleteDateTime" id="PlanCompleteDateTime" class="layui-input" />
+                        </div>
+                    </div>
+                    <div class="layui-col-lg4 layui-col-md4 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">金额</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="AmountMoney" class="layui-input pen" />
+                        </div>
+                    </div>
+
+                </div>
+                <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                    <div class="layui-col-lg4 layui-col-md4 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">结算方式</label>
+                        <div class="layui-input-block">
+                            <select name="SettlementModes" id="SettlementModes" lay-search lay-filter="ContSourceId">
+                                <option value="">请选择..</option>
+                            </select>
+
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                    <div class="layui-col-lg12 layui-col-md12 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">备注</label>
+                        <div class="layui-input-block">
+                            <textarea name="Remark" class="layui-textarea"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <!--需要在最后加这个或者没有也加一个 <div class="layui-form-item">，这样不会导致隐藏菜单是显示问题-->
+                <div class="layui-form-item">
+
+                </div>
+            </div>
+        </div>
+
+        <div class="layui-form-item layui-layout-admin layui-hide">
+            <div class="layui-input-block">
+                <div class="layui-footer" style="left: 0;">
+                    <button class="layui-btn" id="NF-ContPlanFinance-FormSubmit" lay-submit lay-filter="NF-ContPlanFinance-FormSubmit">保存</button>
+                    <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+@{
+    Html.RenderPartial("_LayuiScriptsPartial");
+}
+<script>
+
+    layui.config({
+        base: '/lib/layuiadmin/'
+    }).extend({
+        index: 'lib/index',
+        commonnf: 'common-nf/commonnf'
+    }).use(['index', 'form', 'laydate', 'commonnf'], function ()
+    {
+          var $ = layui.$
+          , form = layui.form
+          , laydate = layui.laydate
+          , commonnf = layui.commonnf;
+          var _objId = wooutil.getQueryString('Id');
+          //结算方式
+          commonnf.getdatadic({ dataenum: 17, selectEl: "#SettlementModes" });
+         //计划完成日期
+          laydate.render({ elem: '#PlanCompleteDateTime', trigger: 'click' });
+          //输入千分位
+          $("input[name=AmountMoney]").blur(function () {
+             
+              $(this).val(wooutil.numThodFormat($(this).val()));
+          });
+        //修改显示
+          wooutil.showView({
+            objId: _objId,
+            url: '/Finance/ContPlanFinance/ShowView',
+            formFilter: 'NF-ContPlanFinanceForm',
+            form: form
+          });
+    });
+</script>
+
+
+
+
+

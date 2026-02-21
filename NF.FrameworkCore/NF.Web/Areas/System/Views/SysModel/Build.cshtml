@@ -1,0 +1,164 @@
+﻿
+@{
+    ViewData["Title"] = "模块新建";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/lib/layuiadmin/style/selectTree.css" rel="stylesheet" />
+<div class="layui-fluid">
+    <!--基本信息begin-->
+    <div class="layui-form" lay-filter="Nf-SystemAdmin-SysModelForm">
+        <input type="hidden" id="Id" name="Id" />
+        <div class="layui-card ">
+            <div class="layui-card-header">基本信息</div>
+            <div class="layui-card-body" style="padding: 15px;">
+                <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                    <div class="layui-col-lg4 layui-col-md4 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">名称</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="Name" lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input pen" />
+                        </div>
+                    </div>
+                    <div class="layui-col-lg4 layui-col-md4 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">上级名称</label>
+                        <div class="layui-input-block">
+
+                            <input type="text" id="NF-PModel" lay-filter="NF-PModel"  name="PId" lay-verify="required" placeholder="请选择"   class="layui-input" />
+                        </div>
+                    </div>
+                    <div class="layui-col-lg4 layui-col-md4 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">区域</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="AreaName" class="layui-input" />
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                    <div class="layui-col-lg4 layui-col-md4 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">控制器名称</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="ControllerName"  class="layui-input" />
+                        </div>
+                    </div>
+                    <div class="layui-col-lg4 layui-col-md4 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">方法名称</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="ActionName"  class="layui-input" />
+                        </div>
+                    </div>
+                    <div class="layui-col-lg4 layui-col-md4 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">URL</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="RequestUrl" class="layui-input"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                    <div class="layui-col-lg4 layui-col-md4 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">图标</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="Ico" autocomplete="off" class="layui-input" />
+                        </div>
+                    </div>
+                   
+                </div>
+
+                <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+
+                    <div class="layui-col-lg12 layui-col-md12 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">备注</label>
+                        <div class="layui-input-block">
+                            <textarea name="Remark" class="layui-textarea"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!--需要在最后加这个或者没有也加一个 <div class="layui-form-item">，这样不会导致隐藏菜单是显示问题-->
+                <div class="layui-form-item">
+
+                </div>
+
+            </div>
+        </div>
+        <!--按钮begin-->
+        <div class="layui-form-item layui-layout-admin layui-hide">
+            <div class="layui-input-block">
+                <div class="layui-footer" style="left: 0;">
+                    <button class="layui-btn" id="Nf-SystemAdmin-SysModelFormSubmit" lay-submit lay-filter="Nf-SystemAdmin-SysModelFormSubmit">保存</button>
+                    <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                </div>
+            </div>
+        </div>
+        <!--按钮begin-->
+    </div>
+    <!--用户基本信息end-->
+
+</div>
+
+@{
+    Html.RenderPartial("_LayuiScriptsPartial");
+}
+<script>
+    layui.config({
+        base: '/lib/layuiadmin/'
+    }).extend({
+        index: 'lib/index' //主入口模块
+         , treeSelect: 'layui-nf-plugs/treeselect'
+    }).use(['index', 'form', 'laydate', 'treeSelect'], function () {
+        var $ = layui.$
+            , admin = layui.admin
+            , element = layui.element
+            , layer = layui.layer
+            , laydate = layui.laydate
+            , treeSelect = layui.treeSelect
+            , table = layui.table
+            , form = layui.form;
+        var byId = wooutil.getUrlVar('Id');
+        /**
+        *菜单初始化
+        **/
+        function IniModelTeee(selVal) {
+            treeSelect.render(
+              {
+                  elem: "#NF-PModel",
+                  data: '/System/SysModel/GetSelectTree?rand=' + wooutil.getRandom(),
+                  method: "GET",
+                  verify: true,
+                  search: true,
+                  click: function (d) {
+                      $("#NF-PModel").val(d.current.id);
+                  },
+                  success: function (d) {
+                      if (selVal!=null){
+                          treeSelect.checkNode("NF-PModel", selVal);
+                      }
+
+                  }
+              });
+        }
+       
+        //--------------------------修改的时候赋值----------------------------------
+
+        if (byId !== "" && byId !== undefined) {
+            admin.req({
+                url: '/System/SysModel/ShowView',
+                data: { Id: byId, rand: wooutil.getRandom() },
+                done: function (res) {
+                    form.val("Nf-SystemAdmin-SysModelForm", res.Data);
+                    IniModelTeee(res.Data.Pid);
+                }
+            });
+
+        } else {
+            
+            IniModelTeee(null);
+        }
+        //-------------------------------------修改赋值end--------------------------------------------
+       
+
+     });
+
+
+
+</script>
+

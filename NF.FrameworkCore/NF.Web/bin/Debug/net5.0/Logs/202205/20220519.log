@@ -1,0 +1,74 @@
+
+======================================================================================
+
+
+--------------------------------------------------------------------------------------
+
+日志时间：2022-05-19 09:38:01,692 [28] 
+日志级别：ERROR 
+日 志 类：类名：NF.BLL
+	方法名：GetConsoleReminder [(null)] 
+Err-->mesgInfo.DqjhskNum:Object reference not set to an instance of an object. 
+
+
+--------------------------------------------------------------------------------------
+
+日志时间：2022-05-19 09:38:01,775 [28] 
+日志级别：ERROR 
+日 志 类：类名：NF.BLL
+	方法名：GetConsoleReminder [(null)] 
+Err-->mesgInfo.DqjhfkNum:Object reference not set to an instance of an object. 
+
+
+--------------------------------------------------------------------------------------
+
+日志时间：2022-05-19 09:48:30,061 [69] 
+日志级别：ERROR 
+日 志 类：类名：NF.BLL
+	方法名：GetConsoleReminder [(null)] 
+Err-->mesgInfo.DqjhskNum:Object reference not set to an instance of an object. 
+
+
+--------------------------------------------------------------------------------------
+
+日志时间：2022-05-19 09:48:30,112 [69] 
+日志级别：ERROR 
+日 志 类：类名：NF.BLL
+	方法名：GetConsoleReminder [(null)] 
+Err-->mesgInfo.DqjhfkNum:Object reference not set to an instance of an object. 
+
+
+--------------------------------------------------------------------------------------
+
+日志时间：2022-05-19 09:48:57,722 [62] 
+日志级别：ERROR 
+日 志 类：类名：NF.BLL
+	方法名：GetConsoleReminder [(null)] 
+Err-->mesgInfo.DqjhskNum:Object reference not set to an instance of an object. 
+
+
+--------------------------------------------------------------------------------------
+
+日志时间：2022-05-19 09:48:57,803 [62] 
+日志级别：ERROR 
+日 志 类：类名：NF.BLL
+	方法名：GetConsoleReminder [(null)] 
+Err-->mesgInfo.DqjhfkNum:Object reference not set to an instance of an object. 
+
+
+--------------------------------------------------------------------------------------
+
+日志时间：2022-05-19 09:48:59,354 [62] 
+日志级别：ERROR 
+日 志 类：类名：NF.BLL
+	方法名：GetConsoleReminder [(null)] 
+Err-->mesgInfo.DqjhskNum:Object reference not set to an instance of an object. 
+
+
+--------------------------------------------------------------------------------------
+
+日志时间：2022-05-19 09:48:59,413 [62] 
+日志级别：ERROR 
+日 志 类：类名：NF.BLL
+	方法名：GetConsoleReminder [(null)] 
+Err-->mesgInfo.DqjhfkNum:Object reference not set to an instance of an object. 

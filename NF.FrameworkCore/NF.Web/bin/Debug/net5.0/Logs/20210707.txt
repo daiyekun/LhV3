@@ -1,0 +1,36 @@
+-----2021/07/07 08:54:15-----
+Error:Microsoft.AspNetCore.Session.DistributedSession
+Session cache read exception, Key:b751d48b-b2c2-033c-68ad-f6522e36ec65
+StackExchange.Redis.RedisTimeoutException: Timeout performing EXPIRE Redis_Session_b751d48b-b2c2-033c-68ad-f6522e36ec65, inst: 2, queue: 7, qu: 0, qs: 7, qc: 0, wr: 0, wq: 0, in: 864, ar: 0, clientName: DESKTOP-27QSEB9, serverEndpoint: 127.0.0.1:6379, keyHashSlot: 9817 (Please take a look at this article for some common client-side issues that can cause timeouts: http://stackexchange.github.io/StackExchange.Redis/Timeouts)
+   at StackExchange.Redis.ConnectionMultiplexer.ExecuteSyncImpl[T](Message message, ResultProcessor`1 processor, ServerEndPoint server) in c:\code\StackExchange.Redis\StackExchange.Redis\StackExchange\Redis\ConnectionMultiplexer.cs:line 2120
+   at StackExchange.Redis.RedisBase.ExecuteSync[T](Message message, ResultProcessor`1 processor, ServerEndPoint server) in c:\code\StackExchange.Redis\StackExchange.Redis\StackExchange\Redis\RedisBase.cs:line 81
+   at StackExchange.Redis.RedisDatabase.KeyExpire(RedisKey key, Nullable`1 expiry, CommandFlags flags) in c:\code\StackExchange.Redis\StackExchange.Redis\StackExchange\Redis\RedisDatabase.cs:line 606
+   at Microsoft.Extensions.Caching.Redis.RedisCache.Refresh(String key, Nullable`1 absExpr, Nullable`1 sldExpr)
+   at Microsoft.Extensions.Caching.Redis.RedisCache.GetAndRefresh(String key, Boolean getData)
+   at Microsoft.AspNetCore.Session.DistributedSession.Load()
+-----End-----
+
+-----2021/07/07 08:54:15-----
+Error:Microsoft.AspNetCore.Session.DistributedSession
+Session cache read exception, Key:b751d48b-b2c2-033c-68ad-f6522e36ec65
+StackExchange.Redis.RedisTimeoutException: Timeout performing EXPIRE Redis_Session_b751d48b-b2c2-033c-68ad-f6522e36ec65, inst: 2, queue: 7, qu: 0, qs: 7, qc: 0, wr: 0, wq: 0, in: 864, ar: 0, clientName: DESKTOP-27QSEB9, serverEndpoint: 127.0.0.1:6379, keyHashSlot: 9817 (Please take a look at this article for some common client-side issues that can cause timeouts: http://stackexchange.github.io/StackExchange.Redis/Timeouts)
+   at StackExchange.Redis.ConnectionMultiplexer.ExecuteSyncImpl[T](Message message, ResultProcessor`1 processor, ServerEndPoint server) in c:\code\StackExchange.Redis\StackExchange.Redis\StackExchange\Redis\ConnectionMultiplexer.cs:line 2120
+   at StackExchange.Redis.RedisBase.ExecuteSync[T](Message message, ResultProcessor`1 processor, ServerEndPoint server) in c:\code\StackExchange.Redis\StackExchange.Redis\StackExchange\Redis\RedisBase.cs:line 81
+   at StackExchange.Redis.RedisDatabase.KeyExpire(RedisKey key, Nullable`1 expiry, CommandFlags flags) in c:\code\StackExchange.Redis\StackExchange.Redis\StackExchange\Redis\RedisDatabase.cs:line 606
+   at Microsoft.Extensions.Caching.Redis.RedisCache.Refresh(String key, Nullable`1 absExpr, Nullable`1 sldExpr)
+   at Microsoft.Extensions.Caching.Redis.RedisCache.GetAndRefresh(String key, Boolean getData)
+   at Microsoft.AspNetCore.Session.DistributedSession.Load()
+-----End-----
+
+-----2021/07/07 08:54:15-----
+Error:Microsoft.AspNetCore.Session.DistributedSession
+Session cache read exception, Key:b751d48b-b2c2-033c-68ad-f6522e36ec65
+StackExchange.Redis.RedisTimeoutException: Timeout performing EVAL, inst: 2, queue: 7, qu: 0, qs: 7, qc: 0, wr: 0, wq: 0, in: 864, ar: 0, clientName: DESKTOP-27QSEB9, serverEndpoint: 127.0.0.1:6379, keyHashSlot: 9817 (Please take a look at this article for some common client-side issues that can cause timeouts: http://stackexchange.github.io/StackExchange.Redis/Timeouts)
+   at StackExchange.Redis.ConnectionMultiplexer.ExecuteSyncImpl[T](Message message, ResultProcessor`1 processor, ServerEndPoint server) in c:\code\StackExchange.Redis\StackExchange.Redis\StackExchange\Redis\ConnectionMultiplexer.cs:line 2120
+   at StackExchange.Redis.RedisBase.ExecuteSync[T](Message message, ResultProcessor`1 processor, ServerEndPoint server) in c:\code\StackExchange.Redis\StackExchange.Redis\StackExchange\Redis\RedisBase.cs:line 81
+   at StackExchange.Redis.RedisDatabase.ScriptEvaluate(String script, RedisKey[] keys, RedisValue[] values, CommandFlags flags) in c:\code\StackExchange.Redis\StackExchange.Redis\StackExchange\Redis\RedisDatabase.cs:line 1059
+   at Microsoft.Extensions.Caching.Redis.RedisExtensions.HashMemberGet(IDatabase cache, String key, String[] members)
+   at Microsoft.Extensions.Caching.Redis.RedisCache.GetAndRefresh(String key, Boolean getData)
+   at Microsoft.AspNetCore.Session.DistributedSession.Load()
+-----End-----
+

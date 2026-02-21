@@ -1,0 +1,128 @@
+﻿
+@{
+    ViewData["Title"] = "SetEmail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="layui-fluid">
+    <div class="layui-row layui-col-space15">
+        <div class="layui-col-md12">
+            <div class="layui-card">
+                <div class="layui-card-header">邮件服务</div>
+                <div class="layui-card-body">
+                    <div class="layui-form" wid100 lay-filter="NF-SystemMail">
+                        <input type="hidden" name="Id" value="0" />
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">邮件服务器</label>
+                            <div class="layui-input-inline">
+                                <input type="text" name="ServiceName" lay-verify class="layui-input pen">
+                            </div>
+                            <div class="layui-form-mid layui-word-aux">如：smtp.163.com</div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">端口号</label>
+                            <div class="layui-input-inline" style="width: 80px;">
+                                <input type="text" name="ServicePort" lay-verify="number" value="25" class="layui-input pen">
+                            </div>
+                            <div class="layui-form-mid layui-word-aux">一般为 25 或 465</div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">发件人邮箱</label>
+                            <div class="layui-input-inline">
+                                <input type="text" name="SenderMail" lay-verify="email"  class="layui-input pen">
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">发件人昵称</label>
+                            <div class="layui-input-inline">
+                                <input type="text" name="SendNickname"  class="layui-input">
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">授权码</label>
+                            <div class="layui-input-inline">
+                                <input type="password" name="MailPwd" lay-verify  class="layui-input pen">
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <div class="layui-inline">
+                                <button class="layui-btn" lay-submit lay-filter="set_system_email">确认保存</button>
+                                <button class="layui-btn" id="system-test-mail">测试邮箱</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@*测试邮箱*@
+<div class="layui-card layui-hide" id="testemaildiv">
+    <div class="layui-card-body" style="padding: 15px;">
+        <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+            <div class="layui-col-lg12 layui-col-md12 layui-col-xs12 layui-col-sm12">
+                <label class="layui-form-label" style="width:85px;">接受者邮箱</label>
+                <div class="layui-input-block">
+                    <input type="text" name="TestMail" id="TestMail" style="width:200px;" lay-verify="required" class="layui-input pen" />
+                </div>
+            </div>
+           
+        </div>
+    </div>
+</div>
+@{
+    Html.RenderPartial("_LayuiScriptsPartial");
+}
+<script>
+
+
+    layui.config({
+        base: '/lib/layuiadmin/'
+    }).extend({
+        index: 'lib/index'
+
+    }).use(['index', 'nf-set'], function () {
+        var $ = layui.$
+                , admin = layui.admin
+                , layer = layui.layer
+                , form = layui.form;
+        admin.req({
+            url: '/System/Email/ShowView',
+            data: { Id:0,  rand: wooutil.getRandom() },
+            done: function (res) {
+                form.val("NF-SystemMail", res.Data);
+
+            }
+        });
+        //测试邮箱
+        $("#system-test-mail").click(function () {
+            $("#testemaildiv").removeClass("layui-hide");
+            layer.open({
+                type: 1
+                , title: '测试邮箱'
+                , area: ['370px', '220px']
+                , btn: ['确定', '取消']
+                , content: $('#testemaildiv')
+                , yes: function (index, layero) {
+                    var testmal = $("#TestMail").val();
+                    admin.req({
+                        url: '/System/Email/TestMail',
+                        data: { testMail: testmal },
+                        done: function (res) {
+                            layer.msg("已发送,请查看邮箱是否收到测试内容", { time: 500, icon: 6 }, function () {
+                                $("#testemaildiv").addClass("layui-hide");
+                                layer.close(index);
+                            });
+
+                        }
+                    });
+                }, btn2: function (index, layero) {
+                    $("#testemaildiv").addClass("layui-hide");
+                }
+            });
+        });
+     });
+</script>
+

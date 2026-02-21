@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+此文件由 Web 项目的发布/打包过程使用。可以通过编辑此 MSBuild 文件
+自定义此过程的行为。为了解与此相关的更多内容，请访问 https://go.microsoft.com/fwlink/?LinkID=208121。 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>D:\MyProjectCode\NF2.83\publish</_PublishTargetUrl>
+    <History>True|2022-11-10T06:32:07.8123896Z;True|2022-11-10T14:09:58.4402325+08:00;True|2022-09-16T12:21:21.5210636+08:00;True|2022-09-16T11:39:42.4598611+08:00;True|2022-09-16T10:58:24.4142678+08:00;False|2022-09-16T10:53:38.5803517+08:00;True|2022-02-25T10:30:55.8560300+08:00;True|2022-02-24T19:41:11.6724802+08:00;True|2022-02-24T14:58:27.7640346+08:00;True|2021-12-21T19:14:48.8267533+08:00;True|2021-12-21T18:34:01.7535568+08:00;True|2021-08-06T15:24:03.0745911+08:00;True|2021-08-05T10:30:58.1876271+08:00;True|2021-07-07T09:19:51.8710361+08:00;True|2021-07-06T09:34:18.2587398+08:00;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+</Project>

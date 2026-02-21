@@ -1,0 +1,209 @@
+﻿
+@{
+    ViewData["Title"] = "合同文本盖章";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="layui-fluid">
+    <!--基本信息begin-->
+    <div class="layui-form" lay-filter="NF-ContTextSealForm">
+        @*当前ID*@
+        <input type="hidden" id="Id" name="Id" />
+        @*修改时合同文本ID*@
+        <input type="hidden" id="ContTextId" name="ContTextId" />
+
+        <div class="layui-card ">
+            <div class="layui-card-header">基本信息</div>
+            <div class="layui-card-body" style="padding: 15px;">
+                <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                    <div class="layui-col-lg4 layui-col-md4 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">签约主体</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="MainDeptName" class="layui-input detail" />
+                        </div>
+
+                    </div>
+                    <div class="layui-col-lg4 layui-col-md4 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">经办机构</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="DeptName" class="layui-input detail" />
+                        </div>
+                    </div>
+                    <div class="layui-col-lg4 layui-col-md4 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">用章人</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="CreateUserName" class="layui-input detail" />
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                    <div class="layui-col-lg4 layui-col-md4 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">用章日期</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="CreateDateTime" class="layui-input detail" />
+                        </div>
+
+                    </div>
+                    <div class="layui-col-lg4 layui-col-md4 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">合同状态</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="ContStateDic" class="layui-input detail" />
+                        </div>
+                    </div>
+                    <div class="layui-col-lg4 layui-col-md4 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">印章名称</label>
+                        <div class="layui-input-block" >
+
+                            
+                            <select name="SealId" id="SealId" lay-verify="required"   lay-search lay-filter="SealId">
+                                <option value="" class="pen">请选择..</option>
+
+                            </select>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                    <div class="layui-col-lg4 layui-col-md4 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">申请人</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="SealUser" lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input pen" />
+                        </div>
+
+                    </div>
+                    <div class="layui-col-lg4 layui-col-md4 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">用章状态</label>
+                        <div class="layui-input-block">
+                            <select name="SealState" lay-verify="required" lay-search lay-filter="SealState">
+                                <option value="">请选择..</option>
+                                <option value="0">我方已用章对方未用章</option>
+                                <option value="1">双方均用章</option>
+
+                            </select>
+                        </div>
+                    </div>
+                    <div class="layui-col-lg4 layui-col-md4 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">盖章份数</label>
+                        <div class="layui-input-block">
+                            <input type="number" name="SealNumber" lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input pen" />
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                    <div class="layui-col-lg4 layui-col-md4 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">每份盖章数</label>
+                        <div class="layui-input-block">
+                            <input type="number" name="EachNumber" lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input pen" />
+                        </div>
+
+                    </div>
+                    <div class="layui-col-lg4 layui-col-md4 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">盖章总数</label>
+                        <div class="layui-input-block">
+                            <input type="number" name="SealTotal" readonly class="layui-input detail" />
+                        </div>
+                    </div>
+
+
+
+                </div>
+                <!--需要在最后加这个或者没有也加一个 <div class="layui-form-item">，这样不会导致隐藏菜单是显示问题-->
+                <div class="layui-form-item">
+
+                </div>
+            </div>
+        </div>
+
+        <div class="layui-form-item layui-layout-admin layui-hide">
+            <div class="layui-input-block">
+                <div class="layui-footer" style="left: 0;">
+                    <button class="layui-btn" id="NF-ContTextSeal-FormSubmit" lay-submit lay-filter="NF-ContTextSeal-FormSubmit">保存</button>
+                    <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+@{
+    Html.RenderPartial("_LayuiScriptsPartial");
+}
+
+<script>
+
+    layui.config({
+        base: '/lib/layuiadmin/'
+    }).extend({
+        index: 'lib/index',
+        commonnf: 'common-nf/commonnf',
+       
+    }).use(['index', 'form', 'commonnf'], function () {
+
+        var $ = layui.$
+            , admin = layui.admin
+          , form = layui.form
+          , commonnf = layui.commonnf
+         , setter = layui.setter ;
+        var txtId = wooutil.getQueryString('txtId');
+        var contId = wooutil.getQueryString('contId');
+      
+      //  commonnf.getdatadic({ txtId:txtId, contId:contId, selectEl: "#SealId", wooverify: true, });
+        $("#ContTextId").val(txtId);
+        //合同盖章
+        $.ajax({
+            url: "/System/SealManager/SelectSeal",
+            data: { Id: txtId, contId: contId },
+            async:false,
+            success: function (res) {
+                $(res.data).each(function (i, n) {
+                    $("#SealId").append("<option  value='" + n.Id + "'>" + n.SealName + "</option>");
+                });
+               form.render("select");//必须
+              }
+        });
+        $(".pen").addClass("pen");
+        $(".layui-select-title").children("input").addClass("pen");
+       
+      
+        /**
+        *计算盖章总数
+        **/
+        function counttotal() {
+            var gzfs = parseInt($("input[name=SealNumber]").val());
+            var mfgzs = parseInt($("input[name=EachNumber]").val());
+            if (isNaN(gzfs) || gzfs < 0) {
+                gzfs = 0;
+            }
+            if (isNaN(mfgzs) || mfgzs < 0) {
+                mfgzs = 0;
+            }
+            $("input[name=SealTotal]").val(gzfs * mfgzs);
+        }
+        //盖章数文本框
+        $("input[name=SealNumber]").blur(function () {
+            counttotal();
+        });
+        //每份盖章数
+        $("input[name=EachNumber]").blur(function () {
+            counttotal();
+        });
+         wooutil.showView({
+            objId: txtId,
+            url: '/ContractDraft/ContText/SealShowView',
+            formFilter: 'NF-ContTextSealForm',
+             form: form
+            
+         });
+        function pen() {
+            $(".layui-select-title").children("input").addClass("pen");
+        }
+      
+    });
+    
+</script>
+

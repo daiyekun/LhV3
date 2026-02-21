@@ -1,0 +1,9 @@
+﻿接口页面：
+http://localhost/swagger/index.html
+UI https://weui.shanliwawa.top/weui/index.html
+
+
+微信开发隧道：http://lhwx.vipgz4.idcfengye.com  16471957947
+
+
+dotnet NF.WeiXinApp.dll --urls="http://*:8029" --ip="127.0.0.1" --port=8029

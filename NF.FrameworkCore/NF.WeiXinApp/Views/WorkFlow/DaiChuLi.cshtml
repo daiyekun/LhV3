@@ -1,0 +1,256 @@
+﻿
+@{
+    ViewData["Title"] = "待处理";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+     .content-wg {
+            border: 1px solid #ffffff;
+            border-radius: 5px 5px 5px 5px;
+            background-color:#fbfafa;
+            margin-top:5px;
+            margin-left:20px;
+            padding:0px;
+        }
+        .appuser {
+            text-align: right;
+            padding: 0 15px 0 0;
+            color:#000000;
+            font-size:14px;
+           
+        }
+        .appusername{
+            color:#000000;
+             padding: 5px 0px 10px 0px;
+        }
+        .flownode {
+            border-bottom: solid 1px #e6e0e0;
+            padding:6px 0px 6px 5px;
+            border-radius: 5px 5px 0 0;
+            font-size: 16px;
+          
+         
+        }
+        .appyijian {
+            padding: 5px 8px 8px 8px;
+            font-size: 14px;
+          
+        }
+        .msgcontent{
+             width:100%; 
+             padding:0px 5px 0px 0px;
+             text-align:center;
+             margin:10px 10px 8px 5px;
+            
+        }
+        .sucmsgdiv{
+            width:98%;
+            height:45px;
+            background-color:#07C160;
+            border-radius: 8px;
+            font-size: 18px;
+            color:#fff;
+            border:3px solid #FFF;
+            text-align:left; 
+            vertical-align:middle;
+           /* padding:12px 0px 0px 5px;*/
+            -webkit-text-size-adjust: 100%;
+            -webkit-box-align: center;
+                align-items: center;
+                display: flex;
+                box-sizing: border-box;
+                   position: relative;
+                 padding: 8px 10px;
+
+        }
+        .apptitle{
+            padding:0;
+            margin:0;
+
+        }
+        
+       
+
+   
+</style>
+<input type="hidden" id="Pag" />
+<input type="hidden" id="Ts" />
+<input type="hidden" id="keyWord" />
+<input type="hidden" id="Wx" value="@ViewData["wxzh"]" />
+<input type="hidden" id="HtType" value="@ViewData["HtTye"]" />
+<a href="/Home/Eees" type="hidden" id="wxnamenull"></a>
+<div class="weui-search-bar">
+    <input type="search" class="search-input" id='searchInput' placeholder='名称、编号' /><button class="weui-btn weui-btn_mini weui-btn_primary" id="btnsearch"><i class="icon icon-4"></i></button>
+</div>
+ <div class="msgcontent" id="msgcontent">
+         <div id="spsucmsg" class="sucmsgdiv">
+           <div class="apptitle"><i class="icon icon-67"></i><span style="margin-left:5px;">您还有<span id="approwcount">0</span>条待处理审批</span></div>
+          
+        </div>
+
+        </div>
+<div class="weui-panel weui-panel_access">
+    
+    <div class="weui-panel__bd page-back list-box" id="rank-list"> </div>
+
+    <div class="weui-panel__ft" style="margin-bottom:100px;">
+        <a href="javascript:void(0);" class="weui-cell weui-cell_access weui-cell_link">
+            <div class="weui-cell__bd list-more" id="getmore">查看更多<i id="loading" class="weui-loading"></i></div>
+        </a>
+    </div>
+</div>
+
+
+<script src="~/lib/modules/workflow/daichuli-index.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

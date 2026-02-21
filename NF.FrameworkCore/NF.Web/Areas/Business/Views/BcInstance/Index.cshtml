@@ -1,0 +1,86 @@
+﻿
+@{
+    ViewData["Title"] = "单品管理列表";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="layui-fluid">
+    <input type="hidden" name="hide_keyWord" />
+    <div class="layui-card">
+        <div class="layui-card-body">
+            <table id="NF-BcInstance-Index" lay-filter="NF-BcInstance-Index"></table>
+            <script type="text/html" id="nameTpl">
+                <a class="layui-table-link hand" lay-text="查看详情" lay-event="detail">
+                    <cite>{{d.Name}}</cite>
+                </a>
+            </script>
+
+
+            <!--表格工具栏-->
+            <script id="toolbcinstance" type="text/html">
+                <button class="layui-btn" lay-event="cateSearch">
+                    <i class="layui-icon layui-icon-triangle-d layuiadmin-button-btn"></i>显示业务品类
+                </button>
+                <div class="layui-inline">
+                    <input class="layui-input" type="text" name="keyWord" placeholder="名称、编号" style="width:240px;" />
+                </div>
+                <div class="layui-inline">
+                    <button class="layui-btn" lay-event="search">
+                        <i class="layui-icon layui-icon-search layuiadmin-button-btn"></i>
+                    </button>
+                    <button class="layui-btn" lay-event="add">
+                        <i class="layui-icon layui-icon-edit layuiadmin-button-btn"></i>
+                        新增
+                    </button>
+                    <button class="layui-btn" lay-event="batchdel">
+                        <i class="layui-icon layui-icon-delete layuiadmin-button-btn"></i>批量删除
+                    </button>
+                    @*<div class="layui-btn  layui-unselect layui-form-select downpanel">
+                <div class="layui-select-title">
+                    状态流转
+                    <i class="layui-edge"></i>
+                </div>
+                <dl class="layui-anim layui-anim-upbit datastate"></dl>
+            </div>*@
+                    <button class="layui-btn" lay-event="exportexcel">
+                        <i class="layui-icon layui-icon-export layuiadmin-button-btn"></i>导出Excel
+                    </button>
+                </div>
+            </script>
+
+            @*操作*@
+            <script type="text/html" id="table-actfinance-bar">
+                <a class="layui-btn layui-btn-normal layui-btn-xs" lay-event="edit"><i class="layui-icon layui-icon-edit"></i>修改</a>
+                <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del"><i class="layui-icon layui-icon-delete"></i>删除</a>
+
+            </script>
+
+        </div>
+    </div>
+</div>
+<!--类别菜单容器-->
+<div class="layui-card layui-hide" id="cateDiv">
+    <div class="layui-card-body">
+        <input type="hidden" id="hdselCateIds" />
+        <div id="BcCategory_Tree" style="width: 100%; height:310px; overflow:auto;">
+            
+        </div>
+    </div>
+</div>
+@{
+    Html.RenderPartial("_ExportExcelSetPartial");
+    Html.RenderPartial("_LayuiScriptsPartial");
+}
+<script>
+    layui.config({
+        base: '/lib/layuiadmin/'
+    }).extend({
+        index: 'lib/index'
+        ,bcInstanceIndex: 'business-nf/bcinstance-index'
+        , nfBcTree: 'nf-plugs/biccatetree'
+
+    }).use(['index', 'bcInstanceIndex'], function () {
+
+     });
+</script>
+

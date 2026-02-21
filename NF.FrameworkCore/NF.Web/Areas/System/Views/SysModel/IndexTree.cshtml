@@ -1,0 +1,317 @@
+﻿
+@{
+    ViewData["Title"] = "IndexTree";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="layui-fluid">
+    <div class="layui-card">
+        <div class="layui-form layui-card-header layuiadmin-card-header-auto">
+            <div class="layui-form-item">
+                <div class="layui-inline">
+                    <input type="text" name="keyWord" placeholder="名称" style="width:300px;" autocomplete="off" class="layui-input">
+                </div>
+                <div class="layui-inline">
+                    <button class="layui-btn layuiadmin-btn-useradmin NF-sysmodel-front-search"  id="NF-sysmodel-btn-search" lay-filter="NF-system-sysmodel-search">
+                        <i class="layui-icon layui-icon-search layuiadmin-button-btn"></i>
+                    </button>
+                    <button class="layui-btn layuiadmin-btn-sysmodel" data-type="add"> 新增</button>
+                    @*<button class="layui-btn layuiadmin-btn-sysmodel" data-type="batchdel">批量删除</button>*@
+
+                </div>
+            </div>
+        </div>
+        <div class="layui-card-body">
+            <table id="NF-system-sysmodelTree" lay-filter="NF-system-sysmodelTree"></table>
+          
+            <!--图标-->
+            <script type="text/html" id="IcoTpl">
+                <i class="layui-icon {{d.Ico}}"></i>
+            </script>
+
+
+            @*操作*@
+            <script type="text/html" id="table-system-sysmodeltbar">
+                <a class="layui-btn layui-btn-normal layui-btn-xs" lay-event="edit"><i class="layui-icon layui-icon-edit"></i>修改</a>
+                {{#  if(d.Id ==1){ }}
+                <a class="layui-btn layui-btn-disabled layui-btn-xs"><i class="layui-icon layui-icon-delete"></i>删除</a>
+                {{#  } else { }}
+                <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del"><i class="layui-icon layui-icon-delete"></i>删除</a>
+                {{#  } }}
+            </script>
+            <script type="text/html" id="table-system-sysmodelordertbar">
+                <a class="layui-btn layui-btn-normal layui-btn-xs" lay-event="up"><i class="layui-icon layui-icon-up"></i>上移</a>
+                <a class="layui-btn layui-btn-normal layui-btn-xs" lay-event="down"><i class="layui-icon layui-icon-down"></i>下移</a>
+
+            </script>
+            @*状态*@
+            <script type="text/html" id="sysmodelIsshowTpl">
+                <input type="checkbox" name="Ustart" value="{{d.Id}}" lay-skin="switch" lay-text="是|否" lay-filter="sysmodelIsShow" {{ d.IsShow == 1 ? 'checked' : '' }}>
+            </script>
+        </div>
+    </div>
+</div>
+
+@{
+    Html.RenderPartial("_LayuiScriptsPartial");
+}
+
+<script>
+    layui.config({
+        base: '/lib/layuiadmin/'
+    }).extend({
+        index: 'lib/index', //主入口模块
+        treetable: 'treetable-lay/treetable'
+
+
+        }).use(['index',  'treetable'], function () {
+        var $ = layui.$
+            , form = layui.form
+            , admin = layui.admin
+            , setter = layui.setter
+            ,table = layui.table
+            , treetable = layui.treetable;
+
+            var renderTable = function () {
+                layer.load(2);
+                treetable.render({
+                    treeColIndex: 1,          // treetable新增参数
+                    treeSpid: -1,             // treetable新增参数
+                    treeIdName: 'd_Id',       // treetable新增参数
+                    treePidName: 'd_Pid',     // treetable新增参数
+                    treeDefaultClose: false,   // treetable新增参数
+                    treeLinkage: true,        // treetable新增参数
+                    elem: '#NF-system-sysmodelTree',
+                    url: '/System/sysmodel/GetTreeTable?rand=' + wooutil.getRandom()
+                    ,height: setter.table.height_2,
+                    cols: [[
+                        { type: 'numbers' },
+                        //{ type: 'checkbox' },
+                        //{ field: 'Id', title: 'ID' },
+                        { field: 'Name', title: '名称', width: 180, minWidth: 180 },
+                        { field: 'No', title: '编号', width: 120, minWidth: 80},
+                        { field: 'Ico', title: '图标', width: 100, templet: '#IcoTpl' }
+                        , { field: 'RequestUrl', title: 'URL', width: 140 }
+                        , { field: 'AreaName', title: '区域名称', width: 140 }
+                        , { field: 'IsShow', title: '是否显示', width: 130, templet: '#sysmodelIsshowTpl' }
+                        , { field: 'Sort', title: '排序', width: 150, align: 'center', toolbar: '#table-system-sysmodelordertbar' }
+                        , { title: '操作', width: 150, align: 'center', templet: '#table-system-sysmodeltbar' }
+                    ]],
+                    done: function () {
+                        layer.closeAll('loading');
+                    }
+                });
+            };
+            renderTable();
+
+            
+
+            /************************************公共方法begin*************************************************/
+            
+            function UpdateField(_id, _fieldName,_fieldVal,_reload) {
+                admin.req({
+                    url: '/System/sysmodel/UpdateField',
+                    data: { Id: _id, fieldName: _fieldName, fieldValue: _fieldVal },
+                    done: function (res) {
+                        if (_reload) {
+                            renderTable();
+                        }
+                        layer.msg('操作成功！');
+
+                    }
+
+                });
+            }
+            /**************************************公共方法end**********************************************************/
+            //监听状态操作
+            form.on('switch(sysmodelIsShow)', function (obj) {
+                var state = obj.elem.checked ? 1 : 0;//状态
+                UpdateField(this.value, "IsShow", state, false);
+               
+            });
+
+            //监听工具条
+            table.on('tool(NF-system-sysmodelTree)', function (obj) {
+                var data = obj.data;
+                var layEvent = obj.event;
+                if (layEvent === 'del') {
+                    // wooutil.deleteInfo(table, "NF-system-sysmodel", obj, '/System/Sysmodel/Delete');
+                    //layer.msg('删除' + data.id);
+                    var tempId = [];
+                    layer.confirm('确定要删除吗？', { icon: 3, title: '提示信息' }, function (index) {
+                        tempId.push(data.id);
+                        admin.req({
+                            url: "/System/Sysmodel/Delete",// '/System/UserInfor/Delete',
+                            data: { Ids: tempId.toString() },
+                            done: function (res) {
+                                obj.del();//删除缓存
+                                renderTable();//刷新
+                                layer.msg('已删除');
+                            }
+
+                        });
+                    });
+
+                } else if (layEvent === 'edit') {
+                    layer.open({
+                        type: 2
+                        , title: '修改菜单'
+                        , content: '/System/sysmodel/Build?Id=' + obj.data.Id + "&rand=" + wooutil.getRandom()
+                        , maxmin: true
+                        , area: ['60%', '80%']
+                        // , area: [window.screen.width / 2 + 'px', window.screen.height / 2 + 'px'] //宽高
+                        , btn: ['确定', '取消']
+                        , btnAlign: 'c'
+                        , yes: function (index, layero) {
+
+                            var iframeWindow = window['layui-layer-iframe' + index]
+                                , submitID = 'Nf-SystemAdmin-SysModelFormSubmit'
+                                , submit = layero.find('iframe').contents().find('#' + submitID);
+                            //监听提交
+                            iframeWindow.layui.form.on('submit(' + submitID + ')', function (data) {
+                               
+                                var field = data.field; //获取提交的字段
+                                //var res = wooutil.UniqueVal("/System/sysmodel/CheckInputValExist", "Name", field.Name, field.Id);
+                                var res = wooutil.UniqueValObj({
+                                    url: '/System/sysmodel/CheckInputValExist',
+                                    fieldName: 'Name',
+                                    inputVal: field.Name,
+                                    currId: field.Id
+                                });
+                                if (!res) {
+                                    admin.req({
+                                        url: "/System/sysmodel/UpdateSave",
+                                        data: field,
+                                        type: 'POST',
+                                        success: function (res) {
+
+                                            layer.msg("保存成功！", { icon: 1, time: 500 }, function (msgindex) {
+                                                renderTable();//刷新
+                                                layer.close(index); //关闭弹层
+                                            });
+
+
+                                        }
+                                    });
+                                    // wooutil.SaveForm(table, "/System/sysmodel/UpdateSave", 'NF-system-sysmodel', field, '保存成功！', index);
+                                } else {
+                                    layer.msg('当前菜单已经存在！');
+
+                                }
+                                return false;
+
+                            });
+
+                            submit.trigger('click');
+                        },
+                        success: function (layero, index) {
+                            layer.full(index);
+                            wooutil.openTip();
+                        }
+                    });
+
+                } else if (layEvent === 'up') {//上移
+                    UpdateField(obj.data.Id,"Sort",0,true);
+                   
+                }
+                else if (layEvent === 'down') {//下移
+                    UpdateField(obj.data.Id, "Sort",1,true);
+                }
+
+            });
+           
+
+       
+            $('#NF-sysmodel-btn-search').click(function () {
+            var keyword = $('input[name=keyWord]').val();
+            var searchCount = 0;
+            $('#NF-system-sysmodelTree').next('.treeTable').find('.layui-table-body tbody tr td').each(function () {
+                $(this).css('background-color', 'transparent');
+                var text = $(this).text();
+                if (keyword !== '' && text.indexOf(keyword) >= 0) {
+                    $(this).css('background-color', 'rgba(250,230,160,0.5)');
+                    if (searchCount === 0) {
+                        treetable.expandAll('#NF-system-sysmodelTree');
+                        $('html,body').stop(true);
+                        $('html,body').animate({ scrollTop: $(this).offset().top - 150 }, 500);
+                    }
+                    searchCount++;
+                }
+            });
+            if (keyword === '') {
+                layer.msg("请输入搜索内容", { icon: 5 });
+            } else if (searchCount === 0) {
+                layer.msg("没有匹配结果", { icon: 5 });
+            }
+        });
+
+        //事件
+            var active = {
+                //batchdel: function () {//删除
+                //    wooutil.deleteDatas(table, 'NF-system-sysmodel', '/System/Sysmodel/Delete');
+                //},
+                add: function () {
+                    layer.open({
+                        type: 2
+                        , title: '新增'
+                        , content: '/System/sysmodel/Build'
+                        , maxmin: true
+                        , area: ['60%', '80%']
+                        , btn: ['确定', '取消']
+                        , btnAlign: 'c'
+                        , skin: "layer-ext-myskin"
+                        , yes: function (index, layero) {
+                            var iframeWindow = window['layui-layer-iframe' + index]
+                                , submitID = 'Nf-SystemAdmin-SysModelFormSubmit'
+                                , submit = layero.find('iframe').contents().find('#' + submitID);
+                            //监听提交
+                            iframeWindow.layui.form.on('submit(' + submitID + ')', function (data) {
+                                var field = data.field; //获取提交的字段
+                              
+                                var res = wooutil.UniqueValObj({
+                                    url: '/System/SysModel/CheckInputValExist',
+                                    fieldName: 'Name',
+                                    inputVal: data.field.Name,
+                                    currId: 0
+                                });
+                                if (!res) {
+                                    admin.req({
+                                        url: "/System/SysModel/AddSave",
+                                        data: field,
+                                        type: 'POST',
+                                        success: function (res) {
+                                            //wooutil.reloadTable(table, msg, _tableId);
+                                            layer.msg("保存成功！", { icon: 1, time: 500 }, function (msgindex) {
+                                                renderTable();//刷新
+                                                layer.close(index); //关闭弹层
+                                            });
+
+
+                                        }
+                                    });
+
+
+                                } else {
+                                    layer.msg('当前信息已经存在！');
+
+                                }
+                                return false;
+
+
+                            });
+
+                            submit.trigger('click');
+                        },
+                        success: function (layero, index) {
+                            layer.full(index);
+                            wooutil.openTip();
+                        }
+                    });
+                }
+            };
+        $('.layui-btn.layuiadmin-btn-sysmodel').on('click', function () {
+            var type = $(this).data('type');
+            active[type] ? active[type].call(this) : '';
+        });
+
+    });
+</script>

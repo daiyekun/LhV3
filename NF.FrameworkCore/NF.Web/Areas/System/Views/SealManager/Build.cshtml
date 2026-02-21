@@ -1,0 +1,105 @@
+﻿
+@{
+    ViewData["Title"] = "印章管理";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="layui-fluid">
+    <!--基本信息begin-->
+    <div class="layui-form" lay-filter="NF-SealManagerForm">
+        <!--修改时使用-->
+        <input type="hidden" id="Id" name="Id" />
+
+        <!--合同ID-->
+        <input type="hidden" name="MainDeptId" id="MainDeptId" />
+        <div class="layui-card ">
+            <div class="layui-card-header">基本信息</div>
+            <div class="layui-card-body" style="padding: 15px;">
+                <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                    <div class="layui-col-lg4 layui-col-md4 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">印章名称</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="SealName" lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input pen" />
+                        </div>
+                    </div>
+                    <div class="layui-col-lg4 layui-col-md4 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">印章编号</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="SealCode" lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input pen" />
+                        </div>
+                    </div>
+                    <div class="layui-col-lg4 layui-col-md4 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">保管人</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="KeeperUserName" id="KeeperUserName" lay-verify="required" class="layui-input pen" />
+                            <input type="hidden" name="UserId" id="UserId"  />
+                        </div>
+                    </div>
+
+                </div>
+                
+                <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                    <div class="layui-col-lg12 layui-col-md12 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">说明</label>
+                        <div class="layui-input-block">
+                            <textarea name="Remark" class="layui-textarea"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <!--需要在最后加这个或者没有也加一个 <div class="layui-form-item">，这样不会导致隐藏菜单是显示问题-->
+                <div class="layui-form-item">
+
+                </div>
+            </div>
+        </div>
+
+        <div class="layui-form-item layui-layout-admin layui-hide">
+            <div class="layui-input-block">
+                <div class="layui-footer" style="left: 0;">
+                    <button class="layui-btn" id="NF-SealManager-FormSubmit" lay-submit lay-filter="NF-SealManager-FormSubmit">保存</button>
+                    <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+@{
+    Html.RenderPartial("_LayuiScriptsPartial");
+}
+<script>
+
+    layui.config({
+        base: '/lib/layuiadmin/'
+    }).extend({
+        index: 'lib/index',
+        commonnf: 'common-nf/commonnf',
+        tableSelect: 'layui-nf-plugs/tableSelect',
+        selectnfitem: 'common-nf/selectnfitem',
+    }).use(['index', 'form', 'selectnfitem', 'tableSelect'], function ()
+    {
+          var $ = layui.$
+          , form = layui.form
+          ,tableSelect = layui.tableSelect
+         , selectnfitem = layui.selectnfitem;
+          var _objId = wooutil.getQueryString('Id');
+          selectnfitem.selectUserItem(
+            {
+                tableSelect: tableSelect,
+                elem: '#KeeperUserName',
+                hide_elem: '#UserId'
+
+            });
+        //修改显示
+           wooutil.showView({
+            objId: _objId,
+            url: '/System/SealManager/ShowView',
+            formFilter: 'NF-SealManagerForm',
+            form: form
+          });
+    });
+</script>
+
+
+
+
+

@@ -1,0 +1,148 @@
+﻿
+@{
+    ViewData["Title"] = "新建单品";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="layui-fluid">
+    <!--单品基本信息begin-->
+    <div class="layui-form" lay-filter="NF-BcInstanceForm">
+        <!--修改时使用-->
+        <input type="hidden" id="Id" name="Id" />
+
+        <div class="layui-card ">
+            <div class="layui-card-header">基本信息</div>
+            <div class="layui-card-body" style="padding: 15px;">
+                <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">所属类别</label>
+                        <div class="layui-input-block">
+                            <input type="text" id="NF-LbId" lay-filter="NF-LbId" name="LbId" lay-verify="required" placeholder="请选择" class="layui-input pen" />
+                        </div>
+                    </div>
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">名称</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="Name" lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input pen" />
+                        </div>
+                    </div>
+
+                </div>
+                <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">编号</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="Code" lay-verify="required" class="layui-input pen" placeholder="请输入" />
+                        </div>
+                    </div>
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">单位</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="Unit" lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input pen" />
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">报价</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="Price" lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input pen lhmoney" />
+                        </div>
+                    </div>
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">属性</label>
+                        <div class="layui-input-block">
+                            <select name="Pro" id="Pro" lay-search="">
+                                <option value="0">采购</option>
+                                <option value="1">销售</option>
+                                <option value="2" selected="selected">采购销售</option>
+
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                    <div class="layui-col-lg12 layui-col-md12 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">备注</label>
+                        <div class="layui-input-block">
+                            <textarea name="Remark" class="layui-textarea"></textarea>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <!--需要在最后加这个或者没有也加一个 <div class="layui-form-item">，这样不会导致隐藏菜单是显示问题-->
+                <div class="layui-form-item">
+
+                </div>
+
+            </div>
+        </div>
+
+
+
+        <!--按钮begin-->
+        <div class="layui-form-item layui-layout-admin layui-hide">
+            <div class="layui-input-block">
+                <div class="layui-footer" style="left: 0;">
+                    <button class="layui-btn" id="NF-BcInstance-FormSubmit" lay-submit lay-filter="NF-BcInstance-FormSubmit">保存</button>
+                    <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                </div>
+            </div>
+        </div>
+        <!--按钮begin-->
+    </div>
+    <!--单品基本信息end-->
+    @*附件begin*@
+       <div class="layui-card ">
+        <div class="layui-card-header">附件</div>
+        <div class="layui-card-body">
+            <table id="NF-BcAttachment" lay-filter="NF-BcAttachment"></table>
+            <!--表格工具栏-->
+            <script id="toolBcAttachment" type="text/html">
+                <div class="layui-inline">
+                    <button class="layui-btn " lay-event="add"><i class="layui-icon layui-icon-edit"></i> 新增</button>
+                    <button class="layui-btn  layui-btn-danger" lay-event="batchdel"><i class="layui-icon layui-icon-delete"></i>批量删除</button>
+                </div>
+            </script>
+            <script type="text/html" id="tabl-bcAttachmentbar">
+                <a class="layui-btn layui-btn-xs" lay-event="download"><i class="layui-icon layui-icon-edit"></i>下载</a>
+                <a class="layui-btn layui-btn-normal layui-btn-xs" lay-event="edit"><i class="layui-icon layui-icon-edit"></i>修改</a>
+                <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del"><i class="layui-icon layui-icon-delete"></i>删除</a>
+            </script>
+        </div>
+        </div>
+       
+     @*附件end*@
+        </div>
+
+        @{
+            Html.RenderPartial("_LayuiScriptsPartial");
+        }
+        <script>
+
+    layui.config({
+        base: '/lib/layuiadmin/'
+    }).extend({
+        index: 'lib/index', //主入口模块
+        bcInstanceBuild: 'business-nf/bcinstance-build',
+        treeSelect: 'layui-nf-plugs/treeselect'
+    }).use(['index', 'form', 'bcInstanceBuild'], function () {
+        var $ = layui.$
+                   , admin = layui.admin
+                   , element = layui.element
+                   , layer = layui.layer
+                   , table = layui.table
+                   , form = layui.form;
+    
+
+       
+
+            
+        
+
+    });
+</script>

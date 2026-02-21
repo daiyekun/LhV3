@@ -1,0 +1,593 @@
+/**********
+--jQuery Mobile 主题覆盖
+**********/
+
+* {
+    font-weight: normal !important;
+}
+
+.ui-page-theme-a a:visited, html .ui-bar-a a:visited, html .ui-body-a a:visited, html body .ui-group-theme-a a:visited {
+    /*color: #29abe2;*/
+    color: #3388cc;
+}
+
+.ui-page-theme-a .ui-header.ui-bar-inherit {
+    background: #52595a;
+    border-color: #ddd;
+    color: #fff;
+    font-weight: bold;
+    text-shadow: 0 -1px 0 #000000;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#656a6b), to(#101818)); /* Saf4+, Chrome */
+    background-image: -webkit-linear-gradient(#656a6b, #101818); /* Chrome 10+, Saf5.1+ */
+    background-image: -moz-linear-gradient(#656a6b, #101818); /* FF3.6 */
+    background-image: -ms-linear-gradient(#656a6b, #101818); /* IE10 */
+    background-image: -o-linear-gradient(#656a6b, #101818); /* Opera 11.10+ */
+    background-image: linear-gradient(#656a6b, #101818);
+}
+
+.ui-page-theme-a .ui-header .ui-btn {
+    background: transparent !important;
+    border: none !important;
+    color: #fff;
+    text-shadow: none;
+    text-indent: -9999px;
+    -webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    box-shadow: none !important;
+}
+
+.ui-page-theme-a .ui-header {
+    border-top: none;
+}
+
+.ui-page-theme-a .ui-footer {
+    background-color: #fff;
+    border-bottom: none;
+}
+
+.ui-page-theme-a .ui-footer .ui-navbar {
+    border-top: 1px solid #fff !important;
+
+}
+
+.ui-page-theme-a .ui-footer .ui-btn {
+    color: #2992ff;
+    text-shadow: none;
+    padding: 0.4em 1em;
+}
+
+.ui-page-theme-a .ui-header .ui-btn:after {
+    background-color: transparent;
+}
+
+.ui-page-theme-a .ui-footer .ui-btn:after {
+    background-color: transparent;
+}
+
+.ui-page-theme-a .ui-footer .ui-btn.ui-btn-icon-top {
+    padding-top: 3.2em;
+}
+
+.ui-page-theme-a .ui-footer .ui-btn.ui-btn-icon-top:after {
+    top: 0.4em;
+    width: 32px;
+    height: 32px;
+    margin-left: -16px;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+}
+
+.ui-page-theme-a .ui-footer .ui-btn.ui-btn-active {
+    background-color: #363f40;
+    border-color: #363f40;
+    color: #fff;
+    text-shadow: none;
+}
+
+.ui-page-theme-a .ui-collapsible .ui-collapsible-heading .ui-btn {
+    background: #3388cc;
+    color: #fff;
+    text-shadow: none;
+}
+
+/**********
+--通用样式
+**********/
+
+/**********
+--分段控件
+    <div data-role="footer" data-position="fixed" data-theme="d" class="segmented-control">
+        <div data-role="controlgroup" data-type="horizontal">
+            <a href="#" data-role="button" class="ui-control-active">item1</a>
+            <a href="#" data-role="button" class="ui-control-inactive">item2</a>
+            <a href="#" data-role="button" class="ui-control-inactive">item3</a>
+        </div>
+    </div>
+**********/
+
+.segmented-control {
+    text-align: center
+}
+
+.segmented-control .ui-controlgroup {
+    margin: 0.2em;
+}
+
+.ui-control-active, .ui-control-inactive {
+    border-style: solid;
+    border-color: grey;
+}
+
+.ui-control-active {
+    background: #bbb;
+}
+
+.ui-control-inactive {
+    background: #ddd;
+}
+
+/**********
+--自定义图标
+**********/
+
+.ui-icon-c-refresh {
+    background: url(../img/icon/01-refresh.png) 50% 50% no-repeat;
+    background-size: 24px 26px;
+}
+
+.ui-page-theme-a .ui-footer .ui-icon-c-yewu {
+    background: transparent !important;
+    background-image: url(../img/c-yewu.png) !important;
+    background-size: 32px 32px !important;
+    background-repeat: no-repeat !important;
+    background-position: 50% 4px !important;
+}
+
+.ui-page-theme-a .ui-footer .ui-btn-active.ui-icon-c-yewu {
+    background-image: url(../img/c-yewu-s.png) !important;
+    background-color: #363f40 !important;
+}
+
+.ui-page-theme-a .ui-footer .ui-icon-c-shenpi {
+    background: transparent !important;
+    background-image: url(../img/c-shenpi.png) !important;
+    background-size: 32px 32px !important;
+    background-repeat: no-repeat !important;
+    background-position: 50% 4px !important;
+}
+
+.ui-page-theme-a .ui-footer .ui-btn-active.ui-icon-c-shenpi {
+    background-image: url(../img/c-shenpi-s.png) !important;
+    background-color: #363f40 !important;
+}
+
+.ui-page-theme-a .ui-footer .ui-icon-c-tixing {
+    background: transparent !important;
+    background-image: url(../img/c-tixing.png) !important;
+    background-size: 32px 32px !important;
+    background-repeat: no-repeat !important;
+    background-position: 50% 4px !important;
+}
+
+.ui-page-theme-a .ui-footer .ui-btn-active.ui-icon-c-tixing {
+    background-image: url(../img/c-tixing-s.png) !important;
+    background-color: #363f40 !important;
+}
+
+.ui-page-theme-a .ui-footer .ui-icon-c-shezhi {
+    background: transparent !important;
+    background-image: url(../img/c-shezhi.png) !important;
+    background-size: 32px 32px !important;
+    background-repeat: no-repeat !important;
+    background-position: 50% 4px !important;
+}
+
+.ui-page-theme-a .ui-footer .ui-btn-active.ui-icon-c-shezhi {
+    background-image: url(../img/c-shezhi-s.png) !important;
+    background-color: #363f40 !important;
+}
+
+/**********
+--长文字自动换行
+**********/
+
+.ui-li .ui-btn-text a.ui-link-inherit, .ui-btn-inner {
+    white-space: normal;
+}
+
+.ui-header .ui-title, .ui-footer .ui-title {
+    white-space: normal;
+}
+
+.ui-li-heading, .ui-li-desc {
+    white-space: normal;
+}
+
+.ui-slider-switch .ui-slider-label {
+    white-space: normal;
+}
+
+/**********
+--jQuery Validate
+**********/
+
+label.error {
+    color: red;
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 1.4;
+    margin-top: 0.5em;
+    width: 100%;
+    float: none;
+}
+
+@media screen and (orientation: portrait) {
+    label.error {
+        margin-left: 0;
+        display: block;
+    }
+}
+
+@media screen and (orientation: landscape) {
+    label.error {
+        display: inline-block;
+        margin-left: 22%;
+    }
+}
+
+/**********
+--基础样式
+**********/
+
+fieldset hr {
+    margin: 1em 0;
+    border: none;
+    border-bottom: 1px solid #ddd;
+}
+
+div.info, div.success, div.warning, div.error {
+    border: 2px solid;
+    margin: 10px 0px;
+    padding: 15px 10px 15px 10px;
+    background-repeat: no-repeat;
+    background-position: 10px center;
+    -moz-border-radius: 0.5em;
+    -webkit-border-radius: 0.5em;
+    border-radius: 0.5em;
+}
+
+div.info {
+    color: #2373a5;
+    background-color: #BDE5F8;
+}
+
+div.success {
+    color: #4F8A10;
+    background-color: #DFF2BF;
+}
+
+div.warning {
+    color: #9F6000;
+    background-color: #FEEFB3;
+}
+
+div.error {
+    color: #D8000C;
+    background-color: #FFBABA;
+}
+
+/*数字气泡*/
+.bubblecount {
+    display: block;
+    background: #D8000C;
+    color: #fff;
+    padding: 3px 9px;
+    position: absolute;
+    right: 2px;
+    top: 2px;
+    z-index: 999;
+    border-radius: 0.6em;
+    border: 0px solid #ffb0b0;
+}
+
+.ui-navbar ul li {
+    position: relative;
+}
+
+/*首页导航*/
+.gridmenu {
+    width: 100%;
+    height: 100%;
+    border-spacing: 10px;
+}
+
+.gridmenu td {
+    width: 50%;
+    padding: 0.4em 0.4em 0.5em 0.4em;
+    background-color: #1c97bc;
+    /*background-color: #2992ff;*/
+    border-radius: 10px;
+}
+
+.gridmenu td.title {
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    color: #1c97bc;
+    font-weight: bold;
+}
+
+.gridmenu td a {
+    text-decoration: none;
+    float: left;
+    display: block;
+    width: 100%;
+    text-align: left;
+    color: #fff !important;
+    margin-bottom: 6px;
+    /*text-shadow: 0 1px 0 #444444 !important;*/
+    text-shadow: none;
+}
+
+.gridmenu td a img {
+    float: left;
+    width: 32px;
+    height: 32px;
+    margin: 10px 0 0 10px;
+}
+
+.gridmenu td a span {
+    float: left;
+    text-decoration: none;
+    display: inline;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 36px;
+    margin: 8px 0 0 10px;
+}
+
+@media all and (max-device-width: 300px) {
+    .gridmenu .ui-block-a,
+    .gridmenu .ui-block-b {
+        width: 96%;
+    }
+}
+
+/*响应式列表*/
+
+.woo-list {
+    border-top: 1px solid #c1d5e5;
+    border-left: 1px solid #c1d5e5;
+
+}
+
+.woo-list thead th,
+.woo-list tbody th .ui-table-cell-label,
+.woo-list tbody td .ui-table-cell-label {
+    text-transform: uppercase;
+    font-size: 1em;
+    color: #fff;
+    text-shadow: none;
+    font-weight: bold;
+    background: #3388cc;
+}
+
+.ui-collapsible-content .woo-list thead th,
+.ui-collapsible-content .woo-list tbody th .ui-table-cell-label,
+.ui-collapsible-content .woo-list tbody td .ui-table-cell-label {
+    background: transparent;
+    color: #3388cc
+}
+
+.woo-list thead th:nth-child(1) {
+    /*隐藏ID*/
+    display: none !important;
+}
+
+.woo-list tbody th {
+    /*隐藏ID*/
+    display: none !important;
+}
+
+.woo-list tbody td.title {
+    color: #3388cc;
+}
+
+.woo-list tbody a {
+    text-decoration: none;
+}
+
+/* Add strokes */
+.woo-list thead th {
+    border-right: 1px solid #c1d5e5;
+    border-bottom: 1px solid #c1d5e5;
+}
+
+.woo-list tbody th,
+.woo-list tbody td {
+    border-right: 1px solid #c1d5e5;
+    border-bottom: 1px solid #c1d5e5;
+}
+
+@media (max-width: 30em) {
+    .woo-list {
+        border: none;
+    }
+
+    .woo-list tbody th {
+        margin-top: 0;
+        text-align: left;
+    }
+
+    .woo-list tbody th,
+    .woo-list tbody td {
+        border: none;
+        border-bottom: 1px solid #c1d5e5;
+    }
+
+    .woo-list tbody tr {
+    }
+
+    .woo-list thead th,
+    .woo-list tbody th .ui-table-cell-label,
+    .woo-list tbody td .ui-table-cell-label {
+        color: #999 !important;
+        text-shadow: none;
+        font-size: 0.8em;
+        font-weight: normal;
+        background: transparent;
+    }
+
+    .woo-list tbody td.title {
+        display: block;
+        font-size: 1em;
+        line-height: 110%;
+        padding: 0.5em 0.5em;
+        background-color: #f0f0f0;
+        color: #005599;
+    }
+
+    .woo-list tbody th .ui-table-cell-label,
+    .woo-list tbody td.title .ui-table-cell-label {
+        /*隐藏ID*/
+        display: none;
+    }
+
+    .woo-list tbody td.title {
+        margin-top: 0.3em;
+        padding-left: 1em;
+        color: #fff;
+        text-shadow: none;
+        background: #3388cc;
+    }
+
+    .ui-collapsible-content .woo-list tbody td.title {
+        background: #f0f3f5;
+        color: #3388cc
+    }
+
+    .woo-list tbody td.title a {
+        color: #fff;
+        line-height: 1.5;
+    }
+
+    .ui-collapsible-content .woo-list tbody td.title a {
+        color: #3388cc
+    }
+
+    .woo-list th,
+    .woo-list td {
+        font-size: 0.8em;
+        font-weight: bold;
+    }
+
+    .woo-list td.tr {
+        text-align: left;
+    }
+
+    .woo-list td .ui-table-cell-label,
+    .woo-list th .ui-table-cell-label {
+        min-width: 20%;
+    }
+}
+
+@media ( min-width: 30em ) {
+    /* Show the table header rows */
+    .woo-list td,
+    .woo-list th,
+    .woo-list tbody th,
+    .woo-list tbody td,
+    .woo-list thead td,
+    .woo-list thead th {
+        display: table-cell;
+        margin: 0;
+    }
+
+    .woo-list tbody tr:nth-child(even) {
+        background: #e7eff6;
+    }
+
+    /* Hide the labels in each cell */
+    .woo-list td .ui-table-cell-label,
+    .woo-list th .ui-table-cell-label {
+        display: none;
+    }
+
+    .woo-list td.tr {
+        text-align: right;
+    }
+}
+
+@media ( max-width: 30em ) {
+    /* Hack to make IE9 and WP7.5 treat cells like block level elements */
+    /* Applied in a max-width media query up to the table layout breakpoint so we don't need to negate this */
+    .woo-list td,
+    .woo-list th {
+        width: 100%;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        float: left;
+        clear: left;
+    }
+}
+
+/*选择框自动换行*/
+.ui-select span {
+    /*white-space: normal !important;*/
+}
+
+/*popup*/
+.popup {
+    padding: 1.5em;
+}
+
+/**********
+--页面样式
+**********/
+
+/* 欢迎页面 */
+
+#welcome {
+    background-color: #fff;
+    background-image: url(../img/logo.png);
+    background-repeat: no-repeat;
+    background-position: 50% 40%;
+    background-size: contain;
+}
+
+/* 详细信息页面信息展示 */
+.view li {
+    color: #666;
+    line-height: 1.6;
+}
+
+.view li span {
+    margin-left: 10px;
+    color: #333;
+    font-weight: bold;
+    white-space: normal !important;
+}
+
+.view li p {
+    white-space: normal !important;
+}
+
+.view li.unread {
+    color: #e51400;
+}
+
+.view li.readed h2 span {
+    margin-left: 0px;
+}
+
+.view li.unread h2 span {
+    margin-left: 0px;
+    color: #e51400;
+}
+
+/* 联系人列表 */
+
+.contactlist li span {
+    color: #999;
+}

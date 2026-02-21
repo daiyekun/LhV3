@@ -1,0 +1,506 @@
+﻿
+@{
+    ViewData["Title"] = "Detail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="layui-fluid">
+    <!--合同基本信息begin-->
+    <div class="layui-form" lay-filter="NF-Ajgl-Form">
+        <!--修改时使用-->
+        <input type="hidden" id="Id" name="Id" />
+        <div class="layui-card " id="contractfo">
+            <div class="layui-card-header">主要信息</div>
+            <div class="layui-card-body" style="padding: 15px;">
+                <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">标题</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="Title" id="Title" readonly="readonly" class="layui-input detail" />
+                            @* <input type="text" name="Title" lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input pen" />*@
+                        </div>
+                    </div>
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">紧急程度</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="UrgentName" id="UrgentName" readonly="readonly" class="layui-input detail" />
+                            @*<select name="Urgent" id="Urgent" lay-verify="required" lay-search>
+                                <option value="">请选择..</option>
+                            </select>*@
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">纠纷信息</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="DisName" id="DisName" readonly="readonly" class="layui-input detail" />
+                            @*<input type="text" name="DisName" id="DisName" lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input pen" />*@
+                            <input type="hidden" name="DisId" id="DisId" />
+                        </div>
+                    </div>
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">纠纷编号</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="DisCode" id="DisCode" readonly="readonly" class="layui-input detail" />
+                            @*<input type="text" name="DisCode" id="DisCode" lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input pen" />*@
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">案件名称</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="Name" id="Name" readonly="readonly" class="layui-input detail" />
+                            @*<input type="text" name="Name" lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input pen" />*@
+                        </div>
+                    </div>
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">案件编号</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="Code" id="Code" readonly="readonly" class="layui-input detail" />
+                            @*<input type="text" name="Code" lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input pen" />*@
+                        </div>
+                    </div>
+                </div>
+
+                <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">经办日期</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="HandDate" id="HandDate" readonly="readonly" class="layui-input detail" />
+                            @*<input type="text" name="HandDate" id="HandDate" lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input pen" />*@
+                        </div>
+                    </div>
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">负责人</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="ContIdName" id="ContIdName" readonly="readonly" class="layui-input detail" />
+                            @*<input type="text" name="ContIdName" id="ContIdName" lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input pen" />*@
+                            <input type="hidden" name="ContId" id="ContId" />
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">记录人</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="HandlerIdName" id="HandlerIdName" readonly="readonly" class="layui-input detail" />
+                            @*<input type="text" name="HandlerIdName" id="HandlerIdName" lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input pen" />*@
+                            <input type="hidden" name="HandlerId" id="HandlerId" />
+                        </div>
+                    </div>
+                    <div class="layui-col-lg12 layui-col-md12 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">关联案件</label>
+                        <div class="layui-input-block">
+                            <textarea readonly="readonly" class="layui-textarea detail" name="Title"></textarea>
+                        </div>
+                    </div>
+                    <!--<div class="layui-col-lg12 layui-col-md12 layui-col-xs12 layui-col-sm12">
+        <label class="layui-form-label">关联案件</label>
+        <div class="layui-input-block">
+            <textarea name="CaseBrief" id="CaseBrief" readonly="readonly" class="layui-textarea detail"></textarea>
+
+        </div>
+    </div>
+    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+        <label class="layui-form-label">我方地位</label>
+        <div class="layui-input-block">
+            <input type="text" name="WoDw" id="WoDw" readonly="readonly" class="layui-input detail" />-->
+                    @*<input type="text" name="WoDw" lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input pen" />*@
+                    <!--</div>
+    </div>-->
+                </div>
+                <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">备注</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="Remark" id="Remark" readonly="readonly" class="layui-input detail" />
+                            @*<input type="text" name="Remark" lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input pen" />*@
+                        </div>
+                    </div>
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">纠纷类别</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="DisputeName" id="DisputeName" readonly="readonly" class="layui-input detail" />
+                            @*<select name="DisputeType" id="DisputeType" lay-verify="required" lay-search>
+                                <option value="">请选择..</option>
+                            </select>*@
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">抵押物</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="Pawn" id="Pawn" readonly="readonly" class="layui-input detail" />
+                            @*<input type="text" name="Pawn" lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input pen" />*@
+                        </div>
+                    </div>
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">涉及金额(万元)</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="Amount" id="Amount" readonly="readonly" class="layui-input detail" />
+                            @*<input type="text" name="Amount" id="Amount" lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input pen" />*@
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                    <div class="layui-col-lg12 layui-col-md12 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">涉及金额备注</label>
+                        <div class="layui-input-block">
+                            <textarea name="AmoutDisc" id="AmoutDisc" readonly="readonly" class="layui-textarea detail"></textarea>
+
+                        </div>
+                    </div>
+                    <div class="layui-col-lg12 layui-col-md12 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">纠纷简述及建议</label>
+                        <div class="layui-input-block">
+                            <textarea name="DisDic" id="DisDic" readonly="readonly" class="layui-textarea detail"></textarea>
+
+                        </div>
+                    </div>
+                    <!--<div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">涉及金额备注</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="AmoutDisc" id="AmoutDisc" readonly="readonly" class="layui-input detail" />-->
+                            @*<input type="text" name="AmoutDisc" lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input pen" />*@
+                        <!--</div>
+                    </div>
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">纠纷简述及建议</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="DisDic" id="DisDic" readonly="readonly" class="layui-input detail" />-->
+                            @*<input type="text" name="DisDic" lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input pen" />*@
+                        <!--</div>
+                    </div>-->
+                </div>
+                <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                    <div class="layui-col-lg12 layui-col-md12 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">案件说明</label>
+                        <div class="layui-input-block">
+                            <textarea name="CaseRemark" id="CaseRemark" readonly="readonly" class="layui-textarea detail"></textarea>
+
+                        </div>
+                    </div>
+                    <div class="layui-col-lg12 layui-col-md12 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">案由</label>
+                        <div class="layui-input-block">
+                            <textarea name="CaseBrief" id="CaseBrief" readonly="readonly" class="layui-textarea detail"></textarea>
+
+                        </div>
+                    </div>
+                    @*<div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">案件说明</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="CaseRemark" id="CaseRemark" readonly="readonly" class="layui-input detail" />
+                           
+                        </div>
+                    </div>
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">案由</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="CaseBrief" id="CaseBrief" readonly="readonly" class="layui-input detail" />
+                           
+                        </div>
+                    </div>*@
+                </div>
+                <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                    @*<div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+            <label class="layui-form-label">关联案件</label>
+            <div class="layui-input-block">
+                <input type="text" name="Title" id="CaseRemark" readonly="readonly" class="layui-input detail" />
+
+            </div>
+        </div>*@
+                    <div class="layui-col-lg12 layui-col-md12 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">我方地位</label>
+                        <div class="layui-input-block">
+                            <textarea name="WoDw" id="WoDw" readonly="readonly" class="layui-textarea detail"></textarea>
+
+                        </div>
+                    </div>
+                    <!--<div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">我方地位</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="WoDw" id="WoDw" readonly="readonly" class="layui-input detail" />-->
+                            @*<input type="text" name="WoDw" lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input pen" />*@
+                        <!--</div>
+                    </div>-->
+                </div>
+                <!--需要在最后加这个或者没有也加一个 <div class="layui-form-item">，这样不会导致隐藏菜单是显示问题-->
+                <div class="layui-form-item">
+
+                </div>
+
+            </div>
+        </div>
+
+       
+
+        <div class="layui-collapse">
+            <div class="layui-colla-item" id="contattachment">
+                <h2 class="layui-colla-title">案件附件</h2>
+                <div class="layui-colla-content">
+                    @*合同附件begin*@
+                    <div class="layui-card ">
+
+                        <div class="layui-card-body" style="padding: 15px;">
+                            <table id="NF-Ajglfj" lay-filter="NF-Ajglfj"></table>
+                            @*表格工具栏*@
+                            <script id="toolcontattachment" type="text/html">
+                                <div class="layui-inline">
+                                   
+                                </div>
+                            </script>
+                            <script type="text/html" id="tabl-contattachmentbar">
+                               
+                            </script>
+
+                        </div>
+                    </div>
+                    @*合同附件--end*@
+
+                </div>
+            </div>
+        </div>
+
+        <div class="layui-collapse">
+            <div class="layui-colla-item">
+                <h2 class="layui-colla-title">一审信息</h2>
+                <div class="layui-colla-content">
+                    <div class="layui-card ">
+                        <div class="layui-card-body" style="padding: 15px;">
+                            <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                                <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                                    <label class="layui-form-label">开庭法院</label>
+                                    <div class="layui-input-block">
+                                        <input type="text" name="CourtName" id="CourtName" readonly="readonly" class="layui-input detail" />
+                                        @*<input type="text" name="CourtName" lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input pen" />*@
+                                    </div>
+                                </div>
+                                <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                                    <label class="layui-form-label">开庭时间</label>
+                                    <div class="layui-input-block">
+                                        <input type="text" name="BeginDate" id="BeginDate" readonly="readonly" class="layui-input detail" />
+                                        @*<input type="text" name="BeginDate" id="BeginDate" lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input pen" />*@
+                                    </div>
+                                </div>
+                            </div>
+                            @*<div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                                <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                                    <label class="layui-form-label">审判结果</label>
+                                    <div class="layui-input-block">
+                                        <input type="text" name="SpResult" id="SpResult" readonly="readonly" class="layui-input detail" />
+                                     
+                                    </div>
+                                </div>
+                                <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                                    <label class="layui-form-label">审判文书</label>
+                                 
+                                    <div class="layui-input-block">
+                                        <input type="text" name="SpFileName" id="SpFileName" readonly="readonly" class="layui-input detail" />
+                                
+                                    </div>
+
+                                </div>
+                            </div>*@
+                            <div class="layui-col-lg12 layui-col-md12 layui-col-xs12 layui-col-sm12">
+                                <div class="layui-collapse">
+                                    <div class="layui-colla-item" id="contattachment1">
+                                        <h2 class="layui-colla-title">审判文书</h2>
+                                        <div class="layui-colla-content">
+                                            <!--合同附件begin-->
+                                            <div class="layui-card ">
+
+                                                <div class="layui-card-body" style="padding: 15px;">
+                                                    <table id="NF-Ajglfj-Sqws" lay-filter="NF-Ajglfj-Sqws"></table>
+                                                    <!--表格工具栏-->
+                                                    <script id="toolcontattachment-Sqws" type="text/html">
+                                                        <div class="layui-inline">
+                                                         @*   <button class="layui-btn " lay-event="add"><i class="layui-icon layui-icon-edit"></i> 新增</button>*@
+                                                           @* <button class="layui-btn  layui-btn-danger" lay-event="batchdel"><i class="layui-icon layui-icon-delete"></i>批量删除</button>*@
+                                                            @*<button class="layui-btn" lay-event="htYuLan"><i class="layui-icon layui-icon-read "></i>预览</button>*@
+                                                        </div>
+                                                    </script>
+                                                    <script type="text/html" id="tabl-contattachmentbar-Sqws">
+                                                        @*<a class="layui-btn layui-btn-xs" lay-event="download"><i class="layui-icon layui-icon-edit"></i>下载</a>
+                                                        <a class="layui-btn layui-btn-normal layui-btn-xs" lay-event="edit"><i class="layui-icon layui-icon-edit"></i>修改</a>
+                                                        <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del"><i class="layui-icon layui-icon-delete"></i>删除</a>*@
+                                                    </script>
+
+                                                </div>
+                                            </div>
+                                            <!--合同附件--end-->
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!--需要在最后加这个或者没有也加一个 <div class="layui-form-item">，这样不会导致隐藏菜单是显示问题-->
+                            <div class="layui-form-item">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="layui-collapse">
+            <div class="layui-colla-item">
+                <h2 class="layui-colla-title">相关律师</h2>
+                <div class="layui-colla-content">
+                    <div class="layui-card ">
+                        <div class="layui-card-body" style="padding: 15px;">
+                            <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                                <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                                    <label class="layui-form-label">律师名称</label>
+                                    <div class="layui-input-block">
+                                        <input type="text" name="LawyerName" id="LawyerName" readonly="readonly" class="layui-input detail" />
+                                        @*<input type="text" name="LawyerName" lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input pen" />*@
+                                    </div>
+                                </div>
+                                <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                                    <label class="layui-form-label">负责内容</label>
+                                    <div class="layui-input-block">
+                                        <input type="text" name="HandRemark" id="HandRemark" readonly="readonly" class="layui-input detail" />
+                                        @*<input type="text" name="HandRemark" lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input pen" />*@
+                                    </div>
+                                </div>
+                            </div>
+                            <!--需要在最后加这个或者没有也加一个 <div class="layui-form-item">，这样不会导致隐藏菜单是显示问题-->
+                            <div class="layui-form-item">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--<div class="layui-collapse">
+            <div class="layui-colla-item">
+                <h2 class="layui-colla-title">保全信息</h2>
+                <div class="layui-colla-content">
+                    <div class="layui-card ">
+                        <div class="layui-card-body" style="padding: 15px;">
+                            <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                                <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                                    <label class="layui-form-label">保全类型</label>
+                                    <div class="layui-input-block">
+                                        <input type="text" name="PreTypeName" id="PreTypeName" readonly="readonly" class="layui-input detail" />
+                                     
+                                    </div>
+                                </div>
+                                <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                                    <label class="layui-form-label">诉讼保全申请书</label>
+                                    
+
+                                    <div class="layui-input-block">
+                                        <input type="text" name="PreFileName" id="PreFileName" readonly="readonly" class="layui-input detail" />
+
+                                       
+                                    </div>
+                                </div>
+                            </div>-->
+                            <!--需要在最后加这个或者没有也加一个 <div class="layui-form-item">，这样不会导致隐藏菜单是显示问题-->
+                            <!--<div class="layui-form-item">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>-->
+        <div class="layui-collapse">
+            <div class="layui-colla-item" id="contattachment2">
+                <h2 class="layui-colla-title">诉讼保全信息</h2>
+                <div class="layui-colla-content">
+                    <!--合同附件begin-->
+                    <div class="layui-card ">
+
+                        <div class="layui-card-body" style="padding: 15px;">
+                            <table id="NF-Ajglfj-Ssbq" lay-filter="NF-Ajglfj-Ssbq"></table>
+                            <!--表格工具栏-->
+                            <script id="toolcontattachment-Ssbq" type="text/html">
+                                <div class="layui-inline">
+                                    @*  <button class="layui-btn " lay-event="add"><i class="layui-icon layui-icon-edit"></i> 新增</button>*@
+                                    @*  <button class="layui-btn  layui-btn-danger" lay-event="batchdel"><i class="layui-icon layui-icon-delete"></i>批量删除</button>*@
+                                    @*<button class="layui-btn" lay-event="htYuLan"><i class="layui-icon layui-icon-read "></i>预览</button>*@
+                                </div>
+                            </script>
+                            <script type="text/html" id="tabl-contattachmentbar-Ssbq">
+                                @*<a class="layui-btn layui-btn-xs" lay-event="download"><i class="layui-icon layui-icon-edit"></i>下载</a>
+        <a class="layui-btn layui-btn-normal layui-btn-xs" lay-event="edit"><i class="layui-icon layui-icon-edit"></i>修改</a>*@
+                                @* <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del"><i class="layui-icon layui-icon-delete"></i>删除</a>*@
+                            </script>
+
+                        </div>
+                    </div>
+                    <!--合同附件--end-->
+
+                </div>
+            </div>
+        </div>
+
+
+
+        <!--按钮begin-->
+        <div class="layui-form-item layui-layout-admin layui-hide">
+            <div class="layui-input-block">
+                <div class="layui-footer" style="left: 0;">
+                    <button class="layui-btn" id="NF-Ajgl-FormSubmit" lay-submit lay-filter="NF-Ajgl-FormSubmit">保存</button>
+                    <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                </div>
+            </div>
+        </div>
+        <!--按钮end-->
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+<!--目录-->
+<ul class="site-dir layui-layer-wrap nf-ml-ul layui-hide" id="customernva">
+    <li><a href="#contractfo" rel="external nofollow" class="current">主要信息</a></li>
+
+</ul>
+
+
+@{
+    Html.RenderPartial("_LayuiScriptsPartial");
+}
+@*<script type="text/javascript" src="~/lib/signalr/dist/browser/signalr.min.js"></script>*@
+<script type="text/javascript">
+        layui.config({
+            base: '/lib/layuiadmin/'
+        }).extend({
+            index: 'lib/index', //主入口模块
+            nfcontents: 'contents-nf/nfcontents'
+            , tableSelect: 'layui-nf-plugs/tableSelect'
+            , viewPageEdit: 'viewpage-edit/viewPageEdit'
+            , selectnfitem: 'common-nf/selectnfitem'
+            , treeSelect: 'layui-nf-plugs/treeselect'
+            , CollectionContractDetail: 'Ajgl-nf/Ajgl-detail'
+            , appListHist: 'workflow-nf/approvelisthist'
+            , subMetDetail: 'subjectmatter-nf/submet-detail'
+            , wordAddin: 'addin-nf/wordAddin'
+        }).use(['index', 'element','CollectionContractDetail'], function () {
+            var element = layui.element;
+
+        });
+</script>
+

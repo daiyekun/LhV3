@@ -1,0 +1,171 @@
+﻿
+@{
+    ViewData["Title"] = "流程设置";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!--[if lt IE 9]>
+<?import namespace="v" implementation="#default#VML" ?>
+<![endif]-->
+<link rel="stylesheet" type="text/css" href="~/lib/gooflow/codebase/fonts/iconflow.css" />
+<link rel="stylesheet" type="text/css" href="~/lib/gooflow/codebase/GooFlow.css" />
+
+
+<div class="layui-fluid">
+    <div class="layui-row layui-col-space5">
+        <div class="layui-col-xs12 layui-col-md9">
+            @*<div id="flowdesignser" style="width:1024px;height:768px;"></div>*@
+            <div class="layui-card ">
+                <div class="layui-card-header">设计区</div>
+                <div class="layui-card-body" id="flowpanel">
+                    <div id="flowdesignser" style="width:100%;height:868px;"></div>
+                </div>
+                </div>
+
+                </div>
+             <div class="layui-col-xs6 layui-col-md3" >
+            <div class="layui-card ">
+                <div class="layui-card-header">基本信息
+                <span style="float:right">
+                    <button class="layui-btn layui-btn-sm layui-btn-normal tempnode-btn" data-type="saveNodeInfo">保存</button>
+                </span>
+                </div>
+                <div class="layui-card-body layui-form" style="padding:3px;" lay-filter="nodeInfo">
+
+                    @*节点ID*@
+                    <input type="hidden" name="NodeStrId" id="NodeStrId" />
+                    @*模板ID*@
+                    <input type="hidden" name="TempId" id="TempId" />
+
+                    <table class="layui-table wfnodeTb">
+                        <colgroup>
+                            <col width="90" style="padding:0px;">
+                            <col>
+                        </colgroup>
+                        <thead>
+                            <tr>
+                                <th>名称</th>
+                                <th>值</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            <tr class="fnode">
+                                <td colspan="2" class="layui-bg-blue ">
+                                    节点信息
+                                </td>
+                            </tr>
+                            <tr class="fnode">
+                                <td>节点ID</td>
+                                <td id="nodeId"></td>
+                            </tr>
+                            <tr class="fnode">
+                                <td>节点名称</td>
+                                <td  id="tdnodeName">
+                                    @*<input class="layui-input" type="text" id="nodeName"  />*@
+                                </td>
+                            </tr>
+                           
+                            <tr class="fnode">
+                                <td>审批组</td>
+                                <td id="groupId" style="padding:1px;">
+                                    <span style="float:left; width:69%">
+                                        <input type="text" name="GroupName" id="GroupName" lay-verify="required"  class="layui-input" />
+                                        <input type="hidden" name="GroupId" id="GroupId" />
+                                    </span>
+                                    <span style="float:right;width:30%" class="layui-btn layui-btn-normal  tempnode-btn" data-type="addUsers">选择</span>
+
+                                </td>
+                            </tr>
+                            <tr class="fnode">
+                                <td>用户名称</td>
+                                <td id="groUserNames"></td>
+                            </tr>
+                            <tr class="fnode">
+                                <td>审批规则</td>
+                                <td id="nrule">
+                                    <div class="layui-input-inline">
+                                        <input type="radio" name="Nrule" id="Nrule0" value="0" title="全部通过">
+                                        <input type="radio" name="Nrule" id="Nrule1" value="1" title="任意通过" checked>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="fnode">
+                                <td>是否可调节点</td>
+                                <td id="Isktz">
+                                    <div class="layui-input-inline">
+                                        <input type="radio" name="Isktz" id="Isktz0" value="0" title="是">
+                                        <input type="radio" name="Isktz" id="Isktz1" value="1" title="否" checked>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="fnode htnode">
+                                <td>修改文本</td>
+                                <td id="reviseText">
+                                    <input type="checkbox" name="ReviseText" value="1" lay-skin="switch" lay-text="是|否" />
+                                   
+                                </td>
+                            </tr>
+                            <tr class="fnode nodecdn">
+                                <td colspan="2" class="layui-bg-blue">
+                                    节点条件
+                                </td>
+                            </tr>
+                            <tr class="fnode nodecdn">
+                                <td>大于</td>
+                                <td id="minamount" style="padding:1px;">
+                                    <input class="layui-input" type="text" name="Min" placeholder="￥" />
+                                </td>
+                            </tr>
+                            <tr class="fnode nodecdn">
+                                <td>是否等于</td>
+                                <td id="minamountchk">
+                                    <input type="checkbox" name="IsMin" value="1" lay-skin="switch" lay-text="是|否" />
+                                   
+                                </td>
+                            </tr>
+                            <tr class="fnode nodecdn">
+                                <td>小于</td>
+                                <td id="maxamount" style="padding:1px;">
+                                    <input class="layui-input" name="Max" type="text" placeholder="￥" />
+                                </td>
+                            </tr>
+                            <tr class="fnode nodecdn">
+                                <td>是否等于</td>
+                                <td id="maxamountchk">
+                                    <input type="checkbox" name="IsMax" value="1" lay-skin="switch" lay-text="是|否" />
+                                   
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+
+
+
+                    <button class="layui-btn layui-btn-fluid layui-hide" id="nodeInfoFromBtn" lay-submit lay-filter="nodeInfoFromBtn">提交</button>
+
+
+                </div>
+            </div>
+        </div>
+
+            </div>
+        </div>
+@{
+    Html.RenderPartial("_LayuiScriptsPartial");
+    Html.RenderPartial("GooFlowPartial");
+}
+
+<script>
+    layui.config({
+        base: '/lib/layuiadmin/'
+    }).extend({
+        index: 'lib/index' //主入口模块
+        , workFlowTempSet: 'workflow-nf/workflowtemp-set'
+    }).use(['index', 'workFlowTempSet'], function () {
+        
+        
+     });
+</script>
+

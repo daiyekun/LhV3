@@ -1,0 +1,5 @@
+-----2022/09/16 12:05:22-----
+Error:NF.Web.Controllers.HomeController
+The type initializer for 'Microsoft.EntityFrameworkCore.Query.QueryableMethods' threw an exception.
+-----End-----
+

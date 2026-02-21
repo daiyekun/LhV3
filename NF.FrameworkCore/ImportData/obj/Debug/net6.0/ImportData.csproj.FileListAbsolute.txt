@@ -1,0 +1,8 @@
+D:\MyCode\V3.0\NF.FrameworkCore\ImportData\obj\Debug\net6.0\ImportData.csproj.AssemblyReference.cache
+D:\MyCode\V3.0\NF.FrameworkCore\ImportData\obj\Debug\net6.0\ImportData.GeneratedMSBuildEditorConfig.editorconfig
+D:\MyCode\V3.0\NF.FrameworkCore\ImportData\obj\Debug\net6.0\ImportData.AssemblyInfoInputs.cache
+D:\MyCode\V3.0\NF.FrameworkCore\ImportData\obj\Debug\net6.0\ImportData.AssemblyInfo.cs
+D:\MyCode\V3.0\NF.FrameworkCore\ImportData\obj\Debug\net6.0\ImportData.csproj.CoreCompileInputs.cache
+D:\MyCode\V3.0\NF.FrameworkCore\ImportData\obj\Debug\net6.0\ImportData.MvcApplicationPartsAssemblyInfo.cache
+D:\MyCode\V3.0\NF.FrameworkCore\ImportData\obj\Debug\net6.0\ImportData.RazorAssemblyInfo.cache
+D:\MyCode\V3.0\NF.FrameworkCore\ImportData\obj\Debug\net6.0\ImportData.RazorAssemblyInfo.cs

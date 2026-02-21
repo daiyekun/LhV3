@@ -1,0 +1,97 @@
+﻿
+@{
+    ViewData["Title"] = "收款合同标的交付明细";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="layui-fluid">
+    <div class="layui-card">
+        <div class="layui-card-body">
+            <table id="NF-CollSubMetMxIndex" lay-filter="NF-CollSubMetMxIndex"></table>
+            <!--查看详情-->
+            <script type="text/html" id="nameTpl">
+                <a class="layui-table-link hand" lay-text="查看详情" lay-event="contdetail">
+                    <cite>{{d.ContName}}</cite>
+                </a>
+            </script>
+            <script type="text/html" id="compTpl">
+                <a class="layui-table-link hand" lay-text="查看详情" lay-event="compdetail">
+                    <cite>{{d.CompName}}</cite>
+                </a>
+            </script>
+            <!--表格工具栏-->
+            <script id="toolCollSubMet" type="text/html">
+                <button class="layui-btn" lay-event="cateSearch">
+                    <i class="layui-icon layui-icon-triangle-d layuiadmin-button-btn"></i>显示业务品类
+                </button>
+                <div class="layui-inline">
+                    <input type="text" name="StratTime" class="layui-input jf-laydate-item" style="width:100px;" placeholder="开始时间">
+                </div>
+                <div class="layui-inline">
+                    <input type="text" name="EndTime" class="layui-input jf-laydate-item" style="width:100px;" placeholder="结束时间">
+                </div>
+                <div class="layui-inline">
+                    <input class="layui-input" type="text" name="keyWord" placeholder="合同名称、编号、标的名称" style="width:200px;" autocomplete="off" />
+                </div>
+                <div class="layui-inline">
+                    <button class="layui-btn" lay-event="search">
+                        <i class="layui-icon layui-icon-search layuiadmin-button-btn"></i>
+                    </button>
+                    <button class="layui-btn" lay-event="exportexcel">
+                        <i class="layui-icon layui-icon-export layuiadmin-button-btn"></i>导出Excel
+                    </button>
+                    <button class="layui-btn" lay-event="clear">
+                        <i class="layui-icon layui-icon-edit layuiadmin-button-btn"></i>清除
+                    </button>
+                </div>
+
+            </script>
+
+            @*下载*@
+            <script type="text/html" id="downloadTpl">
+                <a class="layui-table-link hand" lay-event="download">
+                    <cite>下载</cite>
+                </a>
+            </script>
+
+
+
+        </div>
+    </div>
+</div>
+<!--类别菜单容器-->
+<div class="layui-card layui-hide" id="cateDiv">
+    <div class="layui-card-body">
+        <input type="hidden" id="hdselCateIds" />
+        <div id="BcCategory_Tree" style="width: 100%; height:310px; overflow:auto;">
+
+        </div>
+    </div>
+</div>
+
+@{
+    Html.RenderPartial("_ContStatePartial");
+    Html.RenderPartial("_ExportExcelSetPartial");
+    Html.RenderPartial("_LayuiScriptsPartial");
+
+}
+
+<script>
+    layui.config({
+        base: '/lib/layuiadmin/'
+    }).extend({
+        index: 'lib/index', //主入口模块
+        collSubJiaoFundex: 'subjectmatter-nf/collsubJiaofuindex'
+        , nfBcTree: 'nf-plugs/biccatetree'
+        , soulTable: 'layui-nf-plugs/soulTable/soulTable',
+        tableChild: 'layui-nf-plugs/soulTable/tableChild',
+        tableMerge: 'layui-nf-plugs/soulTable/tableMerge',
+        tableFilter: 'layui-nf-plugs/soulTable/tableFilter',
+        excel: 'layui-nf-plugs/soulTable/excel'
+    }).use(['index', 'collSubJiaoFundex'], function () {
+
+        
+       
+
+     });
+</script>
+<link href="~/lib/layuiadmin/modules/layui-nf-plugs/soulTable/soulTable.css" rel="stylesheet" />

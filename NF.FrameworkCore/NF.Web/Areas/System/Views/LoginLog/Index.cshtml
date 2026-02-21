@@ -1,0 +1,70 @@
+﻿
+@{
+    ViewData["Title"] = "登录日志";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="layui-fluid">
+    <div class="layui-card">
+        <div class="layui-form layui-card-header layuiadmin-card-header-auto">
+            <div class="layui-form-item">
+                <div class="layui-inline">
+                    <input type="text" name="loginName" placeholder="请输入登录名称" autocomplete="off" class="layui-input">
+                </div>
+                <div class="layui-inline">
+                    <input type="text" name="loginStratTime" class="layui-input login-laydate-item" placeholder="开始时间">
+                </div>
+                <div class="layui-inline">
+                    <input type="text" name="loginEndTime" class="layui-input login-laydate-item" placeholder="结束时间">
+                </div>
+                <div class="layui-inline">
+                    <button class="layui-btn layuiadmin-btn-useradmin NF-user-front-search" lay-submit lay-filter="NF-user-front-search">
+                        <i class="layui-icon layui-icon-search layuiadmin-button-btn"></i>
+                    </button>
+                    <button class="layui-btn layuiadmin-btn-loginlog dellloginlog" data-type="batchdel">批量删除</button>
+
+                </div>
+            </div>
+        </div>
+        <div class="layui-card-body">
+            <table id="NF-user-back-loginlog" lay-filter="NF-user-back-loginlog"></table>
+        </div>
+    </div>
+</div>
+
+
+@{
+    Html.RenderPartial("_LayuiScriptsPartial");
+}
+<script type="text/javascript">
+    layui.config({
+        base: '/lib/layuiadmin/'
+    }).extend({
+        index: 'lib/index', //主入口模块
+        systemLoginlog:'system-nf/nf-system-loginlog'
+        }).use(['index', 'table', 'laydate', 'systemLoginlog'], function () {
+        var $ = layui.$
+            , form = layui.form
+            , table = layui.table
+            , laydate = layui.laydate;
+
+        //搜索
+        form.on('submit(NF-user-front-search)', function (data) {
+            var field = data.field;
+            //执行重载
+            table.reload('NF-user-back-loginlog', {
+                where: field
+            });
+        });
+        $('.layui-btn.layuiadmin-btn-loginlog').on('click', function () {
+            var type = $(this).data('type');
+            active[type] ? active[type].call(this) : '';
+        });
+        //绑定日期控件
+            lay('.login-laydate-item').each(function () {
+            laydate.render({
+                elem: this
+                , trigger: 'click'
+            });
+        });
+    });
+</script>

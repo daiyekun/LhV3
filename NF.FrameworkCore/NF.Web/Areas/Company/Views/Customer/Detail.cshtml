@@ -1,0 +1,654 @@
+﻿
+@{
+    ViewData["Title"] = "客户查看页面";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="layui-fluid">
+    <!--客户基本信息begin-->
+    <div class="layui-form" lay-filter="Nf-Company-CustomerBuildForm">
+        <!--修改时使用-->
+        <input type="hidden" id="Id" name="Id" />
+        <!--标识客户-->
+        <input type="hidden" name="Ctype" />
+        <div class="layui-card" id="customInfo">
+            <div class="layui-card-header">主要信息</div>
+            <div class="layui-card-body" style="padding: 15px;">
+                <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">名称</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="Name" id="Name" class="layui-input detail" />
+                        </div>
+                    </div>
+
+
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">编号</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="Code" class="layui-input detail" />
+                        </div>
+                    </div>
+
+                </div>
+                <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">类别</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="CompanyTypeClass" class="layui-input detail" />
+                        </div>
+                    </div>
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">首要联系人</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="FirstContact" id="FirstContact" class="layui-input detail"  />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">职位</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="FirstContactPosition" id="FirstContactPosition" class="layui-input detail"  />
+                        </div>
+                    </div>
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">联系地址</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="Address" id="Address" class="layui-input detail"  />
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">办公电话</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="FirstContactTel" id="FirstContactTel" class="layui-input detail"  />
+                        </div>
+                    </div>
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">移动电话</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="FirstContactMobile" id="FirstContactMobile" class="layui-input detail"  />
+                        </div>
+                    </div>
+
+                </div>
+                @*主要信息2---发票信息----begin*@
+                <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                    <fieldset class="layui-elem-field layui-field-title">
+                        <legend><font color="#1E9FFF" size="3">客户开票信息</font></legend>
+                        <div class="layui-field-box">
+                            <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                                <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                                    <label class="layui-form-label">名称</label>
+                                    <div class="layui-input-block">
+                                        <input type="text" name="InvoiceTitle" class="layui-input detail"  />
+                                    </div>
+                                </div>
+                                <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                                    <label class="layui-form-label">纳税识别号</label>
+                                    <div class="layui-input-block">
+                                        <input type="text" name="TaxIdentification" class="layui-input detail"  />
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                                <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                                    <label class="layui-form-label">地址</label>
+                                    <div class="layui-input-block">
+                                        <input type="text" name="InvoiceAddress" class="layui-input detail" />
+                                    </div>
+                                </div>
+                                <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                                    <label class="layui-form-label">电话</label>
+                                    <div class="layui-input-block">
+                                        <input type="text" name="InvoiceTel" class="layui-input detail"  />
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                                <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                                    <label class="layui-form-label">开户银行</label>
+                                    <div class="layui-input-block">
+                                        <input type="text" name="BankName" class="layui-input detail"  />
+                                    </div>
+                                </div>
+                                <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                                    <label class="layui-form-label">银行账号</label>
+                                    <div class="layui-input-block">
+                                        <input type="text" name="BankAccount" class="layui-input detail"  />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+
+                @*主要信息2---发票信息---end*@
+
+
+
+                
+                
+
+                <!--需要在最后加这个或者没有也加一个 <div class="layui-form-item">，这样不会导致隐藏菜单是显示问题-->
+                <div class="layui-form-item">
+
+                </div>
+
+            </div>
+        </div>
+
+        <div class="layui-collapse">
+            <div class="layui-colla-item" id="customInfotwo">
+                <h2 class="layui-colla-title">次要信息</h2>
+                <div class="layui-colla-content">
+                    <div class="layui-card ">
+                        <div class="layui-card-body" style="padding: 15px;">
+                            <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+
+                                <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                                    <label class="layui-form-label">行业</label>
+                                    <div class="layui-input-block">
+                                        <input type="text" name="Trade" id="Trade" class="layui-input detail" />
+                                    </div>
+                                </div>
+                                <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                                    <label class="layui-form-label">级别</label>
+                                    <div class="layui-input-block">
+                                        <input type="text" name="LevelName" id="LevelName" class="layui-input detail" />
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+
+                                <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                                    <label class="layui-form-label">信用等级</label>
+                                    <div class="layui-input-block">
+                                        <input type="text" name="CareditName" class="layui-input detail" />
+                                    </div>
+                                </div>
+                                <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                                    <label class="layui-form-label">国家</label>
+                                    <div class="layui-input-block">
+                                        <input type="text" name="CountryName" class="layui-input detail" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+
+                                <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                                    <label class="layui-form-label">省</label>
+                                    <div class="layui-input-block">
+                                        <input type="text" name="ProvinceName" class="layui-input detail" />
+                                    </div>
+                                </div>
+                                <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                                    <label class="layui-form-label">市</label>
+                                    <div class="layui-input-block">
+                                        <input type="text" name="CityName" class="layui-input detail" />
+
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                                <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                                    <label class="layui-form-label">邮编</label>
+                                    <div class="layui-input-block">
+                                        <input type="text" name="PostCode" id="PostCode" class="layui-input detail" />
+                                    </div>
+                                </div>
+                                <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                                    <label class="layui-form-label">公司网址</label>
+                                    <div class="layui-input-block">
+                                        <input type="text" name="WebSite" id="WebSite" class="layui-input detail" />
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+                            <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                                <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12 ">
+                                    <label class="layui-form-label">传真</label>
+                                    <div class="layui-input-block">
+                                        <input type="text" name="Fax" id="Fax" class="layui-input detail">
+                                    </div>
+                                </div>
+                                <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                                    <label class="layui-form-label">E-mail</label>
+                                    <div class="layui-input-block">
+                                        <input type="text" name="FirstContactEmail" id="FirstContactEmail" class="layui-input detail" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                                <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                                    <label class="layui-form-label">QQ/MSN</label>
+                                    <div class="layui-input-block">
+                                        <input type="text" name="FirstContactQq" id="FirstContactQq" class="layui-input detail" />
+                                    </div>
+                                </div>
+                                <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                                    <label class="layui-form-label">法人代表</label>
+                                    <div class="layui-input-block">
+                                        <input type="text" name="LegalPerson" class="layui-input detail" />
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                                <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                                    <label class="layui-form-label">注册资本</label>
+                                    <div class="layui-input-block">
+                                        <input type="text" name="RegisterCapital" class="layui-input detail" />
+                                    </div>
+                                </div>
+                                <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                                    <label class="layui-form-label">实收资本</label>
+                                    <div class="layui-input-block">
+                                        <input type="text" name="PaidUpCapital" class="layui-input detail" />
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+
+                                <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                                    <label class="layui-form-label">公司类型</label>
+                                    <div class="layui-input-block">
+                                        <input type="text" name="CompTypeName" class="layui-input detail" />
+
+                                    </div>
+                                </div>
+                                <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                                    <label class="layui-form-label">注册地址</label>
+                                    <div class="layui-input-block">
+                                        <input type="text" name="RegisterAddress" class="layui-input detail" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                                <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                                    <label class="layui-form-label">成立日期</label>
+                                    <div class="layui-input-block">
+                                        <input type="text" name="FoundDateTime" class="layui-input detail" />
+                                    </div>
+                                </div>
+
+                                <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                                    <label class="layui-form-label">截止日期</label>
+                                    <div class="layui-input-block">
+                                        <input type="text" name="ExpirationDateTime" class="layui-input detail">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                                <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                                    <label class="layui-form-label">负责人</label>
+
+                                    <div class="layui-input-block">
+                                        <input type="text" name="PrincipalUserDisplayName" id="PrincipalUserDisplayName" class="layui-input detail" />
+                                        <input type="hidden" name="PrincipalUserId" id="PrincipalUserId" />
+                                    </div>
+
+                                </div>
+                                <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                                    <label class="layui-form-label">经营范围</label>
+                                    <div class="layui-input-block">
+                                        <input type="text" name="BusinessScope" class="layui-input detail" />
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+
+                                <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                                    <label class="layui-form-label">备注1</label>
+                                    <div class="layui-input-block">
+                                        <input type="text" name="Reserve1" id="Reserve1" class="layui-input detail" />
+                                    </div>
+                                </div>
+                                <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                                    <label class="layui-form-label">备注2</label>
+                                    <div class="layui-input-block">
+                                        <input type="text" name="Reserve2" id="Reserve2" class="layui-input detail" />
+                                    </div>
+                                </div>
+
+
+                            </div>
+                            <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                                <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                                    <label class="layui-form-label">创建人</label>
+                                    <div class="layui-input-block">
+                                        <input type="text" name="CreateUserDisplayName" id="CreateUserDisplayName" class="layui-input detail" />
+                                    </div>
+                                </div>
+                                <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                                    <label class="layui-form-label">创建时间</label>
+                                    <div class="layui-input-block">
+                                        <input type="text" name="CreateDateTime" id="CreateDateTime" class="layui-input detail" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+
+                            </div>
+                        </div>
+                        </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+        <!--按钮begin-->
+        <div class="layui-form-item layui-layout-admin layui-hide">
+            <div class="layui-input-block">
+                <div class="layui-footer" style="left: 0;">
+                    <button class="layui-btn" id="NF-customer-formsubmit" lay-submit lay-filter="NF-customer-formsubmit">保存</button>
+                    <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                </div>
+            </div>
+        </div>
+        <!--按钮begin-->
+    </div>
+    <!--客户基本信息end-->
+
+    <div class="layui-collapse">
+        <div class="layui-colla-item" id="customContact">
+            <h2 class="layui-colla-title">其他联系人</h2>
+            <div class="layui-colla-content">
+                <!--其他联系人begin-->
+                <div class="layui-card " >
+                    @*<div class="layui-card-header">其他联系人</div>*@
+                    <div class="layui-card-body" style="padding: 15px;">
+                        <table id="NF-customer-detail-otherContact" lay-filter="NF-customer-detail-otherContact"></table>
+                        <!--表格工具栏-->
+                        <script id="toolcustomer_otherContact" type="text/html">
+                            <div class="layui-inline">
+                                <button class="layui-btn " lay-event="add"><i class="layui-icon layui-icon-edit"></i> 新增</button>
+                                <button class="layui-btn  layui-btn-danger" lay-event="batchdel"><i class="layui-icon layui-icon-delete"></i>批量删除</button>
+                            </div>
+                        </script>
+                        <script type="text/html" id="table-customer-otherContactbar">
+                            <a class="layui-btn layui-btn-normal layui-btn-xs" lay-event="edit"><i class="layui-icon layui-icon-edit"></i>修改</a>
+                            <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del"><i class="layui-icon layui-icon-delete"></i>删除</a>
+                        </script>
+                    </div>
+                </div>
+                <!--其他联系人end-->
+
+            </div>
+        </div>
+        <div class="layui-colla-item"  id="customAttachment">
+            <h2 class="layui-colla-title">客户附件</h2>
+            <div class="layui-colla-content">
+                <!--客户附件begin-->
+                <div class="layui-card ">
+                    @*<div class="layui-card-header">客户附件</div>*@
+                    <div class="layui-card-body" style="padding: 15px;">
+                        <table id="NF-customer-detail-CompAttachment" lay-filter="NF-customer-detail-CompAttachment"></table>
+                        <!--表格工具栏-->
+                        <script id="toolcustomer_CompAttachment" type="text/html">
+                            <div class="layui-inline">
+                                <button class="layui-btn " lay-event="add"><i class="layui-icon layui-icon-edit"></i> 新增</button>
+                                <button class="layui-btn  layui-btn-danger" lay-event="batchdel"><i class="layui-icon layui-icon-delete"></i>批量删除</button>
+                            </div>
+                        </script>
+                        <script type="text/html" id="table-customer-CompAttachmentbar">
+                            <a class="layui-btn layui-btn-xs" lay-event="download"><i class="layui-icon layui-icon-edit"></i>下载</a>
+                            <a class="layui-btn layui-btn-normal layui-btn-xs" lay-event="edit"><i class="layui-icon layui-icon-edit"></i>修改</a>
+                            <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del"><i class="layui-icon layui-icon-delete"></i>删除</a>
+                        </script>
+
+                    </div>
+                </div>
+                <!--客户附件end-->
+            </div>
+        </div>
+        <div class="layui-colla-item"  id="customDesc">
+            <h2 class="layui-colla-title">备忘录</h2>
+            <div class="layui-colla-content">
+                <!--备忘录begin-->
+                <div class="layui-card ">
+                    @*<div class="layui-card-header">备忘录</div>*@
+                    <div class="layui-card-body" style="padding: 15px;">
+                        <table id="NF-customer-detail-CompDescription" lay-filter="NF-customer-detail-CompDescription"></table>
+                        <!--表格工具栏-->
+                        <script id="toolcustomer_CompDescription" type="text/html">
+                            <div class="layui-inline">
+                                <button class="layui-btn " lay-event="add"><i class="layui-icon layui-icon-edit"></i> 新增</button>
+                                <button class="layui-btn  layui-btn-danger" lay-event="batchdel"><i class="layui-icon layui-icon-delete"></i>批量删除</button>
+                            </div>
+                        </script>
+                        <script type="text/html" id="table-customer-CompDescriptionbar">
+                            <a class="layui-btn layui-btn-normal layui-btn-xs" lay-event="edit"><i class="layui-icon layui-icon-edit"></i>修改</a>
+                            <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del"><i class="layui-icon layui-icon-delete"></i>删除</a>
+                        </script>
+
+                    </div>
+                </div>
+                <!--备忘录end-->
+
+            </div>
+        </div>
+        <div class="layui-colla-item" id="contracts">
+            <h2 class="layui-colla-title">签约合同</h2>
+            <div class="layui-colla-content">
+                <!--签约合同begin-->
+                <div class="layui-card " >
+                    @*<div class="layui-card-header">签约合同</div>*@
+                    <div class="layui-card-body" style="padding: 15px;">
+                        <table id="NF-customer-detail-Contracts" lay-filter="NF-customer-detail-Contracts"></table>
+                        <script type="text/html" id="nameTpl">
+                            <a class="layui-table-link hand" lay-text="查看详情" lay-event="detail">
+                                <cite>{{d.Name}}</cite>
+                            </a>
+                        </script>
+
+                    </div>
+                </div>
+                <!--签约合同end-->
+
+            </div>
+        </div>
+        <div class="layui-colla-item" id="zijingtongji">
+            <h2 class="layui-colla-title">资金统计</h2>
+            <div class="layui-colla-content">
+                <!--资金统计begin-->
+                <div class="layui-card " >
+                    @*<div class="layui-card-header">资金统计</div>*@
+                    <div class="layui-card-body" style="padding: 15px;">
+                        <div class="layui-form" lay-filter="Nf-Company-TongJiForm">
+
+
+                            <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                                <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                                    <label class="layui-form-label">合同金额</label>
+                                    <div class="layui-input-block">
+                                        <input type="text" name="HtJeThod" class="layui-input detail" />
+                                    </div>
+                                </div>
+                                <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                                    <label class="layui-form-label">已收金额</label>
+                                    <div class="layui-input-block">
+                                        <input type="text" name="CompAtmThod" class="layui-input detail" />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                                <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                                    <label class="layui-form-label">未收金额</label>
+                                    <div class="layui-input-block">
+                                        <input type="text" name="NoCompAtmThod" class="layui-input detail" />
+                                    </div>
+                                </div>
+                                <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                                    <label class="layui-form-label">已开票金额</label>
+                                    <div class="layui-input-block">
+                                        <input type="text" name="CompInThod" class="layui-input detail" />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                                <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                                    <label class="layui-form-label">未开票金额</label>
+                                    <div class="layui-input-block">
+                                        <input type="text" name="NoCompInThod" class="layui-input detail" />
+                                    </div>
+                                </div>
+                                <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                                    <label class="layui-form-label">财务应收</label>
+                                    <div class="layui-input-block">
+                                        <input type="text" name="CaiYsThod" class="layui-input detail" />
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                                <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                                    <label class="layui-form-label">财务预收</label>
+                                    <div class="layui-input-block">
+                                        <input type="text" name="CaiYjThod" class="layui-input detail" />
+                                    </div>
+                                </div>
+
+
+                            </div>
+                            <div class="layui-form-item">
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!--资金统计end-->
+
+            </div>
+        </div>
+        <div class="layui-colla-item" id="projctlist">
+            <h2 class="layui-colla-title">相关项目</h2>
+            <div class="layui-colla-content">
+                <!--相关项目begin-->
+                <div class="layui-card " >
+                    @*<div class="layui-card-header">相关项目</div>*@
+                    <div class="layui-card-body" style="padding: 15px;">
+                        <table id="NF-detail-projctlist" lay-filter="NF-detail-projctlist"></table>
+                        <script type="text/html" id="projctTpls">
+                            <a class="layui-table-link hand" lay-text="查看详情" lay-event="projctdetails">
+                                <cite>{{d.Name}}</cite>
+                            </a>
+                        </script>
+                    </div>
+                </div>
+                <!--相关项目end-->
+
+            </div>
+        </div>
+        <div class="layui-colla-item" id="submitlist">
+            <h2 class="layui-colla-title">相关标的</h2>
+            <div class="layui-colla-content">
+                <!--相关标的begin-->
+                <div class="layui-card " >
+                    @*<div class="layui-card-header">相关标的</div>*@
+                    <div class="layui-card-body" style="padding: 15px;">
+                        <table id="NF-detail-submitlist" lay-filter="NF-detail-submitlist"></table>
+                        <script type="text/html" id="nameTpls">
+                            <a class="layui-table-link hand" lay-text="查看详情" lay-event="details">
+                                <cite>{{d.ContName}}</cite>
+                            </a>
+                        </script>
+                    </div>
+                </div>
+                <!--相关标的end-->
+
+            </div>
+        </div>
+        <div class="layui-colla-item" id="approveHist">
+            <h2 class="layui-colla-title">审批历史</h2>
+            <div class="layui-colla-content">
+                <!--审批历史begin-->
+                <div class="layui-card " >
+                    @*<div class="layui-card-header">审批历史</div>*@
+                    <div class="layui-card-body" style="padding: 15px;">
+                        <table id="NF-workFlow-approveList" lay-filter="NF-workFlow-approveList"></table>
+                    </div>
+                    <script type="text/html" id="applisthist-bar">
+                        <a class="layui-btn layui-btn-normal layui-btn-xs" lay-event="viewapp"><i class="layui-icon layui-icon-edit"></i>查看</a>
+                        <a class="layui-btn layui-btn-normal layui-btn-xs" lay-event="printapp"><i class="layui-icon layui-icon-delete"></i>审批单</a>
+                    </script>
+                </div>
+                <!--审批历史--end-->
+
+            </div>
+        </div>
+    </div>
+
+    
+    
+    
+    
+    
+
+    
+   
+</div>
+
+
+<!--目录-->
+<ul class="site-dir layui-layer-wrap nf-ml-ul layui-hide" id="customernva">
+    <li><a href="#customInfo" rel="external nofollow" class="current">基本信息</a></li>
+    <li><a href="#customInfotwo" rel="external nofollow">次要信息</a></li>
+    <li><a href="#customContact" rel="external nofollow">其他联系人</a></li>
+    <li><a href="#customAttachment" rel="external nofollow">客户附件</a></li>
+    <li><a href="#customDesc" rel="external nofollow">备忘录</a></li>
+    <li><a href="#contracts" rel="external nofollow">签约合同</a></li>
+    <li><a href="#zijingtongji" rel="external nofollow">资金统计</a></li>
+    <li><a href="#projctlist" rel="external nofollow">相关项目</a></li>
+    <li><a href="#submitlist" rel="external nofollow">相关标的</a></li>
+    <li><a href="#approveHist" rel="external nofollow">审批历史</a></li>
+</ul>
+@{
+    Html.RenderPartial("_LayuiScriptsPartial");
+}
+<script>
+
+            layui.config({
+                base: '/lib/layuiadmin/'
+            }).extend({
+                index: 'lib/index', //主入口模块
+                nfcontents: 'contents-nf/nfcontents',
+                //commonnf: 'common-nf/commonnf',
+                //address: 'layui-nf-plugs/address',
+                tableSelect: 'layui-nf-plugs/tableSelect',
+                selectnfitem: 'common-nf/selectnfitem',
+                viewPageEdit: 'viewpage-edit/viewPageEdit'
+               , customerdetail: 'customer-nf/customer-detail'
+               , appListHist: 'workflow-nf/approvelisthist'
+            }).use(['index', 'element', 'nfcontents', 'customerdetail', 'appListHist'], function () {
+                var $ = layui.$
+                    , element = layui.element
+                    , nfcontents = layui.nfcontents
+                    , appListHist = layui.appListHist;
+                var byId = wooutil.getUrlVar('Id');
+                    //目录
+                    nfcontents.render({ content: '#customernva' });
+                     //审批历史
+                    appListHist.applistInit({ Id: byId, objType: 0 });
+                  
+            });
+</script>
+

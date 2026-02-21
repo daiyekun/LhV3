@@ -1,0 +1,172 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>恒润基EBP移动终端</title>
+    <!--Styles-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="vendor/jquery.mobile-1.4.0-rc.1.css"/>
+    <link rel="stylesheet" href="vendor/mobiscroll/css/mobiscroll.custom-2.6.2.min.css"/>
+    <link rel="stylesheet" href="css/style.css"/>
+    <!--Scripts-->
+    <script type="text/javascript" src="vendor/jquery-1.10.2.js"></script>
+    <script type="text/javascript" src="vendor/jquery.jsonp.js"></script>
+    <script type="text/javascript" src="vendor/jquery.validate.js"></script>
+    <script type="text/javascript" src="vendor/jquery.mobile-1.4.0-rc.1.js"></script>
+    <script type="text/javascript" src="vendor/mobiscroll/js/mobiscroll.custom-2.6.2.min.js"></script>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/woo.js"></script>
+    <script type="text/javascript" src="vendor/PushNotification.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+</head>
+
+<body>
+
+<!--初始欢迎页-->
+<div data-role="page" id="welcome"></div>
+
+<!--密码锁-->
+<div data-role="page" id="lock">
+    <div data-role="header" data-position="fixed">
+        <h1>密码锁</h1>
+    </div>
+    <div data-role="content">
+        <form id="lockform">
+            <label for="lockpassword">请输入密码锁（4-6位）</label>
+            <input type="password" name="lockpassword" id="lockpassword">
+            <input type="submit" id="lockform_submit" value="提交" data-role="button"/>
+        </form>
+        <div data-role="popup" id="lockform_error">
+            <p>密码输入错误！<p>
+        </div>
+    </div>
+</div>
+
+<!--登陆页-->
+<div data-role="page" id="login">
+    <div data-role="header" data-position="fixed">
+        <h1>登录系统</h1>
+    </div>
+    <div data-role="content" data-inset="true">
+        <form id="loginform">
+            <fieldset>
+                <div class="ui-field-contain">
+                    <label for="loginform_systemurl">请输入合同系统地址，格式 http://xxx/</label>
+                    <input type="text" name="systemurl" id="loginform_systemurl" placeholder="请输入合同系统地址" required
+                           value="http://localhost:1669/"/>
+                </div>
+                <hr/>
+                <input type="text" name="username" id="loginform_username" placeholder="请输入用户名" required value="admin" />
+                <input type="password" name="password" id="loginform_password" placeholder="请输入密码" required value="1" />
+                <select name="issave" id="loginform_issave" data-role="slider">
+                    <option value="false">不保存</option>
+                    <option value="true" selected>保存</option>
+                </select>
+                <input type="submit" id="loginform_submit" value="登录" data-role="button"/>
+                <div class="info" id="loginform_info"></div>
+            </fieldset>
+        </form>
+    </div>
+</div>
+
+<!--首页-->
+<div data-role="page" id="index" style="background: #fff;">
+    <div data-role="header" data-position="fixed">
+        <a href="#" class="ui-btn ui-btn-left ui-nodisc-icon ui-btn-icon-notext ui-icon-back" id="exitsystem">退出</a>
+        <h1>欢迎，<span id="index_username"></span></h1>
+    </div>
+    <div data-role="content" style="padding: 5px; height: 100%;">
+        <table class="gridmenu">
+            <tr>
+                <td colspan="2" class="title">合同对方</td>
+            </tr>
+            <tr>
+                <td><a href="company.html?type=0" data-ajax="false">
+                    <img src="img/indexicons1-1.png"/><span>客户</span></a></td>
+                <td><a href="company.html?type=1" data-ajax="false">
+                    <img src="img/indexicons1-1.png"/><span>供应商</span></a></td>
+            </tr>
+            <tr>
+                <td colspan="2" class="title">合同</td>
+            </tr>
+            <tr>
+                <td><a href="contract.html?type=0" data-ajax="false">
+                    <img src="img/indexicons2-1.png"/><span>收款合同</span></a></td>
+                <td><a href="contract.html?type=1" data-ajax="false">
+                    <img src="img/indexicons2-1.png"/><span>付款合同</span></a></td>
+            </tr>
+            <!--<tr>
+                <td colspan="2" class="title">设计变更</td>
+            </tr>
+            <tr>
+                <td><a  data-ajax="false">
+                    <img src="img/indexicons2-1.png"/><span>设计变更单</span></a></td>
+                <td><a  data-ajax="false">
+                    <img src="img/indexicons2-1.png"/><span>设计变更费用单</span></a></td>
+            </tr>-->
+            <tr>
+                 <!--<tr>
+                <td colspan="2" class="title">合同外委</td>
+            </tr>
+            <tr>
+                <td><a data-ajax="false">
+                    <img src="img/indexicons2-1.png"/><span>合同外委托单</span></a></td>
+                <td><a data-ajax="false">
+                    <img src="img/indexicons2-1.png"/><span>合同委托费用单</span></a></td>
+            </tr>-->
+            <tr>
+                <td colspan="2" class="title">资金</td>
+            <tr>
+                <!--   <td><a href="company.html?type=0" data-ajax="false">
+        <img src="img/indexicons1-1.png"/><span>客户</span></a></td>
+    <td><a href="company.html?type=1" data-ajax="false">
+        <img src="img/indexicons1-1.png"/><span>供应商</span></a></td> -->
+        
+                <td>
+                    <a data-ajax="false" href="finance_plan.html?type=0">
+                        <img src="img/indexicons3-1.png" /><span>收款计划</span>
+                    </a>
+                </td>
+                <td>
+                    <a data-ajax="false"  href="finance_plan.html?type=1">
+                        <img src="img/indexicons3-1.png" /><span>付款计划</span>
+                    </a>
+                </td>
+            </tr>
+            </tr>
+            <tr>
+                <td><a data-ajax="false" href="finance_actual.html?type=0">
+                    <img src="img/indexicons4-1.png"/><span>实际付款</span></a></td>
+
+                 <td><a data-ajax="false" href="finance_actual.html?type=1">
+                    <img src="img/indexicons4-1.png"/><span>实际付款</span></a></td> 
+            </tr>
+            <tr>
+                <td colspan="2" class="title">发票</td>
+            </tr>
+            <tr>
+                <td><a href="invoice.html?type=0" data-ajax="false">
+                    <img src="img/indexicons5-1.png"/><span>已开发票</span></a></td>
+                <td><a href="invoice.html?type=1" data-ajax="false">
+                    <img src="img/indexicons5-1.png" /><span>已收发票</span>
+</a></td>
+            </tr>
+        </table>
+    </div>
+    <div data-role="footer" data-position="fixed" data-tap-toggle = "false">
+        <div data-role="navbar">
+            <ul>
+                <li>
+                    <a href="index.html#index" data-icon="c-yewu" data-ajax="false" id="menu_index"
+                       class="ui-btn-active">业务</a>
+                </li>
+                <li><a href="approve.html" data-icon="c-shenpi" data-ajax="false" id="menu_approve">审批</a></li>
+                <li><a href="remind.html" data-icon="c-tixing" data-ajax="false" id="menu_remind">提醒</a></li>
+                <li><a href="system.html" data-icon="c-shezhi" data-ajax="false" id="menu_system">设置</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

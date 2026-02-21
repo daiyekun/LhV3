@@ -1,0 +1,150 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>恒润基EBP移动终端</title>
+    <!--Styles-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="vendor/jquery.mobile-1.4.0-rc.1.css" />
+    <link rel="stylesheet" href="vendor/mobiscroll/css/mobiscroll.custom-2.6.2.min.css" />
+    <link rel="stylesheet" href="vendor/jqpagination.css" />
+    <link rel="stylesheet" href="vendor/jquery.fileupload.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <!--Scripts-->
+    <script type="text/javascript" src="vendor/jquery-1.10.2.js"></script>
+    <script type="text/javascript" src="vendor/jquery.validate.js"></script>
+    <script type="text/javascript" src="vendor/jquery.mobile-1.4.0-rc.1.js"></script>
+    <script type="text/javascript" src="vendor/mobiscroll/js/mobiscroll.custom-2.6.2.min.js"></script>
+    <script type="text/javascript" src="vendor/jquery.jqpagination.js"></script>
+    <script type="text/javascript" src="vendor/jquery.fileupload.js"></script>
+    <script type="text/javascript" src="vendor/jquery.iframe-transport.js"></script>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="ContactView.js"></script>
+    <script type="text/javascript" src="js/woo.js"></script>
+    <script type="text/javascript" src="js/finance_actual.js"></script>
+</head>
+
+<body>
+    <!--首页-->
+    <div data-role="page" id="index">
+        <div data-role="header">
+            <a href="#" class="ui-btn ui-btn-left ui-nodisc-icon ui-btn-icon-notext ui-icon-back" id="backtoindex">返回</a>
+            <h1></h1>
+        </div>
+        <div data-role="content">
+            <input type="hidden" data-role="none" id="detailId" />
+            <form id="searchform">
+                <input type="search" name="search" id="search" placeholder="名称、编号..." data-clear-btn="true" />
+            </form>
+            <table data-role="table" id="list-table" data-mode="reflow" class="woo-list">
+                <thead>
+                    <tr>
+                        <th data-priority="1">序号</th>
+                        <th data-priority="persist">合同名称</th>
+                        <th data-priority="2">合同编号</th>
+                        <th data-priority="3">客户名称</th>
+                        <th data-priority="4">金额</th>
+                        <th data-priority="5">结算日期</th>
+                        <th data-priority="6">结算方式</th>
+                        <th data-priority="7">资金状态</th>
+                        <th data-priority="8">确认人</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+            <div class="gigantic pagination">
+                <a href="#" class="first" data-action="first">&laquo;</a>
+                <a href="#" class="previous" data-action="previous">&lsaquo;</a>
+                <input type="text" readonly="readonly" data-role="none" />
+                <a href="#" class="next" data-action="next">&rsaquo;</a>
+                <a href="#" class="last" data-action="last">&raquo;</a>
+            </div>
+        </div>
+        <div data-role="footer" data-position="fixed">
+            <div data-role="navbar">
+                <ul>
+                    <li>
+                        <a href="index.html#index" data-icon="c-yewu" data-ajax="false" id="menu_index"
+                           class="ui-btn-active">业务</a>
+                    </li>
+                    <li><a href="approve.html" data-icon="c-shenpi" data-ajax="false" id="menu_approve">审批</a></li>
+                    <li><a href="remind.html" data-icon="c-tixing" data-ajax="false" id="menu_remind">提醒</a></li>
+                    <li><a href="system.html" data-icon="c-shezhi" data-ajax="false" id="menu_system">设置</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div data-role="page" id="detail">
+        <!-- 基本信息 -->
+        <div data-role="panel" id="detail_menu" data-position="right" data-theme="b" data-display="overlay">
+            <ul data-role="listview">
+                <li><a href="#" data-collapsible-id="detail_basic">实际资金基本信息</a></li>
+                <li><a href="#" data-collapsible-id="detail_HT">合同基本信息</a></li>
+                <li><a href="#" data-collapsible-id="detail_files">计划资金</a></li>
+            </ul>
+        </div>
+        <div data-role="header">
+            <a href="#" data-role="btn" data-icon="back" id="detail_back">返回</a>
+            <h1></h1>
+            <!--<a href="#detail_menu" data-role="btn" data-icon="bars" data-iconpos="notext" class="ui-btn-right"></a>-->
+        </div>
+        <div data-role="content">
+            <!-- 计划资金基本信息 -->
+            <div data-role="collapsible" data-collapsed="false" id="detail_basic">
+                <h4>实际资金基本信息</h4>
+                <ul data-role="listview" data-inset="true" class="view">
+                    <li>资金金额:<span name="AmountMoney"></span></li>
+                    <li>票据号码:<span name="VoucherNo"></span></li>
+                    <li>结算方式:<span name="SettlementMethodDic"></span></li>
+                    <li>结算日期:<span name="ActualSettlementDate"></span></li>
+                    <li class="ys">开户银行:<span name="Bank"></span></li>
+                    <li class="ys">账号:<span name="Account"></span></li>
+                    <li>备用1:<span name="Reserve1"></span></li>
+                    <li>备用2:<span name="Reserve2"></span></li>
+                    <li>备注:<span name="Remark"></span></li>
+                </ul>
+            </div>
+
+            <!-- 合同基本信息 -->
+            <div data-role="collapsible" data-collapsed="false" id="detail_HT">
+                <h4>合同基本信息</h4>
+                <ul data-role="listview" data-inset="true" class="view">
+                    <li>合同名称:<span name="Name"></span></li>
+                    <li>合同编号:<span name="Code"></span></li>
+                    <li>合同金额:<span name="ContAmThod"></span></li>
+                    <li>合同对方:<span name="CompName"></span></li>
+                    <li>付款金额:<span name="HtWcJeThod"></span></li>
+                    <li>收款金额:<span name="FaPiaoThod"></span></li>
+                </ul>
+            </div>
+            <!-- 计划资金 -->
+            <div data-role="collapsible" data-collapsed="false" id="detail_files">
+                <h4>计划资金</h4>
+                <table data-role="table" id="detail_files_table" data-mode="reflow" class="woo-list">
+                    <thead>
+                        <tr>
+                            <!--<th data-priority="1">名123称</th>
+    <th data-priority="2">金额</th>
+    <th data-priority="3">已完成金额</th>
+    <th data-priority="4">余额</th>
+    <th data-priority="5">完成比例</th>
+    <th data-priority="6">计划日期</th>
+    <th data-priority="7">结算方式</th>-->
+                            <th data-priority="1">占位</th>
+                            <th data-priority="2">名称</th>
+                            <th data-priority="3">金额</th>
+                            <th data-priority="4">已完成金额</th>
+                            <th data-priority="5">余额</th>
+                            <th data-priority="6">完成比例</th>
+                            <th data-priority="7">计划日期</th>
+                            <th data-priority="8">结算方式</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,291 @@
+﻿
+@{
+    ViewData["Title"] = "Build";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/lib/layuiadmin/style/selectTree.css" rel="stylesheet" />
+<div class="layui-fluid">
+    <!--部门基本信息begin-->
+    <div class="layui-form" lay-filter="Nf-SystemAdmin-DeptForm">
+        <input type="hidden" id="Id" name="Id" />
+        <div class="layui-card ">
+            <div class="layui-card-header">部门基本信息</div>
+            <div class="layui-card-body" style="padding: 15px;">
+                <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">机构名称</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="Name" lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input pen" />
+                        </div>
+                    </div>
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">机构编号</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="No" lay-verify="required" autocomplete="off" class="layui-input pen" placeholder="请输入" />
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">所属机构</label>
+                        <div class="layui-input-block">
+                            <input type="text" id="NF-PDept" lay-filter="NF-PDept" name="Pid"  value="0" class="layui-input" />
+                        </div>
+                    </div>
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">机构类型</label>
+                        <div class="layui-input-block">
+                            <select name="CategoryId" id="CategoryId" lay-verify="required" lay-search="">
+                                <option value="" id="cateempty">请选择机构类型</option>
+
+                            </select>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                    
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">机构简称</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="ShortName" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">子公司</label>
+                        <div class="layui-input-block">
+                            <input type="checkbox" name="IsSubCompany" value="1" lay-skin="primary" />
+
+                        </div>
+                    </div>
+                </div>
+
+                <!--需要在最后加这个或者没有也加一个 <div class="layui-form-item">，这样不会导致隐藏菜单是显示问题-->
+                <div class="layui-form-item">
+                    <div class="layui-inline">
+
+                        <label class="layui-form-label">签约主体</label>
+                        <div class="layui-input-block">
+                            <input type="checkbox" name="IsMain" value="1" lay-skin="primary" lay-filter="IsMainCheck">
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!--部门基本信息end-->
+        <!--签约主体基本信息begin-->
+        <div class="layui-card deptMain" style="display:none;">
+            <div class="layui-card-header">签约主体基本信息</div>
+            <div class="layui-card-body" style="padding: 15px;">
+
+                <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">法定代表人</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="LawPerson" autocomplete="off" class="layui-input">
+                        </div>
+                    </div>
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">税务登记号</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="TaxId" autocomplete="off" class="layui-input" />
+                        </div>
+                    </div>
+
+                </div>
+                <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">开户银行</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="BankName" autocomplete="off" class="layui-input" />
+                        </div>
+                    </div>
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">账号</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="Account" autocomplete="off" class="layui-input" />
+                        </div>
+                    </div>
+
+                </div>
+                <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">地址</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="Address" autocomplete="off" class="layui-input" />
+                        </div>
+                    </div>
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">邮编</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="ZipCode" autocomplete="off" class="layui-input" />
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">传真</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="Fax" autocomplete="off" class="layui-input" />
+                        </div>
+                    </div>
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">联系电话</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="TelePhone" autocomplete="off" class="layui-input" />
+                        </div>
+                    </div>
+                   
+                </div>
+                <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">开票名称</label>
+                        <div class="layui-input-block">
+                            <input type="text" name="InvoiceName" autocomplete="off" class="layui-input" />
+                        </div>
+                    </div>
+                </div>
+
+                <!--需要在最后加这个或者没有也加一个 <div class="layui-form-item">，这样不会导致隐藏菜单是显示问题-->
+                <div class="layui-form-item">
+
+                </div>
+
+            </div>
+        </div>
+        <!--签约主体基本信息end-->
+        <!--按钮begin-->
+        <div class="layui-form-item layui-layout-admin layui-hide">
+            <div class="layui-input-block">
+                <div class="layui-footer" style="left: 0;">
+                    <button class="layui-btn"  id="Nf-SystemAdmin-DeptFormSubmit" lay-submit lay-filter="Nf-SystemAdmin-DeptFormSubmit">保存</button>
+                    <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+                </div>
+            </div>
+        </div>
+        <!--按钮begin-->
+    </div>
+
+</div>
+
+@{
+    Html.RenderPartial("_LayuiScriptsPartial");
+}
+<script>
+
+    layui.config({
+        base: '/lib/layuiadmin/'
+    }).extend({
+        index: 'lib/index', //主入口模块
+        treeSelect: 'layui-nf-plugs/treeselect'
+    }).use(['index', 'form', 'laydate', 'treeSelect'], function () {
+        var $ = layui.$
+            , admin = layui.admin
+            , element = layui.element
+            , layer = layui.layer
+            , laydate = layui.laydate
+            , treeSelect = layui.treeSelect
+            , table = layui.table
+            , form = layui.form;
+        var byId = wooutil.getUrlVar('Id');
+
+        //机构类型绑定
+        //admin.req({
+        //    url: '/System/DataDictionary/GetListByDataEnumType',
+        //    data: { dataEnum: 0 },
+        //    done: function (res) {
+        //        $(res.Data).each(function (i, n) {
+        //            $("select[name='CategoryId']").append("<option value='" + n.Id + "'>" + n.Name + "</option>");
+        //        });
+        //        form.render("select");//必须
+        //    }
+        //});
+
+        
+              admin.req({
+                  url: '/System/DataDictionary/GetListByDataEnumType',
+                  async: false,
+                  data: { dataEnum: 0 },
+                  done: function (res) {
+                      $(res.Data).each(function (i, n) {
+                        
+                          $("select[name='CategoryId']").append("<option value='" + n.Id + "'>" + n.Name + "</option>");
+                      });
+                      form.render("select");//必须
+                  }
+              });
+      
+
+        //签约主体
+        form.on('checkbox(IsMainCheck)', function (data) {
+            if (data.elem.checked) {
+                $("div .deptMain").show();
+
+            } else {
+                $("div .deptMain").hide();
+
+            }
+
+        });
+        /**
+        *初始化组织机构树
+        **/
+               function InitDeptTree(tvl) {
+                   treeSelect.render(
+                       {
+                           elem: "#NF-PDept",
+                           data: '/System/Department/GetTreeSelectDept',
+                           method: "GET",
+                           verify: true,
+                           click: function (d) {
+
+                               $("input[name=Pid]").val(d.current.id);
+                           },
+                           success: function (d) {
+
+                               if (tvl != null) {
+                                   //treeSelect.checkNode("NF-PDept", res.Data.Pid);
+                                   treeSelect.checkNode("NF-PDept", tvl);
+                               }
+                           }
+                       });
+               }
+
+
+        //--------------------------修改的时候赋值----------------------------------
+    
+        if (byId !== "" && byId !== undefined) {
+            admin.req({
+                url: '/System/Department/ShowView',
+                data: { Id: byId, rand: wooutil.getRandom() },
+                done: function (res) {
+                    form.val("Nf-SystemAdmin-DeptForm", res.Data);
+                    //下拉树（所属机构）,必须放到设置值以后，不然修改时设置不稳定
+
+                    if (res.Data.IsMain === 1) {
+                        $("input[name=IsMain]").attr("checked", true);
+                        $("div .deptMain").show();
+
+                    }
+                    if (res.Data.IsSubCompany === 1) {
+                        $("input[name=IsSubCompany]").attr("checked", true);
+                    }
+                  
+                   InitDeptTree(res.Data.Pid);
+                }
+            });
+
+        } else {
+            InitDeptTree(null);
+        }
+        //-------------------------------------修改赋值end--------------------------------------------
+         form.render(null, 'Nf-SystemAdmin-DeptForm');
+         wooutil.selpen();
+        });
+</script>
+

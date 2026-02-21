@@ -1,0 +1,14 @@
+﻿1：数据库映射实体都生成在Models下面
+2：如果有更改删掉文件夹执行如下脚本,如果是首次生成也是执行如下脚本
+Scaffold-DbContext "Server=.;Database=NFDB;Persist Security Info=True;User ID=sa;password=Sasa123;" Microsoft.EntityFrameworkCore.SqlServer  -OutputDir Models
+在程序包管理器控制台执行，选择默认项目“NF.Model”.
+如果提示某表名称不存在，说明数据库配置文件有问题，多半数据库名称配置错误
+
+3.如果模型已经生产可以使用下面命令
+ Scaffold-DbContext "Server=.;Database=NFDB;Persist Security Info=True;User ID=sa;password=Sasa123;" Microsoft.EntityFrameworkCore.SqlServer  -OutputDir Models -Force
+ Scaffold-DbContext "Server=192.168.0.189;Database=NFDBV283_New;Persist Security Info=True;User ID=sa;password=Sasa123;" Microsoft.EntityFrameworkCore.SqlServer  -OutputDir Models -Force
+ Scaffold-DbContext "Server=192.168.0.189;Database=LH.NET5_V3.0_ZY;Persist Security Info=True;User ID=sa;password=Sasa123;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models -Context "NFDbContext"  -Force
+Scaffold-DbContext -?  查看命名帮助
+
+dotnet NF.Web.dll --urls="http://*:5188" --ip="127.0.0.1" --port=5188 
+dotnet NF.WeiXinApp.dll --urls="http://*:5178" --ip="127.0.0.1" --port=5178 

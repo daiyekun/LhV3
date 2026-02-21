@@ -1,0 +1,163 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="layui-fluid">
+    <!--基本信息begin-->
+    <div class="layui-form" lay-filter="NF-ContAttachmentForm">
+        <!--修改时使用-->
+        <input type="hidden" id="Id" name="Id" />
+
+        <input type="hidden" id="IsSc" name="IsSc" value="@(ViewData["UserE"])" />
+        @*文件存储文件夹名称*@
+        <input type="hidden" name="FolderName" value="UserEs" />
+        <!--Guid名称-->
+        <input type="hidden" name="GuidFileName" value="@(ViewData["ids"]).jpg" />
+        <div class="layui-card ">
+            <div class="layui-card-header">基本信息</div>
+            <div class="layui-card-body" style="padding: 15px;">
+                <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <label class="layui-form-label">文件名</label>
+                        @*<div class="layui-input-block">*@
+                        <div class="layui-input-inline" style="width:40%;">
+                            <input type="text" name="FileName" lay-verify="required" placeholder="请输入" autocomplete="off" class="layui-input pen" />
+
+                        </div>
+                        <div class="layui-form-mid layui-word-aux" style="margin-top:-9px;">
+                            <button class="layui-btn layui-btn layui-btn-sm " id="contract-attUpload" style="height:38px;line-height:38px;">上传</button>
+                        </div>
+                    </div>
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12 UserE layui-hide">
+                        <label class="layui-form-label">附件名称</label>
+                        <div class="layui-input-block">
+                            <input type="image" src="~/Uploads/UserEs/@(ViewData["ids"]).png" />
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!--需要在最后加这个或者没有也加一个 <div class="layui-form-item">，这样不会导致隐藏菜单是显示问题-->
+            <div class="layui-form-item">
+
+            </div>
+        </div>
+    </div>
+
+    <div class="layui-form-item layui-layout-admin layui-hide">
+        <div class="layui-input-block">
+            <div class="layui-footer" style="left: 0;">
+                <button class="layui-btn" id="NF-ContAttachment-FormSubmit" lay-submit lay-filter="NF-ContAttachment-FormSubmit">保存</button>
+                <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+@{
+    Html.RenderPartial("_LayuiScriptsPartial");
+}
+<script>
+
+    layui.config({
+        base: '/lib/layuiadmin/'
+    }).extend({
+        index: 'lib/index',
+        commonnf: 'common-nf/commonnf',
+    }).use(['index', 'form', 'commonnf', 'upload'], function () {
+
+        var $ = layui.$
+            , admin = layui.admin
+          , form = layui.form
+          , commonnf = layui.commonnf
+          , upload = layui.upload
+         , setter = layui.setter ;
+        var _objId = wooutil.getQueryString('Id');
+
+        var isd = $('#IsSc').val();
+
+        if (isd == 1) {
+            $(".UserE").removeClass("layui-hide");
+
+        }
+
+
+          //上传14
+           var uploadcontractInst = upload.render({
+                elem: '#contract-attUpload'
+               , url: setter.layupload.uploadIp + '/NfCommon/NfAttachment/Upload?folderIndex=15'
+              // , accept: setter.layupload.accept
+               , accept: 'images'
+               , exts: 'png'
+               //, exts: setter.layupload.exts
+               , size: 2048
+               , auto: false
+               , before: function (obj) {
+
+                   layer.load(); //上传loading
+               }
+               , choose: function (obj) {  //上传前选择回调方法
+
+                   var flag = true;
+                   obj.preview(function (index, file, result) {
+                       console.log(file);            //file表示文件信息，result表示文件src地址
+                       var img = new Image();
+                       img.src = result;
+                       img.onload = function () { //初始化夹在完成后获取上传图片宽高，判断限制上传图片的大小。
+
+                           if (img.width <= 200 && img.height <=60) {
+                               obj.upload(index, file); //满足条件调用上传方法
+                               flag = false;
+                               return  false;
+                           } else {
+                               flag = false;
+                               layer.msg("您上传的小图大小不能超过是200*60尺寸！");
+                               return false;
+                           }
+                       }
+                       return flag;
+                       layer.closeAll('loading');
+                   });
+               }
+               , done: function (file, index, upload) { //上传完毕回调
+                   $("input[name=FileName]").val(file.RetValue.SourceFileName);
+                   var UrlRequst = function (_url, _msg) {
+                       admin.req({
+                           url: _url,
+                           done: function (res) {
+                               layer.alert(_msg);
+                           }
+                       });
+                   }
+                   UrlRequst("/System/InitData/SetCacheUserData", "图片加载完毕");
+                   var isd = $('#IsSc').val();
+
+                   if (isd == 1 )
+                   {
+                          $(".UserE").removeClass("layui-hide");
+
+                   }
+                   form.render
+                   layer.closeAll('loading');
+               }
+               , error: function (index, upload) {
+                   //请求异常回调
+                   layer.closeAll('loading');
+                   layer.msg('网络异常，请稍后重试！');
+               }
+
+             });
+
+
+
+
+
+    });
+</script>
+
+

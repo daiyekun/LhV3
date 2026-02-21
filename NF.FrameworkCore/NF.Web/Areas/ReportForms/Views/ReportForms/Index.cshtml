@@ -1,0 +1,104 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script src="~/lib/layuiadmin/modules/Report-nf/echarts.min.js"></script>
+<script src="~/lib/layuiadmin/modules/Report-nf/node_modules/echarts/lib/coord/polar/Polar.js"></script>
+@*//D:\lh\WXqapp\NF.FrameworkCore\NF.Web\wwwroot\lib\layuiadmin\modules\Report-nf\node_modules\echarts\lib\coord\polar*@
+<div class="layui-fluid">
+    <!--合同基本信息begin-->
+    <div class="layui-form" lay-filter="NF-ContractCollection-Form">
+        <!--修改时使用-->
+        <input type="hidden" id="Id" name="Id" />
+        @*自定义字段，保存修改时存储值*@
+        <input type="hidden" id="CustField" name="CustField" />
+        <div class="layui-card " id="contractfo">
+            <div class="layui-card-header">报表集</div>
+            <div class="layui-card-body" style="padding: 15px;">
+                @*<div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+
+                        <div id="Bbpj" style="height: 500px ;width:600px"></div>
+                        <h3 style="text-align:center;">报表拼接测1.2</h3>
+                    </div>
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+
+                        <div id="Hxt" style="height: 500px ;width:600px"></div>
+                        <h3 style="text-align:center;">报表拼接母版</h3>
+                    </div>
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <div id="Zxtjt" style="height: 500px ;width:600px"></div>
+                        <h3 style="text-align:center;">报表拼接测1.0</h3>
+                    </div>
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <div id="Zxtjtwer" style="height: 500px ;width:600px"></div>
+                        <h3 style="text-align:center;">报表拼接测1.3</h3>
+                    </div>
+                </div>*@
+
+
+                <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <div id="container" style="height: 500px ;width:600px"></div>
+                        <h3 style="text-align:center;">合同状态统计</h3>
+                    </div>
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <div id="containers" style="height: 500px ;width:600px"></div>
+                        <h3 style="text-align:center;">合同金额与份数统计</h3>
+                    </div>
+                </div>
+        
+                <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <input type="text" style="height: 25px; width: 150px" name="Name" id="Name" placeholder="请选择时间" readonly="readonly" autocomplete="off" class="layui-input" />
+                        <div id="HtqdYsSsjeTj" style="height: 500px ;width:600px"></div>
+                        <h3 style="text-align:center;">收款资金统计</h3>
+                    </div>
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+
+                        <div id="Htlytj" style="height: 500px ;width:600px"></div>
+                        <h3 style="text-align:center;">合同来源统计</h3>
+                    </div>
+                </div>
+                        <div class="layui-row layui-col-space10 layui-form-item layui-col-lg12">
+              @*      <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+                        <div id="Htlbjt" style="height: 500px ;width:600px"></div>
+                        <h3 style="text-align:center;">合同类别统计</h3>
+                    </div>*@
+                    <div class="layui-col-lg6 layui-col-md6 layui-col-xs12 layui-col-sm12">
+
+                        <input type="text" style="height: 25px; width: 150px" name="Times" id="Times" placeholder="请选择时间" readonly="readonly" autocomplete="off" class="layui-input" />
+                        <div id="HtZjFpTj" style="height: 500px ;width:600px"></div>
+                        <h3 style="text-align:center;">合同资金往来</h3>
+                    </div>
+                </div>
+                <!--需要在最后加这个或者没有也加一个 <div class="layui-form-item">，这样不会导致隐藏菜单是显示问题-->
+                <div class="layui-form-item">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@{
+    Html.RenderPartial("_LayuiScriptsPartial");
+}
+
+
+
+<script src="~/lib/layuiadmin/layui/layui.js"></script>
+<script type="text/javascript">
+
+    layui.config({
+        base: '/lib/layuiadmin/'
+    }).extend({
+        index: 'lib/index' //主入口模块
+        ,
+        CollectionContractDetail: 'Report-nf/Repotr-Zt'
+
+    }).use(['index', 'CollectionContractDetail'], function () {
+
+    });
+
+</script>

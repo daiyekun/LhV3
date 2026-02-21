@@ -1,0 +1,50 @@
+﻿
+@{
+    ViewData["Title"] = "待处理";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="layui-fluid">
+    <input type="hidden" name="hide_keyWord" />
+    <div class="layui-card">
+        <div class="layui-card-body">
+            <table id="NF-AppPendingList" lay-filter="NF-AppPendingList"></table>
+            <script type="text/html" id="approveTpl">
+                <a class="layui-table-link hand" lay-text="查看详情" lay-event="appingdetail">
+                    <cite>{{d.AppObjName}}</cite>
+                </a>
+            </script>
+            <!--表格工具栏-->
+            <script id="toolAppPending" type="text/html">
+                <div class="layui-inline">
+                    <input class="layui-input" type="text" name="keyWord" placeholder="名称、编号" style="width:240px;" />
+
+                </div>
+                <div class="layui-inline">
+                    <button class="layui-btn" lay-event="search">
+                        <i class="layui-icon layui-icon-search layuiadmin-button-btn"></i>
+                    </button>
+                </div>
+            </script>
+
+        </div>
+    </div>
+</div>
+
+
+@{
+    Html.RenderPartial("_LayuiScriptsPartial");
+}
+
+<script>
+    layui.config({
+        base: '/lib/layuiadmin/'
+    }).extend({
+        index: 'lib/index', //主入口模块
+        appPendingList: 'workflow-nf/apppendinglist'
+
+    }).use(['index', 'appPendingList'], function () {
+
+     });
+</script>
+
